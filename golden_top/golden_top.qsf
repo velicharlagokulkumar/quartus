@@ -1,0 +1,836 @@
+set_global_assignment -name TOP_LEVEL_ENTITY golden_top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 19.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:03:33  APRIL 09, 2019"
+set_global_assignment -name LAST_QUARTUS_VERSION "23.2.0 Pro Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name DEVICE AGFB014R24B2E2V
+set_global_assignment -name FAMILY "Agilex 7"
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "ACTIVE SERIAL X4"
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name GENERATE_PR_RBF_FILE ON
+set_global_assignment -name ENABLE_ED_CRC_CHECK ON
+set_global_assignment -name MINIMUM_SEU_INTERVAL 0
+set_global_assignment -name PWRMGT_SLAVE_DEVICE_TYPE ED8401
+set_global_assignment -name PWRMGT_SLAVE_DEVICE0_ADDRESS 42
+set_global_assignment -name PWRMGT_SLAVE_DEVICE1_ADDRESS 00
+set_global_assignment -name PWRMGT_SLAVE_DEVICE2_ADDRESS 00
+set_global_assignment -name ACTIVE_SERIAL_CLOCK AS_FREQ_115MHZ_IOSC
+set_global_assignment -name USE_PWRMGT_SCL SDM_IO0
+set_global_assignment -name USE_PWRMGT_SDA SDM_IO12
+set_global_assignment -name USE_CONF_DONE SDM_IO16
+set_global_assignment -name FLOW_DISABLE_ASSEMBLER OFF
+set_global_assignment -name PWRMGT_PAGE_COMMAND_ENABLE OFF
+set_global_assignment -name PWRMGT_BUS_SPEED_MODE "100 KHZ"
+set_global_assignment -name PWRMGT_VOLTAGE_OUTPUT_FORMAT "LINEAR FORMAT"
+set_global_assignment -name PWRMGT_LINEAR_FORMAT_N "-13"
+
+
+
+set_location_assignment PIN_U52 -to FPGA_SYSTEM_CLK
+set_location_assignment PIN_G52 -to FPGA_SYS_RESETN
+set_location_assignment PIN_D43 -to FPGA_LED_G[0]
+set_location_assignment PIN_B43 -to FPGA_LED_G[1]
+set_location_assignment PIN_C42 -to FPGA_LED_G[2]
+set_location_assignment PIN_A42 -to FPGA_LED_G[3]
+set_location_assignment PIN_D41 -to FPGA_LED_G[4]
+set_location_assignment PIN_B41 -to FPGA_LED_G[5]
+set_location_assignment PIN_C40 -to FPGA_LED_G[6]
+set_location_assignment PIN_A40 -to FPGA_LED_G[7]
+set_location_assignment PIN_H45 -to FPGA_SW[0]
+set_location_assignment PIN_F45 -to FPGA_SW[1]
+set_location_assignment PIN_J44 -to FPGA_SW[2]
+set_location_assignment PIN_G44 -to FPGA_SW[3]
+set_location_assignment PIN_H43 -to FPGA_SW[4]
+set_location_assignment PIN_F43 -to FPGA_SW[5]
+set_location_assignment PIN_J42 -to FPGA_SW[6]
+set_location_assignment PIN_G42 -to FPGA_SW[7]
+set_location_assignment PIN_H41 -to FPGA_PB[0]
+set_location_assignment PIN_F41 -to FPGA_PB[1]
+set_location_assignment PIN_J40 -to FPGA_PB[2]
+set_location_assignment PIN_G40 -to FPGA_PB[3]
+set_location_assignment PIN_D45 -to FPGA_PB[4]
+set_location_assignment PIN_B45 -to FPGA_PB[5]
+set_location_assignment PIN_C44 -to FPGA_PB[6]
+set_location_assignment PIN_A44 -to FPGA_PB[7]
+set_location_assignment PIN_V45 -to FPGA_GPIO[0]
+set_location_assignment PIN_T45 -to FPGA_GPIO[1]
+set_location_assignment PIN_W44 -to FPGA_GPIO[2]
+set_location_assignment PIN_U44 -to FPGA_GPIO[3]
+set_location_assignment PIN_V43 -to FPGA_GPIO[4]
+set_location_assignment PIN_T43 -to FPGA_GPIO[5]
+set_location_assignment PIN_W42 -to FPGA_GPIO[6]
+set_location_assignment PIN_U42 -to FPGA_GPIO[7]
+set_location_assignment PIN_V41 -to FPGA_GPIO[8]
+set_location_assignment PIN_T41 -to FPGA_GPIO[9]
+set_location_assignment PIN_W40 -to FPGA_GPIO[10]
+set_location_assignment PIN_U40 -to FPGA_GPIO[11]
+set_location_assignment PIN_P45 -to FPGA_GPIO[12]
+set_location_assignment PIN_M45 -to FPGA_GPIO[13]
+set_location_assignment PIN_N44 -to FPGA_GPIO[14]
+set_location_assignment PIN_L44 -to FPGA_GPIO[15]
+set_location_assignment PIN_U36 -to FPGA_TEST_ALERTN
+set_location_assignment PIN_W34 -to FPGA_TESTIO[0]
+set_location_assignment PIN_U34 -to FPGA_TESTIO[1]
+set_location_assignment PIN_V33 -to FPGA_TESTIO[2]
+set_location_assignment PIN_T33 -to FPGA_TESTIO[3]
+set_location_assignment PIN_N38 -to FPGA_TESTIO[4]
+set_location_assignment PIN_L38 -to FPGA_TESTIO[5]
+set_location_assignment PIN_P37 -to FPGA_TESTIO[6]
+set_location_assignment PIN_M37 -to FPGA_TESTIO[7]
+set_location_assignment PIN_N36 -to FPGA_TESTIO[8]
+set_location_assignment PIN_L36 -to FPGA_TESTIO[9]
+set_location_assignment PIN_L34 -to FPGA_TESTIO[10]
+set_location_assignment PIN_P33 -to FPGA_TESTIO[11]
+set_location_assignment PIN_M33 -to FPGA_TESTIO[12]
+
+set_location_assignment PIN_AJ48 -to REFCLK_GXPP0
+set_location_assignment PIN_AE48 -to REFCLK_GXPP2
+set_location_assignment PIN_AT13 -to REFCLK_GXEP0
+set_location_assignment PIN_AR14 -to REFCLK_GXEP1
+set_location_assignment PIN_AJ12 -to REFCLK_GXEP2
+set_location_assignment PIN_AK13 -to REFCLK_GXEP3 
+set_location_assignment PIN_DC20 -to FPGA_GPIO_OUTCLKP 
+set_location_assignment PIN_DC22 -to FPGA_GPIO_REFCLKP0 
+set_location_assignment PIN_CG24 -to FPGA_GPIO_REFCLKP1
+set_location_assignment PIN_CU24 -to FPGA_GPIO_REFCLKP2
+
+set_location_assignment PIN_CL48 -to SODIMM_I2C_SDA
+set_location_assignment PIN_CL46 -to SODIMM_I2C_SCL
+set_location_assignment PIN_J38 -to F2M_I2C_SCL
+set_location_assignment PIN_J36 -to F2M_I2C_SDA
+set_location_assignment PIN_J34 -to M2F_I2C_SCL
+set_location_assignment PIN_C38 -to M2F_I2C_SDA
+set_location_assignment PIN_C36 -to FPGA_TEST_SCL
+set_location_assignment PIN_C34 -to FPGA_TEST_SDA
+
+
+set_location_assignment PIN_AJ8  -to MXP_RXN[0]
+set_location_assignment PIN_AK7  -to MXP_RXP[0]
+set_location_assignment PIN_AM11 -to MXP_RXN[1]
+set_location_assignment PIN_AL10 -to MXP_RXP[1]
+set_location_assignment PIN_AN8  -to MXP_RXN[2]
+set_location_assignment PIN_AP7  -to MXP_RXP[2]
+set_location_assignment PIN_AT11 -to MXP_RXN[3]
+set_location_assignment PIN_AR10 -to MXP_RXP[3]
+set_location_assignment PIN_AJ2  -to MXP_TXN[0]
+set_location_assignment PIN_AK1  -to MXP_TXP[0]
+set_location_assignment PIN_AM5  -to MXP_TXN[1]
+set_location_assignment PIN_AL4  -to MXP_TXP[1]
+set_location_assignment PIN_AN2  -to MXP_TXN[2]
+set_location_assignment PIN_AP1  -to MXP_TXP[2]
+set_location_assignment PIN_AT5  -to MXP_TXN[3]
+set_location_assignment PIN_AR4  -to MXP_TXP[3]	
+set_location_assignment PIN_CY7 -to QSFP_I2C_SCL
+set_location_assignment PIN_CR10 -to QSFP_I2C_SDA
+set_location_assignment PIN_CR6 -to QSFP_MODSELN
+set_location_assignment PIN_CU6 -to QSFP_RESETN
+set_location_assignment PIN_CT7 -to QSFP_MODPRSN
+set_location_assignment PIN_CV7 -to QSFP_INTN
+set_location_assignment PIN_CR8 -to QSFP_INITMODE
+set_location_assignment PIN_AU8  -to ZQSFP_RXN[0]
+set_location_assignment PIN_AV7  -to ZQSFP_RXP[0]
+set_location_assignment PIN_BA8  -to ZQSFP_RXN[1]
+set_location_assignment PIN_BB7  -to ZQSFP_RXP[1]
+set_location_assignment PIN_AY11 -to ZQSFP_RXN[2]
+set_location_assignment PIN_AW10 -to ZQSFP_RXP[2]
+set_location_assignment PIN_BD11 -to ZQSFP_RXN[3]
+set_location_assignment PIN_BC10 -to ZQSFP_RXP[3]
+set_location_assignment PIN_AU2  -to ZQSFP_TXN[0]
+set_location_assignment PIN_AV1  -to ZQSFP_TXP[0]
+set_location_assignment PIN_BA2  -to ZQSFP_TXN[1]
+set_location_assignment PIN_BB1  -to ZQSFP_TXP[1]
+set_location_assignment PIN_AY5  -to ZQSFP_TXN[2]
+set_location_assignment PIN_AW4  -to ZQSFP_TXP[2]
+set_location_assignment PIN_BD5  -to ZQSFP_TXN[3]
+set_location_assignment PIN_BC4  -to ZQSFP_TXP[3]
+set_location_assignment PIN_CT3 -to QSFPDD_MODPRSN
+set_location_assignment PIN_CV3 -to QSFPDD_RESETN
+set_location_assignment PIN_CR4 -to QSFPDD_MODSELN
+set_location_assignment PIN_CU4 -to QSFPDD_INTN
+set_location_assignment PIN_CT5 -to QSFPDD_INITMODE
+set_location_assignment PIN_CT1 -to QSFPDD_I2C_SCL
+set_location_assignment PIN_CY5 -to QSFPDD_I2C_SDA
+set_location_assignment PIN_BE8  -to QSFPDD_RXN[0]
+set_location_assignment PIN_BF7  -to QSFPDD_RXP[0]
+set_location_assignment PIN_BJ8  -to QSFPDD_RXN[1]
+set_location_assignment PIN_BK7  -to QSFPDD_RXP[1]
+set_location_assignment PIN_BH11 -to QSFPDD_RXN[2]
+set_location_assignment PIN_BG10 -to QSFPDD_RXP[2]
+set_location_assignment PIN_BM11 -to QSFPDD_RXN[3]
+set_location_assignment PIN_BL10 -to QSFPDD_RXP[3]
+set_location_assignment PIN_BN8  -to QSFPDD_RXN[4]
+set_location_assignment PIN_BP7  -to QSFPDD_RXP[4]
+set_location_assignment PIN_BU8  -to QSFPDD_RXN[5]
+set_location_assignment PIN_BV7  -to QSFPDD_RXP[5]
+set_location_assignment PIN_BT11 -to QSFPDD_RXN[6]
+set_location_assignment PIN_BR10 -to QSFPDD_RXP[6]
+set_location_assignment PIN_BY11 -to QSFPDD_RXN[7]
+set_location_assignment PIN_BW10 -to QSFPDD_RXP[7]
+set_location_assignment PIN_BE2  -to QSFPDD_TXN[0]
+set_location_assignment PIN_BF1  -to QSFPDD_TXP[0]
+set_location_assignment PIN_BJ2  -to QSFPDD_TXN[1]
+set_location_assignment PIN_BK1  -to QSFPDD_TXP[1]
+set_location_assignment PIN_BH5  -to QSFPDD_TXN[2]
+set_location_assignment PIN_BG4  -to QSFPDD_TXP[2]
+set_location_assignment PIN_BM5  -to QSFPDD_TXN[3]
+set_location_assignment PIN_BL4  -to QSFPDD_TXP[3]
+set_location_assignment PIN_BN2  -to QSFPDD_TXN[4]
+set_location_assignment PIN_BP1  -to QSFPDD_TXP[4]
+set_location_assignment PIN_BU2  -to QSFPDD_TXN[5]
+set_location_assignment PIN_BV1  -to QSFPDD_TXP[5]
+set_location_assignment PIN_BT5  -to QSFPDD_TXN[6]
+set_location_assignment PIN_BR4  -to QSFPDD_TXP[6]
+set_location_assignment PIN_BY5  -to QSFPDD_TXN[7]
+set_location_assignment PIN_BW4  -to QSFPDD_TXP[7]
+
+set_location_assignment PIN_BR62 -to PCIE_RC_RXN[0]
+set_location_assignment PIN_BP61 -to PCIE_RC_RXP[0]
+set_location_assignment PIN_BM59 -to PCIE_RC_RXN[1]
+set_location_assignment PIN_BN58 -to PCIE_RC_RXP[1]
+set_location_assignment PIN_BL62 -to PCIE_RC_RXN[2]
+set_location_assignment PIN_BK61 -to PCIE_RC_RXP[2]
+set_location_assignment PIN_BH59 -to PCIE_RC_RXN[3]
+set_location_assignment PIN_BJ58 -to PCIE_RC_RXP[3]
+set_location_assignment PIN_BG62 -to PCIE_RC_RXN[4]
+set_location_assignment PIN_BF61 -to PCIE_RC_RXP[4]
+set_location_assignment PIN_BD59 -to PCIE_RC_RXN[5]
+set_location_assignment PIN_BE58 -to PCIE_RC_RXP[5]
+set_location_assignment PIN_BC62 -to PCIE_RC_RXN[6]
+set_location_assignment PIN_BB61 -to PCIE_RC_RXP[6]
+set_location_assignment PIN_AY59 -to PCIE_RC_RXN[7]
+set_location_assignment PIN_BA58 -to PCIE_RC_RXP[7]
+set_location_assignment PIN_AW62 -to PCIE_RC_RXN[8]
+set_location_assignment PIN_AV61 -to PCIE_RC_RXP[8]
+set_location_assignment PIN_AT59 -to PCIE_RC_RXN[9]
+set_location_assignment PIN_AU58 -to PCIE_RC_RXP[9]
+set_location_assignment PIN_AR62 -to PCIE_RC_RXN[10]
+set_location_assignment PIN_AP61 -to PCIE_RC_RXP[10]
+set_location_assignment PIN_AM59 -to PCIE_RC_RXN[11]
+set_location_assignment PIN_AN58 -to PCIE_RC_RXP[11]
+set_location_assignment PIN_AL62 -to PCIE_RC_RXN[12]
+set_location_assignment PIN_AK61 -to PCIE_RC_RXP[12]
+set_location_assignment PIN_AH59 -to PCIE_RC_RXN[13]
+set_location_assignment PIN_AJ58 -to PCIE_RC_RXP[13]
+set_location_assignment PIN_AG62 -to PCIE_RC_RXN[14]
+set_location_assignment PIN_AF61 -to PCIE_RC_RXP[14]
+set_location_assignment PIN_AD59 -to PCIE_RC_RXN[15]
+set_location_assignment PIN_AE58 -to PCIE_RC_RXP[15]
+set_location_assignment PIN_BR56 -to PCIE_RC_TXN[0]
+set_location_assignment PIN_BP55 -to PCIE_RC_TXP[0]
+set_location_assignment PIN_BM53 -to PCIE_RC_TXN[1]
+set_location_assignment PIN_BN52 -to PCIE_RC_TXP[1]
+set_location_assignment PIN_BL56 -to PCIE_RC_TXN[2]
+set_location_assignment PIN_BK55 -to PCIE_RC_TXP[2]
+set_location_assignment PIN_BH53 -to PCIE_RC_TXN[3]
+set_location_assignment PIN_BJ52 -to PCIE_RC_TXP[3]
+set_location_assignment PIN_BG56 -to PCIE_RC_TXN[4]
+set_location_assignment PIN_BF55 -to PCIE_RC_TXP[4]
+set_location_assignment PIN_BD53 -to PCIE_RC_TXN[5]
+set_location_assignment PIN_BE52 -to PCIE_RC_TXP[5]
+set_location_assignment PIN_BC56 -to PCIE_RC_TXN[6]
+set_location_assignment PIN_BB55 -to PCIE_RC_TXP[6]
+set_location_assignment PIN_AY53 -to PCIE_RC_TXN[7]
+set_location_assignment PIN_BA52 -to PCIE_RC_TXP[7]
+set_location_assignment PIN_AW56 -to PCIE_RC_TXN[8]
+set_location_assignment PIN_AV55 -to PCIE_RC_TXP[8]
+set_location_assignment PIN_AT53 -to PCIE_RC_TXN[9]
+set_location_assignment PIN_AU52 -to PCIE_RC_TXP[9]
+set_location_assignment PIN_AR56 -to PCIE_RC_TXN[10]
+set_location_assignment PIN_AP55 -to PCIE_RC_TXP[10]
+set_location_assignment PIN_AM53 -to PCIE_RC_TXN[11]
+set_location_assignment PIN_AN52 -to PCIE_RC_TXP[11]
+set_location_assignment PIN_AL56 -to PCIE_RC_TXN[12]
+set_location_assignment PIN_AK55 -to PCIE_RC_TXP[12]
+set_location_assignment PIN_AH53 -to PCIE_RC_TXN[13]
+set_location_assignment PIN_AJ52 -to PCIE_RC_TXP[13]
+set_location_assignment PIN_AG56 -to PCIE_RC_TXN[14]
+set_location_assignment PIN_AF55 -to PCIE_RC_TXP[14]
+set_location_assignment PIN_AD53 -to PCIE_RC_TXN[15]
+set_location_assignment PIN_AE52 -to PCIE_RC_TXP[15]
+set_location_assignment PIN_BU58 -to PCIE_RC_PERSTN
+
+set_location_assignment PIN_CL56 -to ETH_RSTN
+set_location_assignment PIN_CN56 -to ETH_INTN 
+set_location_assignment PIN_CE46 -to ETH_MDIO
+set_location_assignment PIN_CL50 -to ETH_MDC  
+set_location_assignment PIN_CF21 -to ETH_SGMII_RXN
+set_location_assignment PIN_CH21 -to ETH_SGMII_RXP
+set_location_assignment PIN_CE22 -to ETH_SGMII_TXN
+set_location_assignment PIN_CG22 -to ETH_SGMII_TXP
+
+set_location_assignment PIN_CK55 -to CLKCLEANER_SCL
+set_location_assignment PIN_CE48 -to CLKCLEANER_SDA
+set_location_assignment PIN_CF53 -to CLKCLEANER_GPIO[0]
+set_location_assignment PIN_CF57 -to CLKCLEANER_GPIO[1]
+set_location_assignment PIN_CH57 -to CLKCLEANER_GPIO[2]
+set_location_assignment PIN_CE56 -to CLKCLEANER_GPIO[3]
+set_location_assignment PIN_CG56 -to CLKCLEANER_GPIO[4]
+set_location_assignment PIN_CF55 -to CLKCLEANER_GPIO[5]
+set_location_assignment PIN_CH55 -to CLKCLEANER_GPIO[6]
+set_location_assignment PIN_CE54 -to CLKCLEANER_STATUS[0]
+set_location_assignment PIN_CG54 -to CLKCLEANER_STATUS[1]
+set_location_assignment PIN_CE52 -to CLKCLEANER_INSEL0[0]
+set_location_assignment PIN_CG52 -to CLKCLEANER_INSEL0[1]
+set_location_assignment PIN_CK57 -to CLKCLEANER_INSEL1[0]
+set_location_assignment PIN_CM57 -to CLKCLEANER_INSEL1[1]
+set_location_assignment PIN_CY27 -to CLEARNER_RECOVERY_N[0]
+set_location_assignment PIN_DB27 -to CLEARNER_RECOVERY_P[0]
+set_location_assignment PIN_CY29 -to CLEARNER_RECOVERY_N[1]
+set_location_assignment PIN_DB29 -to CLEARNER_RECOVERY_P[1]
+set_location_assignment PIN_CL22 -to CLEARNER_SYSTEM_N
+set_location_assignment PIN_CN22 -to CLEARNER_SYSTEM_P
+
+set_location_assignment PIN_A54 -to USB_RESETN  
+set_location_assignment PIN_V59 -to USB_SCL
+set_location_assignment PIN_V57 -to USB_SDA
+set_location_assignment PIN_L54 -to USB_FPGA_CLK
+set_location_assignment PIN_T49 -to USB_ADDR[1]
+set_location_assignment PIN_W48 -to USB_ADDR[0]
+set_location_assignment PIN_U48 -to USB_DATA[0]
+set_location_assignment PIN_V47 -to USB_DATA[1]
+set_location_assignment PIN_T47 -to USB_DATA[2]
+set_location_assignment PIN_N52 -to USB_DATA[3]
+set_location_assignment PIN_L52 -to USB_DATA[4]
+set_location_assignment PIN_P51 -to USB_DATA[5]
+set_location_assignment PIN_M51 -to USB_DATA[6]
+set_location_assignment PIN_N50 -to USB_DATA[7]
+set_location_assignment PIN_L50 -to USB_WRN
+set_location_assignment PIN_P49 -to USB_RDN
+set_location_assignment PIN_M49 -to USB_OEN
+set_location_assignment PIN_N48 -to USB_FULL
+set_location_assignment PIN_L48 -to USB_EMPTY
+
+
+set_location_assignment PIN_CM39 -to SODIMM_RZQ
+set_location_assignment PIN_CL38 -to SODIMM_REFCLKN
+set_location_assignment PIN_CN38 -to SODIMM_REFCLKP
+set_location_assignment PIN_DC48 -to MEM_DMAN[3]
+set_location_assignment PIN_CU48 -to MEM_DMAN[2]
+set_location_assignment PIN_DB55 -to MEM_DMAN[1]
+set_location_assignment PIN_CV55 -to MEM_DMAN[0]
+set_location_assignment PIN_CY47 -to MEM_DQSAN[3]
+set_location_assignment PIN_DB47 -to MEM_DQSAP[3]
+set_location_assignment PIN_CT47 -to MEM_DQSAN[2]
+set_location_assignment PIN_CV47 -to MEM_DQSAP[2]
+set_location_assignment PIN_DA54 -to MEM_DQSAN[1]
+set_location_assignment PIN_DC54 -to MEM_DQSAP[1]
+set_location_assignment PIN_CR54 -to MEM_DQSAN[0]
+set_location_assignment PIN_CU54 -to MEM_DQSAP[0]
+set_location_assignment PIN_DA48 -to MEM_DQA[33]
+set_location_assignment PIN_CY55 -to MEM_DQA[32]
+set_location_assignment PIN_DC46 -to MEM_DQA[31]
+set_location_assignment PIN_CY49 -to MEM_DQA[30]
+set_location_assignment PIN_DC50 -to MEM_DQA[29]
+set_location_assignment PIN_DA50 -to MEM_DQA[28]
+set_location_assignment PIN_DB45 -to MEM_DQA[27]
+set_location_assignment PIN_CY45 -to MEM_DQA[26]
+set_location_assignment PIN_DB49 -to MEM_DQA[25]
+set_location_assignment PIN_DA46 -to MEM_DQA[24]
+set_location_assignment PIN_CV49 -to MEM_DQA[23]
+set_location_assignment PIN_CR50 -to MEM_DQA[22]
+set_location_assignment PIN_CU46 -to MEM_DQA[21]
+set_location_assignment PIN_CV45 -to MEM_DQA[20]
+set_location_assignment PIN_CU50 -to MEM_DQA[19]
+set_location_assignment PIN_CT49 -to MEM_DQA[18]
+set_location_assignment PIN_CR46 -to MEM_DQA[17]
+set_location_assignment PIN_CT45 -to MEM_DQA[16]
+set_location_assignment PIN_DB53 -to MEM_DQA[15]
+set_location_assignment PIN_CY53 -to MEM_DQA[14]
+set_location_assignment PIN_DB57 -to MEM_DQA[13]
+set_location_assignment PIN_CY57 -to MEM_DQA[12]
+set_location_assignment PIN_DC52 -to MEM_DQA[11]
+set_location_assignment PIN_DA52 -to MEM_DQA[10]
+set_location_assignment PIN_DC56 -to MEM_DQA[9]
+set_location_assignment PIN_DA56 -to MEM_DQA[8]
+set_location_assignment PIN_CT57 -to MEM_DQA[7]
+set_location_assignment PIN_CR56 -to MEM_DQA[6]
+set_location_assignment PIN_CT53 -to MEM_DQA[5]
+set_location_assignment PIN_CU52 -to MEM_DQA[4]
+set_location_assignment PIN_CV57 -to MEM_DQA[3]
+set_location_assignment PIN_CU56 -to MEM_DQA[2]
+set_location_assignment PIN_CV53 -to MEM_DQA[1]
+set_location_assignment PIN_CR52 -to MEM_DQA[0]
+
+set_location_assignment PIN_DA34 -to MEM_DQB[33]
+set_location_assignment PIN_CY41 -to MEM_DQB[32]
+set_location_assignment PIN_DB31 -to MEM_DQB[31]
+set_location_assignment PIN_DC32 -to MEM_DQB[30]
+set_location_assignment PIN_DB35 -to MEM_DQB[29]
+set_location_assignment PIN_DC36 -to MEM_DQB[28]
+set_location_assignment PIN_CY31 -to MEM_DQB[27]
+set_location_assignment PIN_DA32 -to MEM_DQB[26]
+set_location_assignment PIN_DA36 -to MEM_DQB[25]
+set_location_assignment PIN_CY35 -to MEM_DQB[24]
+set_location_assignment PIN_CU32 -to MEM_DQB[23]
+set_location_assignment PIN_CV31 -to MEM_DQB[22]
+set_location_assignment PIN_CT35 -to MEM_DQB[21]
+set_location_assignment PIN_CR36 -to MEM_DQB[20]
+set_location_assignment PIN_CU36 -to MEM_DQB[19]
+set_location_assignment PIN_CT31 -to MEM_DQB[18]
+set_location_assignment PIN_CR32 -to MEM_DQB[17]
+set_location_assignment PIN_CV35 -to MEM_DQB[16]
+set_location_assignment PIN_DA38 -to MEM_DQB[15]
+set_location_assignment PIN_CY39 -to MEM_DQB[14]
+set_location_assignment PIN_CY43 -to MEM_DQB[13]
+set_location_assignment PIN_DB43 -to MEM_DQB[12]
+set_location_assignment PIN_DC38 -to MEM_DQB[11]
+set_location_assignment PIN_DB39 -to MEM_DQB[10]
+set_location_assignment PIN_DC42 -to MEM_DQB[9]
+set_location_assignment PIN_DA42 -to MEM_DQB[8]
+set_location_assignment PIN_CU38 -to MEM_DQB[7]
+set_location_assignment PIN_CV39 -to MEM_DQB[6]
+set_location_assignment PIN_CT43 -to MEM_DQB[5]
+set_location_assignment PIN_CR42 -to MEM_DQB[4]
+set_location_assignment PIN_CR38 -to MEM_DQB[3]
+set_location_assignment PIN_CT39 -to MEM_DQB[2]
+set_location_assignment PIN_CV43 -to MEM_DQB[1]
+set_location_assignment PIN_CU42 -to MEM_DQB[0]
+set_location_assignment PIN_CY33 -to MEM_DQSBN[3]
+set_location_assignment PIN_DB33 -to MEM_DQSBP[3]
+set_location_assignment PIN_CT33 -to MEM_DQSBN[2]
+set_location_assignment PIN_CV33 -to MEM_DQSBP[2]
+set_location_assignment PIN_DA40 -to MEM_DQSBN[1]
+set_location_assignment PIN_DC40 -to MEM_DQSBP[1]
+set_location_assignment PIN_CR40 -to MEM_DQSBN[0]
+set_location_assignment PIN_CU40 -to MEM_DQSBP[0]
+set_location_assignment PIN_CK35 -to MEM_CLKN
+set_location_assignment PIN_CM35 -to MEM_CLKP
+set_location_assignment PIN_DC34 -to MEM_DMBN[3]
+set_location_assignment PIN_CU34 -to MEM_DMBN[2]
+set_location_assignment PIN_DB41 -to MEM_DMBN[1]
+set_location_assignment PIN_CV41 -to MEM_DMBN[0]
+set_location_assignment PIN_CE40 -to MEM_DQS_ADDR_CMDN
+set_location_assignment PIN_CG40 -to MEM_DQS_ADDR_CMDP
+set_location_assignment PIN_CF43 -to MEM_DQ_ADDR_CMD[8]
+set_location_assignment PIN_CH43 -to MEM_DQ_ADDR_CMD[7]
+set_location_assignment PIN_CE42 -to MEM_DQ_ADDR_CMD[6]
+set_location_assignment PIN_CG42 -to MEM_DQ_ADDR_CMD[5]
+set_location_assignment PIN_CH41 -to MEM_DQ_ADDR_CMD[4]
+set_location_assignment PIN_CF39 -to MEM_DQ_ADDR_CMD[3]
+set_location_assignment PIN_CH39 -to MEM_DQ_ADDR_CMD[2]
+set_location_assignment PIN_CE38 -to MEM_DQ_ADDR_CMD[1]
+set_location_assignment PIN_CG38 -to MEM_DQ_ADDR_CMD[0]
+set_location_assignment PIN_CK43 -to MEM_ADDR_CMD30
+set_location_assignment PIN_CM43 -to MEM_ADDR_CMD29
+set_location_assignment PIN_CL42 -to MEM_ADDR_CMD28
+set_location_assignment PIN_CN42 -to MEM_ADDR_CMD27
+set_location_assignment PIN_CK41 -to MEM_ADDR_CMD[26]
+set_location_assignment PIN_CM41 -to MEM_ADDR_CMD[25]
+set_location_assignment PIN_CL40 -to MEM_ADDR_CMD[24]
+set_location_assignment PIN_CN40 -to MEM_ADDR_CMD[23]
+set_location_assignment PIN_CK39 -to MEM_ADDR_CMD[22]
+set_location_assignment PIN_CE36 -to MEM_ADDR_CMD[21]
+set_location_assignment PIN_CG36 -to MEM_ADDR_CMD[20]
+set_location_assignment PIN_CF35 -to MEM_ADDR_CMD[19]
+set_location_assignment PIN_CH35 -to MEM_ADDR_CMD[18]
+set_location_assignment PIN_CE34 -to MEM_ADDR_CMD[17]
+set_location_assignment PIN_CG34 -to MEM_ADDR_CMD[16]
+set_location_assignment PIN_CF33 -to MEM_ADDR_CMD[15]
+set_location_assignment PIN_CH33 -to MEM_ADDR_CMD[14]
+set_location_assignment PIN_CE32 -to MEM_ADDR_CMD[13]
+set_location_assignment PIN_CG32 -to MEM_ADDR_CMD[12]
+set_location_assignment PIN_CF31 -to MEM_ADDR_CMD[11]
+set_location_assignment PIN_CH31 -to MEM_ADDR_CMD[10]
+set_location_assignment PIN_CL36 -to MEM_ADDR_CMD[9]
+set_location_assignment PIN_CN36 -to MEM_ADDR_CMD[8]
+set_location_assignment PIN_CL34 -to MEM_ADDR_CMD[7]
+set_location_assignment PIN_CN34 -to MEM_ADDR_CMD[6]
+set_location_assignment PIN_CK33 -to MEM_ADDR_CMD[5]
+set_location_assignment PIN_CM33 -to MEM_ADDR_CMD[4]
+set_location_assignment PIN_CL32 -to MEM_ADDR_CMD[3]
+set_location_assignment PIN_CN32 -to MEM_ADDR_CMD[2]
+set_location_assignment PIN_CK31 -to MEM_ADDR_CMD[1]
+set_location_assignment PIN_CM31 -to MEM_ADDR_CMD[0]
+
+set_location_assignment PIN_AH5 -to HPS_GPIO[0]
+set_location_assignment PIN_AD1 -to HPS_GPIO[1]
+set_location_assignment PIN_AG6 -to HPS_GPIO[2]
+set_location_assignment PIN_AB1 -to HPS_GPIO[3]
+set_location_assignment PIN_AG4 -to HPS_GPIO[4]
+set_location_assignment PIN_AD3 -to HPS_GPIO[5]
+set_location_assignment PIN_AF5 -to HPS_GPIO[6]
+set_location_assignment PIN_AC2 -to HPS_GPIO[7]
+set_location_assignment PIN_AF1 -to HPS_GPIO[8]
+set_location_assignment PIN_AB3 -to HPS_GPIO[9]
+set_location_assignment PIN_AF3 -to HPS_GPIO[10]
+set_location_assignment PIN_AA2 -to HPS_GPIO[11]
+set_location_assignment PIN_AC4 -to HPS_GPIO[12]
+set_location_assignment PIN_V1  -to HPS_GPIO[13]
+set_location_assignment PIN_AA4 -to HPS_GPIO[14]
+set_location_assignment PIN_T1  -to HPS_GPIO[15]
+set_location_assignment PIN_AD5 -to HPS_GPIO[16]
+set_location_assignment PIN_P1  -to HPS_GPIO[17]
+set_location_assignment PIN_AF7 -to HPS_GPIO[18]
+set_location_assignment PIN_M1  -to HPS_GPIO[19]
+set_location_assignment PIN_AF9 -to HPS_GPIO[20]
+set_location_assignment PIN_W2  -to HPS_GPIO[21]
+set_location_assignment PIN_AB5 -to HPS_GPIO[22]
+set_location_assignment PIN_U2  -to HPS_GPIO[23]
+set_location_assignment PIN_AC6 -to HPS_GPIO[24]
+set_location_assignment PIN_H1  -to HPS_GPIO[25]
+set_location_assignment PIN_AA6 -to HPS_GPIO[26]
+set_location_assignment PIN_F1  -to HPS_GPIO[27]
+set_location_assignment PIN_AD7 -to HPS_GPIO[28]
+set_location_assignment PIN_N2  -to HPS_GPIO[29]
+set_location_assignment PIN_AB7 -to HPS_GPIO[30]
+set_location_assignment PIN_L2  -to HPS_GPIO[31]
+set_location_assignment PIN_AC8 -to HPS_GPIO[32]
+set_location_assignment PIN_J2  -to HPS_GPIO[33]
+set_location_assignment PIN_AA8 -to HPS_GPIO[34]
+set_location_assignment PIN_G2  -to HPS_GPIO[35]
+set_location_assignment PIN_AD9 -to HPS_GPIO[36]
+set_location_assignment PIN_V3  -to HPS_GPIO[37]
+set_location_assignment PIN_AB9 -to HPS_GPIO[38]
+set_location_assignment PIN_T3  -to HPS_GPIO[39]
+set_location_assignment PIN_AC10 -to HPS_GPIO[40]
+set_location_assignment PIN_P3   -to HPS_GPIO[41]
+set_location_assignment PIN_AD11 -to HPS_GPIO[42]
+set_location_assignment PIN_M3   -to HPS_GPIO[43]
+set_location_assignment PIN_AC12 -to HPS_GPIO[44]
+set_location_assignment PIN_H3   -to HPS_GPIO[45]
+set_location_assignment PIN_AD13 -to HPS_GPIO[46]
+set_location_assignment PIN_F3   -to HPS_GPIO[47]   
+
+set_location_assignment PIN_T7 -to DDR4_COMP_DBIN[8]
+set_location_assignment PIN_L28 -to DDR4_COMP_DBIN[7]
+set_location_assignment PIN_U28 -to DDR4_COMP_DBIN[6]
+set_location_assignment PIN_M21 -to DDR4_COMP_DBIN[5]
+set_location_assignment PIN_T21 -to DDR4_COMP_DBIN[4]
+set_location_assignment PIN_A14 -to DDR4_COMP_DBIN[3]
+set_location_assignment PIN_G14 -to DDR4_COMP_DBIN[2]
+set_location_assignment PIN_B7 -to DDR4_COMP_DBIN[1]
+set_location_assignment PIN_F7 -to DDR4_COMP_DBIN[0]
+
+set_location_assignment PIN_W8 -to DDR4_COMP_DQSN[8]
+set_location_assignment PIN_U8 -to DDR4_COMP_DQSP[8]
+set_location_assignment PIN_P29 -to DDR4_COMP_DQSN[7]
+set_location_assignment PIN_M29 -to DDR4_COMP_DQSP[7]
+set_location_assignment PIN_V29 -to DDR4_COMP_DQSN[6]
+set_location_assignment PIN_T29 -to DDR4_COMP_DQSP[6]
+set_location_assignment PIN_N22 -to DDR4_COMP_DQSN[5]
+set_location_assignment PIN_L22 -to DDR4_COMP_DQSP[5]
+set_location_assignment PIN_W22 -to DDR4_COMP_DQSN[4]
+set_location_assignment PIN_U22 -to DDR4_COMP_DQSP[4]
+set_location_assignment PIN_D15 -to DDR4_COMP_DQSN[3]
+set_location_assignment PIN_B15 -to DDR4_COMP_DQSP[3]
+set_location_assignment PIN_H15 -to DDR4_COMP_DQSN[2]
+set_location_assignment PIN_F15 -to DDR4_COMP_DQSP[2]
+set_location_assignment PIN_C8 -to DDR4_COMP_DQSN[1]
+set_location_assignment PIN_A8 -to DDR4_COMP_DQSP[1]
+set_location_assignment PIN_J8 -to DDR4_COMP_DQSN[0]
+set_location_assignment PIN_G8 -to DDR4_COMP_DQSP[0]
+set_location_assignment PIN_W6 -to DDR4_COMP_DQ[71]
+set_location_assignment PIN_W10 -to DDR4_COMP_DQ[70]
+set_location_assignment PIN_U6 -to DDR4_COMP_DQ[69]
+set_location_assignment PIN_V9 -to DDR4_COMP_DQ[68]
+set_location_assignment PIN_V5 -to DDR4_COMP_DQ[67]
+set_location_assignment PIN_T9 -to DDR4_COMP_DQ[66]
+set_location_assignment PIN_T5 -to DDR4_COMP_DQ[65]
+set_location_assignment PIN_U10 -to DDR4_COMP_DQ[64]
+set_location_assignment PIN_M27 -to DDR4_COMP_DQ[63]
+set_location_assignment PIN_M31 -to DDR4_COMP_DQ[62]
+set_location_assignment PIN_L26 -to DDR4_COMP_DQ[61]
+set_location_assignment PIN_P31 -to DDR4_COMP_DQ[60]
+set_location_assignment PIN_P27 -to DDR4_COMP_DQ[59]
+set_location_assignment PIN_N30 -to DDR4_COMP_DQ[58]
+set_location_assignment PIN_N26 -to DDR4_COMP_DQ[57]
+set_location_assignment PIN_L30 -to DDR4_COMP_DQ[56]
+set_location_assignment PIN_V27 -to DDR4_COMP_DQ[55]
+set_location_assignment PIN_V31 -to DDR4_COMP_DQ[54]
+set_location_assignment PIN_U26 -to DDR4_COMP_DQ[53]
+set_location_assignment PIN_W30 -to DDR4_COMP_DQ[52]
+set_location_assignment PIN_W26 -to DDR4_COMP_DQ[51]
+set_location_assignment PIN_T31 -to DDR4_COMP_DQ[50]
+set_location_assignment PIN_T27 -to DDR4_COMP_DQ[49]
+set_location_assignment PIN_U30 -to DDR4_COMP_DQ[48]
+set_location_assignment PIN_L20 -to DDR4_COMP_DQ[47]
+set_location_assignment PIN_N24 -to DDR4_COMP_DQ[46]
+set_location_assignment PIN_M19 -to DDR4_COMP_DQ[45]
+set_location_assignment PIN_L24 -to DDR4_COMP_DQ[44]
+set_location_assignment PIN_N20 -to DDR4_COMP_DQ[43]
+set_location_assignment PIN_M23 -to DDR4_COMP_DQ[42]
+set_location_assignment PIN_P19 -to DDR4_COMP_DQ[41]
+set_location_assignment PIN_P23 -to DDR4_COMP_DQ[40]
+set_location_assignment PIN_W20 -to DDR4_COMP_DQ[39]
+set_location_assignment PIN_W24 -to DDR4_COMP_DQ[38]
+set_location_assignment PIN_T19 -to DDR4_COMP_DQ[37]
+set_location_assignment PIN_V23 -to DDR4_COMP_DQ[36]
+set_location_assignment PIN_V19 -to DDR4_COMP_DQ[35]
+set_location_assignment PIN_U24 -to DDR4_COMP_DQ[34]
+set_location_assignment PIN_U20 -to DDR4_COMP_DQ[33]
+set_location_assignment PIN_T23 -to DDR4_COMP_DQ[32]
+set_location_assignment PIN_D13 -to DDR4_COMP_DQ[31]
+set_location_assignment PIN_B17 -to DDR4_COMP_DQ[30]
+set_location_assignment PIN_C12 -to DDR4_COMP_DQ[29]
+set_location_assignment PIN_D17 -to DDR4_COMP_DQ[28]
+set_location_assignment PIN_B13 -to DDR4_COMP_DQ[27]
+set_location_assignment PIN_C16 -to DDR4_COMP_DQ[26]
+set_location_assignment PIN_A12 -to DDR4_COMP_DQ[25]
+set_location_assignment PIN_A16 -to DDR4_COMP_DQ[24]
+set_location_assignment PIN_J12 -to DDR4_COMP_DQ[23]
+set_location_assignment PIN_H17 -to DDR4_COMP_DQ[22]
+set_location_assignment PIN_G12 -to DDR4_COMP_DQ[21]
+set_location_assignment PIN_J16 -to DDR4_COMP_DQ[20]
+set_location_assignment PIN_F13 -to DDR4_COMP_DQ[19]
+set_location_assignment PIN_F17 -to DDR4_COMP_DQ[18]
+set_location_assignment PIN_H13 -to DDR4_COMP_DQ[17]
+set_location_assignment PIN_G16 -to DDR4_COMP_DQ[16]
+set_location_assignment PIN_A6 -to DDR4_COMP_DQ[15]
+set_location_assignment PIN_A10 -to DDR4_COMP_DQ[14]
+set_location_assignment PIN_B5 -to DDR4_COMP_DQ[13]
+set_location_assignment PIN_C10 -to DDR4_COMP_DQ[12]
+set_location_assignment PIN_C6 -to DDR4_COMP_DQ[11]
+set_location_assignment PIN_D9 -to DDR4_COMP_DQ[10]
+set_location_assignment PIN_D5 -to DDR4_COMP_DQ[9]
+set_location_assignment PIN_B9 -to DDR4_COMP_DQ[8]
+set_location_assignment PIN_H5 -to DDR4_COMP_DQ[7]
+set_location_assignment PIN_J10 -to DDR4_COMP_DQ[6]
+set_location_assignment PIN_F5 -to DDR4_COMP_DQ[5]
+set_location_assignment PIN_H9 -to DDR4_COMP_DQ[4]
+set_location_assignment PIN_J6 -to DDR4_COMP_DQ[3]
+set_location_assignment PIN_G10 -to DDR4_COMP_DQ[2]
+set_location_assignment PIN_G6 -to DDR4_COMP_DQ[1]
+set_location_assignment PIN_F9 -to DDR4_COMP_DQ[0]
+set_location_assignment PIN_P7 -to DDR4_COMP_A[16]
+set_location_assignment PIN_M7 -to DDR4_COMP_A[15]
+set_location_assignment PIN_N8 -to DDR4_COMP_A[14]
+set_location_assignment PIN_L8 -to DDR4_COMP_A[13]
+set_location_assignment PIN_P9 -to DDR4_COMP_A[12]
+set_location_assignment PIN_W12 -to DDR4_COMP_A[11]
+set_location_assignment PIN_U12 -to DDR4_COMP_A[10]
+set_location_assignment PIN_V13 -to DDR4_COMP_A[9]
+set_location_assignment PIN_T13 -to DDR4_COMP_A[8]
+set_location_assignment PIN_W14 -to DDR4_COMP_A[7]
+set_location_assignment PIN_U14 -to DDR4_COMP_A[6]
+set_location_assignment PIN_V15 -to DDR4_COMP_A[5]
+set_location_assignment PIN_T15 -to DDR4_COMP_A[4]
+set_location_assignment PIN_W16 -to DDR4_COMP_A[3]
+set_location_assignment PIN_U16 -to DDR4_COMP_A[2]
+set_location_assignment PIN_V17 -to DDR4_COMP_A[1]
+set_location_assignment PIN_T17 -to DDR4_COMP_A[0]
+set_location_assignment PIN_M17 -to DDR4_COMP_BG[1]
+set_location_assignment PIN_P5 -to DDR4_COMP_BG[0]
+set_location_assignment PIN_M5 -to DDR4_COMP_BA[1]
+set_location_assignment PIN_N6 -to DDR4_COMP_BA[0]
+set_location_assignment PIN_L6 -to DDR4_COMP_ALERTN
+set_location_assignment PIN_M9 -to DDR4_COMP_RZQ
+set_location_assignment PIN_N10 -to DDR4_COMP_REFCLKN
+set_location_assignment PIN_L10 -to DDR4_COMP_REFCLKP
+set_location_assignment PIN_N12 -to DDR4_COMP_PAR
+set_location_assignment PIN_P13 -to DDR4_COMP_CLKN
+set_location_assignment PIN_M13 -to DDR4_COMP_CLKP
+set_location_assignment PIN_L14 -to DDR4_COMP_CKE
+set_location_assignment PIN_M15 -to DDR4_COMP_ODT
+set_location_assignment PIN_N16 -to DDR4_COMP_ACTN
+set_location_assignment PIN_L16 -to DDR4_COMP_CSN
+set_location_assignment PIN_P17 -to DDR4_COMP_RESETN
+  
+set_global_assignment -name VERILOG_FILE golden_top.v
+
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CLKCLEANER_INSEL1[1] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CLKCLEANER_INSEL1[0] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CLKCLEANER_INSEL0[1] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CLKCLEANER_INSEL0[0] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CLKCLEANER_STATUS[1] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CLKCLEANER_STATUS[0] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CLKCLEANER_GPIO[6] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CLKCLEANER_GPIO[5] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CLKCLEANER_GPIO[4] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CLKCLEANER_GPIO[3] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CLKCLEANER_GPIO[2] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CLKCLEANER_GPIO[1] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CLKCLEANER_GPIO[0] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CLKCLEANER_SDA -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to CLKCLEANER_SCL -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to ETH_MDC -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to ETH_MDIO -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to ETH_INTN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to ETH_RSTN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to SODIMM_I2C_SCL -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to SODIMM_I2C_SDA -entity golden_top
+
+set_instance_assignment -name IO_STANDARD "1.2 V" -to QSFPDD_I2C_SDA -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to QSFPDD_I2C_SCL -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to QSFPDD_INITMODE -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to QSFPDD_INTN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to QSFPDD_MODSELN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to QSFPDD_RESETN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to QSFPDD_MODPRSN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to QSFP_INITMODE -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to QSFP_INTN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to QSFP_MODPRSN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to QSFP_RESETN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to QSFP_MODSELN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to QSFP_I2C_SDA -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to QSFP_I2C_SCL -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_EMPTY -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_FULL -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_OEN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_RDN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_WRN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_DATA[7] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_DATA[6] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_DATA[5] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_DATA[4] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_DATA[3] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_DATA[2] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_DATA[1] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_DATA[0] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_ADDR[0] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_ADDR[1] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_FPGA_CLK -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_SDA -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_SCL -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to USB_RESETN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_SYS_RESETN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_SYSTEM_CLK -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TEST_SDA -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TEST_SCL -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to M2F_I2C_SDA -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to M2F_I2C_SCL -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to F2M_I2C_SDA -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to F2M_I2C_SCL -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TESTIO[12] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TESTIO[11] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TESTIO[10] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TESTIO[9] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TESTIO[8] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TESTIO[7] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TESTIO[6] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TESTIO[5] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TESTIO[4] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TESTIO[3] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TESTIO[2] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TESTIO[1] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TESTIO[0] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_TEST_ALERTN -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[15] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[14] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[13] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[12] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[11] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[10] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[9] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[8] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[7] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[6] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[5] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[4] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[3] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[2] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[1] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_GPIO[0] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_PB[7] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_PB[6] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_PB[5] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_PB[4] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_PB[3] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_PB[2] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_PB[1] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_PB[0] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_SW[7] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_SW[6] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_SW[5] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_SW[4] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_SW[3] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_SW[2] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_SW[1] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_SW[0] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_LED_G[7] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_LED_G[6] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_LED_G[5] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_LED_G[4] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_LED_G[3] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_LED_G[2] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_LED_G[1] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.2 V" -to FPGA_LED_G[0] -entity golden_top
+
+set_instance_assignment -name IO_STANDARD "TRUE DIFFERENTIAL SIGNALING" -to FPGA_GPIO_OUTCLKP -entity golden_top
+set_instance_assignment -name IO_STANDARD "TRUE DIFFERENTIAL SIGNALING" -to FPGA_GPIO_REFCLKP0 -entity golden_top
+set_instance_assignment -name IO_STANDARD "TRUE DIFFERENTIAL SIGNALING" -to FPGA_GPIO_REFCLKP1 -entity golden_top
+set_instance_assignment -name IO_STANDARD "TRUE DIFFERENTIAL SIGNALING" -to FPGA_GPIO_REFCLKP2 -entity golden_top
+set_instance_assignment -name IO_STANDARD "TRUE DIFFERENTIAL SIGNALING" -to eth_sgmii_txp -entity golden_top
+set_instance_assignment -name IO_STANDARD "TRUE DIFFERENTIAL SIGNALING" -to eth_sgmii_rxp -entity golden_top
+set_instance_assignment -name IO_STANDARD "TRUE DIFFERENTIAL SIGNALING" -to CLEARNER_RECOVERY_P[0] -entity golden_top
+set_instance_assignment -name IO_STANDARD "TRUE DIFFERENTIAL SIGNALING" -to CLEARNER_RECOVERY_P[1] -entity golden_top
+set_instance_assignment -name IO_STANDARD "TRUE DIFFERENTIAL SIGNALING" -to CLEARNER_SYSTEM_P -entity golden_top
+
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL LVPECL" -to REFCLK_GXEP0 
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL LVPECL" -to REFCLK_GXEP1 
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL LVPECL" -to REFCLK_GXEP2 
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL LVPECL" -to REFCLK_GXEP3 
+
+set_instance_assignment -name IO_STANDARD "HCSL" -to REFCLK_GXPP0 
+set_instance_assignment -name IO_STANDARD "HCSL" -to REFCLK_GXPP2 
+
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_TXP[0]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_TXP[1]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_TXP[2]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_TXP[3]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_TXP[4]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_TXP[5]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_TXP[6]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_TXP[7]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_RXP[0]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_RXP[1]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_RXP[2]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_RXP[3]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_RXP[4]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_RXP[5]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_RXP[6]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to QSFPDD_RXP[7]
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to ZQSFP_TXP[0] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to ZQSFP_TXP[1] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to ZQSFP_TXP[2] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to ZQSFP_TXP[3] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to ZQSFP_RXP[0] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to ZQSFP_RXP[1] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to ZQSFP_RXP[2] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to ZQSFP_RXP[3] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to MXP_TXP[0] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to MXP_TXP[1] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to MXP_TXP[2] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to MXP_TXP[3] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to MXP_RXP[0] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to MXP_RXP[1] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to MXP_RXP[2] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to MXP_RXP[3] 
+
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[0] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[1] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[2] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[3] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[4] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[5] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[6] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[7] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[8]   
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[9]   
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[10]  
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[11]  
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[12]  
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[13]  
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[14]  
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_TXP[15]  
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[0] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[1] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[2] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[3] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[4] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[5] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[6] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[7] 
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[8]   
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[9]   
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[10]  
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[11]  
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[12]  
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[13]  
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[14]  
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to PCIE_RC_RXP[15]  
+																					   
