@@ -1,0 +1,125 @@
+Flow report for fpga
+Fri Nov 17 16:51:59 2023
+Quartus Prime Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Flow Summary                                                                ;
++---------------------------------+-------------------------------------------+
+; Flow Status                     ; Successful - Fri Nov 17 16:51:59 2023     ;
+; Quartus Prime Version           ; 22.4.0 Build 94 12/07/2022 SC Pro Edition ;
+; Revision Name                   ; fpga                                      ;
+; Top-level Entity Name           ; fpga                                      ;
+; Family                          ; Agilex                                    ;
+; Top-level Entity Name           ; fpga                                      ;
+; Device                          ; AGFB014R24B2E2V                           ;
+; Timing Models                   ; Final                                     ;
+; Power Models                    ; Final                                     ;
+; Device Status                   ; Final                                     ;
+; Logic utilization (in ALMs)     ; 0 / 487,200 ( 0 % )                       ;
+; Total dedicated logic registers ; 0                                         ;
+; Total pins                      ; 2 / 924 ( < 1 % )                         ;
+; Total block memory bits         ; 0 / 145,612,800 ( 0 % )                   ;
+; Total RAM Blocks                ; 0 / 7,110 ( 0 % )                         ;
+; Total DSP Blocks                ; 0 / 4,510 ( 0 % )                         ;
+; Total eSRAMs                    ; 0 / 2 ( 0 % )                             ;
+; Total HSSI P-Tiles              ; 0 / 1 ( 0 % )                             ;
+; Total HSSI E-Tile Channels      ; 0 / 24 ( 0 % )                            ;
+; Total HSSI HPS                  ; 0 / 1 ( 0 % )                             ;
+; Total HSSI EHIPs                ; 0 / 4 ( 0 % )                             ;
+; Total PLLs                      ; 0 / 24 ( 0 % )                            ;
++---------------------------------+-------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 11/17/2023 16:44:41 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; fpga                ;
++-------------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                          ;
++--------------------------+---------------------------------+---------------+-------------+----------------+
+; Assignment Name          ; Value                           ; Default Value ; Entity Name ; Section Id     ;
++--------------------------+---------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID    ; 118933448423605.170021968107487 ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT   ; Verilog Hdl                     ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL      ; Questa Intel FPGA (Verilog)     ; <None>        ; --          ; --             ;
+; EDA_TIME_SCALE           ; 1 ps                            ; --            ; --          ; eda_simulation ;
+; PROJECT_OUTPUT_DIRECTORY ; output_files                    ; --            ; --          ; --             ;
++--------------------------+---------------------------------+---------------+-------------+----------------+
+
+
++------------------------------------------------------+
+; Flow Elapsed Time                                    ;
++-----------------+--------------+---------------------+
+; Module Name     ; Elapsed Time ; Peak Virtual Memory ;
++-----------------+--------------+---------------------+
+; Synthesis       ; 00:00:03     ; 1475 MB             ;
+; Fitter          ; 00:05:37     ; 13072 MB            ;
+; Timing Analyzer ; 00:00:16     ; 2806 MB             ;
+; Assembler       ; 00:01:17     ; 5257 MB             ;
+; Total           ; 00:07:13     ; --                  ;
++-----------------+--------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++-----------------+------------------------+----------------+------------+----------------+
+; Module Name     ; Machine Hostname       ; OS Name        ; OS Version ; Processor type ;
++-----------------+------------------------+----------------+------------+----------------+
+; Synthesis       ; wisig321-OptiPlex-7060 ; Ubuntu 18.04.6 ; 18         ; x86_64         ;
+; Fitter          ; wisig321-OptiPlex-7060 ; Ubuntu 18.04.6 ; 18         ; x86_64         ;
+; Timing Analyzer ; wisig321-OptiPlex-7060 ; Ubuntu 18.04.6 ; 18         ; x86_64         ;
+; Assembler       ; wisig321-OptiPlex-7060 ; Ubuntu 18.04.6 ; 18         ; x86_64         ;
++-----------------+------------------------+----------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_syn --read_settings_files=on --write_settings_files=off fpga -c fpga
+quartus_fit --read_settings_files=on --write_settings_files=off fpga -c fpga
+quartus_sta fpga -c fpga --mode=finalize
+quartus_asm --read_settings_files=on --write_settings_files=off fpga -c fpga
+
+
+

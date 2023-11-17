@@ -1,0 +1,21 @@
+Fitter Status : Successful - Fri Nov 17 16:50:21 2023
+Quartus Prime Version : 22.4.0 Build 94 12/07/2022 SC Pro Edition
+Revision Name : fpga
+Top-level Entity Name : fpga
+Family : Agilex
+Device : AGFB014R24B2E2V
+Timing Models : Final
+Power Models : Final
+Device Status : Final
+Logic utilization (in ALMs) : 0 / 487,200 ( 0 % )
+Total dedicated logic registers : 0
+Total pins : 2 / 924 ( < 1 % )
+Total block memory bits : 0 / 145,612,800 ( 0 % )
+Total RAM Blocks : 0 / 7,110 ( 0 % )
+Total DSP Blocks : 0 / 4,510 ( 0 % )
+Total eSRAMs : 0 / 2 ( 0 % )
+Total HSSI P-Tiles : 0 / 1 ( 0 % )
+Total HSSI E-Tile Channels : 0 / 24 ( 0 % )
+Total HSSI HPS : 0 / 1 ( 0 % )
+Total HSSI EHIPs : 0 / 4 ( 0 % )
+Total PLLs : 0 / 24 ( 0 % )
