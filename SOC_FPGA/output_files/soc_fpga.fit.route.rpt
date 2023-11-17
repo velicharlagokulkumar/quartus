@@ -1,0 +1,429 @@
+Fitter Route Stage Report for soc_fpga
+Wed Nov 15 18:21:40 2023
+Quartus Prime Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Delay Chain Summary
+  3. Routing Usage Summary
+  4. Route Messages
+  5. Global Router Wire Utilization Map
+  6. Peak Wire Demand Summary
+  7. Peak Wire Demand Details
+  8. Peak Total Grid Crossings
+  9. Global Router Congestion Hotspot Summary
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Delay Chain Summary                                                                                                                                                          ;
++-----------------------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+; Name                        ; Pin Type ; Input Delay Chain 0 ; Output Delay Chain ; OE Delay Chain ; IO_12_LANE Input Data Delay Chain ; IO_12_LANE Input Strobe Delay Chain ;
++-----------------------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+; refclk_bti                  ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; fpga_led_pio[0]             ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; fpga_led_pio[1]             ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; emif_hps_mem_mem_ck[0]      ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_ck_n[0]    ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[0]       ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[1]       ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[2]       ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[3]       ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[4]       ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[5]       ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[6]       ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[7]       ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[8]       ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[9]       ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[10]      ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[11]      ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[12]      ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[13]      ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[14]      ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[15]      ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_a[16]      ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_act_n[0]   ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_ba[0]      ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_ba[1]      ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_bg[0]      ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_cke[0]     ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_cs_n[0]    ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_odt[0]     ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_reset_n[0] ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_par[0]     ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_jtag_tdo                ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_sdmmc_CCLK              ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_usb0_STP                ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_emac0_TX_CLK            ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_emac0_TX_CTL            ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_emac0_TXD0              ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_emac0_TXD1              ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_emac0_TXD2              ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_emac0_TXD3              ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_emac0_MDC               ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_uart0_TX                ; Output   ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
+; emif_hps_mem_mem_dbi_n[0]   ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dbi_n[1]   ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dbi_n[2]   ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dbi_n[3]   ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dbi_n[4]   ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dbi_n[5]   ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dbi_n[6]   ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dbi_n[7]   ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dbi_n[8]   ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[0]      ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[1]      ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[2]      ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[3]      ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[4]      ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[5]      ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[6]      ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[7]      ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[8]      ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[9]      ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[10]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[11]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[12]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[13]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[14]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[15]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[16]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[17]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[18]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[19]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[20]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[21]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[22]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[23]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[24]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[25]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[26]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[27]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[28]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[29]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[30]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[31]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[32]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[33]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[34]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[35]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[36]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[37]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[38]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[39]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[40]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[41]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[42]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[43]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[44]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[45]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[46]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[47]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[48]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[49]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[50]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[51]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[52]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[53]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[54]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[55]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[56]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[57]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[58]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[59]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[60]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[61]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[62]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[63]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[64]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[65]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[66]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[67]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[68]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[69]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[70]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dq[71]     ; Bidir    ; 0                   ; 0                  ; 0              ; 125                               ; --                                  ;
+; emif_hps_mem_mem_dqs[0]     ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs[1]     ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs[2]     ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs[3]     ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs[4]     ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs[5]     ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs[6]     ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs[7]     ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs[8]     ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs_n[0]   ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs_n[1]   ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs_n[2]   ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs_n[3]   ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs_n[4]   ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs_n[5]   ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs_n[6]   ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs_n[7]   ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; emif_hps_mem_mem_dqs_n[8]   ; Bidir    ; 0                   ; 0                  ; 0              ; 0                                 ; 0                                   ;
+; hps_sdmmc_CMD               ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_sdmmc_D0                ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_sdmmc_D1                ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_sdmmc_D2                ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_sdmmc_D3                ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_usb0_DATA0              ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_usb0_DATA1              ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_usb0_DATA2              ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_usb0_DATA3              ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_usb0_DATA4              ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_usb0_DATA5              ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_usb0_DATA6              ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_usb0_DATA7              ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_emac0_MDIO              ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_i2c1_SDA                ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_i2c1_SCL                ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_gpio1_io0               ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_gpio1_io1               ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_gpio1_io4               ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_gpio1_io5               ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_gpio1_io19              ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_gpio1_io20              ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_gpio1_io21              ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; hps_emac0_RX_CTL            ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; hps_emac0_RX_CLK            ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; hps_emac0_RXD0              ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; hps_emac0_RXD1              ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; hps_emac0_RXD2              ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; hps_emac0_RXD3              ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; hps_usb0_CLK                ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; hps_usb0_DIR                ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; hps_usb0_NXT                ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; hps_uart0_RX                ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; hps_jtag_tck                ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; hps_jtag_tms                ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; hps_jtag_tdi                ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; hps_ref_clk                 ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; fpga_clk_100[0]             ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; emif_hps_oct_oct_rzqin      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; emif_hps_mem_mem_alert_n[0] ; Input    ; 0                   ; --                 ; --             ; 125                               ; --                                  ;
+; emif_hps_pll_ref_clk        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; fpga_reset_n[0]             ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; emif_hps_pll_ref_clk(n)     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; refclk_bti(n)               ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
++-----------------------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+
+
++-----------------------------------------------------------+
+; Routing Usage Summary                                     ;
++-----------------------------+-----------------------------+
+; Routing Resource Type       ; Usage                       ;
++-----------------------------+-----------------------------+
+; Block Input Mux Wrapbacks   ; 0 / 516,600 ( 0 % )         ;
+; Block Input Muxes           ; 2,576 / 5,658,000 ( < 1 % ) ;
+; Block interconnects         ; 1,850 / 6,625,600 ( < 1 % ) ;
+; C1 interconnects            ; 515 / 2,769,200 ( < 1 % )   ;
+; C4 interconnects            ; 76 / 2,640,400 ( < 1 % )    ;
+; C8 interconnects            ; 0 / 264,040 ( 0 % )         ;
+; DCM_muxes                   ; 1 / 824 ( < 1 % )           ;
+; DELAY_CHAINs                ; 0 / 17,290 ( 0 % )          ;
+; Direct links                ; 466 / 6,625,600 ( < 1 % )   ;
+; HIO Buffers                 ; 0 / 45,920 ( 0 % )          ;
+; Programmable Invert Buffers ; 0 / 480 ( 0 % )             ;
+; Programmable Invert Inputs  ; 67 / 513,810 ( < 1 % )      ;
+; Programmable Inverts        ; 67 / 513,810 ( < 1 % )      ;
+; R0 interconnects            ; 873 / 4,620,700 ( < 1 % )   ;
+; R1 interconnects            ; 491 / 2,640,400 ( < 1 % )   ;
+; R12 interconnects           ; 0 / 396,060 ( 0 % )         ;
+; R2 interconnects            ; 131 / 1,324,300 ( < 1 % )   ;
+; R4 interconnects            ; 51 / 1,332,500 ( < 1 % )    ;
+; R6 interconnects            ; 162 / 1,336,600 ( < 1 % )   ;
+; Redundancy Muxes            ; 0 / 90,920 ( 0 % )          ;
+; Row Clock Tap-Offs          ; 40 / 396,060 ( < 1 % )      ;
+; Switchbox_clock_muxes       ; 27 / 13,440 ( < 1 % )       ;
+; VIO Buffers                 ; 74 / 19,200 ( < 1 % )       ;
+; Vertical_seam_tap_muxes     ; 10 / 6,720 ( < 1 % )        ;
++-----------------------------+-----------------------------+
+
+
++----------------+
+; Route Messages ;
++----------------+
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
+    Info: Processing started: Wed Nov 15 18:13:50 2023
+    Info: System process ID: 13896
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off soc_fpga -c soc_fpga
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = soc_fpga
+Info: Revision = soc_fpga
+Info (22300): Design uses Placement Effort Multiplier = 1.0.
+Info (170193): Fitter routing operations beginning
+Info (20215): Router estimated peak short interconnect demand : 0% of right directional wire in region X0_Y0 to X11_Y7
+    Info (20265): Estimated peak short right directional wire demand : 0% in region X0_Y0 to X11_Y7
+    Info (20265): Estimated peak short left directional wire demand : 0% in region X0_Y0 to X11_Y7
+    Info (20265): Estimated peak short up directional wire demand : 0% in region X0_Y0 to X11_Y7
+    Info (20265): Estimated peak short down directional wire demand : 0% in region X0_Y0 to X11_Y7
+Info (20215): Router estimated peak long high speed interconnect demand : 13% of left directional wire in region X312_Y200 to X323_Y207
+    Info (20265): Estimated peak long high speed right directional wire demand : 4% in region X300_Y200 to X311_Y207
+    Info (20265): Estimated peak long high speed left directional wire demand : 13% in region X312_Y200 to X323_Y207
+    Info (20265): Estimated peak long high speed up directional wire demand : 0% in region X0_Y0 to X11_Y7
+    Info (20265): Estimated peak long high speed down directional wire demand : 0% in region X0_Y0 to X11_Y7
+    Info (20315): Note that the router may use short wires to implement long connections at higher delay
+Info (170239): Router is attempting to preserve 0.12 percent of routes from an earlier compilation, a user specified Routing Constraints File, or internal routing requirements.
+Info (11888): Total time spent on timing analysis during Routing is 0.04 seconds.
+Info (16607): Fitter routing operations ending: elapsed time is 00:02:05
+
+
+--------------------------------------
+; Global Router Wire Utilization Map ;
+--------------------------------------
+This report is unavailable in plain text report export.
+
+
++-------------------------------------------------------------------------------+
+; Peak Wire Demand Summary                                                      ;
++-----------------+-----------+-----------------------------------+-------------+
+; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ;
++-----------------+-----------+-----------------------------------+-------------+
+; long high speed ; right     ; [(300, 200), (311, 207)]          ; 4.068 %     ;
+; long high speed ; left      ; [(312, 200), (323, 207)]          ; 13.194 %    ;
++-----------------+-----------+-----------------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Peak Wire Demand Details                                                                                                                                                                                     ;
++-----------------+-----------+-----------------------------------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ; Net Names                                                                                                                    ;
++-----------------+-----------+-----------------------------------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+; long high speed ; right     ; [(300, 200), (311, 207)]          ; 4.068 %     ;    High Routing Fan-Out                                                                                                      ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|new_burst_reg               ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state.ST_UNCOMP_TRANS       ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state.ST_UNCOMP_WR_SUBBURST ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state.ST_COMP_TRANS         ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|source0_endofpacket~0       ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|i1662~0                     ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_bytecount_reg_zero       ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|i1249~0                     ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_agent|uncompressor|last_packet_beat~2xsyn                                                ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_agent|uncompressor|last_packet_beat~5xsyn                                                ;
+; long high speed ; right     ; [(300, 200), (311, 207)]          ; 4.068 %     ;    Long Distance                                                                                                             ;
+;     --          ;           ;                                   ;             ; soc_inst|rst_controller|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out                                             ;
+;     --          ;           ;                                   ;             ; soc_inst|rst_controller_001|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0]                                          ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|new_burst_reg               ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state.ST_UNCOMP_TRANS       ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state.ST_UNCOMP_WR_SUBBURST ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state.ST_COMP_TRANS         ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|source0_endofpacket~0       ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|i1662~0                     ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_bytecount_reg_zero       ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|i1249~0                     ;
+; long high speed ; left      ; [(312, 200), (323, 207)]          ; 13.194 %    ;    High Routing Fan-Out                                                                                                      ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|cmd_mux|saved_grant[0]                                                                            ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|cmd_mux|saved_grant[1]                                                                            ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_agent_rsp_fifo|mem_used[1]                                                               ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_cmd_width_adapter|use_reg                                                                ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|cmd_mux|Select_41~0                                                                               ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_cmd_width_adapter|LessThan_3~1                                                           ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|internal_sclr               ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|out_valid_reg               ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|cmd_mux|Select_41~1xsyn_5                                                                         ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_agent|cp_ready~0xsyn                                                                     ;
+; long high speed ; left      ; [(312, 200), (323, 207)]          ; 13.194 %    ;    Long Distance                                                                                                             ;
+;     --          ;           ;                                   ;             ; soc_inst|pio_0|pio_0|data_out[0]                                                                                             ;
+;     --          ;           ;                                   ;             ; soc_inst|pio_0|pio_0|data_out[1]                                                                                             ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|cmd_mux|Select_59~6                                                                               ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|load_next_out_cmd           ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|cmd_mux|Select_59~3                                                                               ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|cmd_mux|Select_59~0                                                                               ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|cmd_mux|Select_59~2                                                                               ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|cmd_mux|Select_59~8                                                                               ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_cmd_width_adapter|LessThan_3~0                                                           ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_0|pio_0_s1_cmd_width_adapter|i656~10                                                                ;
++-----------------+-----------+-----------------------------------+-------------+------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Peak Total Grid Crossings                                                                                                                           ;
++------------------------------------------------------------------------------------------------------------------------------+----------------------+
+; Net Name                                                                                                                     ; Total Grid Crossings ;
++------------------------------------------------------------------------------------------------------------------------------+----------------------+
+; soc_inst|rst_controller|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out                                             ; 16                   ;
+; soc_inst|pio_0|pio_0|data_out[1]                                                                                             ; 15                   ;
+; soc_inst|pio_0|pio_0|data_out[0]                                                                                             ; 15                   ;
+; soc_inst|rst_controller_001|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0]                                          ; 11                   ;
+; soc_inst|rst_controller_001|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1]                                          ; 5                    ;
+; fpga_reset_n_debounced                                                                                                       ; 2                    ;
+; soc_inst|mm_interconnect_0|cmd_mux|Select_59~8                                                                               ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_cmd_width_adapter|i656~11                                                                ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_cmd_width_adapter|LessThan_3~0                                                           ; 1                    ;
+; soc_inst|mm_interconnect_0|cmd_mux|Select_59~4                                                                               ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_cmd_width_adapter|i656~10xsyn                                                            ; 1                    ;
+; soc_inst|mm_interconnect_0|cmd_mux|Select_59~3                                                                               ; 1                    ;
+; soc_inst|mm_interconnect_0|cmd_mux|Select_59~0                                                                               ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_cmd_width_adapter|i656~4                                                                 ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_agent|uncompressor|i113~0                                                                ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_cmd_width_adapter|i656~10                                                                ; 1                    ;
+; soc_inst|mm_interconnect_0|cmd_mux|Select_59~6                                                                               ; 1                    ;
+; soc_inst|mm_interconnect_0|cmd_mux|Select_59~5                                                                               ; 1                    ;
+; soc_inst|mm_interconnect_0|cmd_mux|Select_59~2                                                                               ; 1                    ;
+; soc_inst|mm_interconnect_0|cmd_mux|Select_59~1                                                                               ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_agent|i342~xsyn                                                                          ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_agent|uncompressor|last_packet_beat~5xsyn                                                ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_agent|uncompressor|last_packet_beat~2xsyn                                                ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_agent|uncompressor|burst_uncompress_busy                                                 ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_cmd_width_adapter|shift_left_0~8xsyn                                                     ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_cmd_width_adapter|i643~0                                                                 ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|i1662~0                     ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|i1250~1                     ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_cmd_width_adapter|LessThan_3~1                                                           ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|d0_in_valid                 ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_cmd_width_adapter|use_reg                                                                ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_eop_reg                  ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|load_next_out_cmd           ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|i1833                       ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_agent_rsp_fifo|i294~0                                                                    ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|source0_endofpacket~0       ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state.ST_UNCOMP_WR_SUBBURST ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|i1249~0                     ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state.ST_UNCOMP_TRANS       ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_agent|cp_ready~0xsyn                                                                     ; 1                    ;
+; soc_inst|mm_interconnect_0|cmd_mux|Select_41~1xsyn_5                                                                         ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_bytecount_reg_zero       ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state.ST_COMP_TRANS         ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|new_burst_reg               ; 1                    ;
+; soc_inst|mm_interconnect_0|cmd_mux|Select_41~0                                                                               ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_agent_rsp_fifo|mem_used[1]                                                               ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|out_valid_reg               ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|i616~0                      ; 1                    ;
+; soc_inst|mm_interconnect_0|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|internal_sclr               ; 1                    ;
+; soc_inst|mm_interconnect_0|agilex_hps_h2f_axi_master_agent|i25~0                                                             ; 1                    ;
++------------------------------------------------------------------------------------------------------------------------------+----------------------+
+
+
+--------------------------------------------
+; Global Router Congestion Hotspot Summary ;
+--------------------------------------------
+No congestion hotspots found where global router short wire usage exceeded 100%.
+If the design is hard to route, use other techniques to analyze congestion. Refer to the Estimated Delay Added for Hold Timing section in the Fitter report and routing utilization in the Chip Planner.
+
+

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2023.11.15.17:07:11"
+ outputDirectory="/home/wisig321/Videos/7/agilex_soc_devkit_ghrd/ip/qsys_top/rst_in/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Agilex"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="AGFB014R24B2E2V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="in_reset" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="in_reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="out_reset" kind="reset" start="1">
+   <property name="associatedClock" value="" />
+   <property name="associatedDirectReset" value="in_reset" />
+   <property name="associatedResetSinks" value="in_reset" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="out_reset_n" direction="output" role="reset_n" width="1" />
+  </interface>
+ </perimeter>
+ <entity kind="rst_in" version="1.0" name="rst_in">
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="AGFB014R24B2E2V" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/home/wisig321/Videos/7/agilex_soc_devkit_ghrd/ip/qsys_top/rst_in/synth/rst_in.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/wisig321/Videos/7/agilex_soc_devkit_ghrd/ip/qsys_top/rst_in/synth/rst_in.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/wisig321/Videos/7/agilex_soc_devkit_ghrd/ip/qsys_top/rst_in.ip" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <messages>
+   <message level="Info" culprit="rst_in">"Generating: rst_in"</message>
+  </messages>
+ </entity>
+</deploy>
