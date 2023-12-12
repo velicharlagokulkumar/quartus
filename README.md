@@ -1,1 +1,1 @@
-![unnamed](https://github.com/velicharlagokulkumar/quartus/assets/104726431/9f36fc12-b9ff-4c0c-9554-a1222c7897d0)
+![unnamed](https://github.com/velicharlagokulkumar/quartus/assets/104726431/17cd3836-a6fd-4cc9-b182-fc5ec0c2d075)
