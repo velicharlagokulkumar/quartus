@@ -1,0 +1,98 @@
+set_global_assignment -entity "agilex_hps" -library "agilex_hps" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "agilex_hps" -library "agilex_hps" -name IP_TOOL_VERSION "22.4"
+set_global_assignment -entity "agilex_hps" -library "agilex_hps" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "agilex_hps" -library "agilex_hps" -name IP_TOOL_VENDOR_NAME "Intel Corporation"
+set_global_assignment -entity "agilex_hps" -library "agilex_hps" -name IP_TOP_LEVEL_COMPONENT_NAME "intel_agilex_hps"
+set_global_assignment -library "agilex_hps" -name SOPCINFO_FILE [file join $::quartus(qip_path) "agilex_hps.sopcinfo"]
+set_global_assignment -entity "agilex_hps" -library "agilex_hps" -name SLD_INFO "QSYS_NAME agilex_hps HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "agilex_hps" -name MISC_FILE [file join $::quartus(qip_path) "agilex_hps.cmp"]
+set_global_assignment -entity "agilex_hps" -library "agilex_hps" -name IP_TARGETED_DEVICE_FAMILY "Agilex"
+set_global_assignment -entity "agilex_hps" -library "agilex_hps" -name IP_GENERATED_DEVICE_FAMILY "Agilex"
+set_global_assignment -entity "agilex_hps" -library "agilex_hps" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "agilex_hps" -name MISC_FILE [file join $::quartus(qip_path) "../agilex_hps.ip"]
+
+set_global_assignment -entity "agilex_hps_intel_agilex_interface_generator_191_7q4nyby" -library "intel_agilex_interface_generator_191" -name IP_COMPONENT_NAME "YWdpbGV4X2hwc19pbnRlbF9hZ2lsZXhfaW50ZXJmYWNlX2dlbmVyYXRvcl8xOTFfN3E0bnlieQ=="
+set_global_assignment -entity "agilex_hps_intel_agilex_interface_generator_191_7q4nyby" -library "intel_agilex_interface_generator_191" -name IP_COMPONENT_DISPLAY_NAME "aW50ZWxfYWdpbGV4X2ludGVyZmFjZV9nZW5lcmF0b3I="
+set_global_assignment -entity "agilex_hps_intel_agilex_interface_generator_191_7q4nyby" -library "intel_agilex_interface_generator_191" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "agilex_hps_intel_agilex_interface_generator_191_7q4nyby" -library "intel_agilex_interface_generator_191" -name IP_COMPONENT_INTERNAL "On"
+set_global_assignment -entity "agilex_hps_intel_agilex_interface_generator_191_7q4nyby" -library "intel_agilex_interface_generator_191" -name IP_COMPONENT_VERSION "MTkuMQ=="
+set_global_assignment -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -library "intel_agilex_hps_2300" -name IP_COMPONENT_NAME "YWdpbGV4X2hwc19pbnRlbF9hZ2lsZXhfaHBzXzIzMDBfbXV2NzYzaQ=="
+set_global_assignment -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -library "intel_agilex_hps_2300" -name IP_COMPONENT_DISPLAY_NAME "SGFyZCBQcm9jZXNzb3IgU3lzdGVtIEludGVsIEFnaWxleCBGUEdBIElQ"
+set_global_assignment -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -library "intel_agilex_hps_2300" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -library "intel_agilex_hps_2300" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -library "intel_agilex_hps_2300" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -library "intel_agilex_hps_2300" -name IP_COMPONENT_VERSION "MjMuMC4w"
+set_global_assignment -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -library "intel_agilex_hps_2300" -name IP_COMPONENT_DESCRIPTION "VGhlIEhQUyBjb250YWlucyBhIG1pY3JvcHJvY2Vzc29yIHVuaXQgKE1QVSkgc3Vic3lzdGVtIHdpdGggUXVhZC1jb3JlIEFSTT8/IENvcnRleC1BNTMgTVBDb3JlIHByb2Nlc3NvcnMsIGZsYXNoIG1lbW9yeSBjb250cm9sbGVycywgZGVkaWNhdGVkIFNEUkFNIGNvbnRyb2xsZXIgaW50ZXJjb25uZWN0LCBvbi1jaGlwIG1lbW9yaWVzLCBzdXBwb3J0IHBlcmlwaGVyYWxzLCBpbnRlcmZhY2UgcGVyaXBoZXJhbHMsIGRlYnVnIGNhcGFiaWxpdGllcyBhbmQgcGhhc2UtbG9ja2VkIGxvb3BzIChQTExzKS4="
+set_global_assignment -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -library "intel_agilex_hps_2300" -name IP_COMPONENT_GROUP "UHJvY2Vzc29ycyBhbmQgUGVyaXBoZXJhbHMvSGFyZCBQcm9jZXNzb3IgU3lzdGVtcw=="
+set_global_assignment -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -library "intel_agilex_hps_2300" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL3NsdTE1NDgyNjM0MzgwMDIuaHRtbA=="
+set_global_assignment -entity "agilex_hps" -library "agilex_hps" -name IP_COMPONENT_NAME "YWdpbGV4X2hwcw=="
+set_global_assignment -entity "agilex_hps" -library "agilex_hps" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "agilex_hps" -library "agilex_hps" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "agilex_hps" -library "agilex_hps" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "agilex_hps" -library "agilex_hps" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "agilex_hps" -library "agilex_hps" -name IP_COMPONENT_VERSION "MS4w"
+
+set_instance_assignment -name MESSAGE_DISABLE 10230 -entity agilex_hps_intel_agilex_interface_generator_191_7q4nyby
+set_instance_assignment -name MESSAGE_DISABLE 10230 -entity agilex_hps_intel_agilex_interface_generator_191_7q4nyby
+set_instance_assignment -name HPS_LOCATION PIN_AC4 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to EMAC0_TX_CLK
+set_instance_assignment -name HPS_LOCATION PIN_AD5 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to EMAC0_TXD0
+set_instance_assignment -name HPS_LOCATION PIN_P1 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to EMAC0_TXD1
+set_instance_assignment -name HPS_LOCATION PIN_AF9 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to EMAC0_TXD2
+set_instance_assignment -name HPS_LOCATION PIN_W2 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to EMAC0_TXD3
+set_instance_assignment -name HPS_LOCATION PIN_T1 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to EMAC0_RX_CTL
+set_instance_assignment -name HPS_LOCATION PIN_V1 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to EMAC0_TX_CTL
+set_instance_assignment -name HPS_LOCATION PIN_AA4 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to EMAC0_RX_CLK
+set_instance_assignment -name HPS_LOCATION PIN_AF7 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to EMAC0_RXD0
+set_instance_assignment -name HPS_LOCATION PIN_M1 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to EMAC0_RXD1
+set_instance_assignment -name HPS_LOCATION PIN_AB5 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to EMAC0_RXD2
+set_instance_assignment -name HPS_LOCATION PIN_U2 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to EMAC0_RXD3
+set_instance_assignment -name HPS_LOCATION PIN_AD13 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to EMAC0_MDIO
+set_instance_assignment -name HPS_LOCATION PIN_F3 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to EMAC0_MDC
+set_instance_assignment -name HPS_LOCATION PIN_V3 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to SDMMC_CMD
+set_instance_assignment -name HPS_LOCATION PIN_AD9 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to SDMMC_D0
+set_instance_assignment -name HPS_LOCATION PIN_T3 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to SDMMC_D1
+set_instance_assignment -name HPS_LOCATION PIN_AC10 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to SDMMC_D2
+set_instance_assignment -name HPS_LOCATION PIN_P3 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to SDMMC_D3
+set_instance_assignment -name HPS_LOCATION PIN_AB9 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to SDMMC_CCLK
+set_instance_assignment -name HPS_LOCATION PIN_AB1 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to USB0_DATA0
+set_instance_assignment -name HPS_LOCATION PIN_AG4 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to USB0_DATA1
+set_instance_assignment -name HPS_LOCATION PIN_AF5 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to USB0_DATA2
+set_instance_assignment -name HPS_LOCATION PIN_AC2 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to USB0_DATA3
+set_instance_assignment -name HPS_LOCATION PIN_AF1 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to USB0_DATA4
+set_instance_assignment -name HPS_LOCATION PIN_AB3 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to USB0_DATA5
+set_instance_assignment -name HPS_LOCATION PIN_AF3 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to USB0_DATA6
+set_instance_assignment -name HPS_LOCATION PIN_AA2 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to USB0_DATA7
+set_instance_assignment -name HPS_LOCATION PIN_AH5 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to USB0_CLK
+set_instance_assignment -name HPS_LOCATION PIN_AD1 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to USB0_STP
+set_instance_assignment -name HPS_LOCATION PIN_AG6 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to USB0_DIR
+set_instance_assignment -name HPS_LOCATION PIN_AD3 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to USB0_NXT
+set_instance_assignment -name HPS_LOCATION PIN_F1 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to UART0_RX
+set_instance_assignment -name HPS_LOCATION PIN_AA6 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to UART0_TX
+set_instance_assignment -name HPS_LOCATION PIN_AB7 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to I2C1_SDA
+set_instance_assignment -name HPS_LOCATION PIN_L2 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to I2C1_SCL
+set_instance_assignment -name HPS_LOCATION PIN_AC6 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to gpio1_io0
+set_instance_assignment -name HPS_LOCATION PIN_H1 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to gpio1_io1
+set_instance_assignment -name HPS_LOCATION PIN_AD7 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to gpio1_io4
+set_instance_assignment -name HPS_LOCATION PIN_N2 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to gpio1_io5
+set_instance_assignment -name HPS_LOCATION PIN_AC8 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to jtag_tck
+set_instance_assignment -name HPS_LOCATION PIN_J2 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to jtag_tms
+set_instance_assignment -name HPS_LOCATION PIN_AA8 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to jtag_tdo
+set_instance_assignment -name HPS_LOCATION PIN_G2 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to jtag_tdi
+set_instance_assignment -name HPS_LOCATION PIN_AD11 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to hps_osc_clk
+set_instance_assignment -name HPS_LOCATION PIN_M3 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to gpio1_io19
+set_instance_assignment -name HPS_LOCATION PIN_AC12 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to gpio1_io20
+set_instance_assignment -name HPS_LOCATION PIN_H3 -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -to gpio1_io21
+set_global_assignment -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -library "intel_agilex_hps_2300" -name HPS_ISW_DATA " SDM DDR 1  SDM WACH COLD clk eosc1_clk_hz 25000000.0 clk emac0_clk_hz 250000000 clk emac1_clk_hz 250000000 clk emac2_clk_hz 250000000 clk sdmmc_clk_hz 200000000 clk l3_main_free_clk_hz 400000000 clk h2f_user0_clk_hz 500000000 clk h2f_user1_clk_hz 500000000 clk tpiu_clk_hz 100000000 clk f2h_free_clk_hz 200000000 clk cb_intosc_ls_clk_hz 60000000 aix F2H_AXI_SLAVE 1 aix H2F_AXI_MASTER 1 aix LWH2F_AXI_MASTER 1 per rgmii0 true per rgmii1 false per rgmii2 false per nand false per sdmmc true per usb0 true per usb1 false per spim0 false per spim1 false per spis0 false per spis1 false per uart0 true per uart1 false per i2c0 false per i2c1 true per i2cemac0 false per i2cemac1 false per i2cemac2 false per trace false per pll_clock_out false din 0 0 dou 0 0 din 1 126 dou 1 0 din 2 126 dou 2 0 din 3 126 dou 3 0 din 4 126 dou 4 0 din 5 126 dou 5 0 din 6 126 dou 6 0 din 7 126 dou 7 0 din 8 126 dou 8 0 din 9 126 dou 9 0 din 10 126 dou 10 0 din 11 126 dou 11 0 din 12 0 dou 12 45 din 13 0 dou 13 0 din 14 0 dou 14 0 din 15 0 dou 15 0 din 16 0 dou 16 0 din 17 0 dou 17 0 din 18 0 dou 18 0 din 19 0 dou 19 0 din 20 0 dou 20 0 din 21 0 dou 21 0 din 22 0 dou 22 0 din 23 0 dou 23 0 din 24 0 dou 24 0 din 25 0 dou 25 0 din 26 0 dou 26 0 din 27 0 dou 27 0 din 28 0 dou 28 0 din 29 0 dou 29 0 din 30 0 dou 30 0 din 31 0 dou 31 0 din 32 0 dou 32 0 din 33 0 dou 33 0 din 34 0 dou 34 0 din 35 0 dou 35 0 din 36 0 dou 36 0 din 37 0 dou 37 0 din 38 0 dou 38 0 din 39 0 dou 39 0 din 40 0 dou 40 0 din 41 0 dou 41 0 din 42 0 dou 42 0 din 43 0 dou 43 0 din 44 0 dou 44 0 din 45 0 dou 45 0 din 46 0 dou 46 0 din 47 0 dou 47 0 sel 28 8 sel 23 0 sel 29 8 sel 30 4 sel 31 4 sel 32 7 sel 33 7 sel 34 7 sel 35 7 sel 36 1 sel 37 1 sel 38 1 sel 39 1 sel 40 1 sel 41 1 sel 42 9 sel 43 8 sel 44 8 sel 45 8 sel 46 5 sel 47 5 sel 0 1 sel 1 1 sel 2 1 sel 3 1 sel 4 1 sel 5 1 sel 6 1 sel 7 1 sel 9 1 sel 8 1 sel 10 1 sel 11 1 sel 12 0 sel 13 0 sel 14 0 sel 15 0 sel 16 0 sel 17 0 sel 18 0 sel 19 0 sel 24 8 sel 20 0 sel 25 8 sel 21 0 sel 26 5 sel 22 0 sel 27 5 use rgmii0 0 use rgmii1 0 use rgmii2 0 use nand 0 use sdmmc 0 use spim0 0 use spim1 0 use spis0 0 use spis1 0 use uart0 0 use uart1 0 use i2c0 0 use i2c1 0 use i2cemac0 0 use i2cemac1 0 use i2cemac2 0 use pll_clock_out 0 use mdio0 0 use mdio1 0 use mdio2 0 raw hps_osc_clk 42 pll p.pllglob.arefclkdiv 1 pll p.emacctl.emac2sel 0 pll a.emacbctr.cnt 3 pll m.fdbck.fdiv 0 pll m.pllglob.modclkdiv 5 pll m.pllc0.div 3 pll a.sdmmcctr.src 1 pll m.pllc2.div 6 pll p.fdbck.fdiv 0 pll m.nocdiv.l4mpclk 1 pll a.emacptpctr.src 1 pll p.emacctl.emac0sel 0 pll a.psirefctr.src 0 pll a.s2fuser1ctr.cnt 0 pll p.pllc1.div 6 pll m.nocdiv.l4spclk 2 pll p.gpiodiv.gpiodbclk 1 pll a.sdmmcctr.cnt 0 pll a.emacbctr.src 1 pll p.pllc3.div 12 pll a.s2fuser1ctr.src 0 pll m.pllm.mdiv 120 pll m.nocdiv.csclk 0 pll m.nocdiv.cspdbgclk 2 pll m.mpuclk.cnt 0 pll a.gpiodbctr.src 1 pll a.emacactr.src 0 pll m.nocdiv.cstraceclk 0 pll a.psirefctr.cnt 0 pll m.nocdiv.l4mainclk 0 pll c.testioctrl.periclksel 8 pll a.s2fuser0ctr.src 0 pll m.mpuclk.src 1 pll a.emacactr.cnt 1 pll a.emacptpctr.cnt 1 pll m.pllglob.arefclkdiv 1 pll c.testioctrl.debugclksel 16 pll m.nocclk.src 1 pll p.emacctl.emac1sel 0 pll m.pllc1.div 8 pll m.pllc3.div 15 pll p.pllglob.psrc 0 pll p.pllglob.modclkdiv 4 pll p.pllglob.drefclkdiv 0 pll p.pllm.mdiv 96 pll a.s2fuser0ctr.cnt 0 pll p.pllc0.div 2 pll c.testioctrl.mainclksel 8 pll m.pllglob.psrc 0 pll p.pllc2.div 5 pll a.gpiodbctr.cnt 0 pll m.pllglob.drefclkdiv 0 pll hps_osc_hz  25000000.0 pll fpga_clk_hz 200000000 pwr vccl_hps 810 pwr vccplldig_hps 810 ddr interleaving 0 ddr IO96B_CSR 1 "
+
+set_global_assignment -library "intel_agilex_interface_generator_191" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "intel_agilex_interface_generator_191/synth/agilex_hps_intel_agilex_interface_generator_191_7q4nyby.sv"]
+set_instance_assignment -entity "agilex_hps_intel_agilex_interface_generator_191_7q4nyby" -library "intel_agilex_interface_generator_191" -name SDC_ENTITY_FILE [file join $::quartus(qip_path) "intel_agilex_interface_generator_191/synth/agilex_hps_intel_agilex_interface_generator_191_7q4nyby.sdc"]
+set_global_assignment -library "intel_agilex_interface_generator_191" -name VERILOG_FILE [file join $::quartus(qip_path) "intel_agilex_interface_generator_191/synth/hps_agi_lib.v"]
+set_global_assignment -library "intel_agilex_hps_2300" -name VERILOG_FILE [file join $::quartus(qip_path) "intel_agilex_hps_2300/synth/agilex_hps_intel_agilex_hps_2300_muv763i.v"]
+set_global_assignment -library "agilex_hps" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/agilex_hps.v"]
+
+
+set_global_assignment -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -library "intel_agilex_hps_2300" -name IP_TOOL_NAME "intel_agilex_hps"
+set_global_assignment -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -library "intel_agilex_hps_2300" -name IP_TOOL_VERSION "23.0.0"
+set_global_assignment -entity "agilex_hps_intel_agilex_hps_2300_muv763i" -library "intel_agilex_hps_2300" -name IP_TOOL_ENV "QsysPrimePro"
+

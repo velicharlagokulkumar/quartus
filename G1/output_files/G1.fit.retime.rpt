@@ -1,0 +1,229 @@
+Fitter Retime Stage Report for G1
+Wed Dec 13 11:39:56 2023
+Quartus Prime Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Hyper-Retimer Settings
+  3. Reset Sequence Requirement
+  4. Retiming Limit Summary
+  5. Critical Chain Summary for Transfer from altera_reserved_tck to Top-level Output ports
+  6. Critical Chain Summary for Clock Domain Top-level Input ports
+  7. Clock Domain soc_inst|emif_hps|altera_emif_fm_hps_inst_phy_clk_0 (Meets timing requirements: No further analysis performed.)
+  8. Clock Domain altera_reserved_tck (Meets timing requirements: No further analysis performed.)
+  9. Clock Domain MAIN_CLOCK (Meets timing requirements: No further analysis performed.)
+ 10. Retime Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------+
+; Hyper-Retimer Settings                           ;
++------------------------+---------+---------------+
+; Option                 ; Setting ; Default Value ;
++------------------------+---------+---------------+
+; Enable Auto-Pipelining ; On      ; On            ;
++------------------------+---------+---------------+
+
+
++-------------------------------------------------------------------------------------+
+; Reset Sequence Requirement                                                          ;
++-------------------------------------------------------+-----------------------------+
+; Clock Name                                            ; Number of additional cycles ;
++-------------------------------------------------------+-----------------------------+
+; MAIN_CLOCK                                            ; 0                           ;
+; EMIF_REF_CLOCK                                        ; 0                           ;
+; altera_reserved_tck                                   ; 0                           ;
+; internal_clk                                          ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_vco_clk_0   ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_vco_clk_1   ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_vco_clk_2   ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_phy_clk_0   ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_phy_clk_1   ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_phy_clk_2   ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_phy_clk_l_0 ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_phy_clk_l_1 ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_phy_clk_l_2 ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_wf_clk_0    ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_wf_clk_1    ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_wf_clk_2    ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_wf_clk_3    ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_wf_clk_4    ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_wf_clk_5    ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_wf_clk_6    ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_wf_clk_7    ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_wf_clk_8    ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_wf_clk_9    ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_wf_clk_10   ; 0                           ;
+; soc_inst|emif_hps|altera_emif_fm_hps_inst_wf_clk_11   ; 0                           ;
+; emif_hps_mem_mem_dqs[0]_IN                            ; 0                           ;
+; emif_hps_mem_mem_dqs[1]_IN                            ; 0                           ;
+; emif_hps_mem_mem_dqs[2]_IN                            ; 0                           ;
+; emif_hps_mem_mem_dqs[3]_IN                            ; 0                           ;
+; emif_hps_mem_mem_dqs[4]_IN                            ; 0                           ;
+; emif_hps_mem_mem_dqs[5]_IN                            ; 0                           ;
+; emif_hps_mem_mem_dqs[6]_IN                            ; 0                           ;
+; emif_hps_mem_mem_dqs[7]_IN                            ; 0                           ;
+; emif_hps_mem_mem_dqs[8]_IN                            ; 0                           ;
++-------------------------------------------------------+-----------------------------+
+Note: Due to retiming optimizations, a clock domain may require a longer reset sequence to ensure correct functionality.  The table above indicates the minimum number of additional reset sequence cycles needed for each clock domain.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Retiming Limit Summary                                                                                                                                                                                              ;
++------------------------------------------------------------------+-----------------------------------------------------------+--------------------------------------------------------------------------------------+
+; Clock Transfer                                                   ; Limiting Reason                                           ; Recommendation                                                                       ;
++------------------------------------------------------------------+-----------------------------------------------------------+--------------------------------------------------------------------------------------+
+; Transfer from altera_reserved_tck to Top-level Output ports      ; Path Limit                                                ; None. Retiming has used all available register locations in the critical chain path. ;
+;                                                                  ;                                                           ;    Performance cannot be increased through retiming/Fast Forward analysis alone.     ;
+;                                                                  ;                                                           ;    Increased clock speed may be possible through other optimization techniques.      ;
+; Clock Domain Top-level Input ports                               ; Path Limit                                                ; None. Retiming has used all available register locations in the critical chain path. ;
+;                                                                  ;                                                           ;    Performance cannot be increased through retiming/Fast Forward analysis alone.     ;
+;                                                                  ;                                                           ;    Increased clock speed may be possible through other optimization techniques.      ;
+; Clock Domain soc_inst|emif_hps|altera_emif_fm_hps_inst_phy_clk_0 ; Meets timing requirements: No further analysis performed. ; None                                                                                 ;
+; Clock Domain altera_reserved_tck                                 ; Meets timing requirements: No further analysis performed. ; None                                                                                 ;
+; Clock Domain MAIN_CLOCK                                          ; Meets timing requirements: No further analysis performed. ; None                                                                                 ;
++------------------------------------------------------------------+-----------------------------------------------------------+--------------------------------------------------------------------------------------+
+
+
+Critical Chain Summary for Transfer from altera_reserved_tck to Top-level Output ports
+===============================================================================
++-------------------------------------------------------------------------------------+
+; Recommendations for Critical Chain                                                  ;
++-------------------------------------------------------------------------------------+
+; Recommendation                                                                      ;
++-------------------------------------------------------------------------------------+
+; The critical chain is limited by: Path Limit                                        ;
+;                                                                                     ;
+; The source or destination register is involved in a cross-partition transfer        ;
+;    and so Hyper-Registers on the routing path cannot be used and are not displayed  ;
+;    on the critical chain. Consider duplicating the register to isolate the critical ;
+;    path from the cross-partition transfer.                                          ;
+;                                                                                     ;
+; Retiming Restriction: Boundary Port Restriction                                     ;
+;  Unable to retime across boundary ports:                                            ;
+;    auto_fab_0|auto_export_alt_sld_fab_0_alt_sld_fab_0_jtagpins_ext_tdo              ;
+;                                                                                     ;
+; Retiming Restriction: Cross Partition Transfer Restriction                          ;
+;  Unable to retime across nodes involved in cross-partition transfers:               ;
+;    auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|jtagpins|atom_inst|atom                   ;
+;    altera_reserved_tdo~output                                                       ;
++-------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Critical Chain Details                                                                                                                      ;
++----------------------+-----------+-------------+--------------------------------------------------------------------------------------------+
+; Path Info            ; Register  ; Register ID ; Element                                                                                    ;
++----------------------+-----------+-------------+--------------------------------------------------------------------------------------------+
+; Long Path (Critical) ; REG (SDM) ; #1          ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|jtagpins|atom_inst|atom~soc_sdm/padsig_io1.reg__nff ;
+; Long Path (Critical) ;           ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|jtagpins|atom_inst|atom|tdo                         ;
+; Long Path (Critical) ;           ;             ; auto_fab_0|auto_export_alt_sld_fab_0_alt_sld_fab_0_jtagpins_ext_tdo|input                  ;
+; Long Path (Critical) ;           ;             ; auto_fab_0|auto_export_alt_sld_fab_0_alt_sld_fab_0_jtagpins_ext_tdo                        ;
+; Long Path (Critical) ;           ;             ; altera_reserved_tdo~output|i                                                               ;
+; Long Path (Critical) ;           ;             ; altera_reserved_tdo~output|o                                                               ;
+; Long Path (Critical) ; PIN       ;             ; altera_reserved_tdo                                                                        ;
++----------------------+-----------+-------------+--------------------------------------------------------------------------------------------+
+
+
+
+Critical Chain Summary for Clock Domain Top-level Input ports
+===============================================================================
++-------------------------------------------------------------------------------------+
+; Recommendations for Critical Chain                                                  ;
++-------------------------------------------------------------------------------------+
+; Recommendation                                                                      ;
++-------------------------------------------------------------------------------------+
+; The critical chain is limited by: Path Limit                                        ;
+;                                                                                     ;
+; The source or destination register is involved in a cross-partition transfer        ;
+;    and so Hyper-Registers on the routing path cannot be used and are not displayed  ;
+;    on the critical chain. Consider duplicating the register to isolate the critical ;
+;    path from the cross-partition transfer.                                          ;
+;                                                                                     ;
+; Retiming Restriction: Boundary Port Restriction                                     ;
+;  Unable to retime across boundary ports:                                            ;
+;    auto_fab_0|auto_export_alt_sld_fab_0_alt_sld_fab_0_jtagpins_ext_tdi              ;
+;    auto_fab_0|auto_export_alt_sld_fab_0_alt_sld_fab_0_jtagpins_ext_tdo              ;
+;                                                                                     ;
+; Retiming Restriction: Cross Partition Transfer Restriction                          ;
+;  Unable to retime across nodes involved in cross-partition transfers:               ;
+;    altera_reserved_tdi~input                                                        ;
+;    auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|jtagpins|atom_inst|atom                   ;
+;    altera_reserved_tdo~output                                                       ;
++-------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Critical Chain Details                                                                                                    ;
++----------------------+----------+-------------+---------------------------------------------------------------------------+
+; Path Info            ; Register ; Register ID ; Element                                                                   ;
++----------------------+----------+-------------+---------------------------------------------------------------------------+
+; Long Path (Critical) ; PIN      ;             ; altera_reserved_tdi                                                       ;
+; Long Path (Critical) ;          ;             ; altera_reserved_tdi~input|i                                               ;
+; Long Path (Critical) ;          ;             ; altera_reserved_tdi~input|o                                               ;
+; Long Path (Critical) ;          ;             ; auto_fab_0|auto_export_alt_sld_fab_0_alt_sld_fab_0_jtagpins_ext_tdi|input ;
+; Long Path (Critical) ;          ;             ; auto_fab_0|auto_export_alt_sld_fab_0_alt_sld_fab_0_jtagpins_ext_tdi       ;
+; Long Path (Critical) ;          ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|jtagpins|atom_inst|atom|tdi        ;
+; Long Path (Critical) ;          ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|jtagpins|atom_inst|atom|tdo        ;
+; Long Path (Critical) ;          ;             ; auto_fab_0|auto_export_alt_sld_fab_0_alt_sld_fab_0_jtagpins_ext_tdo|input ;
+; Long Path (Critical) ;          ;             ; auto_fab_0|auto_export_alt_sld_fab_0_alt_sld_fab_0_jtagpins_ext_tdo       ;
+; Long Path (Critical) ;          ;             ; altera_reserved_tdo~output|i                                              ;
+; Long Path (Critical) ;          ;             ; altera_reserved_tdo~output|o                                              ;
+; Long Path (Critical) ; PIN      ;             ; altera_reserved_tdo                                                       ;
++----------------------+----------+-------------+---------------------------------------------------------------------------+
+
+
+
+Clock Domain soc_inst|emif_hps|altera_emif_fm_hps_inst_phy_clk_0 (Meets timing requirements: No further analysis performed.)
+===============================================================================
+
+
+Clock Domain altera_reserved_tck (Meets timing requirements: No further analysis performed.)
+===============================================================================
+
+
+Clock Domain MAIN_CLOCK (Meets timing requirements: No further analysis performed.)
+===============================================================================
+
+
++-----------------+
+; Retime Messages ;
++-----------------+
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
+    Info: Processing started: Wed Dec 13 11:19:09 2023
+    Info: System process ID: 25397
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off G1 -c G1
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = G1
+Info: Revision = G1
+Info (17966): Starting Hyper-Retimer operations.
+Info (18914): The Hyper-Retimer was unable to optimize the design due to retiming restrictions. Run Fast Forward Timing Closure Recommendations to see step-by-step suggestions for design changes and show the estimated performance improvement from making these changes.
+Info (17968): Completed Hyper-Retimer operations.
+Info (18821): Fitter Hyper-Retimer operations ending: elapsed time is 00:00:10
+Info: Constraints on the CDC paths between acquisition clock and communication clock are created in the Signal Tap instance, auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0
+
+

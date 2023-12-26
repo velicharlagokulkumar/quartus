@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.0" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_0.xsd">
+<name>qsys_top</name>
+<peripherals>
+<peripheral>
+      <name>qsys_top_dma_0_control_port_slave_altera_avalon_dma</name>
+      <addressBlock>
+        <offset>0x0</offset>
+        <size>32</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <description>Avalon DMA</description>
+      <access>read-write</access>
+      <baseAddress>0x00000000</baseAddress>
+      <size>32</size>
+      <registers>
+        <register>
+          <access>read-write</access>
+          <addressOffset>0x0</addressOffset>
+          <description>The status register consists of individual bits that indicate conditions inside the DMA controller. The status register can be read at any time. Reading the status register does not change its value.</description>
+          <displayName>status</displayName>
+          <name>status</name>
+          <resetMask>0xffffffff</resetMask>
+          <resetValue>0x0</resetValue>
+          <size>32</size>
+          <fields>
+            <field>
+              <access>read-only</access>
+              <bitRange>[0:0]</bitRange>
+              <description>A DMA transaction is complete. The DONE bit is set to 1 when an end of packet condition is detected or the specified transaction length is completed. Write zero to the status register to clear the DONE bit.</description>
+              <name>DONE</name>
+              <readAction>clear</readAction>
+            </field>
+            <field>
+              <access>read-only</access>
+              <bitRange>[1:1]</bitRange>
+              <description>The BUSY bit is 1 when a DMA transaction is in progress.</description>
+              <name>BUSY</name>
+            </field>
+            <field>
+              <access>read-only</access>
+              <bitRange>[2:2]</bitRange>
+              <description>The REOP bit is 1 when a transaction is completed due to an end-of-packet event on the read side.</description>
+              <name>REOP</name>
+            </field>
+            <field>
+              <access>read-only</access>
+              <bitRange>[3:3]</bitRange>
+              <description>The WEOP bit is 1 when a transaction is completed due to an end of packet event on the write side.</description>
+              <name>WEOP</name>
+            </field>
+            <field>
+              <access>read-only</access>
+              <bitRange>[4:4]</bitRange>
+              <description>The LEN bit is set to 1 when the length register decrements to zero.</description>
+              <name>LEN</name>
+            </field>
+            <field>
+              <access>read-only</access>
+              <bitRange>[31:5]</bitRange>
+              <description>These bits are reserved. Read values are undefined. Write zero.</description>
+              <name>Reserved</name>
+              <parameters>
+                <parameter>
+                  <name>Reserved</name>
+                  <value>true</value>
+                </parameter>
+              </parameters>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <access>read-write</access>
+          <addressOffset>0x1</addressOffset>
+          <description>Read master start address</description>
+          <displayName>readAddress</displayName>
+          <name>readaddress</name>
+          <resetMask>0xffffffff</resetMask>
+          <resetValue>0x0</resetValue>
+          <size>32</size>
+        </register>
+        <register>
+          <access>read-write</access>
+          <addressOffset>0x2</addressOffset>
+          <description>Write master start address</description>
+          <displayName>writeAddress</displayName>
+          <name>writeaddress</name>
+          <resetMask>0xffffffff</resetMask>
+          <resetValue>0x0</resetValue>
+          <size>32</size>
+        </register>
+        <register>
+          <access>read-write</access>
+          <addressOffset>0x3</addressOffset>
+          <description>DMA trasaction length (in bytes)</description>
+          <displayName>length</displayName>
+          <name>length</name>
+          <resetMask>0xffffffff</resetMask>
+          <resetValue>0x0</resetValue>
+          <size>32</size>
+        </register>
+        <register>
+          <access>read-only</access>
+          <addressOffset>0x4</addressOffset>
+          <description>This register is reserved. Read values are undefined. The result of a write is undefined.</description>
+          <displayName>reserved</displayName>
+          <name>reserved0</name>
+          <resetMask>0xffffffff</resetMask>
+          <resetValue>0x0</resetValue>
+          <size>32</size>
+        </register>
+        <register>
+          <access>read-only</access>
+          <addressOffset>0x5</addressOffset>
+          <description>This register is reserved. Read values are undefined. The result of a write is undefined.</description>
+          <displayName>reserved</displayName>
+          <name>reserved1</name>
+          <resetMask>0xffffffff</resetMask>
+          <resetValue>0x0</resetValue>
+          <size>32</size>
+        </register>
+        <register>
+          <access>read-write</access>
+          <addressOffset>0x6</addressOffset>
+          <description>The control register is composed of individual bits that control the DMA's internal operation. The control register's value can be read at any time. The control register bits determine which, if any, conditions of the DMA transaction result in the end of a transaction and an interrupt request.</description>
+          <displayName>control</displayName>
+          <name>control</name>
+          <resetMask>0xffffffff</resetMask>
+          <resetValue>0x0</resetValue>
+          <size>32</size>
+          <fields>
+            <field>
+              <access>read-write</access>
+              <bitRange>[0:0]</bitRange>
+              <description>Specifies byte transfers.</description>
+              <name>BYTE</name>
+            </field>
+            <field>
+              <access>read-write</access>
+              <bitRange>[1:1]</bitRange>
+              <description>Specifies halfword (16-bit) transfers.</description>
+              <name>HW</name>
+            </field>
+            <field>
+              <access>read-write</access>
+              <bitRange>[2:2]</bitRange>
+              <description>Specifies word (32-bit) transfers.</description>
+              <name>WORD</name>
+            </field>
+            <field>
+              <access>read-write</access>
+              <bitRange>[3:3]</bitRange>
+              <description>Enables DMA transaction. When the GO bit is set to 0 during idle stage (before execution starts), the DMA is prevented from executing transfers. When the GO bit is set to 1 during idle stage and the length register is non-zero, transfers occur. If go bit is de-asserted low before write transaction complete, done bit will never go high. It is advisable that GO bit is modified during idle stage (no execution happened) only.</description>
+              <name>GO</name>
+            </field>
+            <field>
+              <access>read-write</access>
+              <bitRange>[4:4]</bitRange>
+              <description>Enables interrupt requests (IRQ). When the I_EN bit is 1, the DMA controller generates an IRQ when the status register's DONE bit is set to 1. IRQs are disabled when the I_EN bit is 0.</description>
+              <name>I_EN</name>
+            </field>
+            <field>
+              <access>read-write</access>
+              <bitRange>[5:5]</bitRange>
+              <description>Ends transaction on read-side end-of-packet. When the REEN bit is set to 1, a slave port with flow control on the read side may end the DMA transaction by asserting its end-of-packet signal.</description>
+              <name>REEN</name>
+            </field>
+            <field>
+              <access>read-write</access>
+              <bitRange>[6:6]</bitRange>
+              <description>Ends transaction on write-side end-of-packet. WEEN bit shoudl be set to 0.</description>
+              <name>WEEN</name>
+            </field>
+            <field>
+              <access>read-write</access>
+              <bitRange>[7:7]</bitRange>
+              <description>Ends transaction when the length register reaches zero. When this bit is 0, length reaching 0 does not cause a transaction to end. In this case, the DMA transaction must be terminated by an end-ofpacket signal from either the read or write master port.</description>
+              <name>LEEN</name>
+            </field>
+            <field>
+              <access>read-write</access>
+              <bitRange>[8:8]</bitRange>
+              <description>Reads from a constant address. When RCON is 0, the read address increments after every data transfer. This is the mechanism for the DMA controller to read a range of memory addresses. When RCON is 1, the read address does not increment. This is the mechanism for the DMA controller to read from a peripheral at a constant memory address. For details, see the Addressing and Address Incrementing section.</description>
+              <name>RCON</name>
+            </field>
+            <field>
+              <access>read-write</access>
+              <bitRange>[9:9]</bitRange>
+              <description>Writes to a constant address. Similar to the RCON bit, when WCON is 0 the write address increments after every data transfer; when WCON is 1 the write address does not increment. For details, see Addressing and Address Incrementing.</description>
+              <name>WCON</name>
+            </field>
+            <field>
+              <access>read-write</access>
+              <bitRange>[10:10]</bitRange>
+              <description>Specifies doubleword transfers.</description>
+              <name>DOUBLEWORD</name>
+            </field>
+            <field>
+              <access>read-write</access>
+              <bitRange>[11:11]</bitRange>
+              <description>Specifies quadword transfers.</description>
+              <name>QUADWORD</name>
+            </field>
+            <field>
+              <access>read-write</access>
+              <bitRange>[12:12]</bitRange>
+              <description>Software can reset the DMA engine by writing this bit to 1 twice. Upon the second write of 1 to the SOFTWARERESET bit, the DMA control is reset identically to a system reset. The logic which sequences the software reset process then resets itself automatically.</description>
+              <name>SOFTWARERESET</name>
+            </field>
+            <field>
+              <access>read-write</access>
+              <bitRange>[31:13]</bitRange>
+              <description>Reserved</description>
+              <name>Reserved</name>
+              <parameters>
+                <parameter>
+                  <name>Reserved</name>
+                  <value>true</value>
+                </parameter>
+              </parameters>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <access>read-only</access>
+          <addressOffset>0x7</addressOffset>
+          <description>This register is reserved. Read values are undefined. The result of a write is undefined.</description>
+          <displayName>reserved</displayName>
+          <name>reserved2</name>
+          <resetMask>0xffffffff</resetMask>
+          <resetValue>0x0</resetValue>
+          <size>32</size>
+        </register>
+      </registers>
+    </peripheral>
+  </peripherals>
+</device>

@@ -1,0 +1,37 @@
+# # File gsaved with Nlview 6.7r5  2018-06-05 bk=1.4383 VDI=40 GEI=35 GUI=JA:1.6 TLS
+# 
+preplace inst qsys_top.clk_100 -pg 1 -lvl 1 -y 350
+preplace inst qsys_top.emif_hps -pg 1 -lvl 5 -y 30
+preplace inst qsys_top.rst_in -pg 1 -lvl 1 -y 400
+preplace inst qsys_top.ocm -pg 1 -lvl 4 -y 470
+preplace inst qsys_top.agilex_hps -pg 1 -lvl 3 -y 160
+preplace inst qsys_top.pio_0 -pg 1 -lvl 4 -y 560
+preplace inst qsys_top.emif_calbus_0 -pg 1 -lvl 4 -y 30
+preplace inst qsys_top.user_rst_clkgate_0 -pg 1 -lvl 3 -y 710
+preplace inst qsys_top.jtag2mm_s -pg 1 -lvl 2 -y 350
+preplace inst qsys_top.dma_0 -pg 1 -lvl 2 -y 210
+preplace inst qsys_top -pg 1 -lvl 1 -y 40
+preplace inst qsys_top.jtag2mm_ns -pg 1 -lvl 3 -y 500
+preplace inst qsys_top.ocm2 -pg 1 -lvl 3 -y 380
+preplace inst qsys_top.ila -pg 1 -lvl 4 -y 670
+preplace netloc EXPORT<net_container>qsys_top</net_container>(SLAVE)emif_hps.mem,(SLAVE)qsys_top.emif_hps_mem) 1 0 5 NJ 70 NJ 70 NJ 70 1220J 100 NJ
+preplace netloc EXPORT<net_container>qsys_top</net_container>(SLAVE)qsys_top.ninit_done,(SLAVE)user_rst_clkgate_0.ninit_done) 1 0 3 NJ 720 NJ 720 NJ
+preplace netloc POINT_TO_POINT<net_container>qsys_top</net_container>(MASTER)jtag2mm_s.master,(SLAVE)agilex_hps.f2h_axi_slave) 1 2 1 830
+preplace netloc INTERCONNECT<net_container>qsys_top</net_container>(MASTER)jtag2mm_ns.master,(SLAVE)ocm.s1,(SLAVE)pio_0.s1,(MASTER)dma_0.write_master,(MASTER)dma_0.read_master,(SLAVE)ocm2.s1,(MASTER)agilex_hps.h2f_axi_master) 1 2 2 710 370 1200
+preplace netloc EXPORT<net_container>qsys_top</net_container>(SLAVE)qsys_top.reset,(SLAVE)rst_in.in_reset) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>qsys_top</net_container>(SLAVE)emif_hps.emif_calbus_clk,(MASTER)emif_calbus_0.emif_calbus_clk) 1 4 1 1520
+preplace netloc EXPORT<net_container>qsys_top</net_container>(SLAVE)pio_0.external_connection,(SLAVE)qsys_top.pio_0_external_connection) 1 0 4 NJ 590 NJ 590 NJ 590 NJ
+preplace netloc EXPORT<net_container>qsys_top</net_container>(SLAVE)qsys_top.emif_hps_pll_ref_clk,(SLAVE)emif_hps.pll_ref_clk) 1 0 5 NJ 140 390J 110 NJ 110 1180J 140 NJ
+preplace netloc FAN_OUT<net_container>qsys_top</net_container>(SLAVE)ocm2.clk1,(MASTER)clk_100.out_clk,(SLAVE)jtag2mm_s.clk,(SLAVE)agilex_hps.h2f_axi_clock,(SLAVE)pio_0.clk,(SLAVE)ila.source_clk,(SLAVE)dma_0.clk,(SLAVE)jtag2mm_ns.clk,(SLAVE)ocm.clk1,(SLAVE)agilex_hps.h2f_lw_axi_clock,(SLAVE)agilex_hps.f2h_axi_clock) 1 1 3 390 320 790 470 1260
+preplace netloc EXPORT<net_container>qsys_top</net_container>(SLAVE)qsys_top.emif_hps_oct,(SLAVE)emif_hps.oct) 1 0 5 NJ 120 370J 90 NJ 90 1200J 120 NJ
+preplace netloc EXPORT<net_container>qsys_top</net_container>(SLAVE)agilex_hps.hps_io,(SLAVE)qsys_top.hps_io) 1 0 3 NJ 160 410J 140 730J
+preplace netloc POINT_TO_POINT<net_container>qsys_top</net_container>(SLAVE)dma_0.irq,(MASTER)agilex_hps.f2h_irq0) 1 1 3 450 200 770J 150 1140
+preplace netloc EXPORT<net_container>qsys_top</net_container>(SLAVE)ila.sources,(SLAVE)qsys_top.ila) 1 0 4 NJ 700 NJ 700 NJ 700 NJ
+preplace netloc EXPORT<net_container>qsys_top</net_container>(MASTER)agilex_hps.h2f_reset,(MASTER)qsys_top.h2f_reset) 1 3 3 1260J 320 NJ 320 NJ
+preplace netloc EXPORT<net_container>qsys_top</net_container>(SLAVE)clk_100.in_clk,(SLAVE)qsys_top.clk_100) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>qsys_top</net_container>(SLAVE)emif_calbus_0.emif_calbus_0,(SLAVE)emif_hps.emif_calbus) 1 3 2 1260 20 1540
+preplace netloc POINT_TO_POINT<net_container>qsys_top</net_container>(SLAVE)agilex_hps.hps_emif,(SLAVE)emif_hps.hps_emif) 1 2 3 850 50 1240J 80 NJ
+preplace netloc FAN_OUT<net_container>qsys_top</net_container>(SLAVE)pio_0.reset,(MASTER)rst_in.out_reset,(SLAVE)dma_0.reset,(SLAVE)jtag2mm_ns.clk_reset,(SLAVE)agilex_hps.f2h_axi_reset,(SLAVE)ocm.reset1,(SLAVE)agilex_hps.h2f_lw_axi_reset,(SLAVE)jtag2mm_s.clk_reset,(SLAVE)agilex_hps.h2f_axi_reset,(SLAVE)ocm2.reset1) 1 1 3 430 420 810 490 1240
+preplace netloc POINT_TO_POINT<net_container>qsys_top</net_container>(MASTER)agilex_hps.h2f_lw_axi_master,(SLAVE)dma_0.control_port_slave) 1 1 3 430 160 750J 130 1160
+levelinfo -pg 1 0 180 1780 -top 0 -bot 790
+levelinfo -hier qsys_top * 220 480 900 1290 1570 *

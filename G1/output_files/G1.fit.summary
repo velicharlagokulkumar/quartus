@@ -1,0 +1,21 @@
+Fitter Status : Successful - Wed Dec 13 11:41:33 2023
+Quartus Prime Version : 22.4.0 Build 94 12/07/2022 SC Pro Edition
+Revision Name : G1
+Top-level Entity Name : DMA_1
+Family : Agilex
+Device : AGFB014R24B2E2V
+Timing Models : Final
+Power Models : Final
+Device Status : Final
+Logic utilization (in ALMs) : 10,747 / 487,200 ( 2 % )
+Total dedicated logic registers : 14275
+Total pins : 186 / 924 ( 20 % )
+Total block memory bits : 17,304,064 / 145,612,800 ( 12 % )
+Total RAM Blocks : 901 / 7,110 ( 13 % )
+Total DSP Blocks : 0 / 4,510 ( 0 % )
+Total eSRAMs : 0 / 2 ( 0 % )
+Total HSSI P-Tiles : 0 / 1 ( 0 % )
+Total HSSI E-Tile Channels : 0 / 24 ( 0 % )
+Total HSSI HPS : 1 / 1 ( 100 % )
+Total HSSI EHIPs : 0 / 4 ( 0 % )
+Total PLLs : 3 / 24 ( 13 % )

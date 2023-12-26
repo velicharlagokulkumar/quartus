@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<internal_error>
+	<sub_system>ERR</sub_system>
+	<callstack>	0x7fcaaff6522d: pgm_pgme + 0x3b22d (_ZN15PGME_PROGRAMMER16check_for_jic_ipEP17PGM_CHAIN_ELEMENTPKcPjPPPc + 0xc3)
+	0x7fcab4c0432c: pgm_pgmwq + 0x9032c (_ZN15PGMWQ_FRAME_WND17add_child_devicesESt6vectorIP17PGM_CHAIN_ELEMENTSaIS2_EE + 0xd0)
+	0x7fcab4c4b030: pgm_pgmwq + 0xd7030 (_ZN15PGMWQ_FRAME_WND15add_device_listEjP10AJI_DEVICEbPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEbb + 0x2096)
+	0x7fcab4c56b59: pgm_pgmwq + 0xe2b59 (_ZN15PGMWQ_FRAME_WND22standalone_auto_detectEbPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEb + 0x37b)
+	0x7fcab4c60fc8: pgm_pgmwq + 0xecfc8 (_ZN15PGMWQ_FRAME_WND21on_auto_detect_actionEv + 0x10c)
+	0x7fcab4c70d17: pgm_pgmwq + 0xfcd17 (_ZN15PGMWQ_FRAME_WND18qt_static_metacallEP7QObjectN11QMetaObject4CallEiPPv + 0x109)
+	0x7fcad77ccdc5: Qt5Core + 0x310dc5 (_Z10doActivateILb0EEvP7QObjectiPPv + 0x1e5)
+	0x7fcad8806482: Qt5Widgets + 0x240482 (_ZN15QAbstractButton7clickedEb + 0x42)
+	0x7fcad880669a: Qt5Widgets + 0x24069a (_ZN22QAbstractButtonPrivate11emitClickedEv + 0x3a)
+	0x7fcad8807afa: Qt5Widgets + 0x241afa (_ZN22QAbstractButtonPrivate5clickEv + 0xba)
+	0x7fcad8807ced: Qt5Widgets + 0x241ced (_ZN15QAbstractButton17mouseReleaseEventEP11QMouseEvent + 0xfd)
+	0x7fcad875cbe8: Qt5Widgets + 0x196be8 (_ZN7QWidget5eventEP6QEvent + 0x1c8)
+	0x7fcad88a966f: Qt5Widgets + 0x2e366f (_ZN11QPushButton5eventEP6QEvent + 0x4f)
+	0x7fcad871e55c: Qt5Widgets + 0x15855c (_ZN19QApplicationPrivate13notify_helperEP7QObjectP6QEvent + 0x9c)
+	0x7fcad8725897: Qt5Widgets + 0x15f897 (_ZN12QApplication6notifyEP7QObjectP6QEvent + 0x7b7)
+	0x7fcad778fbe3: Qt5Core + 0x2d3be3 (_ZN16QCoreApplication15notifyInternal2EP7QObjectP6QEvent + 0x113)
+	0x7fcad872489f: Qt5Widgets + 0x15e89f (_ZN19QApplicationPrivate14sendMouseEventEP7QWidgetP11QMouseEventS1_S1_PS1_R8QPointerIS0_Ebb + 0x1df)
+	0x7fcad877720a: Qt5Widgets + 0x1b120a (_ZN13QWidgetWindow16handleMouseEventEP11QMouseEvent + 0x5ca)
+	0x7fcad877a1bd: Qt5Widgets + 0x1b41bd (_ZN13QWidgetWindow5eventEP6QEvent + 0x32d)
+	0x7fcad871e55c: Qt5Widgets + 0x15855c (_ZN19QApplicationPrivate13notify_helperEP7QObjectP6QEvent + 0x9c)
+	0x7fcad872531f: Qt5Widgets + 0x15f31f (_ZN12QApplication6notifyEP7QObjectP6QEvent + 0x23f)
+	0x7fcad778fbe3: Qt5Core + 0x2d3be3 (_ZN16QCoreApplication15notifyInternal2EP7QObjectP6QEvent + 0x113)
+	0x7fcad7e7e5fb: Qt5Gui + 0x1025fb (_ZN22QGuiApplicationPrivate17processMouseEventEPN29QWindowSystemInterfacePrivate10MouseEventE + 0x73b)
+	0x7fcad7e7f8a5: Qt5Gui + 0x1038a5 (_ZN22QGuiApplicationPrivate24processWindowSystemEventEPN29QWindowSystemInterfacePrivate17WindowSystemEventE + 0x135)
+	0x7fcad7e5755b: Qt5Gui + 0xdb55b (_ZN22QWindowSystemInterface22sendWindowSystemEventsE6QFlagsIN10QEventLoop17ProcessEventsFlagEE + 0xab)
+	0x7fcac9fb17c3: Qt5XcbQpa + 0x607c3 (_ZN23QXcbUnixEventDispatcher13processEventsE6QFlagsIN10QEventLoop17ProcessEventsFlagEE + 0x23)
+	0x7fcad778e45a: Qt5Core + 0x2d245a (_ZN10QEventLoop4execE6QFlagsINS_17ProcessEventsFlagEE + 0x13a)
+	0x7fcad7797c87: Qt5Core + 0x2dbc87 (_ZN16QCoreApplication4execEv + 0x97)
+	   0x4041a0: quartus + 0x4041a0 (_Z8qgq_mainiPPKc + 0x6e)
+	0x7fcadada6546: ccl_msg + 0x4e546 (_Z15msg_main_threadPv + 0x10)
+	0x7fcadada7764: ccl_msg + 0x4f764 (_Z18msg_thread_wrapperPFPvS_ES_ + 0x8c)
+	0x7fcad9b51568: ccl_mem + 0x1f568 (_Z18mem_thread_wrapperPFPvS_ES_ + 0x98)
+	0x7fcad9aebf3a: ccl_err + 0x10f3a (_Z18err_thread_wrapperPFPvS_ES_ + 0x1e)
+	0x7fcad9a5e7f5: ccl_thr + 0xb7f5 (thr_thread_wrapper + 0x15)
+	0x7fcadada7684: ccl_msg + 0x4f684 (_Z12msg_exe_mainiPPKcPFiiS1_E + 0xd8)
+	   0x404288: quartus + 0x404288 (main + 0x26)
+	0x7fcad1c92c87: c + 0x21c87 (__libc_start_main + 0xe7)
+	   0x404089: quartus + 0x404089 (_start + 0x29)
+</callstack>
+	<error>*** Fatal Error: hw_name != NULL</error>
+	<date>Fri Dec  8 17:50:38 2023
+</date>
+	<version>Version 22.4.0 Build 94 12/07/2022 SC Pro Edition</version>
+</internal_error>

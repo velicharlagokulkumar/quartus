@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2023.12.13.11:11:48"
+ outputDirectory="/home/wisig321/Videos/G1/ip/qsys_top/qsys_top_in_system_sources_probes_0/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Agilex"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="AGFB014R24B2E2V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_SOURCE_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_SOURCE_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_SOURCE_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="sources" kind="conduit" start="0">
+   <property name="associatedClock" value="source_clk" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="source" direction="output" role="source" width="1" />
+  </interface>
+  <interface name="source_clk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="source_clk" direction="input" role="clk" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   kind="qsys_top_in_system_sources_probes_0"
+   version="1.0"
+   name="qsys_top_in_system_sources_probes_0">
+  <parameter name="AUTO_SOURCE_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_SOURCE_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_SOURCE_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="AGFB014R24B2E2V" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/home/wisig321/Videos/G1/ip/qsys_top/qsys_top_in_system_sources_probes_0/synth/qsys_top_in_system_sources_probes_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/wisig321/Videos/G1/ip/qsys_top/qsys_top_in_system_sources_probes_0/synth/qsys_top_in_system_sources_probes_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/wisig321/Videos/G1/ip/qsys_top/qsys_top_in_system_sources_probes_0.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="qsys_top_in_system_sources_probes_0">"Generating: qsys_top_in_system_sources_probes_0"</message>
+   <message level="Info" culprit="qsys_top_in_system_sources_probes_0">"Generating: altsource_probe_top"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_in_system_sources_probes"
+   version="19.2.1"
+   name="altsource_probe_top">
+  <parameter name="create_source_clock" value="true" />
+  <parameter name="instance_id" value="NONE" />
+  <parameter name="source_initial_value" value="0" />
+  <parameter name="sld_auto_instance_index" value="YES" />
+  <parameter name="sld_instance_index" value="0" />
+  <parameter name="probe_width" value="0" />
+  <parameter name="source_width" value="1" />
+  <parameter name="create_source_clock_enable" value="false" />
+  <parameter name="device_family" value="Agilex" />
+  <parameter name="enable_metastability" value="YES" />
+  <parameter name="gui_use_auto_index" value="true" />
+  <generatedFiles>
+   <file
+       path="/home/wisig321/Videos/G1/ip/qsys_top/qsys_top_in_system_sources_probes_0/altera_in_system_sources_probes_1921/synth/altsource_probe_top.v"
+       attributes="" />
+   <file
+       path="/home/wisig321/Videos/G1/ip/qsys_top/qsys_top_in_system_sources_probes_0/altera_in_system_sources_probes_1921/synth/altera_in_system_sources_probes.sdc"
+       attributes="NO_SDC_PROMOTION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/wisig321/Videos/G1/ip/qsys_top/qsys_top_in_system_sources_probes_0/altera_in_system_sources_probes_1921/synth/altsource_probe_top.v"
+       attributes="" />
+   <file
+       path="/home/wisig321/Videos/G1/ip/qsys_top/qsys_top_in_system_sources_probes_0/altera_in_system_sources_probes_1921/synth/altera_in_system_sources_probes.sdc"
+       attributes="NO_SDC_PROMOTION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="qsys_top_in_system_sources_probes_0"
+     as="in_system_sources_probes_0" />
+  <messages>
+   <message level="Info" culprit="qsys_top_in_system_sources_probes_0">"Generating: altsource_probe_top"</message>
+  </messages>
+ </entity>
+</deploy>

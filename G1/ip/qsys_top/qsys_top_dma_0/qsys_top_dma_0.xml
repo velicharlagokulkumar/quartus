@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2023.12.13.11:11:50"
+ outputDirectory="/home/wisig321/Videos/G1/ip/qsys_top/qsys_top_dma_0/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Agilex"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="AGFB014R24B2E2V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_READ_MASTER_ADDRESS_MAP"
+     type="AddressMap"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_READ_MASTER_ADDRESS_WIDTH"
+     type="AddressWidthType"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_WRITE_MASTER_ADDRESS_MAP"
+     type="AddressMap"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_WRITE_MASTER_ADDRESS_WIDTH"
+     type="AddressWidthType"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="system_reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="control_port_slave" kind="avalon" start="0">
+   <property name="addressAlignment" value="NATIVE" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="8" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="1" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="1" />
+   <property name="writeWaitTime" value="1" />
+   <port name="dma_ctl_address" direction="input" role="address" width="3" />
+   <port
+       name="dma_ctl_chipselect"
+       direction="input"
+       role="chipselect"
+       width="1" />
+   <port name="dma_ctl_readdata" direction="output" role="readdata" width="32" />
+   <port name="dma_ctl_write_n" direction="input" role="write_n" width="1" />
+   <port
+       name="dma_ctl_writedata"
+       direction="input"
+       role="writedata"
+       width="32" />
+  </interface>
+  <interface name="irq" kind="interrupt" start="0">
+   <property
+       name="associatedAddressablePoint"
+       value="qsys_top_dma_0.control_port_slave" />
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="bridgedReceiverOffset" value="0" />
+   <property name="bridgesToReceiver" value="" />
+   <property name="irqScheme" value="NONE" />
+   <port name="dma_ctl_irq" direction="output" role="irq" width="1" />
+  </interface>
+  <interface name="read_master" kind="avalon" start="1">
+   <property name="adaptsTo" value="" />
+   <property name="addressGroup" value="0" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="dBSBigEndian" value="false" />
+   <property name="doStreamReads" value="true" />
+   <property name="doStreamWrites" value="false" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isAsynchronous" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isReadable" value="true" />
+   <property name="isWriteable" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maxAddressWidth" value="32" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="read_address" direction="output" role="address" width="24" />
+   <port name="read_chipselect" direction="output" role="chipselect" width="1" />
+   <port name="read_read_n" direction="output" role="read_n" width="1" />
+   <port name="read_readdata" direction="input" role="readdata" width="32" />
+   <port
+       name="read_readdatavalid"
+       direction="input"
+       role="readdatavalid"
+       width="1" />
+   <port
+       name="read_waitrequest"
+       direction="input"
+       role="waitrequest"
+       width="1" />
+  </interface>
+  <interface name="write_master" kind="avalon" start="1">
+   <property name="adaptsTo" value="" />
+   <property name="addressGroup" value="0" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="dBSBigEndian" value="false" />
+   <property name="doStreamReads" value="false" />
+   <property name="doStreamWrites" value="true" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isAsynchronous" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isReadable" value="false" />
+   <property name="isWriteable" value="true" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maxAddressWidth" value="32" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="write_address" direction="output" role="address" width="32" />
+   <port
+       name="write_chipselect"
+       direction="output"
+       role="chipselect"
+       width="1" />
+   <port
+       name="write_waitrequest"
+       direction="input"
+       role="waitrequest"
+       width="1" />
+   <port name="write_write_n" direction="output" role="write_n" width="1" />
+   <port name="write_writedata" direction="output" role="writedata" width="32" />
+   <port
+       name="write_byteenable"
+       direction="output"
+       role="byteenable"
+       width="4" />
+  </interface>
+ </perimeter>
+ <entity kind="qsys_top_dma_0" version="1.0" name="qsys_top_dma_0">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_WRITE_MASTER_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="AGFB014R24B2E2V" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_READ_MASTER_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_READ_MASTER_ADDRESS_WIDTH" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_WRITE_MASTER_ADDRESS_WIDTH" value="-1" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/home/wisig321/Videos/G1/ip/qsys_top/qsys_top_dma_0/synth/qsys_top_dma_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/wisig321/Videos/G1/ip/qsys_top/qsys_top_dma_0/synth/qsys_top_dma_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="/home/wisig321/Videos/G1/ip/qsys_top/qsys_top_dma_0.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/sopc_builder_ip/altera_avalon_dma/altera_avalon_dma_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="qsys_top_dma_0">"Generating: qsys_top_dma_0"</message>
+   <message level="Info" culprit="qsys_top_dma_0">"Generating: qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi"</message>
+   <message level="Info" culprit="dma_0">softresetEnable = 1</message>
+   <message level="Info" culprit="dma_0">Starting RTL generation for module 'qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi'</message>
+   <message level="Info" culprit="dma_0">  Generation command is [exec /home/wisig321/intelFPGA_pro/22.4/quartus/linux64//perl/bin/perl -I /home/wisig321/intelFPGA_pro/22.4/quartus/linux64//perl/lib -I /home/wisig321/intelFPGA_pro/22.4/quartus/sopc_builder/bin/europa -I /home/wisig321/intelFPGA_pro/22.4/quartus/sopc_builder/bin/perl_lib -I /home/wisig321/intelFPGA_pro/22.4/quartus/sopc_builder/bin -I /home/wisig321/intelFPGA_pro/22.4/quartus/../ip/altera/sopc_builder_ip/common -I /home/wisig321/intelFPGA_pro/22.4/quartus/../ip/altera/sopc_builder_ip/altera_avalon_dma -- /home/wisig321/intelFPGA_pro/22.4/quartus/../ip/altera/sopc_builder_ip/altera_avalon_dma/generate_rtl.pl --name=qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi --dir=/tmp/alt9704_8948476710506918673.dir/0001_dma_0_gen/ --quartus_dir=/home/wisig321/intelFPGA_pro/22.4/quartus --verilog --config=/tmp/alt9704_8948476710506918673.dir/0001_dma_0_gen//qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="dma_0"># 2023.12.13 11:11:50 (*)   qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi: allowing these transactions: word, hw, byte_access</message>
+   <message level="Info" culprit="dma_0">Done RTL generation for module 'qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi'</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_avalon_dma"
+   version="19.1.0"
+   name="qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi">
+  <parameter name="fifoDepth" value="32" />
+  <parameter
+     name="readAddressMap"
+     value="&lt;address-map&gt;&lt;slave name=&apos;ocm.s1&apos; start=&apos;0x800000&apos; end=&apos;0x800020&apos; datawidth=&apos;32&apos; /&gt;&lt;/address-map&gt;" />
+  <parameter name="allowLegacySignals" value="false" />
+  <parameter name="allowWordTransactions" value="true" />
+  <parameter name="burstEnable" value="false" />
+  <parameter name="softresetEnable" value="true" />
+  <parameter name="allowHalfWordTransactions" value="true" />
+  <parameter name="avalonSpec" value="2.0" />
+  <parameter name="maxBurstSize" value="128" />
+  <parameter name="readSlaveDataWidthMax" value="32" />
+  <parameter name="bigEndian" value="false" />
+  <parameter name="writeSlaveDataWidthMax" value="32" />
+  <parameter name="writeMaximumSlaveSpan" value="4294967296" />
+  <parameter name="useRegistersForFIFO" value="false" />
+  <parameter name="minimumNumberOfByteTransfers" value="8191" />
+  <parameter name="allowQuadWordTransactions" value="true" />
+  <parameter name="writeSlaveAddressWidthMax" value="32" />
+  <parameter name="minimumDmaTransactionRegisterWidth" value="13" />
+  <parameter name="actualDmaTransactionRegisterWidth" value="32" />
+  <parameter name="readMaximumSlaveSpan" value="32" />
+  <parameter name="allowByteTransactions" value="true" />
+  <parameter name="readSlaveAddressWidthMax" value="24" />
+  <parameter name="allowDoubleWordTransactions" value="true" />
+  <parameter
+     name="writeAddressMap"
+     value="&lt;address-map&gt;&lt;slave name=&apos;axi_conduit_merger_0.altera_axi_slave&apos; start=&apos;0x0&apos; end=&apos;0x100000000&apos; datawidth=&apos;32&apos; /&gt;&lt;/address-map&gt;" />
+  <generatedFiles>
+   <file
+       path="/home/wisig321/Videos/G1/ip/qsys_top/qsys_top_dma_0/altera_avalon_dma_1910/synth/qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi.v"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/wisig321/Videos/G1/ip/qsys_top/qsys_top_dma_0/altera_avalon_dma_1910/synth/qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi.v"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/sopc_builder_ip/altera_avalon_dma/altera_avalon_dma_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="qsys_top_dma_0" as="dma_0" />
+  <messages>
+   <message level="Info" culprit="qsys_top_dma_0">"Generating: qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi"</message>
+   <message level="Info" culprit="dma_0">softresetEnable = 1</message>
+   <message level="Info" culprit="dma_0">Starting RTL generation for module 'qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi'</message>
+   <message level="Info" culprit="dma_0">  Generation command is [exec /home/wisig321/intelFPGA_pro/22.4/quartus/linux64//perl/bin/perl -I /home/wisig321/intelFPGA_pro/22.4/quartus/linux64//perl/lib -I /home/wisig321/intelFPGA_pro/22.4/quartus/sopc_builder/bin/europa -I /home/wisig321/intelFPGA_pro/22.4/quartus/sopc_builder/bin/perl_lib -I /home/wisig321/intelFPGA_pro/22.4/quartus/sopc_builder/bin -I /home/wisig321/intelFPGA_pro/22.4/quartus/../ip/altera/sopc_builder_ip/common -I /home/wisig321/intelFPGA_pro/22.4/quartus/../ip/altera/sopc_builder_ip/altera_avalon_dma -- /home/wisig321/intelFPGA_pro/22.4/quartus/../ip/altera/sopc_builder_ip/altera_avalon_dma/generate_rtl.pl --name=qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi --dir=/tmp/alt9704_8948476710506918673.dir/0001_dma_0_gen/ --quartus_dir=/home/wisig321/intelFPGA_pro/22.4/quartus --verilog --config=/tmp/alt9704_8948476710506918673.dir/0001_dma_0_gen//qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="dma_0"># 2023.12.13 11:11:50 (*)   qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi: allowing these transactions: word, hw, byte_access</message>
+   <message level="Info" culprit="dma_0">Done RTL generation for module 'qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi'</message>
+  </messages>
+ </entity>
+</deploy>

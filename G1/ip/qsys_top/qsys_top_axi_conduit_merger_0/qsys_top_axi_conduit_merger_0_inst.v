@@ -1,0 +1,92 @@
+	qsys_top_axi_conduit_merger_0 #(
+		.ID_WIDTH      (INTEGER_VALUE_FOR_ID_WIDTH),
+		.DATA_WIDTH    (INTEGER_VALUE_FOR_DATA_WIDTH),
+		.ADDRESS_WIDTH (INTEGER_VALUE_FOR_ADDRESS_WIDTH),
+		.AXUSER_WIDTH  (INTEGER_VALUE_FOR_AXUSER_WIDTH)
+	) u0 (
+		.clk       (_connected_to_clk_),       //   input,               width = 1,             clock.clk
+		.rst_n     (_connected_to_rst_n_),     //   input,               width = 1,        reset_sink.reset_n
+		.m_awvalid (_connected_to_m_awvalid_), //  output,               width = 1, altera_axi_master.awvalid
+		.m_awlen   (_connected_to_m_awlen_),   //  output,               width = 4,                  .awlen
+		.m_awsize  (_connected_to_m_awsize_),  //  output,               width = 3,                  .awsize
+		.m_awburst (_connected_to_m_awburst_), //  output,               width = 2,                  .awburst
+		.m_awlock  (_connected_to_m_awlock_),  //  output,               width = 2,                  .awlock
+		.m_awcache (_connected_to_m_awcache_), //  output,               width = 4,                  .awcache
+		.m_awprot  (_connected_to_m_awprot_),  //  output,               width = 3,                  .awprot
+		.m_awready (_connected_to_m_awready_), //   input,               width = 1,                  .awready
+		.m_awuser  (_connected_to_m_awuser_),  //  output,    width = AXUSER_WIDTH,                  .awuser
+		.m_arvalid (_connected_to_m_arvalid_), //  output,               width = 1,                  .arvalid
+		.m_arlen   (_connected_to_m_arlen_),   //  output,               width = 4,                  .arlen
+		.m_arsize  (_connected_to_m_arsize_),  //  output,               width = 3,                  .arsize
+		.m_arburst (_connected_to_m_arburst_), //  output,               width = 2,                  .arburst
+		.m_arlock  (_connected_to_m_arlock_),  //  output,               width = 2,                  .arlock
+		.m_arcache (_connected_to_m_arcache_), //  output,               width = 4,                  .arcache
+		.m_arprot  (_connected_to_m_arprot_),  //  output,               width = 3,                  .arprot
+		.m_arready (_connected_to_m_arready_), //   input,               width = 1,                  .arready
+		.m_aruser  (_connected_to_m_aruser_),  //  output,    width = AXUSER_WIDTH,                  .aruser
+		.m_rvalid  (_connected_to_m_rvalid_),  //   input,               width = 1,                  .rvalid
+		.m_rlast   (_connected_to_m_rlast_),   //   input,               width = 1,                  .rlast
+		.m_rresp   (_connected_to_m_rresp_),   //   input,               width = 2,                  .rresp
+		.m_rready  (_connected_to_m_rready_),  //  output,               width = 1,                  .rready
+		.m_wvalid  (_connected_to_m_wvalid_),  //  output,               width = 1,                  .wvalid
+		.m_wlast   (_connected_to_m_wlast_),   //  output,               width = 1,                  .wlast
+		.m_wready  (_connected_to_m_wready_),  //   input,               width = 1,                  .wready
+		.m_bvalid  (_connected_to_m_bvalid_),  //   input,               width = 1,                  .bvalid
+		.m_bresp   (_connected_to_m_bresp_),   //   input,               width = 2,                  .bresp
+		.m_bready  (_connected_to_m_bready_),  //  output,               width = 1,                  .bready
+		.m_awaddr  (_connected_to_m_awaddr_),  //  output,   width = ADDRESS_WIDTH,                  .awaddr
+		.m_awid    (_connected_to_m_awid_),    //  output,        width = ID_WIDTH,                  .awid
+		.m_araddr  (_connected_to_m_araddr_),  //  output,   width = ADDRESS_WIDTH,                  .araddr
+		.m_arid    (_connected_to_m_arid_),    //  output,        width = ID_WIDTH,                  .arid
+		.m_rdata   (_connected_to_m_rdata_),   //   input,      width = DATA_WIDTH,                  .rdata
+		.m_rid     (_connected_to_m_rid_),     //   input,        width = ID_WIDTH,                  .rid
+		.m_wdata   (_connected_to_m_wdata_),   //  output,      width = DATA_WIDTH,                  .wdata
+		.m_wstrb   (_connected_to_m_wstrb_),   //  output,  width = (DATA_WIDTH/8),                  .wstrb
+		.m_wid     (_connected_to_m_wid_),     //  output,        width = ID_WIDTH,                  .wid
+		.m_bid     (_connected_to_m_bid_),     //   input,        width = ID_WIDTH,                  .bid
+		.s_awvalid (_connected_to_s_awvalid_), //   input,               width = 1,  altera_axi_slave.awvalid
+		.s_awlen   (_connected_to_s_awlen_),   //   input,               width = 4,                  .awlen
+		.s_awsize  (_connected_to_s_awsize_),  //   input,               width = 3,                  .awsize
+		.s_awburst (_connected_to_s_awburst_), //   input,               width = 2,                  .awburst
+		.s_awlock  (_connected_to_s_awlock_),  //   input,               width = 2,                  .awlock
+		.s_awcache (_connected_to_s_awcache_), //   input,               width = 4,                  .awcache
+		.s_awprot  (_connected_to_s_awprot_),  //   input,               width = 3,                  .awprot
+		.s_awready (_connected_to_s_awready_), //  output,               width = 1,                  .awready
+		.s_awuser  (_connected_to_s_awuser_),  //   input,    width = AXUSER_WIDTH,                  .awuser
+		.s_arvalid (_connected_to_s_arvalid_), //   input,               width = 1,                  .arvalid
+		.s_arlen   (_connected_to_s_arlen_),   //   input,               width = 4,                  .arlen
+		.s_arsize  (_connected_to_s_arsize_),  //   input,               width = 3,                  .arsize
+		.s_arburst (_connected_to_s_arburst_), //   input,               width = 2,                  .arburst
+		.s_arlock  (_connected_to_s_arlock_),  //   input,               width = 2,                  .arlock
+		.s_arcache (_connected_to_s_arcache_), //   input,               width = 4,                  .arcache
+		.s_arprot  (_connected_to_s_arprot_),  //   input,               width = 3,                  .arprot
+		.s_arready (_connected_to_s_arready_), //  output,               width = 1,                  .arready
+		.s_aruser  (_connected_to_s_aruser_),  //   input,    width = AXUSER_WIDTH,                  .aruser
+		.s_rvalid  (_connected_to_s_rvalid_),  //  output,               width = 1,                  .rvalid
+		.s_rlast   (_connected_to_s_rlast_),   //  output,               width = 1,                  .rlast
+		.s_rresp   (_connected_to_s_rresp_),   //  output,               width = 2,                  .rresp
+		.s_rready  (_connected_to_s_rready_),  //   input,               width = 1,                  .rready
+		.s_wvalid  (_connected_to_s_wvalid_),  //   input,               width = 1,                  .wvalid
+		.s_wlast   (_connected_to_s_wlast_),   //   input,               width = 1,                  .wlast
+		.s_wready  (_connected_to_s_wready_),  //  output,               width = 1,                  .wready
+		.s_bvalid  (_connected_to_s_bvalid_),  //  output,               width = 1,                  .bvalid
+		.s_bresp   (_connected_to_s_bresp_),   //  output,               width = 2,                  .bresp
+		.s_bready  (_connected_to_s_bready_),  //   input,               width = 1,                  .bready
+		.s_awaddr  (_connected_to_s_awaddr_),  //   input,   width = ADDRESS_WIDTH,                  .awaddr
+		.s_awid    (_connected_to_s_awid_),    //   input,        width = ID_WIDTH,                  .awid
+		.s_araddr  (_connected_to_s_araddr_),  //   input,   width = ADDRESS_WIDTH,                  .araddr
+		.s_arid    (_connected_to_s_arid_),    //   input,        width = ID_WIDTH,                  .arid
+		.s_rdata   (_connected_to_s_rdata_),   //  output,      width = DATA_WIDTH,                  .rdata
+		.s_rid     (_connected_to_s_rid_),     //  output,        width = ID_WIDTH,                  .rid
+		.s_wdata   (_connected_to_s_wdata_),   //   input,      width = DATA_WIDTH,                  .wdata
+		.s_wstrb   (_connected_to_s_wstrb_),   //   input,  width = (DATA_WIDTH/8),                  .wstrb
+		.s_wid     (_connected_to_s_wid_),     //   input,        width = ID_WIDTH,                  .wid
+		.s_bid     (_connected_to_s_bid_),     //  output,        width = ID_WIDTH,                  .bid
+		.c_awcache (_connected_to_c_awcache_), //   input,               width = 4,       conduit_end.awcache
+		.c_awprot  (_connected_to_c_awprot_),  //   input,               width = 3,                  .awprot
+		.c_awuser  (_connected_to_c_awuser_),  //   input,    width = AXUSER_WIDTH,                  .awuser
+		.c_arcache (_connected_to_c_arcache_), //   input,               width = 4,                  .arcache
+		.c_aruser  (_connected_to_c_aruser_),  //   input,    width = AXUSER_WIDTH,                  .aruser
+		.c_arprot  (_connected_to_c_arprot_)   //   input,               width = 3,                  .arprot
+	);
+

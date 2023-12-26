@@ -1,0 +1,39 @@
+set_global_assignment -entity "qsys_top_dma_0" -library "qsys_top_dma_0" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "qsys_top_dma_0" -library "qsys_top_dma_0" -name IP_TOOL_VERSION "22.4"
+set_global_assignment -entity "qsys_top_dma_0" -library "qsys_top_dma_0" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "qsys_top_dma_0" -library "qsys_top_dma_0" -name IP_TOOL_VENDOR_NAME "Intel Corporation"
+set_global_assignment -entity "qsys_top_dma_0" -library "qsys_top_dma_0" -name IP_TOP_LEVEL_COMPONENT_NAME "altera_avalon_dma"
+set_global_assignment -library "qsys_top_dma_0" -name SOPCINFO_FILE [file join $::quartus(qip_path) "qsys_top_dma_0.sopcinfo"]
+set_global_assignment -entity "qsys_top_dma_0" -library "qsys_top_dma_0" -name SLD_INFO "QSYS_NAME qsys_top_dma_0 HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "qsys_top_dma_0" -name MISC_FILE [file join $::quartus(qip_path) "qsys_top_dma_0.cmp"]
+set_global_assignment -library "qsys_top_dma_0" -name SLD_FILE [file join $::quartus(qip_path) "qsys_top_dma_0.regmap"]
+set_global_assignment -entity "qsys_top_dma_0" -library "qsys_top_dma_0" -name IP_TARGETED_DEVICE_FAMILY "Agilex"
+set_global_assignment -entity "qsys_top_dma_0" -library "qsys_top_dma_0" -name IP_GENERATED_DEVICE_FAMILY "Agilex"
+set_global_assignment -entity "qsys_top_dma_0" -library "qsys_top_dma_0" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "qsys_top_dma_0" -name MISC_FILE [file join $::quartus(qip_path) "../qsys_top_dma_0.ip"]
+
+set_global_assignment -entity "qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi" -library "altera_avalon_dma_1910" -name IP_COMPONENT_NAME "cXN5c190b3BfZG1hXzBfYWx0ZXJhX2F2YWxvbl9kbWFfMTkxMF90amtkbGhp"
+set_global_assignment -entity "qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi" -library "altera_avalon_dma_1910" -name IP_COMPONENT_DISPLAY_NAME "RE1BIENvbnRyb2xsZXIgSW50ZWwgRlBHQSBJUA=="
+set_global_assignment -entity "qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi" -library "altera_avalon_dma_1910" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi" -library "altera_avalon_dma_1910" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi" -library "altera_avalon_dma_1910" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi" -library "altera_avalon_dma_1910" -name IP_COMPONENT_VERSION "MTkuMS4w"
+set_global_assignment -entity "qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi" -library "altera_avalon_dma_1910" -name IP_COMPONENT_GROUP "QmFzaWMgRnVuY3Rpb25zL0RNQQ=="
+set_global_assignment -entity "qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi" -library "altera_avalon_dma_1910" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly9kb2N1bWVudGF0aW9uLmFsdGVyYS5jb20vIy9saW5rL3NmbzE0MDA3ODc5NTI5MzIvaWdhMTQwMTM5NzcwMzM1OQ=="
+set_global_assignment -entity "qsys_top_dma_0" -library "qsys_top_dma_0" -name IP_COMPONENT_NAME "cXN5c190b3BfZG1hXzA="
+set_global_assignment -entity "qsys_top_dma_0" -library "qsys_top_dma_0" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "qsys_top_dma_0" -library "qsys_top_dma_0" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "qsys_top_dma_0" -library "qsys_top_dma_0" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "qsys_top_dma_0" -library "qsys_top_dma_0" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "qsys_top_dma_0" -library "qsys_top_dma_0" -name IP_COMPONENT_VERSION "MS4w"
+
+
+set_global_assignment -library "altera_avalon_dma_1910" -name VERILOG_FILE [file join $::quartus(qip_path) "altera_avalon_dma_1910/synth/qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi.v"]
+set_global_assignment -library "qsys_top_dma_0" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/qsys_top_dma_0.v"]
+
+
+set_global_assignment -entity "qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi" -library "altera_avalon_dma_1910" -name IP_TOOL_NAME "altera_avalon_dma"
+set_global_assignment -entity "qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi" -library "altera_avalon_dma_1910" -name IP_TOOL_VERSION "19.1.0"
+set_global_assignment -entity "qsys_top_dma_0_altera_avalon_dma_1910_tjkdlhi" -library "altera_avalon_dma_1910" -name IP_TOOL_ENV "QsysPrimePro"
+

@@ -1,0 +1,86 @@
+Fitter Finalize Stage Report for G1
+Wed Dec 13 11:41:16 2023
+Quartus Prime Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Routing Usage Summary
+  3. Finalize Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++------------------------------------------------------------+
+; Routing Usage Summary                                      ;
++-----------------------------+------------------------------+
+; Routing Resource Type       ; Usage                        ;
++-----------------------------+------------------------------+
+; Block Input Mux Wrapbacks   ; 10 / 516,600 ( < 1 % )       ;
+; Block Input Muxes           ; 107,840 / 5,658,000 ( 2 % )  ;
+; Block interconnects         ; 87,622 / 6,625,600 ( 1 % )   ;
+; C1 interconnects            ; 52,166 / 2,769,200 ( 2 % )   ;
+; C4 interconnects            ; 23,208 / 2,640,400 ( < 1 % ) ;
+; C8 interconnects            ; 95 / 264,040 ( < 1 % )       ;
+; DCM_muxes                   ; 1 / 824 ( < 1 % )            ;
+; DELAY_CHAINs                ; 0 / 17,290 ( 0 % )           ;
+; Direct links                ; 7,078 / 6,625,600 ( < 1 % )  ;
+; HIO Buffers                 ; 0 / 45,920 ( 0 % )           ;
+; Programmable Invert Buffers ; 0 / 480 ( 0 % )              ;
+; Programmable Invert Inputs  ; 4,029 / 513,810 ( < 1 % )    ;
+; Programmable Inverts        ; 4,029 / 513,810 ( < 1 % )    ;
+; R0 interconnects            ; 53,774 / 4,620,700 ( 1 % )   ;
+; R1 interconnects            ; 32,589 / 2,640,400 ( 1 % )   ;
+; R12 interconnects           ; 90 / 396,060 ( < 1 % )       ;
+; R2 interconnects            ; 11,708 / 1,324,300 ( < 1 % ) ;
+; R4 interconnects            ; 9,568 / 1,332,500 ( < 1 % )  ;
+; R6 interconnects            ; 12,310 / 1,336,600 ( < 1 % ) ;
+; Redundancy Muxes            ; 0 / 90,920 ( 0 % )           ;
+; Row Clock Tap-Offs          ; 2,956 / 396,060 ( < 1 % )    ;
+; Switchbox_clock_muxes       ; 138 / 13,440 ( 1 % )         ;
+; VIO Buffers                 ; 848 / 19,200 ( 4 % )         ;
+; Vertical_seam_tap_muxes     ; 127 / 6,720 ( 2 % )          ;
++-----------------------------+------------------------------+
+
+
++-------------------+
+; Finalize Messages ;
++-------------------+
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
+    Info: Processing started: Wed Dec 13 11:19:09 2023
+    Info: System process ID: 25397
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off G1 -c G1
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = G1
+Info: Revision = G1
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '100'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Info (18258): Fitter Physical Synthesis operations beginning
+Info (18259): Fitter Physical Synthesis operations ending: elapsed time is 00:00:04
+Info (16557): Fitter post-fit operations ending: elapsed time is 00:01:18
+
+

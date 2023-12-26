@@ -1,0 +1,25 @@
+	component qsys_top_dma_0 is
+		port (
+			clk                : in  std_logic                     := 'X';             -- clk
+			system_reset_n     : in  std_logic                     := 'X';             -- reset_n
+			dma_ctl_address    : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- address
+			dma_ctl_chipselect : in  std_logic                     := 'X';             -- chipselect
+			dma_ctl_readdata   : out std_logic_vector(31 downto 0);                    -- readdata
+			dma_ctl_write_n    : in  std_logic                     := 'X';             -- write_n
+			dma_ctl_writedata  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			dma_ctl_irq        : out std_logic;                                        -- irq
+			read_address       : out std_logic_vector(23 downto 0);                    -- address
+			read_chipselect    : out std_logic;                                        -- chipselect
+			read_read_n        : out std_logic;                                        -- read_n
+			read_readdata      : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			read_readdatavalid : in  std_logic                     := 'X';             -- readdatavalid
+			read_waitrequest   : in  std_logic                     := 'X';             -- waitrequest
+			write_address      : out std_logic_vector(31 downto 0);                    -- address
+			write_chipselect   : out std_logic;                                        -- chipselect
+			write_waitrequest  : in  std_logic                     := 'X';             -- waitrequest
+			write_write_n      : out std_logic;                                        -- write_n
+			write_writedata    : out std_logic_vector(31 downto 0);                    -- writedata
+			write_byteenable   : out std_logic_vector(3 downto 0)                      -- byteenable
+		);
+	end component qsys_top_dma_0;
+
