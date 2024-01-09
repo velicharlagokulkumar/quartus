@@ -1,0 +1,844 @@
+Synthesis report
+Thu Jan  4 18:09:38 2024
+Quartus Prime Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Synthesis Summary
+  2. Synthesis Settings
+  3. Synthesis Source Files Read
+  4. Synthesis IP Cores Summary
+  5. Synthesis Partition Summary
+  6. Source Assignments for myrom|rom_1port_0|altera_syncram_component|auto_generated|altera_syncram_impl1
+  7. Source Assignments for dcfifo|fifo_0|dcfifo_component
+  8. Source Assignments for dcfifo|fifo_0|dcfifo_component|auto_generated
+  9. Source Assignments for dcfifo|fifo_0|dcfifo_component|auto_generated|fifo_altera_syncram|altera_syncram_impl1
+ 10. Source Assignments for dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp
+ 11. Source Assignments for dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3
+ 12. Source Assignments for dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp
+ 13. Source Assignments for dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3
+ 14. Source Assignments for ram|ram_1port_0|altera_syncram_component|auto_generated|altera_syncram_impl1
+ 15. Parameter Settings for User Entity Instance: myrom|rom_1port_0|altera_syncram_component
+ 16. Parameter Settings for User Entity Instance: wrctrl_logic
+ 17. Parameter Settings for User Entity Instance: dcfifo|fifo_0|dcfifo_component
+ 18. Parameter Settings for User Entity Instance: rdctrl_logic
+ 19. Parameter Settings for User Entity Instance: ram|ram_1port_0|altera_syncram_component
+ 20. Partition "root_partition" Resource Utilization by Entity
+ 21. State Machine - Summary
+ 22. State Machine - wrctrl_logic|state
+ 23. State Machine - rdctrl_logic|state
+ 24. Registers Protected by Synthesis
+ 25. Registers Removed During Synthesis
+ 26. General Register Statistics for Partition "root_partition"
+ 27. Inverted Register Statistics
+ 28. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 29. Preserve for Debug Assignments for Partition "root_partition"
+ 30. Post-Synthesis Netlist Statistics for Partition "root_partition"
+ 31. Synthesis Resource Usage Summary for Partition "root_partition"
+ 32. Synthesis RAM Summary for Partition "root_partition"
+ 33. General Warnings
+ 34. Synthesis Messages
+
+
+
++---------------------------------------------------------------+
+; Synthesis Summary                                             ;
++-----------------------+---------------------------------------+
+; Synthesis Status      ; Successful - Thu Jan  4 18:09:37 2024 ;
+; Revision Name         ; G2                                    ;
+; Top-level Entity Name ; dcfifo_de_top                         ;
+; Family                ; Agilex                                ;
++-----------------------+---------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Synthesis Settings                                                                                                                  ;
++---------------------------------------------------------------------------------+-------------------------+-------------------------+
+; Option                                                                          ; Setting                 ; Default Value           ;
++---------------------------------------------------------------------------------+-------------------------+-------------------------+
+; Device                                                                          ; AGFB014R24B2E2V         ;                         ;
+; Top-level entity name                                                           ; dcfifo_de_top           ; G2                      ;
+; Family name                                                                     ; Agilex                  ; Cyclone 10 GX           ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                      ; On                      ;
+; Enable compact report table                                                     ; Off                     ; Off                     ;
+; Enable Design Assistant in the compilation flow                                 ; On                      ; On                      ;
+; Design Assistant include IP blocks                                              ; Off                     ; Off                     ;
+; High fanout net threshold for RAM inference                                     ; 15                      ; 15                      ;
+; Design Assistant limit on reported violations per rule                          ; 5000                    ; 5000                    ;
+; Optimization Mode                                                               ; Balanced                ; Balanced                ;
+; Allow Register Retiming                                                         ; On                      ; On                      ;
+; Allow RAM Retiming                                                              ; Off                     ; Off                     ;
+; Allow DSP Retiming                                                              ; Off                     ; Off                     ;
+; Restructure Multiplexers                                                        ; Auto                    ; Auto                    ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                     ; Off                     ;
+; Preserve fewer node names                                                       ; On                      ; On                      ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable                  ; Enable                  ;
+; Verilog Version                                                                 ; Verilog_2001            ; Verilog_2001            ;
+; VHDL Version                                                                    ; VHDL_1993               ; VHDL_1993               ;
+; State Machine Processing                                                        ; Auto                    ; Auto                    ;
+; Safe State Machine                                                              ; Auto                    ; Auto                    ;
+; Iteration limit for constant Verilog loops                                      ; 5000                    ; 5000                    ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                     ; 250                     ;
+; Infer RAMs from Raw Logic                                                       ; On                      ; On                      ;
+; DSP Block Balancing                                                             ; Auto                    ; Auto                    ;
+; NOT Gate Push-Back                                                              ; On                      ; On                      ;
+; Power-Up Don't Care                                                             ; On                      ; On                      ;
+; Remove Redundant Logic Cells                                                    ; Off                     ; Off                     ;
+; Remove Duplicate Registers                                                      ; On                      ; On                      ;
+; Ignore GLOBAL Buffers                                                           ; Off                     ; Off                     ;
+; Ignore LCELL Buffers                                                            ; Off                     ; Off                     ;
+; Ignore SOFT Buffers                                                             ; On                      ; On                      ;
+; Optimization Technique                                                          ; Balanced                ; Balanced                ;
+; Auto Open-Drain Pins                                                            ; On                      ; On                      ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                     ; Off                     ;
+; Auto ROM Replacement                                                            ; On                      ; On                      ;
+; Auto RAM Replacement                                                            ; On                      ; On                      ;
+; Auto DSP Block Replacement                                                      ; On                      ; On                      ;
+; Auto Shift Register Replacement                                                 ; Auto                    ; Auto                    ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                    ; Auto                    ;
+; Physical Shift Register Inference                                               ; On                      ; On                      ;
+; Auto Clock Enable Replacement                                                   ; On                      ; On                      ;
+; Strict RAM Replacement                                                          ; Off                     ; Off                     ;
+; Allow Synchronous Control Signals                                               ; On                      ; On                      ;
+; Force Use of Synchronous Clear Signals                                          ; Off                     ; Off                     ;
+; Auto Resource Sharing                                                           ; Off                     ; Off                     ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                     ; Off                     ;
+; Ignore translate_off and synthesis_off directives                               ; Off                     ; Off                     ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                     ; Off                     ;
+; Synchronization Register Chain Length                                           ; 3                       ; 3                       ;
+; Power Optimization During Synthesis                                             ; Normal compilation      ; Normal compilation      ;
+; HDL message level                                                               ; Level2                  ; Level2                  ;
+; Number of Protected Registers Reported in Synthesis Report                      ; 100                     ; 100                     ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                    ; 5000                    ;
+; Number of Optimized Away Hierarchies Reported in Synthesis Report               ; 100                     ; 100                     ;
+; Group Identical Hierarchies in Optimized Away Hierarchies Report                ; On                      ; On                      ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                    ; 5000                    ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                     ; 100                     ;
+; Clock MUX Protection                                                            ; On                      ; On                      ;
+; Auto Gated Clock Conversion                                                     ; Off                     ; Off                     ;
+; Block Design Naming                                                             ; Auto                    ; Auto                    ;
+; SDC constraint protection                                                       ; Off                     ; Off                     ;
+; Optimization and Constraint Precedence                                          ; Prioritize Optimization ; Prioritize Optimization ;
+; Synthesis Effort                                                                ; Auto                    ; Auto                    ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                      ; On                      ;
+; Analysis & Synthesis Message Level                                              ; Medium                  ; Medium                  ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                    ; Auto                    ;
+; Resource Aware Inference For Block RAM                                          ; On                      ; On                      ;
+; Automatic Parallel Synthesis                                                    ; On                      ; On                      ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                     ; Off                     ;
+; Disable DSP Negate Inferencing                                                  ; Off                     ; Off                     ;
+; Report Parameter Settings                                                       ; On                      ; On                      ;
+; Report Parameter Settings to ASCII                                              ; On                      ; On                      ;
+; Report Source Assignments                                                       ; On                      ; On                      ;
+; Report Source Assignments to ASCII                                              ; On                      ; On                      ;
+; Report Resource Utilization by Entity to ASCII                                  ; On                      ; On                      ;
+; Size of the Latch Report                                                        ; 100                     ; 100                     ;
+; Enable VHDL static assertion support                                            ; Off                     ; Off                     ;
+; Enable SystemVerilog static assertion support                                   ; Off                     ; Off                     ;
+; Enable State Machines Inference                                                 ; On                      ; On                      ;
+; Allow RAMs Inferred In Generate-For Loop For Verilog                            ; Off                     ; Off                     ;
+; Enable formal verification support during compilation                           ; Off                     ; Off                     ;
+; Size of the PR Initial Conditions Report                                        ; 100                     ; 100                     ;
+; Number of Registers with Ignored Power-Up Settings Reported in Synthesis Report ; 500                     ; 500                     ;
+; Report PR Initial Values as Errors                                              ; Off                     ; Off                     ;
+; Fractal Synthesis                                                               ; Off                     ; Off                     ;
+; Aggressive Multiplexer Area Optimization                                        ; Auto                    ; Auto                    ;
+; 6LUT to Extended Mode Conversion                                                ; Auto                    ; Auto                    ;
+; Synthesis Available Resource Multiplier                                         ; 1                       ; 1                       ;
+; Message Level for Unconnected Output Ports                                      ; Warning                 ; Warning                 ;
+; Pack Barrelshifters into Carry Chains for Better Area                           ; Auto                    ; Auto                    ;
+; Initialize Verilog enums to X                                                   ; Off                     ; Off                     ;
+; Enable dynamic report                                                           ; Off                     ; Off                     ;
+; Enable preserve for debug assignments                                           ; Off                     ; Off                     ;
++---------------------------------------------------------------------------------+-------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Synthesis Source Files Read                                                                                                                                                                                                                                                                                                           ;
++----------------------------------------------------------------------------------------------------------------+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------+----------------+----------------------------------+
+; File Name with User-Entered Path                                                                               ; File Type                                       ; File Name with Absolute Path                                                                                   ; Library        ; MD5                              ;
++----------------------------------------------------------------------------------------------------------------+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------+----------------+----------------------------------+
+; ram1.ip                                                                                                        ; User-Specified IP File                          ; /home/bluefalcon/Videos/G2/ram1.ip                                                                             ;                ; 329a89c219f313acc1a21584233b9a89 ;
+; ram1/ram_1port_2010/synth/ram1_ram_1port_2010_evrarkq.v                                                        ; User-Specified Verilog HDL File                 ; /home/bluefalcon/Videos/G2/ram1/ram_1port_2010/synth/ram1_ram_1port_2010_evrarkq.v                             ; ram_1port_2010 ; 995531205f93592922b37e8ad9877cdf ;
+; ram1/synth/ram1.v                                                                                              ; User-Specified Verilog HDL File                 ; /home/bluefalcon/Videos/G2/ram1/synth/ram1.v                                                                   ; ram1           ; 782eadade0d6db9a5d0cdfbeefccf4a3 ;
+; fifo.ip                                                                                                        ; User-Specified IP File                          ; /home/bluefalcon/Videos/G2/fifo.ip                                                                             ;                ; a4f21059d1d5831ba5b31e2fcc3e3f01 ;
+; fifo/fifo_1920/synth/fifo_fifo_1920_cgqugzq.v                                                                  ; User-Specified Verilog HDL File                 ; /home/bluefalcon/Videos/G2/fifo/fifo_1920/synth/fifo_fifo_1920_cgqugzq.v                                       ; fifo_1920      ; cb46bdb3603c2c795717947c8c0de4a2 ;
+; fifo/synth/fifo.v                                                                                              ; User-Specified Verilog HDL File                 ; /home/bluefalcon/Videos/G2/fifo/synth/fifo.v                                                                   ; fifo           ; 28e2cc0e9a9415d95efeb0861bc0c75f ;
+; rom.ip                                                                                                         ; User-Specified IP File                          ; /home/bluefalcon/Videos/G2/rom.ip                                                                              ;                ; 1d77601f6aa6a3feba23d01c0e051cea ;
+; rom/rom_1port_2010/synth/rom_rom_1port_2010_5hpb5ia.v                                                          ; User-Specified Verilog HDL File                 ; /home/bluefalcon/Videos/G2/rom/rom_1port_2010/synth/rom_rom_1port_2010_5hpb5ia.v                               ; rom_1port_2010 ; d9bbe3a47ddd1aea5ae98b0b6b0c91d3 ;
+; rom/synth/rom.v                                                                                                ; User-Specified Verilog HDL File                 ; /home/bluefalcon/Videos/G2/rom/synth/rom.v                                                                     ; rom            ; e69b4c648b100818b41830ca9bb9b3e0 ;
+; read_control_logic.v                                                                                           ; User-Specified Verilog HDL File                 ; /home/bluefalcon/Videos/G2/read_control_logic.v                                                                ;                ; b68044e61119e18d1b58b79f5e37bfef ;
+; write_control_logic.v                                                                                          ; User-Specified Verilog HDL File                 ; /home/bluefalcon/Videos/G2/write_control_logic.v                                                               ;                ; 1b36038bcb9c4f340646bedd5e9fbd7f ;
+; dcfifo_de_top.v                                                                                                ; User-Specified Verilog HDL File                 ; /home/bluefalcon/Videos/G2/dcfifo_de_top.v                                                                     ;                ; a45d9eb3d4a83e248caa3815f007cca0 ;
+; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/altera_syncram.tdf     ; Megafunction                                    ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/altera_syncram.tdf     ; rom_1port_2010 ; b483cfa10f01d6488de335416d05f77a ;
+; cbx.lst                                                                                                        ; Megafunction                                    ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/cbx.lst                ;                ; 9364e54b3730c324baf217a35ed85425 ;
+; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/altera_syncram_impl_f6i4.tdf                                  ; Auto-Generated Megafunction                     ; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/altera_syncram_impl_f6i4.tdf                                  ;                ; 341cf9e66d49b16eeb96c839fba16500 ;
+; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/altera_syncram_s2l1.tdf                                       ; Auto-Generated Megafunction                     ; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/altera_syncram_s2l1.tdf                                       ;                ; c2245dba73d686dda341c1dcba7f310c ;
+; /home/bluefalcon/Videos/G2/mem.mif                                                                             ; Auto-Found Memory Initialization File           ; /home/bluefalcon/Videos/G2/mem.mif                                                                             ;                ; f2395b14ac257b629c966d65c1e5466e ;
+; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/dcfifo.tdf             ; Megafunction                                    ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/dcfifo.tdf             ; fifo_1920      ; 24b31c206530c5631ef7c37e759a78e7 ;
+; lpm_counter.inc                                                                                                ; Megafunction                                    ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/lpm_counter.inc        ;                ; 7f888b1305ddf66f00653c044cb18ac5 ;
+; lpm_add_sub.inc                                                                                                ; Megafunction                                    ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/lpm_add_sub.inc        ;                ; 7d9a330dd309f13aa690c3d0edd88351 ;
+; altdpram.inc                                                                                                   ; Megafunction                                    ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/altdpram.inc           ;                ; ef8da121368208b56cc93fbf1bd671b8 ;
+; a_graycounter.inc                                                                                              ; Megafunction                                    ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/a_graycounter.inc      ;                ; e0cfa3d79dca67edbcf4d8e085622079 ;
+; a_fefifo.inc                                                                                                   ; Megafunction                                    ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/a_fefifo.inc           ;                ; c8498561e0bdc47f87b5548333d65f50 ;
+; a_gray2bin.inc                                                                                                 ; Megafunction                                    ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/a_gray2bin.inc         ;                ; 2466d8920d81838e113e13f4e76e71f2 ;
+; dffpipe.inc                                                                                                    ; Megafunction                                    ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/dffpipe.inc            ;                ; 8dfdb676c11c7bcef0694118a05e0a2d ;
+; alt_sync_fifo.inc                                                                                              ; Megafunction                                    ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/alt_sync_fifo.inc      ;                ; f4c68b9daca4a0e5389631895df300d0 ;
+; lpm_compare.inc                                                                                                ; Megafunction                                    ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/lpm_compare.inc        ;                ; aec4ea1b78f4cda1c3effe18f1abbf63 ;
+; altsyncram_fifo.inc                                                                                            ; Megafunction                                    ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/altsyncram_fifo.inc    ;                ; 120f7d8c61da9805ee5330de430a169e ;
+; aglobal224.inc                                                                                                 ; Megafunction                                    ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/aglobal224.inc         ;                ; 2dfa6dc9d1e6d2c7cb3a4c04bbc02c03 ;
+; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/alt_synch_pipe_iho.tdf                                        ; Auto-Generated Megafunction                     ; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/alt_synch_pipe_iho.tdf                                        ;                ; 7d7d296885209a07ca8a9ac436aee97d ;
+; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/cmpr_ag8.tdf                                                  ; Auto-Generated Megafunction                     ; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/cmpr_ag8.tdf                                                  ;                ; 02d4c6cebd774f1d2c3f9364471549d4 ;
+; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/altera_syncram_impl_6dl4.tdf                                  ; Auto-Generated Megafunction                     ; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/altera_syncram_impl_6dl4.tdf                                  ;                ; 10ff467e2d251dbdd74da717793c643a ;
+; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/dffpipe_37c.tdf                                               ; Auto-Generated Megafunction                     ; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/dffpipe_37c.tdf                                               ;                ; 4e76393713bda3515d97aa6be60b8f72 ;
+; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/altera_syncram_iri1.tdf                                       ; Auto-Generated Megafunction                     ; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/altera_syncram_iri1.tdf                                       ;                ; d307fe50e7d5b20e84a0fa054e250e15 ;
+; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/dcfifo_e242.tdf                                               ; Auto-Generated Megafunction                     ; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/dcfifo_e242.tdf                                               ;                ; eb9f537efc5a036f6ed4c88db50c94e0 ;
+; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/altera_gray_counter.sv ; Megafunction                                    ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/altera_gray_counter.sv ; altera_work    ; 9ebb2ebe60982c064e8908562133dba4 ;
+; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/altera_syncram_impl_p8e4.tdf                                  ; Auto-Generated Megafunction                     ; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/altera_syncram_impl_p8e4.tdf                                  ;                ; f4dfb32d7fe0bf2d41f204e43266cfa8 ;
+; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/altera_syncram_0ap1.tdf                                       ; Auto-Generated Megafunction                     ; /home/bluefalcon/Videos/G2/tmp-clearbox/G2/27498/altera_syncram_0ap1.tdf                                       ;                ; 3406e8980be4b54415c42a97cd36e15c ;
+; fifo/fifo_1920/synth/fifo_fifo_1920_cgqugzq.sdc                                                                ; User-Specified Synopsys Design Constraints File ; fifo/fifo_1920/synth/fifo_fifo_1920_cgqugzq.sdc                                                                ;                ; 25eb67f862977c3676c99c9cd6dacf4c ;
++----------------------------------------------------------------------------------------------------------------+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------+----------------+----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Synthesis IP Cores Summary                                                                                   ;
++-------------------+--------------+---------+--------------+--------------+-----------------+-----------------+
+; Vendor            ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance ; IP Include File ;
++-------------------+--------------+---------+--------------+--------------+-----------------+-----------------+
+; Intel Corporation ; ram_1port    ; 20.1.0  ; N/A          ; N/A          ; ram             ; ram1.ip         ;
+; Intel Corporation ; rom_1port    ; 20.1.0  ; N/A          ; N/A          ; myrom           ; rom.ip          ;
+; Intel Corporation ; fifo         ; 19.2.0  ; N/A          ; N/A          ; dcfifo          ; fifo.ip         ;
++-------------------+--------------+---------+--------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Synthesis Partition Summary                                                                ;
++----------------+----------------+---------+--------------+-------+-------------------------+
+; Partition Name ; Hierarchy Path ; Type    ; Preservation ; Empty ; Partition Database File ;
++----------------+----------------+---------+--------------+-------+-------------------------+
+; root_partition ; |              ; Default ;              ;       ;                         ;
++----------------+----------------+---------+--------------+-------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Source Assignments for myrom|rom_1port_0|altera_syncram_component|auto_generated|altera_syncram_impl1                   ;
++---------------------------------+--------------------+------+----+------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To ; Source Location                                      ;
++---------------------------------+--------------------+------+----+------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -  ; tmp-clearbox/G2/27498/altera_syncram_impl_f6i4.tdf:0 ;
++---------------------------------+--------------------+------+----+------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source Assignments for dcfifo|fifo_0|dcfifo_component                                                                                                      ;
++---------------------------------+-------+------+----+------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To ; Source Location                                                                                      ;
++---------------------------------+-------+------+----+------------------------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -  ; /media/bluefalcon/SSD2/Software/Intel/Quartus_prime_pro/quartus/libraries/megafunctions/dcfifo.tdf:0 ;
++---------------------------------+-------+------+----+------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Source Assignments for dcfifo|fifo_0|dcfifo_component|auto_generated                                     ;
++---------------------------------------+-------+------+---------+-----------------------------------------+
+; Assignment                            ; Value ; From ; To      ; Source Location                         ;
++---------------------------------------+-------+------+---------+-----------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION       ; OFF   ; -    ; -       ; tmp-clearbox/G2/27498/dcfifo_e242.tdf:0 ;
+; REMOVE_DUPLICATE_REGISTERS            ; OFF   ; -    ; -       ; tmp-clearbox/G2/27498/dcfifo_e242.tdf:0 ;
+; SYNCHRONIZER_IDENTIFICATION           ; OFF   ; -    ; -       ; tmp-clearbox/G2/27498/dcfifo_e242.tdf:0 ;
+; SYNCHRONIZATION_REGISTER_CHAIN_LENGTH ; 2     ; -    ; -       ; tmp-clearbox/G2/27498/dcfifo_e242.tdf:0 ;
+; POWER_UP_LEVEL                        ; LOW   ; -    ; wrptr_g ; tmp-clearbox/G2/27498/dcfifo_e242.tdf:0 ;
++---------------------------------------+-------+------+---------+-----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Source Assignments for dcfifo|fifo_0|dcfifo_component|auto_generated|fifo_altera_syncram|altera_syncram_impl1           ;
++---------------------------------+--------------------+------+----+------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To ; Source Location                                      ;
++---------------------------------+--------------------+------+----+------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -  ; tmp-clearbox/G2/27498/altera_syncram_impl_6dl4.tdf:0 ;
++---------------------------------+--------------------+------+----+------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Source Assignments for dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp                                      ;
++-----------------------------+------------------------+------+----+------------------------------------------------+
+; Assignment                  ; Value                  ; From ; To ; Source Location                                ;
++-----------------------------+------------------------+------+----+------------------------------------------------+
+; X_ON_VIOLATION_OPTION       ; OFF                    ; -    ; -  ; tmp-clearbox/G2/27498/alt_synch_pipe_iho.tdf:0 ;
+; SYNCHRONIZER_IDENTIFICATION ; FORCED_IF_ASYNCHRONOUS ; -    ; -  ; tmp-clearbox/G2/27498/alt_synch_pipe_iho.tdf:0 ;
+; PRESERVE_REGISTER           ; ON                     ; -    ; -  ; tmp-clearbox/G2/27498/alt_synch_pipe_iho.tdf:0 ;
+; DONT_MERGE_REGISTER         ; ON                     ; -    ; -  ; tmp-clearbox/G2/27498/alt_synch_pipe_iho.tdf:0 ;
+; ADV_NETLIST_OPT_ALLOWED     ; NEVER_ALLOW            ; -    ; -  ; tmp-clearbox/G2/27498/alt_synch_pipe_iho.tdf:0 ;
++-----------------------------+------------------------+------+----+------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Source Assignments for dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3         ;
++---------------------------------+-------+------+----+-----------------------------------------+
+; Assignment                      ; Value ; From ; To ; Source Location                         ;
++---------------------------------+-------+------+----+-----------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -  ; tmp-clearbox/G2/27498/dffpipe_37c.tdf:0 ;
++---------------------------------+-------+------+----+-----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Source Assignments for dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp                                      ;
++-----------------------------+------------------------+------+----+------------------------------------------------+
+; Assignment                  ; Value                  ; From ; To ; Source Location                                ;
++-----------------------------+------------------------+------+----+------------------------------------------------+
+; X_ON_VIOLATION_OPTION       ; OFF                    ; -    ; -  ; tmp-clearbox/G2/27498/alt_synch_pipe_iho.tdf:0 ;
+; SYNCHRONIZER_IDENTIFICATION ; FORCED_IF_ASYNCHRONOUS ; -    ; -  ; tmp-clearbox/G2/27498/alt_synch_pipe_iho.tdf:0 ;
+; PRESERVE_REGISTER           ; ON                     ; -    ; -  ; tmp-clearbox/G2/27498/alt_synch_pipe_iho.tdf:0 ;
+; DONT_MERGE_REGISTER         ; ON                     ; -    ; -  ; tmp-clearbox/G2/27498/alt_synch_pipe_iho.tdf:0 ;
+; ADV_NETLIST_OPT_ALLOWED     ; NEVER_ALLOW            ; -    ; -  ; tmp-clearbox/G2/27498/alt_synch_pipe_iho.tdf:0 ;
++-----------------------------+------------------------+------+----+------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Source Assignments for dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3         ;
++---------------------------------+-------+------+----+-----------------------------------------+
+; Assignment                      ; Value ; From ; To ; Source Location                         ;
++---------------------------------+-------+------+----+-----------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -  ; tmp-clearbox/G2/27498/dffpipe_37c.tdf:0 ;
++---------------------------------+-------+------+----+-----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Source Assignments for ram|ram_1port_0|altera_syncram_component|auto_generated|altera_syncram_impl1                     ;
++---------------------------------+--------------------+------+----+------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To ; Source Location                                      ;
++---------------------------------+--------------------+------+----+------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -  ; tmp-clearbox/G2/27498/altera_syncram_impl_p8e4.tdf:0 ;
++---------------------------------+--------------------+------+----+------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: myrom|rom_1port_0|altera_syncram_component                          ;
++------------------------------------------------------------+------------------------------------+----------------+
+; Parameter Name                                             ; Value                              ; Type           ;
++------------------------------------------------------------+------------------------------------+----------------+
+; ACF_BLOCK_RAM_AND_MLAB_EQUIVALENT_PAUSED_READ_CAPABILITIES ; DONT CARE                          ; Untyped        ;
+; ACF_BLOCK_RAM_AND_MLAB_EQUIVALENT_POWER_UP_CONDITIONS      ; AUTO                               ; Untyped        ;
+; ACF_DISABLE_MLAB_RAM_USE                                   ; FALSE                              ; Untyped        ;
+; ACF_IMPLEMENT_MLAB_IN_16_BIT_DEEP_MODE                     ; FALSE                              ; Untyped        ;
+; ADDRESS_ACLR_A                                             ; NONE                               ; Untyped        ;
+; ADDRESS_ACLR_B                                             ; NONE                               ; Untyped        ;
+; ADDRESS_REG_B                                              ; CLOCK1                             ; Untyped        ;
+; BYTE_SIZE                                                  ; 8                                  ; Untyped        ;
+; BYTEENA_REG_B                                              ; CLOCK1                             ; Untyped        ;
+; CLKEN_POWER_OPTIMIZATION                                   ; OFF                                ; Untyped        ;
+; CLOCK_DUTY_CYCLE_DEPENDENCE                                ; AUTO                               ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                                        ; USE_INPUT_CLKEN                    ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                                        ; USE_INPUT_CLKEN                    ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A                                       ; BYPASS                             ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B                                       ; NORMAL                             ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A                                      ; BYPASS                             ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B                                      ; NORMAL                             ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED                                 ; FALSE                              ; Untyped        ;
+; ENABLE_COHERENT_READ                                       ; FALSE                              ; Untyped        ;
+; ENABLE_ECC                                                 ; FALSE                              ; Untyped        ;
+; ENABLE_ECC_ENCODER_BYPASS                                  ; FALSE                              ; Untyped        ;
+; ENABLE_FORCE_TO_ZERO                                       ; FALSE                              ; Untyped        ;
+; ENABLE_RUNTIME_MOD                                         ; NO                                 ; Untyped        ;
+; IMPLEMENT_IN_LES                                           ; OFF                                ; Untyped        ;
+; INDATA_REG_B                                               ; CLOCK1                             ; Untyped        ;
+; INIT_FILE                                                  ; /home/bluefalcon/Videos/G2/mem.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                                           ; PORT_A                             ; Untyped        ;
+; init_file_restructured                                     ; UNUSED                             ; Untyped        ;
+; INSTANCE_NAME                                              ; UNUSED                             ; Untyped        ;
+; LOW_POWER_MODE                                             ; AUTO                               ; Untyped        ;
+; MAXIMUM_DEPTH                                              ; 0                                  ; Untyped        ;
+; NUMWORDS_A                                                 ; 1024                               ; Signed Integer ;
+; NUMWORDS_B                                                 ; 0                                  ; Untyped        ;
+; OPERATION_MODE                                             ; ROM                                ; Untyped        ;
+; OPTIMIZATION_OPTION                                        ; AUTO                               ; Untyped        ;
+; OUTDATA_ACLR_A                                             ; NONE                               ; Untyped        ;
+; OUTDATA_ACLR_B                                             ; NONE                               ; Untyped        ;
+; OUTDATA_REG_A                                              ; CLOCK0                             ; Untyped        ;
+; OUTDATA_REG_B                                              ; UNREGISTERED                       ; Untyped        ;
+; OUTDATA_SCLR_A                                             ; NONE                               ; Untyped        ;
+; OUTDATA_SCLR_B                                             ; NONE                               ; Untyped        ;
+; POWER_UP_UNINITIALIZED                                     ; FALSE                              ; Untyped        ;
+; RAM_BLOCK_TYPE                                             ; AUTO                               ; Untyped        ;
+; RDCONTROL_REG_B                                            ; CLOCK1                             ; Untyped        ;
+; RDEN_POWER_OPTIMIZATION                                    ; OFF                                ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS                         ; DONT_CARE                          ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A                              ; NEW_DATA_NO_NBE_READ               ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B                              ; NEW_DATA_NO_NBE_READ               ; Untyped        ;
+; WIDTH_A                                                    ; 32                                 ; Signed Integer ;
+; WIDTH_B                                                    ; 1                                  ; Untyped        ;
+; WIDTH_BYTEENA_A                                            ; 1                                  ; Signed Integer ;
+; WIDTH_BYTEENA_B                                            ; 1                                  ; Untyped        ;
+; WIDTH_ECCENCPARITY                                         ; 8                                  ; Untyped        ;
+; WIDTH_ECCSTATUS                                            ; 3                                  ; Untyped        ;
+; WIDTHAD2_A                                                 ; 1                                  ; Untyped        ;
+; WIDTHAD2_B                                                 ; 1                                  ; Untyped        ;
+; WIDTHAD_A                                                  ; 10                                 ; Signed Integer ;
+; WIDTHAD_B                                                  ; 1                                  ; Untyped        ;
+; WREN_POWER_OPTIMIZATION                                    ; OFF                                ; Untyped        ;
+; CBXI_PARAMETER                                             ; altera_syncram_s2l1                ; Untyped        ;
++------------------------------------------------------------+------------------------------------+----------------+
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: wrctrl_logic ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; IDLE           ; 0     ; Signed Integer                   ;
+; WRITE          ; 1     ; Signed Integer                   ;
+; INCADR         ; 2     ; Signed Integer                   ;
+; WAIT           ; 3     ; Signed Integer                   ;
+; DONE           ; 4     ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dcfifo|fifo_0|dcfifo_component ;
++-------------------------+-------------+-------------------------------------+
+; Parameter Name          ; Value       ; Type                                ;
++-------------------------+-------------+-------------------------------------+
+; WIDTH_BYTEENA           ; 1           ; Untyped                             ;
+; AUTO_CARRY_CHAINS       ; ON          ; Untyped                             ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; Untyped                             ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; Untyped                             ;
+; LPM_WIDTH               ; 32          ; Signed Integer                      ;
+; LPM_NUMWORDS            ; 1024        ; Signed Integer                      ;
+; LPM_WIDTHU              ; 10          ; Signed Integer                      ;
+; LPM_SHOWAHEAD           ; OFF         ; Untyped                             ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                             ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                             ;
+; USE_EAB                 ; ON          ; Untyped                             ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                             ;
+; ENABLE_ECC              ; FALSE       ; Untyped                             ;
+; DELAY_RDUSEDW           ; 1           ; Untyped                             ;
+; DELAY_WRUSEDW           ; 1           ; Untyped                             ;
+; RDSYNC_DELAYPIPE        ; 4           ; Signed Integer                      ;
+; WRSYNC_DELAYPIPE        ; 4           ; Signed Integer                      ;
+; CLOCKS_ARE_SYNCHRONIZED ; FALSE       ; Untyped                             ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                             ;
+; DEVICE_FAMILY           ; Agilex      ; Untyped                             ;
+; ADD_USEDW_MSB_BIT       ; OFF         ; Untyped                             ;
+; WRITE_ACLR_SYNCH        ; OFF         ; Untyped                             ;
+; READ_ACLR_SYNCH         ; OFF         ; Untyped                             ;
+; CBXI_PARAMETER          ; dcfifo_e242 ; Untyped                             ;
++-------------------------+-------------+-------------------------------------+
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rdctrl_logic ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; IDLE           ; 0     ; Signed Integer                   ;
+; INCADR         ; 1     ; Signed Integer                   ;
+; WRITE          ; 2     ; Signed Integer                   ;
+; WAIT           ; 3     ; Signed Integer                   ;
+; RAM_DEPTH      ; 255   ; Signed Integer                   ;
+; FIFO_DEPTH     ; 64    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram|ram_1port_0|altera_syncram_component              ;
++------------------------------------------------------------+----------------------+----------------+
+; Parameter Name                                             ; Value                ; Type           ;
++------------------------------------------------------------+----------------------+----------------+
+; ACF_BLOCK_RAM_AND_MLAB_EQUIVALENT_PAUSED_READ_CAPABILITIES ; DONT CARE            ; Untyped        ;
+; ACF_BLOCK_RAM_AND_MLAB_EQUIVALENT_POWER_UP_CONDITIONS      ; AUTO                 ; Untyped        ;
+; ACF_DISABLE_MLAB_RAM_USE                                   ; FALSE                ; Untyped        ;
+; ACF_IMPLEMENT_MLAB_IN_16_BIT_DEEP_MODE                     ; FALSE                ; Untyped        ;
+; ADDRESS_ACLR_A                                             ; UNUSED               ; Untyped        ;
+; ADDRESS_ACLR_B                                             ; NONE                 ; Untyped        ;
+; ADDRESS_REG_B                                              ; CLOCK1               ; Untyped        ;
+; BYTE_SIZE                                                  ; 8                    ; Untyped        ;
+; BYTEENA_REG_B                                              ; CLOCK1               ; Untyped        ;
+; CLKEN_POWER_OPTIMIZATION                                   ; OFF                  ; Untyped        ;
+; CLOCK_DUTY_CYCLE_DEPENDENCE                                ; AUTO                 ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                                        ; USE_INPUT_CLKEN      ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                                        ; USE_INPUT_CLKEN      ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A                                       ; BYPASS               ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B                                       ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A                                      ; BYPASS               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B                                      ; NORMAL               ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED                                 ; FALSE                ; Untyped        ;
+; ENABLE_COHERENT_READ                                       ; FALSE                ; Untyped        ;
+; ENABLE_ECC                                                 ; FALSE                ; Untyped        ;
+; ENABLE_ECC_ENCODER_BYPASS                                  ; FALSE                ; Untyped        ;
+; ENABLE_FORCE_TO_ZERO                                       ; FALSE                ; Untyped        ;
+; ENABLE_RUNTIME_MOD                                         ; NO                   ; Untyped        ;
+; IMPLEMENT_IN_LES                                           ; OFF                  ; Untyped        ;
+; INDATA_REG_B                                               ; CLOCK1               ; Untyped        ;
+; INIT_FILE                                                  ; UNUSED               ; Untyped        ;
+; INIT_FILE_LAYOUT                                           ; PORT_A               ; Untyped        ;
+; init_file_restructured                                     ; UNUSED               ; Untyped        ;
+; INSTANCE_NAME                                              ; UNUSED               ; Untyped        ;
+; LOW_POWER_MODE                                             ; AUTO                 ; Untyped        ;
+; MAXIMUM_DEPTH                                              ; 0                    ; Untyped        ;
+; NUMWORDS_A                                                 ; 1024                 ; Signed Integer ;
+; NUMWORDS_B                                                 ; 0                    ; Untyped        ;
+; OPERATION_MODE                                             ; SINGLE_PORT          ; Untyped        ;
+; OPTIMIZATION_OPTION                                        ; AUTO                 ; Untyped        ;
+; OUTDATA_ACLR_A                                             ; CLEAR0               ; Untyped        ;
+; OUTDATA_ACLR_B                                             ; NONE                 ; Untyped        ;
+; OUTDATA_REG_A                                              ; CLOCK0               ; Untyped        ;
+; OUTDATA_REG_B                                              ; UNREGISTERED         ; Untyped        ;
+; OUTDATA_SCLR_A                                             ; NONE                 ; Untyped        ;
+; OUTDATA_SCLR_B                                             ; NONE                 ; Untyped        ;
+; POWER_UP_UNINITIALIZED                                     ; FALSE                ; Untyped        ;
+; RAM_BLOCK_TYPE                                             ; AUTO                 ; Untyped        ;
+; RDCONTROL_REG_B                                            ; CLOCK1               ; Untyped        ;
+; RDEN_POWER_OPTIMIZATION                                    ; OFF                  ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS                         ; DONT_CARE            ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A                              ; DONT_CARE            ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B                              ; NEW_DATA_NO_NBE_READ ; Untyped        ;
+; WIDTH_A                                                    ; 32                   ; Signed Integer ;
+; WIDTH_B                                                    ; 1                    ; Untyped        ;
+; WIDTH_BYTEENA_A                                            ; 1                    ; Signed Integer ;
+; WIDTH_BYTEENA_B                                            ; 1                    ; Untyped        ;
+; WIDTH_ECCENCPARITY                                         ; 8                    ; Untyped        ;
+; WIDTH_ECCSTATUS                                            ; 3                    ; Untyped        ;
+; WIDTHAD2_A                                                 ; 1                    ; Untyped        ;
+; WIDTHAD2_B                                                 ; 1                    ; Untyped        ;
+; WIDTHAD_A                                                  ; 10                   ; Signed Integer ;
+; WIDTHAD_B                                                  ; 1                    ; Untyped        ;
+; WREN_POWER_OPTIMIZATION                                    ; OFF                  ; Untyped        ;
+; CBXI_PARAMETER                                             ; altera_syncram_0ap1  ; Untyped        ;
++------------------------------------------------------------+----------------------+----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition "root_partition" Resource Utilization by Entity                                                                                                                                                                                                                  ;
++------------------------------------------+---------------------+---------------------------+-------------------+------------+------+----------------------------------------------------------------------------------------+-----------------------------+----------------+
+; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Full Hierarchy Name                                                                    ; Entity Name                 ; Library Name   ;
++------------------------------------------+---------------------+---------------------------+-------------------+------------+------+----------------------------------------------------------------------------------------+-----------------------------+----------------+
+; |                                        ; 130 (1)             ; 160 (1)                   ; 98304             ; 0          ; 0    ; |                                                                                      ; dcfifo_de_top               ; altera_work    ;
+;    |dcfifo|                              ; 59 (0)              ; 121 (0)                   ; 32768             ; 0          ; 0    ; dcfifo                                                                                 ; fifo                        ; fifo           ;
+;       |fifo_0|                           ; 59 (0)              ; 121 (0)                   ; 32768             ; 0          ; 0    ; dcfifo|fifo_0                                                                          ; fifo_fifo_1920_cgqugzq      ; fifo_1920      ;
+;          |dcfifo_component|              ; 59 (0)              ; 121 (0)                   ; 32768             ; 0          ; 0    ; dcfifo|fifo_0|dcfifo_component                                                         ; dcfifo                      ; fifo_1920      ;
+;             |auto_generated|             ; 59 (6)              ; 121 (33)                  ; 32768             ; 0          ; 0    ; dcfifo|fifo_0|dcfifo_component|auto_generated                                          ; dcfifo_e242                 ; altera_work    ;
+;                |fifo_altera_syncram|     ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; dcfifo|fifo_0|dcfifo_component|auto_generated|fifo_altera_syncram                      ; altera_syncram_iri1         ; altera_work    ;
+;                   |altera_syncram_impl1| ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; dcfifo|fifo_0|dcfifo_component|auto_generated|fifo_altera_syncram|altera_syncram_impl1 ; altera_syncram_impl_6dl4    ; altera_work    ;
+;                |rdempty_eq_comp|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; dcfifo|fifo_0|dcfifo_component|auto_generated|rdempty_eq_comp                          ; cmpr_ag8                    ; altera_work    ;
+;                |rdptr_g1p|               ; 23 (23)             ; 22 (22)                   ; 0                 ; 0          ; 0    ; dcfifo|fifo_0|dcfifo_component|auto_generated|rdptr_g1p                                ; altera_gray_counter         ; altera_work    ;
+;                |rs_dgwp|                 ; 0 (0)               ; 22 (0)                    ; 0                 ; 0          ; 0    ; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp                                  ; alt_synch_pipe_iho          ; altera_work    ;
+;                   |dffpipe3|             ; 0 (0)               ; 22 (22)                   ; 0                 ; 0          ; 0    ; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3                         ; dffpipe_37c                 ; altera_work    ;
+;                |wrfull_eq_comp|          ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; dcfifo|fifo_0|dcfifo_component|auto_generated|wrfull_eq_comp                           ; cmpr_ag8                    ; altera_work    ;
+;                |wrptr_g1p|               ; 22 (22)             ; 22 (22)                   ; 0                 ; 0          ; 0    ; dcfifo|fifo_0|dcfifo_component|auto_generated|wrptr_g1p                                ; altera_gray_counter         ; altera_work    ;
+;                |ws_dgrp|                 ; 0 (0)               ; 22 (0)                    ; 0                 ; 0          ; 0    ; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp                                  ; alt_synch_pipe_iho          ; altera_work    ;
+;                   |dffpipe3|             ; 0 (0)               ; 22 (22)                   ; 0                 ; 0          ; 0    ; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3                         ; dffpipe_37c                 ; altera_work    ;
+;    |myrom|                               ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; myrom                                                                                  ; rom                         ; rom            ;
+;       |rom_1port_0|                      ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; myrom|rom_1port_0                                                                      ; rom_rom_1port_2010_5hpb5ia  ; rom_1port_2010 ;
+;          |altera_syncram_component|      ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; myrom|rom_1port_0|altera_syncram_component                                             ; altera_syncram              ; rom_1port_2010 ;
+;             |auto_generated|             ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; myrom|rom_1port_0|altera_syncram_component|auto_generated                              ; altera_syncram_s2l1         ; altera_work    ;
+;                |altera_syncram_impl1|    ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; myrom|rom_1port_0|altera_syncram_component|auto_generated|altera_syncram_impl1         ; altera_syncram_impl_f6i4    ; altera_work    ;
+;    |ram|                                 ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; ram                                                                                    ; ram1                        ; ram1           ;
+;       |ram_1port_0|                      ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; ram|ram_1port_0                                                                        ; ram1_ram_1port_2010_evrarkq ; ram_1port_2010 ;
+;          |altera_syncram_component|      ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; ram|ram_1port_0|altera_syncram_component                                               ; altera_syncram              ; rom_1port_2010 ;
+;             |auto_generated|             ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; ram|ram_1port_0|altera_syncram_component|auto_generated                                ; altera_syncram_0ap1         ; altera_work    ;
+;                |altera_syncram_impl1|    ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; ram|ram_1port_0|altera_syncram_component|auto_generated|altera_syncram_impl1           ; altera_syncram_impl_p8e4    ; altera_work    ;
+;    |rdctrl_logic|                        ; 47 (47)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; rdctrl_logic                                                                           ; read_control_logic          ; altera_work    ;
+;    |wrctrl_logic|                        ; 23 (23)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; wrctrl_logic                                                                           ; write_control_logic         ; altera_work    ;
++------------------------------------------+---------------------+---------------------------+-------------------+------------+------+----------------------------------------------------------------------------------------+-----------------------------+----------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------+
+; State Machine - Summary                                                        ;
++--------------------+------------------+------------+----------------+----------+
+; Name               ; Number of States ; Using aclr ; Encoding Style ; Safeness ;
++--------------------+------------------+------------+----------------+----------+
+; wrctrl_logic|state ; 5                ; Yes        ; One-Hot        ; Safe     ;
+; rdctrl_logic|state ; 4                ; Yes        ; One-Hot        ; Safe     ;
++--------------------+------------------+------------+----------------+----------+
+
+
+Encoding Type: Safe One-Hot
++----------------------------------------------------------------------------------+
+; State Machine - wrctrl_logic|state                                               ;
++--------------+------------+--------------+-------------+------------+------------+
+; Name         ; state.WAIT ; state.INCADR ; state.WRITE ; state.IDLE ; state.DONE ;
++--------------+------------+--------------+-------------+------------+------------+
+; state.IDLE   ; 0          ; 0            ; 0           ; 0          ; 0          ;
+; state.WRITE  ; 0          ; 0            ; 1           ; 1          ; 0          ;
+; state.INCADR ; 0          ; 1            ; 0           ; 1          ; 0          ;
+; state.WAIT   ; 1          ; 0            ; 0           ; 1          ; 0          ;
+; state.DONE   ; 0          ; 0            ; 0           ; 1          ; 1          ;
++--------------+------------+--------------+-------------+------------+------------+
+
+
+Encoding Type: Safe One-Hot
++---------------------------------------------------------------------+
+; State Machine - rdctrl_logic|state                                  ;
++--------------+------------+-------------+--------------+------------+
+; Name         ; state.WAIT ; state.WRITE ; state.INCADR ; state.IDLE ;
++--------------+------------+-------------+--------------+------------+
+; state.IDLE   ; 0          ; 0           ; 0            ; 0          ;
+; state.INCADR ; 0          ; 0           ; 1            ; 1          ;
+; state.WRITE  ; 0          ; 1           ; 0            ; 1          ;
+; state.WAIT   ; 1          ; 0           ; 0            ; 1          ;
++--------------+------------+-------------+--------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Protected by Synthesis                                                                                                                                                                                                                                       ;
++---------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+----------------------------------------------------------------------------+
+; Register Name                                                             ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ; Cannot be Retimed (Protected by Synthesis Attribute or Quartus Assignment) ;
++---------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+----------------------------------------------------------------------------+
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe5a[0]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe5a[1]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe5a[2]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe5a[3]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe5a[4]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe5a[5]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe5a[6]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe5a[7]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe5a[8]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe5a[9]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe5a[10] ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe4a[0]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe4a[1]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe4a[2]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe4a[3]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe4a[4]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe4a[5]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe4a[6]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe4a[7]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe4a[8]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe4a[9]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe3|dffe4a[10] ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe5a[0]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe5a[1]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe5a[2]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe5a[3]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe5a[4]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe5a[5]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe5a[6]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe5a[7]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe5a[8]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe5a[9]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe5a[10] ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe4a[0]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe4a[1]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe4a[2]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe4a[3]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe4a[4]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe4a[5]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe4a[6]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe4a[7]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe4a[8]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe4a[9]  ; yes                                                              ; yes                                        ; yes                                                                        ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe3|dffe4a[10] ; yes                                                              ; yes                                        ; yes                                                                        ;
+; Total number of protected registers is 44                                 ;                                                                  ;                                            ;                                                                            ;
++---------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+----------------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; wrctrl_logic|state~0                  ; Lost fanout        ;
+; wrctrl_logic|state~1                  ; Lost fanout        ;
+; rdctrl_logic|state~0                  ; Lost fanout        ;
+; rdctrl_logic|state~1                  ; Lost fanout        ;
+; Total Number of Removed Registers = 4 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------------+
+; General Register Statistics for Partition "root_partition" ;
++----------------------------------------------+-------------+
+; Statistic                                    ; Value       ;
++----------------------------------------------+-------------+
+; Total registers                              ; 160         ;
+; Number of registers using Synchronous Clear  ; 19          ;
+; Number of registers using Synchronous Load   ; 0           ;
+; Number of registers using Asynchronous Clear ; 160         ;
+; Number of registers using Asynchronous Load  ; 0           ;
+; Number of registers using Clock Enable       ; 95          ;
+; Number of registers using Preset             ; 0           ;
++----------------------------------------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Inverted Register Statistics                                               ;
++------------------------------------------------------------------+---------+
+; Inverted Register                                                ; Fan out ;
++------------------------------------------------------------------+---------+
+; rdctrl_logic|addr_o[0]                                           ; 2       ;
+; rdctrl_logic|addr_o[1]                                           ; 2       ;
+; rdctrl_logic|addr_o[2]                                           ; 2       ;
+; rdctrl_logic|addr_o[3]                                           ; 2       ;
+; rdctrl_logic|addr_o[4]                                           ; 2       ;
+; rdctrl_logic|addr_o[5]                                           ; 2       ;
+; rdctrl_logic|addr_o[6]                                           ; 2       ;
+; rdctrl_logic|addr_o[7]                                           ; 2       ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rdptr_g1p|q[0]     ; 2       ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|rdptr_g1p|q_bin[1] ; 2       ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|wrptr_g1p|q[0]     ; 1       ;
+; dcfifo|fifo_0|dcfifo_component|auto_generated|wrptr_g1p|q_bin[1] ; 2       ;
+; Total number of inverted registers = 12                          ;         ;
++------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+-------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ; Restructuring Performed ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+-------------------------+
+; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; rdctrl_logic|word_count_o[8] ; Yes                     ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; wrctrl_logic|addr_o[4]       ; Yes                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; rdctrl_logic|addr_o[8]       ; Yes                     ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; rdctrl_logic|addr_o[0]       ; Yes                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+-------------------------+
+
+
++---------------------------------------------------------------+
+; Preserve for Debug Assignments for Partition "root_partition" ;
++------+--------+-----------------------------------------------+
+; Name ; Status ; Notes                                         ;
++------+--------+-----------------------------------------------+
+Notes: Table created because there is an active PRESERVE_FOR_DEBUG_ENABLE in the project, even though there are no tagged names within the partition.
+
+
++------------------------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Partition "root_partition" ;
++------------------------+-----------------------------------------+
+; Type                   ; Count                                   ;
++------------------------+-----------------------------------------+
+; boundary_port          ; 43                                      ;
+; tennm_ff               ; 160                                     ;
+;     CLR                ; 65                                      ;
+;     ENA CLR            ; 76                                      ;
+;     ENA CLR SCLR       ; 19                                      ;
+; tennm_lcell_comb       ; 130                                     ;
+;     arith              ; 49                                      ;
+;         1 data inputs  ; 47                                      ;
+;         2 data inputs  ; 2                                       ;
+;     normal             ; 81                                      ;
+;         1 data inputs  ; 20                                      ;
+;         2 data inputs  ; 21                                      ;
+;         4 data inputs  ; 6                                       ;
+;         5 data inputs  ; 12                                      ;
+;         6 data inputs  ; 22                                      ;
+; tennm_ram_block        ; 96                                      ;
+;                        ;                                         ;
+; Number of carry chains ; 5                                       ;
+; Max carry chain length ; 10                                      ;
+;                        ;                                         ;
+; Max LUT depth          ; 3.00                                    ;
+; Average LUT depth      ; 1.23                                    ;
++------------------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Synthesis Resource Usage Summary for Partition "root_partition" ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Estimate of Logic utilization (ALMs needed) ; 94                ;
+;                                             ;                   ;
+; Combinational ALUT usage for logic          ; 130               ;
+;     -- 8 input functions                    ; 0                 ;
+;     -- 7 input functions                    ; 0                 ;
+;     -- 6 input functions                    ; 22                ;
+;     -- 5 input functions                    ; 12                ;
+;     -- 4 input functions                    ; 6                 ;
+;     -- <=3 input functions                  ; 90                ;
+;                                             ;                   ;
+; Dedicated logic registers                   ; 160               ;
+;                                             ;                   ;
+; I/O pins                                    ; 43                ;
+; Total MLAB memory bits                      ; 0                 ;
+; Total block memory bits                     ; 98304             ;
+;                                             ;                   ;
+; Total DSP Blocks                            ; 0                 ;
+;     -- [A] Total Fixed Point DSP Blocks     ; 0                 ;
+;     -- [B] Total Floating Point DSP Blocks  ; 0                 ;
+;                                             ;                   ;
+; Maximum fan-out node                        ; reset             ;
+; Maximum fan-out                             ; 224               ;
+; Total fan-out                               ; 2640              ;
+; Average fan-out                             ; 6.15              ;
++---------------------------------------------+-------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Synthesis RAM Summary for Partition "root_partition"                                                                                                                                                                                     ;
++-------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------------------------------------+
+; Name                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                ;
++-------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------------------------------------+
+; dcfifo|fifo_0|dcfifo_component|auto_generated|fifo_altera_syncram|altera_syncram_impl1|ALTERA_SYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 32           ; 1024         ; 32           ; 32768 ; None                               ;
+; myrom|rom_1port_0|altera_syncram_component|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM         ; AUTO ; Simple Dual Port ; 1024         ; 32           ; 1024         ; 32           ; 32768 ; /home/bluefalcon/Videos/G2/mem.mif ;
+; ram|ram_1port_0|altera_syncram_component|auto_generated|altera_syncram_impl1|ALTERA_SYNCRAM           ; AUTO ; Simple Dual Port ; 1024         ; 32           ; 1024         ; 32           ; 32768 ; None                               ;
++-------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; General Warnings                                                                                                                                                                                                                                           ;
++------------+------------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Message ID ; Severity         ; Count ; Sample Warning                                                                                                                                                                                                     ;
++------------+------------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 20759      ; Critical Warning ; 1     ; Use the Reset Release IP in Intel Agilex FPGA designs to ensure a successful configuration. For more information about the Reset Release IP, refer to the Intel Agilex Configuration User Guide.                   ;
+; 21620      ; Warning          ; 1     ; Design Assistant Results: 1 of 1 High severity rules issued violations in snapshot 'partitioned'. Please refer to DRC report '/home/bluefalcon/Videos/G2/output_files/G2.drc.partitioned.rpt' for more information ;
++------------+------------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------+
+; Synthesis Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Synthesis
+    Info: Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
+    Info: Processing started: Thu Jan  4 18:09:24 2024
+    Info: System process ID: 27498
+Info: Command: quartus_syn --read_settings_files=on --write_settings_files=off G2 -c G2
+Info: qis_default_flow_script.tcl version: #1
+Info: Initializing Synthesis...
+Info: Project = "G2"
+Info: Revision = "G2"
+Info: Analyzing source files
+Critical Warning (20759): Use the Reset Release IP in Intel Agilex FPGA designs to ensure a successful configuration. For more information about the Reset Release IP, refer to the Intel Agilex Configuration User Guide.
+Info: Elaborating from top-level entity "dcfifo_de_top"
+Info (18235): Library search order is as follows: "ram_1port_2010; ram1; fifo_1920; fifo; rom_1port_2010; rom". Quartus will look for undefined design units in your libraries in that order. To modify the ordering, please specify a semi-colon separated library list using the assignment LIBRARY_SEARCH_ORDER.
+Info: Found 22 design entities
+Info: There are 27 partitions after elaboration.
+Info: Creating instance-specific data models and dissolving soft partitions
+Info (18299): Expanding entity and wildcard assignments.
+Info (18300): Expanded entity and wildcard assignments. Elapsed time: 00:00:00
+Info (21615): Running Design Assistant Rules for snapshot 'partitioned'
+Info: No waiver waived any violations
+Info (22360): Design Assistant Results: 9 of 10 enabled rules passed, and 1 rules was disabled, in snapshot 'partitioned'
+Warning (21620): Design Assistant Results: 1 of 1 High severity rules issued violations in snapshot 'partitioned'. Please refer to DRC report '/home/bluefalcon/Videos/G2/output_files/G2.drc.partitioned.rpt' for more information
+Info (21621): Design Assistant Results: 0 of 1 Medium severity rules issued violations in snapshot 'partitioned'
+Info (21622): Design Assistant Results: 0 of 8 Low severity rules issued violations in snapshot 'partitioned'
+Info: found pre-synthesis snapshots for 1 partition(s)
+Info: Synthesizing partition "root_partition"
+Info (284007): State machine "wrctrl_logic|state" will be implemented as a safe state machine.
+Info (284007): State machine "rdctrl_logic|state" will be implemented as a safe state machine.
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 346 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 41 output pins
+    Info (21061): Implemented 207 logic cells
+    Info (21064): Implemented 96 RAM segments
+Info: Successfully synthesized partition
+Info: Saving post-synthesis snapshots for 1 partition(s)
+Info (21615): Running Design Assistant Rules for snapshot 'synthesized'
+Info: No waiver waived any violations
+Info (22360): Design Assistant Results: 13 of 14 enabled rules passed, and 7 rules was disabled, in snapshot 'synthesized'
+Info (21661): Design Assistant Results: 0 of 2 High severity rules issued violations in snapshot 'synthesized'
+Info (21621): Design Assistant Results: 1 of 6 Medium severity rules issued violations in snapshot 'synthesized'. Please refer to DRC report '/home/bluefalcon/Videos/G2/output_files/G2.drc.synthesized.rpt' for more information
+Info (21622): Design Assistant Results: 0 of 6 Low severity rules issued violations in snapshot 'synthesized'
+Info: Quartus Prime Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 1693 megabytes
+    Info: Processing ended: Thu Jan  4 18:09:38 2024
+    Info: Elapsed time: 00:00:14
+    Info: System process ID: 27498
+
+

@@ -1,0 +1,19 @@
+
+WORK > DEFAULT
+DEFAULT:           ./libraries/work/             
+work:              ./libraries/work/             
+ram_1port_2010:    ./libraries/ram_1port_2010/   
+ram1:              ./libraries/ram1/             
+fifo_1920:         ./libraries/fifo_1920/        
+fifo:              ./libraries/fifo/             
+rom_1port_2010:    ./libraries/rom_1port_2010/   
+rom:               ./libraries/rom/              
+altera_ver:        ./libraries/altera_ver/       
+lpm_ver:           ./libraries/lpm_ver/          
+sgate_ver:         ./libraries/sgate_ver/        
+altera_mf_ver:     ./libraries/altera_mf_ver/    
+altera_lnsim_ver:  ./libraries/altera_lnsim_ver/ 
+tennm_ver:         ./libraries/tennm_ver/        
+tennm_hssi_ver:    ./libraries/tennm_hssi_ver/   
+tennm_hssi_e0_ver: ./libraries/tennm_hssi_e0_ver/
+tennm_hssi_p0_ver: ./libraries/tennm_hssi_p0_ver/

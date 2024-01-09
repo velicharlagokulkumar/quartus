@@ -1,0 +1,9 @@
+QuestaSim vlog 2021.4_2 Compiler 2021.12 Dec  4 2021
+Start time: 17:52:05 on Jan 06,2024
+vlog -work libraries/work/ ../dcfifo_tb.v -logfile ./log/dcfifo_tb.log 
+-- Compiling module dcfifo_tb
+
+Top level modules:
+	dcfifo_tb
+End time: 17:52:06 on Jan 06,2024, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0

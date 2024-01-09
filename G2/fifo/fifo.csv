@@ -1,0 +1,19 @@
+# system info fifo on 2024.01.05.11:51:21
+system_info:
+name,value
+DEVICE,AGFB014R24B2E2V
+DEVICE_FAMILY,Agilex
+GENERATION_ID,0
+#
+#
+# Files generated for fifo on 2024.01.05.11:51:21
+files:
+filepath,kind,attributes,module,is_top
+sim/fifo.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,fifo,true
+fifo_1920/sim/fifo_fifo_1920_cgqugzq.v,VERILOG,,fifo_fifo_1920_cgqugzq,false
+fifo_1920/sim/fifo_fifo_1920_cgqugzq.sdc,SDC_ENTITY,NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION,fifo_fifo_1920_cgqugzq,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+fifo.fifo_0,fifo_fifo_1920_cgqugzq

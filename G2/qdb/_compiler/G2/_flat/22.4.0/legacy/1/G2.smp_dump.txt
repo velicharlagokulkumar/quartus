@@ -1,0 +1,17 @@
+
+State Machine - Summary
+
+State Machine - wrctrl_logic|state
+Name state.WAIT state.INCADR state.WRITE state.IDLE state.DONE 
+state.IDLE 0 0 0 0 0 
+state.WRITE 0 0 1 1 0 
+state.INCADR 0 1 0 1 0 
+state.WAIT 1 0 0 1 0 
+state.DONE 0 0 0 1 1 
+
+State Machine - rdctrl_logic|state
+Name state.WAIT state.WRITE state.INCADR state.IDLE 
+state.IDLE 0 0 0 0 
+state.INCADR 0 0 1 1 
+state.WRITE 0 1 0 1 
+state.WAIT 1 0 0 1 

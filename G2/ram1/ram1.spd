@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="ram_1port_2010/sim/ram1_ram_1port_2010_evrarkq.v"
+   type="VERILOG"
+   library="ram_1port_2010" />
+ <file
+   path="sim/ram1.v"
+   type="VERILOG"
+   library="ram1"
+   hasInlineConfiguration="true" />
+ <topLevel name="ram1.ram1" />
+ <deviceFamily name="agilex" />
+ <device name="AGFB014R24B2E2V" />
+</simPackage>

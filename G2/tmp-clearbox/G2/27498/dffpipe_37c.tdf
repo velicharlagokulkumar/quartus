@@ -1,0 +1,55 @@
+--dffpipe CBX_SINGLE_OUTPUT_FILE="OFF" DELAY=2 WIDTH=11 clock clrn d q ALTERA_INTERNAL_OPTIONS=AUTO_SHIFT_REGISTER_RECOGNITION=OFF
+--VERSION_BEGIN 22.4 cbx_mgl 2022:11:23:20:36:26:SC cbx_stratixii 2022:11:23:20:36:22:SC cbx_util_mgl 2022:11:23:20:36:22:SC  VERSION_END
+
+
+-- Copyright (C) 2022  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+
+--synthesis_resources = reg 22 
+OPTIONS ALTERA_INTERNAL_OPTION = "AUTO_SHIFT_REGISTER_RECOGNITION=OFF";
+
+SUBDESIGN dffpipe_37c
+( 
+	clock	:	input;
+	clrn	:	input;
+	d[10..0]	:	input;
+	q[10..0]	:	output;
+) 
+VARIABLE 
+	dffe4a[10..0] : dffe;
+	dffe5a[10..0] : dffe;
+	ena	: NODE;
+	prn	: NODE;
+	sclr	: NODE;
+
+BEGIN 
+	dffe4a[].clk = clock;
+	dffe4a[].clrn = clrn;
+	dffe4a[].d = (d[] & (! sclr));
+	dffe4a[].ena = ena;
+	dffe4a[].prn = prn;
+	dffe5a[].clk = clock;
+	dffe5a[].clrn = clrn;
+	dffe5a[].d = (dffe4a[].q & (! sclr));
+	dffe5a[].ena = ena;
+	dffe5a[].prn = prn;
+	ena = VCC;
+	prn = VCC;
+	q[] = dffe5a[].q;
+	sclr = GND;
+END;
+--VALID FILE

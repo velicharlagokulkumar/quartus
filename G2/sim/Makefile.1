@@ -1,0 +1,3 @@
+all:
+	vsim -c -do "do_top.do" -voptargs="+acc=npr" -l ./log/intel.log
+	touch $@

@@ -1,0 +1,18 @@
+# system info ram1 on 2024.01.05.11:50:26
+system_info:
+name,value
+DEVICE,AGFB014R24B2E2V
+DEVICE_FAMILY,Agilex
+GENERATION_ID,0
+#
+#
+# Files generated for ram1 on 2024.01.05.11:50:26
+files:
+filepath,kind,attributes,module,is_top
+sim/ram1.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,ram1,true
+ram_1port_2010/sim/ram1_ram_1port_2010_evrarkq.v,VERILOG,,ram1_ram_1port_2010_evrarkq,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+ram1.ram_1port_0,ram1_ram_1port_2010_evrarkq

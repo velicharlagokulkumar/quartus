@@ -1,0 +1,11 @@
+QuestaSim vlog 2021.4_2 Compiler 2021.12 Dec  4 2021
+Start time: 17:52:06 on Jan 06,2024
+vlog -incr -work libraries/work/ -f dcfifo_tb.f -l make.log 
+-- Compiling module dcfifo_de_top
+-- Compiling module read_control_logic
+-- Compiling module write_control_logic
+
+Top level modules:
+	dcfifo_de_top
+End time: 17:52:06 on Jan 06,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

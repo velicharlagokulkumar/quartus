@@ -1,0 +1,78 @@
+# //  Questa Sim
+# //  Version 2021.4_2 linux Dec  4 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# ** Warning: License feature 'msimviewer' will expire today.
+# vsim -do "run -a ; exit" -voptargs="+acc=npr" -l ./log/simLog.log -t fs dcfifo_tb -L work -L work_lib -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L tennm_ver -L tennm_hssi_ver -L tennm_hssi_e0_ver -L tennm_hssi_p0_ver -L ram_1port_2010 -L ram1 -L fifo_1920 -L fifo -L rom_1port_2010 -L rom rom.rom 
+# Start time: 18:02:49 on Jan 06,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: /home/wisig/intelFPGA_pro/22.4/quartus/eda/sim_lib/altera_mf.v(31804): (vopt-2685) [TFMPC] - Too few port connections for 'DCFIFO_MW'.  Expected 14, found 13.
+# ** Warning: /home/wisig/intelFPGA_pro/22.4/quartus/eda/sim_lib/altera_mf.v(31804): (vopt-2718) [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# ** Warning: License feature 'msimhdlsim' will expire today.
+# Loading work.dcfifo_tb(fast)
+# Loading work.dcfifo_de_top(fast)
+# Loading rom.rom(fast__1)
+# Loading rom_1port_2010.rom_rom_1port_2010_5hpb5ia(fast)
+# Loading sv_std.std
+# Loading altera_lnsim_ver.altera_syncram(fast)
+# Loading altera_lnsim_ver.ALTERA_LNSIM_MEMORY_INITIALIZATION(fast)
+# Loading work.write_control_logic(fast)
+# Loading fifo.fifo(fast)
+# Loading fifo_1920.fifo_fifo_1920_cgqugzq(fast)
+# Loading altera_mf_ver.dcfifo(fast)
+# Loading altera_mf_ver.dcfifo_mixed_widths(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.dcfifo_async(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading altera_mf_ver.dcfifo_dffpipe(fast)
+# Loading altera_mf_ver.dcfifo_dffpipe(fast__1)
+# Loading altera_mf_ver.dcfifo_dffpipe(fast__2)
+# Loading altera_mf_ver.dcfifo_dffpipe(fast__3)
+# Loading altera_mf_ver.dcfifo_dffpipe(fast__4)
+# Loading altera_mf_ver.dcfifo_fefifo(fast)
+# Loading altera_mf_ver.dcfifo_fefifo(fast__1)
+# Loading altera_mf_ver.dcfifo_low_latency(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading altera_mf_ver.dcfifo_dffpipe(fast__5)
+# Loading altera_mf_ver.dcfifo_dffpipe(fast__6)
+# Loading altera_mf_ver.dcfifo_dffpipe(fast__7)
+# Loading altera_mf_ver.dcfifo_dffpipe(fast__8)
+# Loading work.read_control_logic(fast)
+# Loading ram1.ram1(fast)
+# Loading ram_1port_2010.ram1_ram_1port_2010_evrarkq(fast)
+# Loading altera_lnsim_ver.altera_syncram(fast__1)
+# Loading rom.rom(fast)
+# Loading /tmp/wisig@wisig-PowerEdge-R820_dpi_75776/linux_gcc-7.4.0/vsim_auto_compile.so
+# ** Warning: License feature 'msimhdlsim' will expire today.
+# run -a 
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "/home/bluefalcon/Videos/G2/mem.mif" for reading.
+# No such file or directory. (errno = ENOENT)    : /home/wisig/intelFPGA_pro/22.4/quartus/eda/sim_lib/altera_lnsim.sv(20873)
+#    Time: 0 fs  Iteration: 0  Instance: /dcfifo_tb/in1/myrom/rom_1port_0/altera_syncram_component
+# ERROR: cannot read /home/bluefalcon/Videos/G2/mem.mif.
+# Initializing memory contents for dcfifo_tb.in1.myrom.rom_1port_0.altera_syncram_component.initialize_mem_contents with                                                                                                                                                                                                                               /home/bluefalcon/Videos/G2/mem.ver
+# ** Warning: (vsim-7) Failed to open readmem file "/home/bluefalcon/Videos/G2/mem.ver" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/wisig/intelFPGA_pro/22.4/quartus/eda/sim_lib/altera_lnsim.sv(17600)
+#    Time: 0 fs  Iteration: 0  Instance: /dcfifo_tb/in1/myrom/rom_1port_0/altera_syncram_component
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "/home/bluefalcon/Videos/G2/mem.mif" for reading.
+# No such file or directory. (errno = ENOENT)    : /home/wisig/intelFPGA_pro/22.4/quartus/eda/sim_lib/altera_lnsim.sv(20873)
+#    Time: 0 fs  Iteration: 0  Instance: /rom/rom_1port_0/altera_syncram_component
+# ERROR: cannot read /home/bluefalcon/Videos/G2/mem.mif.
+# Initializing memory contents for rom.rom_1port_0.altera_syncram_component.initialize_mem_contents with                                                                                                                                                                                                                               /home/bluefalcon/Videos/G2/mem.ver
+# ** Warning: (vsim-7) Failed to open readmem file "/home/bluefalcon/Videos/G2/mem.ver" in read mode.
+# No such file or directory. (errno = ENOENT)    : /home/wisig/intelFPGA_pro/22.4/quartus/eda/sim_lib/altera_lnsim.sv(17600)
+#    Time: 0 fs  Iteration: 0  Instance: /rom/rom_1port_0/altera_syncram_component
+#  exit
+# End time: 18:04:53 on Jan 06,2024, Elapsed time: 0:02:04
+# Errors: 0, Warnings: 6

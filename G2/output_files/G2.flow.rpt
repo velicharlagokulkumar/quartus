@@ -1,0 +1,109 @@
+Flow report for G2
+Thu Jan  4 18:09:38 2024
+Quartus Prime Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------+
+; Flow Summary                                        ;
++-------------+---------------------------------------+
+; Flow Status ; Successful - Thu Jan  4 18:09:38 2024 ;
++-------------+---------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 01/04/2024 18:09:25 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; G2                  ;
++-------------------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                     ;
++--------------------------+-------------------------------------------------+---------------+------------------------+----------------+
+; Assignment Name          ; Value                                           ; Default Value ; Entity Name            ; Section Id     ;
++--------------------------+-------------------------------------------------+---------------+------------------------+----------------+
+; COMPILER_SIGNATURE_ID    ; 123926597970517.170437196527498                 ; --            ; --                     ; --             ;
+; EDA_OUTPUT_DATA_FORMAT   ; Verilog Hdl                                     ; --            ; --                     ; eda_simulation ;
+; EDA_SIMULATION_TOOL      ; Questa Intel FPGA (Verilog)                     ; <None>        ; --                     ; --             ;
+; EDA_TIME_SCALE           ; 1 ps                                            ; --            ; --                     ; eda_simulation ;
+; MISC_FILE                ; fifo/fifo.cmp                                   ; --            ; --                     ; --             ;
+; MISC_FILE                ; fifo/../fifo.ip                                 ; --            ; --                     ; --             ;
+; MISC_FILE                ; ram1/ram1.cmp                                   ; --            ; --                     ; --             ;
+; MISC_FILE                ; ram1/../ram1.ip                                 ; --            ; --                     ; --             ;
+; MISC_FILE                ; rom/rom.cmp                                     ; --            ; --                     ; --             ;
+; MISC_FILE                ; rom/../rom.ip                                   ; --            ; --                     ; --             ;
+; PROJECT_OUTPUT_DIRECTORY ; output_files                                    ; --            ; --                     ; --             ;
+; SDC_ENTITY_FILE          ; fifo/fifo_1920/synth/fifo_fifo_1920_cgqugzq.sdc ; --            ; fifo_fifo_1920_cgqugzq ; --             ;
+; SLD_INFO                 ; QSYS_NAME fifo HAS_SOPCINFO 1 GENERATION_ID 0   ; --            ; fifo                   ; --             ;
+; SLD_INFO                 ; QSYS_NAME ram1 HAS_SOPCINFO 1 GENERATION_ID 0   ; --            ; ram1                   ; --             ;
+; SLD_INFO                 ; QSYS_NAME rom HAS_SOPCINFO 1 GENERATION_ID 0    ; --            ; rom                    ; --             ;
+; SOPCINFO_FILE            ; fifo/fifo.sopcinfo                              ; --            ; --                     ; --             ;
+; SOPCINFO_FILE            ; ram1/ram1.sopcinfo                              ; --            ; --                     ; --             ;
+; SOPCINFO_FILE            ; rom/rom.sopcinfo                                ; --            ; --                     ; --             ;
+; TOP_LEVEL_ENTITY         ; dcfifo_de_top                                   ; G2            ; --                     ; --             ;
++--------------------------+-------------------------------------------------+---------------+------------------------+----------------+
+
+
++--------------------------------------------------+
+; Flow Elapsed Time                                ;
++-------------+--------------+---------------------+
+; Module Name ; Elapsed Time ; Peak Virtual Memory ;
++-------------+--------------+---------------------+
+; Synthesis   ; 00:00:14     ; 1693 MB             ;
+; Total       ; 00:00:14     ; --                  ;
++-------------+--------------+---------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++-------------+---------------------------+----------------+------------+----------------+
+; Module Name ; Machine Hostname          ; OS Name        ; OS Version ; Processor type ;
++-------------+---------------------------+----------------+------------+----------------+
+; Synthesis   ; bluefalcon-PowerEdge-T640 ; Ubuntu 18.04.6 ; 18         ; x86_64         ;
++-------------+---------------------------+----------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_syn --read_settings_files=on --write_settings_files=off G2 -c G2
+
+
+
