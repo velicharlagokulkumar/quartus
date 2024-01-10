@@ -1,4 +1,4 @@
-Block Diagram:
+Block Diagram:(DCFIFO used between RAM and ROM operating at two different clk freq.,) 
 -------------
 ![image](https://github.com/velicharlagokulkumar/quartus/assets/104726431/cb5a40a4-c686-45e1-a107-01f287e5379a)
 
