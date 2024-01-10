@@ -30,6 +30,15 @@ After DMA Transaction contents at destination address:
 ![image](https://github.com/velicharlagokulkumar/quartus/assets/104726431/ccf7a5ea-ca0d-4259-b6cd-00cebc44a1ed)
 
 
+![image](https://github.com/velicharlagokulkumar/quartus/assets/104726431/1013311a-ffd5-405b-ae41-c39a606c4210)
+
+
+
+![image](https://github.com/velicharlagokulkumar/quartus/assets/104726431/df14b6b6-24a1-484d-8606-b263cbfb725f)
+
+
+
+
 
 
 
