@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2024.01.25.19:34:10"
+ outputDirectory="/home/wisig321/Videos/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_0/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Agilex"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="AGFB014R24B2E2V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_AVALON_MASTER_ADDRESS_MAP"
+     type="AddressMap"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_AVALON_MASTER_ADDRESS_WIDTH"
+     type="AddressWidthType"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clock" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="reset" direction="input" role="reset" width="1" />
+  </interface>
+  <interface name="snk_data_slave" kind="axi4stream" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <port name="snk_data" direction="input" role="tdata" width="32" />
+   <port name="snk_valid" direction="input" role="tvalid" width="1" />
+   <port name="snk_ready" direction="output" role="tready" width="1" />
+  </interface>
+  <interface name="snk_cmd_slave" kind="axi4stream" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <port name="snk_command_data" direction="input" role="tdata" width="96" />
+   <port name="snk_command_valid" direction="input" role="tvalid" width="1" />
+   <port name="snk_command_ready" direction="output" role="tready" width="1" />
+  </interface>
+  <interface name="avalon_master" kind="avalon" start="1">
+   <property name="adaptsTo" value="" />
+   <property name="addressGroup" value="0" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="dBSBigEndian" value="false" />
+   <property name="doStreamReads" value="false" />
+   <property name="doStreamWrites" value="false" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isAsynchronous" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isReadable" value="false" />
+   <property name="isWriteable" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maxAddressWidth" value="32" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="master_address" direction="output" role="address" width="32" />
+   <port name="master_write" direction="output" role="write" width="1" />
+   <port
+       name="master_writedata"
+       direction="output"
+       role="writedata"
+       width="32" />
+   <port
+       name="master_burstcount"
+       direction="output"
+       role="burstcount"
+       width="2" />
+   <port
+       name="master_byteenable"
+       direction="output"
+       role="byteenable"
+       width="4" />
+   <port
+       name="master_waitrequest"
+       direction="input"
+       role="waitrequest"
+       width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   kind="qsys_top_pattern_writer_0"
+   version="1.0"
+   name="qsys_top_pattern_writer_0">
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="AGFB014R24B2E2V" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_AVALON_MASTER_ADDRESS_WIDTH" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_AVALON_MASTER_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_0/synth/qsys_top_pattern_writer_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_0/synth/qsys_top_pattern_writer_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_0.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/wisig321/Videos/quartus/G3/custom_ip/pattern_writer/pattern_writer_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="qsys_top_pattern_writer_0">"Generating: qsys_top_pattern_writer_0"</message>
+   <message level="Info" culprit="qsys_top_pattern_writer_0">"Generating: pattern_writer"</message>
+  </messages>
+ </entity>
+ <entity kind="pattern_writer" version="1.0" name="pattern_writer">
+  <generatedFiles>
+   <file
+       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_0/pattern_writer_10/synth/pattern_writer.v"
+       attributes="TOP_LEVEL_FILE" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_0/pattern_writer_10/synth/pattern_writer.v"
+       attributes="TOP_LEVEL_FILE" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/wisig321/Videos/quartus/G3/custom_ip/pattern_writer/pattern_writer_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="qsys_top_pattern_writer_0" as="pattern_writer_0" />
+  <messages>
+   <message level="Info" culprit="qsys_top_pattern_writer_0">"Generating: pattern_writer"</message>
+  </messages>
+ </entity>
+</deploy>

@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "qsys_top.h": "c",
+        "prbs_pattern_generator.h": "c",
+        "ram_test_controller.h": "c",
+        "io.h": "c",
+        "utils.h": "c",
+        "prbs.h": "c",
+        "ram_test_controller_regs.h": "c"
+    }
+}

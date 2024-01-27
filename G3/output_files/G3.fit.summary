@@ -1,0 +1,21 @@
+Fitter Status : Successful - Sat Jan 27 12:11:44 2024
+Quartus Prime Version : 22.4.0 Build 94 12/07/2022 SC Pro Edition
+Revision Name : G3
+Top-level Entity Name : G3
+Family : Agilex
+Device : AGFB014R24B2E2V
+Timing Models : Final
+Power Models : Final
+Device Status : Final
+Logic utilization (in ALMs) : 1,606 / 487,200 ( < 1 % )
+Total dedicated logic registers : 2160
+Total pins : 185 / 924 ( 20 % )
+Total block memory bits : 5,888 / 145,612,800 ( < 1 % )
+Total RAM Blocks : 1 / 7,110 ( < 1 % )
+Total DSP Blocks : 0 / 4,510 ( 0 % )
+Total eSRAMs : 0 / 2 ( 0 % )
+Total HSSI P-Tiles : 0 / 1 ( 0 % )
+Total HSSI E-Tile Channels : 0 / 24 ( 0 % )
+Total HSSI HPS : 1 / 1 ( 100 % )
+Total HSSI EHIPs : 0 / 4 ( 0 % )
+Total PLLs : 3 / 24 ( 13 % )

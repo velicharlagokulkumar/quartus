@@ -1,0 +1,173 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 384 368)
+	(text "qsys_top_ram_controller_1" (rect 103 0 213 12)(font "SansSerif" (font_size 11)))
+	(text "inst" (rect 8 352 20 364)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk" (rect 0 0 10 12)(font "SansSerif" (font_size 8)))
+		(text "clk" (rect 4 65 22 76)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 0 120)
+		(input)
+		(text "reset" (rect 0 0 20 12)(font "SansSerif" (font_size 8)))
+		(text "reset" (rect 4 115 34 126)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "csr_address[2..0]" (rect 0 0 70 12)(font "SansSerif" (font_size 8)))
+		(text "csr_address[2..0]" (rect 4 165 106 176)(font "SansSerif" (font_size 8)))
+		(line (pt 0 176)(pt 119 176)(line_width 3))
+	)
+	(port
+		(pt 0 200)
+		(input)
+		(text "csr_read" (rect 0 0 36 12)(font "SansSerif" (font_size 8)))
+		(text "csr_read" (rect 4 190 52 201)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "csr_write" (rect 0 0 36 12)(font "SansSerif" (font_size 8)))
+		(text "csr_write" (rect 4 215 58 226)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 0 272)
+		(input)
+		(text "csr_writedata[31..0]" (rect 0 0 76 12)(font "SansSerif" (font_size 8)))
+		(text "csr_writedata[31..0]" (rect 4 265 124 276)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 0 296)
+		(input)
+		(text "csr_byteenable[3..0]" (rect 0 0 81 12)(font "SansSerif" (font_size 8)))
+		(text "csr_byteenable[3..0]" (rect 4 290 124 301)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 384 72)
+		(input)
+		(text "src_write_command_ready" (rect 0 0 112 12)(font "SansSerif" (font_size 8)))
+		(text "src_write_command_ready" (rect 253 65 391 76)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 384 176)
+		(input)
+		(text "src_read_command_ready" (rect 0 0 112 12)(font "SansSerif" (font_size 8)))
+		(text "src_read_command_ready" (rect 256 165 388 176)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 0 248)
+		(output)
+		(text "csr_readdata[31..0]" (rect 0 0 76 12)(font "SansSerif" (font_size 8)))
+		(text "csr_readdata[31..0]" (rect 4 240 118 251)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 0 320)
+		(output)
+		(text "csr_waitrequest" (rect 0 0 62 12)(font "SansSerif" (font_size 8)))
+		(text "csr_waitrequest" (rect 4 315 94 326)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 384 96)
+		(output)
+		(text "src_write_command_data[95..0]" (rect 0 0 129 12)(font "SansSerif" (font_size 8)))
+		(text "src_write_command_data[95..0]" (rect 230 90 404 101)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 384 120)
+		(output)
+		(text "src_write_command_valid" (rect 0 0 106 12)(font "SansSerif" (font_size 8)))
+		(text "src_write_command_valid" (rect 259 115 397 126)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 384 200)
+		(output)
+		(text "src_read_command_data[96..0]" (rect 0 0 129 12)(font "SansSerif" (font_size 8)))
+		(text "src_read_command_data[96..0]" (rect 233 190 401 201)(font "SansSerif" (font_size 8)))
+	)
+	(port
+		(pt 384 224)
+		(output)
+		(text "src_read_command_valid" (rect 0 0 106 12)(font "SansSerif" (font_size 8)))
+		(text "src_read_command_valid" (rect 262 215 394 226)(font "SansSerif" (font_size 8)))
+	)
+	(drawing
+		(text "clock" (rect 91 46 212 105)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 124 71 266 152)(font "SansSerif" (color 0 0 0)))
+		(text "reset" (rect 90 96 210 205)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "reset" (rect 124 121 278 252)(font "SansSerif" (color 0 0 0)))
+		(text "csr" (rect 102 146 222 305)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "address" (rect 124 171 290 352)(font "SansSerif" (color 0 0 0)))
+		(text "read" (rect 124 196 272 402)(font "SansSerif" (color 0 0 0)))
+		(text "write" (rect 124 221 278 452)(font "SansSerif" (color 0 0 0)))
+		(text "readdata" (rect 124 246 296 502)(font "SansSerif" (color 0 0 0)))
+		(text "writedata" (rect 124 271 302 552)(font "SansSerif" (color 0 0 0)))
+		(text "byteenable" (rect 124 296 308 602)(font "SansSerif" (color 0 0 0)))
+		(text "waitrequest" (rect 124 321 314 652)(font "SansSerif" (color 0 0 0)))
+		(text "src_write_cmd" (rect 222 46 522 105)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "tready" (rect 190 71 416 152)(font "SansSerif" (color 0 0 0)))
+		(text "tdata" (rect 197 96 424 202)(font "SansSerif" (color 0 0 0)))
+		(text "tvalid" (rect 195 121 426 252)(font "SansSerif" (color 0 0 0)))
+		(text "src_read_cmd" (rect 222 146 516 305)(font "SansSerif" (color 128 0 0)(font_size 9)))
+		(text "tready" (rect 190 171 416 352)(font "SansSerif" (color 0 0 0)))
+		(text "tdata" (rect 197 196 424 402)(font "SansSerif" (color 0 0 0)))
+		(text "tvalid" (rect 195 221 426 452)(font "SansSerif" (color 0 0 0)))
+		(text " qsys_top_ram_controller_1 " (rect 269 351 700 712)(font "SansSerif" ))
+		(line (pt 119 34)(pt 221 34)(line_width 1))
+		(line (pt 221 34)(pt 221 351)(line_width 1))
+		(line (pt 119 351)(pt 221 351)(line_width 1))
+		(line (pt 119 34)(pt 119 351)(line_width 1))
+		(line (pt 0 76)(pt 119 76)(line_width 1))
+		(line (pt 120 55)(pt 120 80)(line_width 1))
+		(line (pt 121 55)(pt 121 80)(line_width 1))
+		(line (pt 0 126)(pt 119 126)(line_width 1))
+		(line (pt 120 105)(pt 120 130)(line_width 1))
+		(line (pt 121 105)(pt 121 130)(line_width 1))
+		(line (pt 0 201)(pt 119 201)(line_width 1))
+		(line (pt 0 226)(pt 119 226)(line_width 1))
+		(line (pt 0 251)(pt 119 251)(line_width 3))
+		(line (pt 0 276)(pt 119 276)(line_width 3))
+		(line (pt 0 301)(pt 119 301)(line_width 3))
+		(line (pt 0 326)(pt 119 326)(line_width 1))
+		(line (pt 120 155)(pt 120 330)(line_width 1))
+		(line (pt 121 155)(pt 121 330)(line_width 1))
+		(line (pt 391 76)(pt 221 76)(line_width 1))
+		(line (pt 391 101)(pt 221 101)(line_width 3))
+		(line (pt 391 126)(pt 221 126)(line_width 1))
+		(line (pt 220 55)(pt 220 130)(line_width 1))
+		(line (pt 219 55)(pt 219 130)(line_width 1))
+		(line (pt 391 176)(pt 221 176)(line_width 1))
+		(line (pt 391 201)(pt 221 201)(line_width 3))
+		(line (pt 391 226)(pt 221 226)(line_width 1))
+		(line (pt 220 155)(pt 220 230)(line_width 1))
+		(line (pt 219 155)(pt 219 230)(line_width 1))
+		(line (pt 0 0)(pt 391 0)(line_width 1))
+		(line (pt 391 0)(pt 391 368)(line_width 1))
+		(line (pt 0 368)(pt 391 368)(line_width 1))
+		(line (pt 0 0)(pt 0 368)(line_width 1))
+	)
+)

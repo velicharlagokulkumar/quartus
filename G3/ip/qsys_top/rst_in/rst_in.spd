@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="sim/rst_in.v"
+   type="VERILOG"
+   library="rst_in"
+   hasInlineConfiguration="true" />
+ <topLevel name="rst_in.rst_in" />
+ <deviceFamily name="agilex" />
+ <device name="AGFB014R24B2E2V" />
+</simPackage>

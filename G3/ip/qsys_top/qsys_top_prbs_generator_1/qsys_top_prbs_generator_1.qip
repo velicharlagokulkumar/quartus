@@ -1,0 +1,30 @@
+set_global_assignment -entity "qsys_top_prbs_generator_1" -library "qsys_top_prbs_generator_1" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "qsys_top_prbs_generator_1" -library "qsys_top_prbs_generator_1" -name IP_TOOL_VERSION "22.4"
+set_global_assignment -entity "qsys_top_prbs_generator_1" -library "qsys_top_prbs_generator_1" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "qsys_top_prbs_generator_1" -library "qsys_top_prbs_generator_1" -name IP_TOOL_VENDOR_NAME "Altera Corporation"
+set_global_assignment -entity "qsys_top_prbs_generator_1" -library "qsys_top_prbs_generator_1" -name IP_TOP_LEVEL_COMPONENT_NAME "prbs_generator"
+set_global_assignment -library "qsys_top_prbs_generator_1" -name SOPCINFO_FILE [file join $::quartus(qip_path) "qsys_top_prbs_generator_1.sopcinfo"]
+set_global_assignment -entity "qsys_top_prbs_generator_1" -library "qsys_top_prbs_generator_1" -name SLD_INFO "QSYS_NAME qsys_top_prbs_generator_1 HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "qsys_top_prbs_generator_1" -name MISC_FILE [file join $::quartus(qip_path) "qsys_top_prbs_generator_1.cmp"]
+set_global_assignment -entity "qsys_top_prbs_generator_1" -library "qsys_top_prbs_generator_1" -name IP_TARGETED_DEVICE_FAMILY "Agilex"
+set_global_assignment -entity "qsys_top_prbs_generator_1" -library "qsys_top_prbs_generator_1" -name IP_GENERATED_DEVICE_FAMILY "Agilex"
+set_global_assignment -entity "qsys_top_prbs_generator_1" -library "qsys_top_prbs_generator_1" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "qsys_top_prbs_generator_1" -name MISC_FILE [file join $::quartus(qip_path) "../qsys_top_prbs_generator_1.ip"]
+
+set_global_assignment -entity "prbs_pattern_generator" -library "prbs_generator_10" -name IP_COMPONENT_NAME "cHJic19wYXR0ZXJuX2dlbmVyYXRvcg=="
+set_global_assignment -entity "prbs_pattern_generator" -library "prbs_generator_10" -name IP_COMPONENT_DISPLAY_NAME "cHJic19nZW5lcmF0b3I="
+set_global_assignment -entity "prbs_pattern_generator" -library "prbs_generator_10" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "prbs_pattern_generator" -library "prbs_generator_10" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "prbs_pattern_generator" -library "prbs_generator_10" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "qsys_top_prbs_generator_1" -library "qsys_top_prbs_generator_1" -name IP_COMPONENT_NAME "cXN5c190b3BfcHJic19nZW5lcmF0b3JfMQ=="
+set_global_assignment -entity "qsys_top_prbs_generator_1" -library "qsys_top_prbs_generator_1" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "qsys_top_prbs_generator_1" -library "qsys_top_prbs_generator_1" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "qsys_top_prbs_generator_1" -library "qsys_top_prbs_generator_1" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "qsys_top_prbs_generator_1" -library "qsys_top_prbs_generator_1" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "qsys_top_prbs_generator_1" -library "qsys_top_prbs_generator_1" -name IP_COMPONENT_VERSION "MS4w"
+
+
+set_global_assignment -library "prbs_generator_10" -name VERILOG_FILE [file join $::quartus(qip_path) "prbs_generator_10/synth/prbs_pattern_generator.v"]
+set_global_assignment -library "qsys_top_prbs_generator_1" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/qsys_top_prbs_generator_1.v"]
+

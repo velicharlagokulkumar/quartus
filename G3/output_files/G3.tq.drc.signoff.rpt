@@ -1,0 +1,1260 @@
+Design Assistant report for G3
+Sat Jan 27 12:12:33 2024
+Quartus Prime Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant (Signoff) Results - 5 of 87 Rules Failed
+  3. CLK-30026 - Missing Clock Assignment
+  4. TMC-20011 - Missing Input Delay Constraint
+  5. TMC-20025 - Ignored or Overridden Constraints
+  6. TMC-20021 - Partial Min-Max Delay Assignment
+  7. CLK-30032 - Improper Clock Targets
+  8. CDC-50001 - 1-Bit Asynchronous Transfer Not Synchronized
+  9. CDC-50002 - 1-Bit Asynchronous Transfer with Insufficient Constraints
+ 10. CDC-50003 - CE-Type CDC Transfer with Insufficient Constraints
+ 11. CDC-50004 - MUX-type CDC Transfer with Insufficient Constraints
+ 12. CDC-50005 - CDC Bus Constructed with Multi-bit Synchronizer Chains of Different Lengths
+ 13. CDC-50006 - CDC Bus Constructed with Unsynchronized Registers
+ 14. CDC-50007 - CDC Bus Constructed with Multi-bit Synchronizer Chains with Insufficient Constraints
+ 15. CDC-50011 - Combinational Logic Before Synchronizer Chain
+ 16. CDC-50012 - Multiple Clock Domains Driving a Synchronizer Chain
+ 17. CLK-30027 - Multiple Clock Assignments Found
+ 18. CLK-30028 - Invalid Generated Clock
+ 19. CLK-30029 - Invalid Clock Assignments
+ 20. CLK-30030 - PLL Setting Violation
+ 21. CLK-30033 - Invalid Clock Group Assignment
+ 22. CLK-30034 - Clock Pairs Missing Logically Exclusive Clock Group Assignment
+ 23. CLK-30035 - Clock Pairs Missing Physically Exclusive Clock Group Assignment
+ 24. CLK-30042 - Incorrect Clock Group Type
+ 25. RDC-50001 - Reconvergence of Multiple Asynchronous Reset Synchronizers in Different Reset Domains
+ 26. RDC-50002 - Reconvergence of Multiple Asynchronous Reset Synchronizers in a Common Reset Domain
+ 27. RES-50001 - Asynchronous Reset Is Not Synchronized
+ 28. RES-50002 - Asynchronous Reset is Insufficiently Synchronized
+ 29. RES-50003 - Asynchronous Reset with Insufficient Constraints
+ 30. RES-50004 - Multiple Asynchronous Resets within Reset Synchronizer Chain
+ 31. TMC-20012 - Missing Output Delay Constraint
+ 32. TMC-20013 - Partial Input Delay
+ 33. TMC-20014 - Partial Output Delay
+ 34. TMC-20015 - Inconsistent Min-Max Delay
+ 35. TMC-20016 - Invalid Reference Pin
+ 36. TMC-20017 - Loops Detected
+ 37. TMC-20019 - Partial Multicycle Assignment
+ 38. TMC-20022 - I/O Delay Assignment Missing Parameters
+ 39. TMC-20023 - Invalid Set Net Delay Assignment
+ 40. TMC-20027 - Collection Filter Matching Multiple Types
+ 41. TMC-30041 - Constraint with Invalid Clock Reference
+ 42. CDC-50103 - Unsynchronized Intra-Clock Forced Synchronizer
+ 43. CLK-30031 - Input Delay Assigned to Clock
+ 44. FLP-10000 - Physical RAM with Utilization Below Threshold
+ 45. LNT-30023 - Reset Nets with Polarity Conflict
+ 46. TMC-20018 - Unsupported Latches Detected
+ 47. TMC-20024 - Synchronous Data Delay Assignment
+ 48. TMC-20026 - Empty Collection Due To Unmatched Filter
+ 49. TMC-20200 - Paths Failing Setup Analysis with Impossible Requirements
+ 50. TMC-20201 - Paths Failing Setup Analysis with High Clock Skew
+ 51. TMC-20202 - Paths Failing Setup Analysis with High Logic Delay
+ 52. TMC-20203 - Paths Failing Setup Analysis with High Fabric Interconnect Delay
+ 53. TMC-20204 - Endpoints of Paths Failing Setup Analysis with Retiming Restrictions
+ 54. TMC-20205 - Endpoints of Paths Failing Setup Analysis with Explicit Power-Up States that Restrict Retiming
+ 55. TMC-20206 - DSP Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis
+ 56. TMC-20207 - DSP Blocks with Unregistered Inputs that are the Destination of Paths Failing Setup Analysis
+ 57. TMC-20208 - RAM Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis
+ 58. TMC-20209 - Paths Failing Setup Analysis with High Routing Delay due to Congestion
+ 59. TMC-20210 - Paths Failing Setup Analysis with High Routing Delay Added for Hold
+ 60. TMC-20212 - Paths Failing Setup Analysis with Global Routing in Data Path
+ 61. TMC-20213 - Paths Failing Setup Analysis with Locally Routed Clock
+ 62. TMC-20214 - Buses with Incoming Paths Failing Setup Analysis with Multiple Sequential Adder Chains
+ 63. TMC-20215 - Buses with Incoming Paths Failing Setup Analysis with Multipliers Implemented in Logic
+ 64. TMC-20216 - Paths Failing Setup Analysis with Inferred-RAM Shift Register Endpoints
+ 65. TMC-20217 - Paths Failing Setup Analysis with Clock-As-Data
+ 66. TMC-20219 - DSP Blocks with Restricted Fmax below Required Fmax
+ 67. TMC-20220 - RAM Blocks with Restricted Fmax below Required Fmax
+ 68. TMC-20221 - Nodes Failing Minimum Pulse Width Due to Clock Pulse Collapse
+ 69. TMC-20312 - Paths Failing Hold Analysis with Global Routing in Data Path
+ 70. TMC-20313 - Paths Failing Hold Analysis with Locally Routed Clock
+ 71. TMC-20712 - Paths Failing Recovery Analysis with Global Routing in Data Path
+ 72. TMC-20713 - Paths Failing Recovery Analysis with Locally Routed Clock
+ 73. TMC-20812 - Paths Failing Removal Analysis with Global Routing in Data Path
+ 74. TMC-20813 - Paths Failing Removal Analysis with Locally Routed Clock
+ 75. CDC-50008 - CDC Bus Constructed with Multi-bit Synchronizer Chains
+ 76. CDC-50101 - Intra-Clock False Path Synchronizer
+ 77. CDC-50102 - Synchronizer after CDC Topology with Control Signal
+ 78. FLP-40006 - Pipelining Registers That Might Be Recoverable
+ 79. LNT-30010 - Nets Driving both Reset and Clock Enable Signals
+ 80. RES-50010 - Reset Synchronizer Chains with Constant Output
+ 81. RES-50101 - Intra-Clock False Path Reset Synchronizer
+ 82. TMC-20020 - Invalid Multicycle Assignment
+ 83. TMC-20550 - Automatically Selected Duplication Candidate Rejected for Placement Constraint
+ 84. TMC-20551 - Automatically Selected Duplication Candidate Likely Requires More Duplication
+ 85. TMC-20552 - User Selected Duplication Candidate was Rejected
+ 86. TMC-20601 - Registers with High Immediate Fan-Out Tension
+ 87. TMC-20602 - Registers with High Timing Path Endpoint Tension
+ 88. TMC-20603 - Registers with High Immediate Fan-Out Span
+ 89. TMC-20604 - Registers with High Timing Path Endpoint Span
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Design Assistant (Signoff) Results - 5 of 87 Rules Failed                                                                                                                                    ;
++------------------------------------------------------------------------------------------------------------+----------+------------+--------+------------------------------------------------+
+; Rule                                                                                                       ; Severity ; Violations ; Waived ; Tags                                           ;
++------------------------------------------------------------------------------------------------------------+----------+------------+--------+------------------------------------------------+
+; CLK-30026 - Missing Clock Assignment                                                                       ; High     ; 1          ; 0      ; sdc                                            ;
+; TMC-20011 - Missing Input Delay Constraint                                                                 ; High     ; 1          ; 0      ; sdc, system                                    ;
+; TMC-20025 - Ignored or Overridden Constraints                                                              ; Medium   ; 138        ; 0      ; sdc                                            ;
+; TMC-20021 - Partial Min-Max Delay Assignment                                                               ; Medium   ; 6          ; 0      ; sdc                                            ;
+; CLK-30032 - Improper Clock Targets                                                                         ; Low      ; 1          ; 0      ; sdc                                            ;
+; CDC-50001 - 1-Bit Asynchronous Transfer Not Synchronized                                                   ; High     ; 0          ; 0      ; synchronizer                                   ;
+; CDC-50002 - 1-Bit Asynchronous Transfer with Insufficient Constraints                                      ; High     ; 0          ; 0      ; synchronizer                                   ;
+; CDC-50003 - CE-Type CDC Transfer with Insufficient Constraints                                             ; High     ; 0          ; 0      ; cdc-bus                                        ;
+; CDC-50004 - MUX-type CDC Transfer with Insufficient Constraints                                            ; High     ; 0          ; 0      ; cdc-bus                                        ;
+; CDC-50005 - CDC Bus Constructed with Multi-bit Synchronizer Chains of Different Lengths                    ; High     ; 0          ; 0      ; synchronizer, cdc-bus                          ;
+; CDC-50006 - CDC Bus Constructed with Unsynchronized Registers                                              ; High     ; 0          ; 0      ; synchronizer, cdc-bus                          ;
+; CDC-50007 - CDC Bus Constructed with Multi-bit Synchronizer Chains with Insufficient Constraints           ; High     ; 0          ; 0      ; synchronizer, cdc-bus                          ;
+; CDC-50011 - Combinational Logic Before Synchronizer Chain                                                  ; High     ; 0          ; 0      ; synchronizer                                   ;
+; CDC-50012 - Multiple Clock Domains Driving a Synchronizer Chain                                            ; High     ; 0          ; 0      ; synchronizer                                   ;
+; CLK-30027 - Multiple Clock Assignments Found                                                               ; High     ; 0          ; 0      ; sdc                                            ;
+; CLK-30028 - Invalid Generated Clock                                                                        ; High     ; 0          ; 0      ; sdc                                            ;
+; CLK-30029 - Invalid Clock Assignments                                                                      ; High     ; 0          ; 0      ; sdc                                            ;
+; CLK-30030 - PLL Setting Violation                                                                          ; High     ; 0          ; 0      ; sdc                                            ;
+; CLK-30033 - Invalid Clock Group Assignment                                                                 ; High     ; 0          ; 0      ; sdc                                            ;
+; CLK-30034 - Clock Pairs Missing Logically Exclusive Clock Group Assignment                                 ; High     ; 0          ; 0      ; sdc                                            ;
+; CLK-30035 - Clock Pairs Missing Physically Exclusive Clock Group Assignment                                ; High     ; 0          ; 0      ; sdc                                            ;
+; CLK-30042 - Incorrect Clock Group Type                                                                     ; High     ; 0          ; 0      ; sdc                                            ;
+; RDC-50001 - Reconvergence of Multiple Asynchronous Reset Synchronizers in Different Reset Domains          ; High     ; 0          ; 0      ; reset-usage, reset-reachability                ;
+; RDC-50002 - Reconvergence of Multiple Asynchronous Reset Synchronizers in a Common Reset Domain            ; High     ; 0          ; 0      ; reset-usage, reset-reachability                ;
+; RES-50001 - Asynchronous Reset Is Not Synchronized                                                         ; High     ; 0          ; 0      ; synchronizer                                   ;
+; RES-50002 - Asynchronous Reset is Insufficiently Synchronized                                              ; High     ; 0          ; 0      ; synchronizer                                   ;
+; RES-50003 - Asynchronous Reset with Insufficient Constraints                                               ; High     ; 0          ; 0      ; synchronizer                                   ;
+; RES-50004 - Multiple Asynchronous Resets within Reset Synchronizer Chain                                   ; High     ; 0          ; 0      ; synchronizer                                   ;
+; TMC-20012 - Missing Output Delay Constraint                                                                ; High     ; 0          ; 0      ; sdc, system                                    ;
+; TMC-20013 - Partial Input Delay                                                                            ; High     ; 0          ; 0      ; sdc, system                                    ;
+; TMC-20014 - Partial Output Delay                                                                           ; High     ; 0          ; 0      ; sdc, system                                    ;
+; TMC-20015 - Inconsistent Min-Max Delay                                                                     ; High     ; 0          ; 0      ; sdc                                            ;
+; TMC-20016 - Invalid Reference Pin                                                                          ; High     ; 0          ; 0      ; sdc, system                                    ;
+; TMC-20017 - Loops Detected                                                                                 ; High     ; 0          ; 0      ; sdc                                            ;
+; TMC-20019 - Partial Multicycle Assignment                                                                  ; High     ; 0          ; 0      ; sdc                                            ;
+; TMC-20022 - I/O Delay Assignment Missing Parameters                                                        ; High     ; 0          ; 0      ; sdc, system                                    ;
+; TMC-20023 - Invalid Set Net Delay Assignment                                                               ; High     ; 0          ; 0      ; sdc                                            ;
+; TMC-20027 - Collection Filter Matching Multiple Types                                                      ; High     ; 0          ; 0      ; sdc                                            ;
+; TMC-30041 - Constraint with Invalid Clock Reference                                                        ; High     ; 0          ; 0      ; sdc                                            ;
+; CDC-50103 - Unsynchronized Intra-Clock Forced Synchronizer                                                 ; Medium   ; 0          ; 0      ; synchronizer                                   ;
+; CLK-30031 - Input Delay Assigned to Clock                                                                  ; Medium   ; 0          ; 0      ; sdc, system                                    ;
+; FLP-10000 - Physical RAM with Utilization Below Threshold                                                  ; Medium   ; 0          ; 0      ; ram, resource-usage                            ;
+; LNT-30023 - Reset Nets with Polarity Conflict                                                              ; Medium   ; 0          ; 0      ; reset-usage                                    ;
+; TMC-20018 - Unsupported Latches Detected                                                                   ; Medium   ; 0          ; 0      ; latch                                          ;
+; TMC-20024 - Synchronous Data Delay Assignment                                                              ; Medium   ; 0          ; 0      ; sdc                                            ;
+; TMC-20026 - Empty Collection Due To Unmatched Filter                                                       ; Medium   ; 0          ; 0      ; sdc                                            ;
+; TMC-20200 - Paths Failing Setup Analysis with Impossible Requirements                                      ; Medium   ; 0          ; 0      ; intrinsic-margin, impossible-requirements, sdc ;
+; TMC-20201 - Paths Failing Setup Analysis with High Clock Skew                                              ; Medium   ; 0          ; 0      ; intrinsic-margin                               ;
+; TMC-20202 - Paths Failing Setup Analysis with High Logic Delay                                             ; Medium   ; 0          ; 0      ; intrinsic-margin, logic-levels                 ;
+; TMC-20203 - Paths Failing Setup Analysis with High Fabric Interconnect Delay                               ; Medium   ; 0          ; 0      ; intrinsic-margin                               ;
+; TMC-20204 - Endpoints of Paths Failing Setup Analysis with Retiming Restrictions                           ; Medium   ; 0          ; 0      ; retime                                         ;
+; TMC-20205 - Endpoints of Paths Failing Setup Analysis with Explicit Power-Up States that Restrict Retiming ; Medium   ; 0          ; 0      ; retime                                         ;
+; TMC-20206 - DSP Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis       ; Medium   ; 0          ; 0      ; dsp                                            ;
+; TMC-20207 - DSP Blocks with Unregistered Inputs that are the Destination of Paths Failing Setup Analysis   ; Medium   ; 0          ; 0      ; dsp                                            ;
+; TMC-20208 - RAM Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis       ; Medium   ; 0          ; 0      ; ram                                            ;
+; TMC-20209 - Paths Failing Setup Analysis with High Routing Delay due to Congestion                         ; Medium   ; 0          ; 0      ; route                                          ;
+; TMC-20210 - Paths Failing Setup Analysis with High Routing Delay Added for Hold                            ; Medium   ; 0          ; 0      ; route                                          ;
+; TMC-20212 - Paths Failing Setup Analysis with Global Routing in Data Path                                  ; Medium   ; 0          ; 0      ; global-signal, route                           ;
+; TMC-20213 - Paths Failing Setup Analysis with Locally Routed Clock                                         ; Medium   ; 0          ; 0      ; global-signal, clock-skew                      ;
+; TMC-20214 - Buses with Incoming Paths Failing Setup Analysis with Multiple Sequential Adder Chains         ; Medium   ; 0          ; 0      ; logic-levels                                   ;
+; TMC-20215 - Buses with Incoming Paths Failing Setup Analysis with Multipliers Implemented in Logic         ; Medium   ; 0          ; 0      ; logic-levels, dsp                              ;
+; TMC-20216 - Paths Failing Setup Analysis with Inferred-RAM Shift Register Endpoints                        ; Medium   ; 0          ; 0      ; ram                                            ;
+; TMC-20217 - Paths Failing Setup Analysis with Clock-As-Data                                                ; Medium   ; 0          ; 0      ; nonstandard-timing                             ;
+; TMC-20219 - DSP Blocks with Restricted Fmax below Required Fmax                                            ; Medium   ; 0          ; 0      ; dsp, minimum-pulse-width                       ;
+; TMC-20220 - RAM Blocks with Restricted Fmax below Required Fmax                                            ; Medium   ; 0          ; 0      ; ram, minimum-pulse-width                       ;
+; TMC-20221 - Nodes Failing Minimum Pulse Width Due to Clock Pulse Collapse                                  ; Medium   ; 0          ; 0      ; minimum-pulse-width                            ;
+; TMC-20312 - Paths Failing Hold Analysis with Global Routing in Data Path                                   ; Medium   ; 0          ; 0      ; global-signal, route                           ;
+; TMC-20313 - Paths Failing Hold Analysis with Locally Routed Clock                                          ; Medium   ; 0          ; 0      ; global-signal, clock-skew                      ;
+; TMC-20712 - Paths Failing Recovery Analysis with Global Routing in Data Path                               ; Medium   ; 0          ; 0      ; global-signal, route                           ;
+; TMC-20713 - Paths Failing Recovery Analysis with Locally Routed Clock                                      ; Medium   ; 0          ; 0      ; global-signal, clock-skew                      ;
+; TMC-20812 - Paths Failing Removal Analysis with Global Routing in Data Path                                ; Medium   ; 0          ; 0      ; global-signal, route                           ;
+; TMC-20813 - Paths Failing Removal Analysis with Locally Routed Clock                                       ; Medium   ; 0          ; 0      ; global-signal, clock-skew                      ;
+; CDC-50008 - CDC Bus Constructed with Multi-bit Synchronizer Chains                                         ; Low      ; 0          ; 0      ; synchronizer, cdc-bus                          ;
+; CDC-50101 - Intra-Clock False Path Synchronizer                                                            ; Low      ; 0          ; 0      ; synchronizer, false-positive-synchronizer      ;
+; CDC-50102 - Synchronizer after CDC Topology with Control Signal                                            ; Low      ; 0          ; 0      ; synchronizer, false-positive-synchronizer      ;
+; FLP-40006 - Pipelining Registers That Might Be Recoverable                                                 ; Low      ; 0          ; 0      ; resource-usage                                 ;
+; LNT-30010 - Nets Driving both Reset and Clock Enable Signals                                               ; Low      ; 0          ; 0      ; reset-usage                                    ;
+; RES-50010 - Reset Synchronizer Chains with Constant Output                                                 ; Low      ; 0          ; 0      ; synchronizer                                   ;
+; RES-50101 - Intra-Clock False Path Reset Synchronizer                                                      ; Low      ; 0          ; 0      ; synchronizer, false-positive-synchronizer      ;
+; TMC-20020 - Invalid Multicycle Assignment                                                                  ; Low      ; 0          ; 0      ; sdc                                            ;
+; TMC-20550 - Automatically Selected Duplication Candidate Rejected for Placement Constraint                 ; Low      ; 0          ; 0      ; register-duplication, place                    ;
+; TMC-20551 - Automatically Selected Duplication Candidate Likely Requires More Duplication                  ; Low      ; 0          ; 0      ; register-duplication, place                    ;
+; TMC-20552 - User Selected Duplication Candidate was Rejected                                               ; Low      ; 0          ; 0      ; register-duplication, place                    ;
+; TMC-20601 - Registers with High Immediate Fan-Out Tension                                                  ; Low      ; 0          ; 0      ; register-duplication, register-spread, place   ;
+; TMC-20602 - Registers with High Timing Path Endpoint Tension                                               ; Low      ; 0          ; 0      ; register-duplication, register-spread, place   ;
+; TMC-20603 - Registers with High Immediate Fan-Out Span                                                     ; Low      ; 0          ; 0      ; register-duplication, register-spread, place   ;
+; TMC-20604 - Registers with High Timing Path Endpoint Span                                                  ; Low      ; 0          ; 0      ; register-duplication, register-spread, place   ;
++------------------------------------------------------------------------------------------------------------+----------+------------+--------+------------------------------------------------+
+
+
+Status:		FAIL
+Severity:		High
+Number of violations: 	1
+Rule Parameters:      	max_violations = 5000
++---------------------------------------------------------------------------------------------------------------------------+
+; CLK-30026 - Missing Clock Assignment                                                                                      ;
++-----------------+------------------------------------------------------------------------------------------------+--------+
+; Clock           ; Reason                                                                                         ; Waived ;
++-----------------+------------------------------------------------------------------------------------------------+--------+
+; fpga_clk_100[0] ; Node was determined to feed a clock port but was found without an associated clock assignment. ;        ;
++-----------------+------------------------------------------------------------------------------------------------+--------+
+
+
+Status:		FAIL
+Severity:		High
+Number of violations: 	1
+Rule Parameters:      	max_violations = 5000
++----------------------------------------------------------------------+
+; TMC-20011 - Missing Input Delay Constraint                           ;
++-----------------+-------------------------------------------+--------+
+; Port            ; Reason                                    ; Waived ;
++-----------------+-------------------------------------------+--------+
+; fpga_reset_n[0] ; No input delay was set on the input port. ;        ;
++-----------------+-------------------------------------------+--------+
+
+
+Status:		FAIL
+Severity:		Medium
+Number of violations: 	138
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; TMC-20025 - Ignored or Overridden Constraints                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+----------------------------------------+--------+
+; Ignored Constraint                                                                                                                                                                                                                                                                                ; Location                                                   ; Reason                                 ; Waived ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+----------------------------------------+--------+
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_ck.inst[0].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[8].b|cal_oct.obuf|oe}]                                                                                                                                                       ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[62].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[63].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[64].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[65].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[66].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[67].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[68].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[69].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[70].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[71].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[9].b|cal_oct.obuf|oe}]                                                                                                                                                       ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dbi_n.inst[0].b|cal_oct.obuf|oe}]                                                                                                                                                   ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dbi_n.inst[1].b|cal_oct.obuf|oe}]                                                                                                                                                   ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dbi_n.inst[2].b|cal_oct.obuf|oe}]                                                                                                                                                   ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dbi_n.inst[3].b|cal_oct.obuf|oe}]                                                                                                                                                   ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dbi_n.inst[4].b|cal_oct.obuf|oe}]                                                                                                                                                   ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dbi_n.inst[5].b|cal_oct.obuf|oe}]                                                                                                                                                   ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dbi_n.inst[6].b|cal_oct.obuf|oe}]                                                                                                                                                   ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dbi_n.inst[7].b|cal_oct.obuf|oe}]                                                                                                                                                   ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dbi_n.inst[8].b|cal_oct.obuf|oe}]                                                                                                                                                   ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[0].b|cal_oct.obuf_bar|oe}]                                                                                                                                                 ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:880 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[10].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[1].b|cal_oct.obuf_bar|oe}]                                                                                                                                                 ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:880 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[2].b|cal_oct.obuf_bar|oe}]                                                                                                                                                 ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:880 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[3].b|cal_oct.obuf_bar|oe}]                                                                                                                                                 ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:880 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[4].b|cal_oct.obuf_bar|oe}]                                                                                                                                                 ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:880 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[5].b|cal_oct.obuf_bar|oe}]                                                                                                                                                 ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:880 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[6].b|cal_oct.obuf_bar|oe}]                                                                                                                                                 ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:880 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[7].b|cal_oct.obuf_bar|oe}]                                                                                                                                                 ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:880 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[8].b|cal_oct.obuf_bar|oe}]                                                                                                                                                 ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:880 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -from [get_keepers {{emif_hps_mem_mem_dqs[0]} {emif_hps_mem_mem_dqs[1]} {emif_hps_mem_mem_dqs[2]} {emif_hps_mem_mem_dqs[3]} {emif_hps_mem_mem_dqs[4]} {emif_hps_mem_mem_dqs[5]} {emif_hps_mem_mem_dqs[6]} {emif_hps_mem_mem_dqs[7]} {emif_hps_mem_mem_dqs[8]}}]                    ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:906 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -from [get_keepers {{emif_hps_mem_mem_dqs_n[0]} {emif_hps_mem_mem_dqs_n[1]} {emif_hps_mem_mem_dqs_n[2]} {emif_hps_mem_mem_dqs_n[3]} {emif_hps_mem_mem_dqs_n[4]} {emif_hps_mem_mem_dqs_n[5]} {emif_hps_mem_mem_dqs_n[6]} {emif_hps_mem_mem_dqs_n[7]} {emif_hps_mem_mem_dqs_n[8]}}]  ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:908 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[11].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -from [get_keepers {{emif_hps_mem_mem_reset_n[0]} {emif_hps_mem_mem_alert_n[0]}}]                                                                                                                                                                                                  ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:921 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -to [get_pins -nocase -compatibility_mode {*|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain*|clrn}]                                                                                                                                                                          ; altera_reset_controller.sdc:29 (from IP)                   ; Exception is invalid (covers no paths) ;        ;
+; set_min_delay -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*amm_c2p_ufi_i|*ufi_read_reg}] -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*phy_reg*}] -0.200                                  ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:708 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_min_delay -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*phy_reg*}] -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*amm_p2c_ufi_i|*ufi_write_reg}] -0.200                                 ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:714 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_min_delay -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*mmr_c2p_ufi_i|*ufi_read_reg}] -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*phy_reg*}] -0.200                                  ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:720 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_min_delay -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*phy_reg*}] -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*mmr_p2c_ufi_i|*ufi_write_reg}] -0.200                                 ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:726 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_min_delay -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*sideband_c2p_ufi_i|*ufi_read_reg}] -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*phy_reg*}] -0.200                             ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:768 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_min_delay -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*phy_reg*}] -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*sideband_p2c_ufi_i|*ufi_write_reg}] -0.200                            ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:774 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_clock_groups -asynchronous -group [get_clocks {internal_clk}]                                                                                                                                                                                                                                 ; altera_s10_user_rst_clkgate_fm.sdc:22 (from IP)            ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[12].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[13].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[14].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[15].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[16].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_act_n.inst[0].b|cal_oct.obuf|oe}]                                                                                                                                                   ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[0].b|cal_oct.obuf|oe}]                                                                                                                                                       ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_ba.inst[0].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_ba.inst[1].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_bg.inst[0].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_cke.inst[0].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_cs_n.inst[0].b|cal_oct.obuf|oe}]                                                                                                                                                    ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_odt.inst[0].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_par.inst[0].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_reset_n.inst[0].b|no_oct.obuf|oe}]                                                                                                                                                  ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_ck.inst[0].b|cal_oct.obuf_bar|oe}]                                                                                                                                                  ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:847 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[0].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[1].b|cal_oct.obuf|oe}]                                                                                                                                                       ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[1].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[2].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[3].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[4].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[5].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[6].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[7].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dqs.inst[8].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[0].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[1].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[2].b|cal_oct.obuf|oe}]                                                                                                                                                       ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[2].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[3].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[4].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[5].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[6].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[7].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[8].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[9].b|cal_oct.obuf|oe}]                                                                                                                                                      ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[10].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[11].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[3].b|cal_oct.obuf|oe}]                                                                                                                                                       ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[12].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[13].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[14].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[15].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[16].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[17].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[18].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[19].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[20].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[21].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[4].b|cal_oct.obuf|oe}]                                                                                                                                                       ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[22].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[23].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[24].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[25].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[26].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[27].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[28].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[29].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[30].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[31].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[5].b|cal_oct.obuf|oe}]                                                                                                                                                       ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[32].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[33].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[34].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[35].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[36].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[37].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[38].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[39].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[40].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[41].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[6].b|cal_oct.obuf|oe}]                                                                                                                                                       ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[42].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[43].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[44].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[45].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[46].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[47].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[48].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[49].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[50].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[51].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_a.inst[7].b|cal_oct.obuf|oe}]                                                                                                                                                       ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:823 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[52].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[53].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[54].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[55].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[56].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[57].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[58].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[59].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[60].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
+; set_false_path -through [get_pins {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|bufs_inst|gen_mem_dq.inst[61].b|cal_oct.obuf|oe}]                                                                                                                                                     ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:864 (from IP) ; Exception is invalid (covers no paths) ;        ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+----------------------------------------+--------+
+
+
+Status:		FAIL
+Severity:		Medium
+Number of violations: 	6
+Rule Parameters:      	max_violations = 5000
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; TMC-20021 - Partial Min-Max Delay Assignment                                                                                                                                                                                                                                                                                                                                     ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+------------------------------------------------------------+--------+
+; Assignment                                                                                                                                                                                                                                      ; Reason                                                   ; Location                                                   ; Waived ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+------------------------------------------------------------+--------+
+; -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*phy_reg*}]  -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*lane_p2c_ufi_i|*ufi_write_reg}]  ; Min delay for this path exists but no max delay was set. ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:762 (from IP) ;        ;
+; -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*phy_reg*}]  -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*ecc_p2c_ufi_i|*ufi_write_reg}]   ; Min delay for this path exists but no max delay was set. ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:750 (from IP) ;        ;
+; -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*seq_c2p_ufi_i|*ufi_read_reg}]  -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*hmc_reg*}]    ; Min delay for this path exists but no max delay was set. ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:732 (from IP) ;        ;
+; -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*hmc_reg*}]  -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*seq_p2c_ufi_i|*ufi_write_reg}]   ; Min delay for this path exists but no max delay was set. ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:738 (from IP) ;        ;
+; -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*ecc_c2p_ufi_i|*ufi_read_reg}]  -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*phy_reg*}]    ; Min delay for this path exists but no max delay was set. ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:744 (from IP) ;        ;
+; -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*lane_c2p_ufi_i|*ufi_read_reg}]  -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*phy_reg*}]   ; Min delay for this path exists but no max delay was set. ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:756 (from IP) ;        ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+------------------------------------------------------------+--------+
+
+
+Status:		FAIL
+Severity:		Low
+Number of violations: 	1
+Rule Parameters:      	max_violations = 5000
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; CLK-30032 - Improper Clock Targets                                                                                                                                                          ;
++-------------------------------------------------------------------------+--------------------------------------------------------+-------------------------------------------------+--------+
+; Assignment                                                              ; Reason                                                 ; Location                                        ; Waived ;
++-------------------------------------------------------------------------+--------------------------------------------------------+-------------------------------------------------+--------+
+; [get_nodes { auto_fab*|*|*sdm_gpo_out_user_reset~internal_ctrl_clock }] ; Target contains node other than top level input ports. ; altera_s10_user_rst_clkgate_fm.sdc:20 (from IP) ;        ;
++-------------------------------------------------------------------------+--------------------------------------------------------+-------------------------------------------------+--------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------------------------------------+
+; CDC-50001 - 1-Bit Asynchronous Transfer Not Synchronized ;
++----------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------------------+
+; CDC-50002 - 1-Bit Asynchronous Transfer with Insufficient Constraints ;
++-----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------------------------------------------+
+; CDC-50003 - CE-Type CDC Transfer with Insufficient Constraints ;
++----------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------------+
+; CDC-50004 - MUX-type CDC Transfer with Insufficient Constraints ;
++-----------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------------------------------------+
+; CDC-50005 - CDC Bus Constructed with Multi-bit Synchronizer Chains of Different Lengths ;
++-----------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++---------------------------------------------------------------+
+; CDC-50006 - CDC Bus Constructed with Unsynchronized Registers ;
++---------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------------------------------------------+
+; CDC-50007 - CDC Bus Constructed with Multi-bit Synchronizer Chains with Insufficient Constraints ;
++--------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------+
+; CDC-50011 - Combinational Logic Before Synchronizer Chain ;
++-----------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------------+
+; CDC-50012 - Multiple Clock Domains Driving a Synchronizer Chain ;
++-----------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++----------------------------------------------+
+; CLK-30027 - Multiple Clock Assignments Found ;
++----------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------+
+; CLK-30028 - Invalid Generated Clock ;
++-------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++---------------------------------------+
+; CLK-30029 - Invalid Clock Assignments ;
++---------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------+
+; CLK-30030 - PLL Setting Violation ;
++-----------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------+
+; CLK-30033 - Invalid Clock Group Assignment ;
++--------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++----------------------------------------------------------------------------+
+; CLK-30034 - Clock Pairs Missing Logically Exclusive Clock Group Assignment ;
++----------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------------------------------+
+; CLK-30035 - Clock Pairs Missing Physically Exclusive Clock Group Assignment ;
++-----------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++----------------------------------------+
+; CLK-30042 - Incorrect Clock Group Type ;
++----------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++---------------------------------------------------------------------------------------------------+
+; RDC-50001 - Reconvergence of Multiple Asynchronous Reset Synchronizers in Different Reset Domains ;
++---------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------------------------------------------------------+
+; RDC-50002 - Reconvergence of Multiple Asynchronous Reset Synchronizers in a Common Reset Domain ;
++-------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------------------------------+
+; RES-50001 - Asynchronous Reset Is Not Synchronized ;
++----------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++---------------------------------------------------------------+
+; RES-50002 - Asynchronous Reset is Insufficiently Synchronized ;
++---------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------+
+; RES-50003 - Asynchronous Reset with Insufficient Constraints ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------------------+
+; RES-50004 - Multiple Asynchronous Resets within Reset Synchronizer Chain ;
++--------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++---------------------------------------------+
+; TMC-20012 - Missing Output Delay Constraint ;
++---------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++---------------------------------+
+; TMC-20013 - Partial Input Delay ;
++---------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++----------------------------------+
+; TMC-20014 - Partial Output Delay ;
++----------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++----------------------------------------+
+; TMC-20015 - Inconsistent Min-Max Delay ;
++----------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------+
+; TMC-20016 - Invalid Reference Pin ;
++-----------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++----------------------------+
+; TMC-20017 - Loops Detected ;
++----------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------+
+; TMC-20019 - Partial Multicycle Assignment ;
++-------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------+
+; TMC-20022 - I/O Delay Assignment Missing Parameters ;
++-----------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++----------------------------------------------+
+; TMC-20023 - Invalid Set Net Delay Assignment ;
++----------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------------+
+; TMC-20027 - Collection Filter Matching Multiple Types ;
++-------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------+
+; TMC-30041 - Constraint with Invalid Clock Reference ;
++-----------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------------------+
+; CDC-50103 - Unsynchronized Intra-Clock Forced Synchronizer ;
++------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------+
+; CLK-30031 - Input Delay Assigned to Clock ;
++-------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		device_ram_occupation = 80
+		low_utilization = 10
++-----------------------------------------------------------+
+; FLP-10000 - Physical RAM with Utilization Below Threshold ;
++-----------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------+
+; LNT-30023 - Reset Nets with Polarity Conflict ;
++-----------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++------------------------------------------+
+; TMC-20018 - Unsupported Latches Detected ;
++------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------+
+; TMC-20024 - Synchronous Data Delay Assignment ;
++-----------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------------+
+; TMC-20026 - Empty Collection Due To Unmatched Filter ;
++------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++-----------------------------------------------------------------------+
+; TMC-20200 - Paths Failing Setup Analysis with Impossible Requirements ;
++-----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++---------------------------------------------------------------+
+; TMC-20201 - Paths Failing Setup Analysis with High Clock Skew ;
++---------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++----------------------------------------------------------------+
+; TMC-20202 - Paths Failing Setup Analysis with High Logic Delay ;
++----------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++------------------------------------------------------------------------------+
+; TMC-20203 - Paths Failing Setup Analysis with High Fabric Interconnect Delay ;
++------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++----------------------------------------------------------------------------------+
+; TMC-20204 - Endpoints of Paths Failing Setup Analysis with Retiming Restrictions ;
++----------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++------------------------------------------------------------------------------------------------------------+
+; TMC-20205 - Endpoints of Paths Failing Setup Analysis with Explicit Power-Up States that Restrict Retiming ;
++------------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++------------------------------------------------------------------------------------------------------+
+; TMC-20206 - DSP Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis ;
++------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++----------------------------------------------------------------------------------------------------------+
+; TMC-20207 - DSP Blocks with Unregistered Inputs that are the Destination of Paths Failing Setup Analysis ;
++----------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++------------------------------------------------------------------------------------------------------+
+; TMC-20208 - RAM Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis ;
++------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++------------------------------------------------------------------------------------+
+; TMC-20209 - Paths Failing Setup Analysis with High Routing Delay due to Congestion ;
++------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++---------------------------------------------------------------------------------+
+; TMC-20210 - Paths Failing Setup Analysis with High Routing Delay Added for Hold ;
++---------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++---------------------------------------------------------------------------+
+; TMC-20212 - Paths Failing Setup Analysis with Global Routing in Data Path ;
++---------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++--------------------------------------------------------------------+
+; TMC-20213 - Paths Failing Setup Analysis with Locally Routed Clock ;
++--------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
+		minimum_number_of_adders = 3
++----------------------------------------------------------------------------------------------------+
+; TMC-20214 - Buses with Incoming Paths Failing Setup Analysis with Multiple Sequential Adder Chains ;
++----------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
+		minimum_number_of_soft_mult_chains = 2
++----------------------------------------------------------------------------------------------------+
+; TMC-20215 - Buses with Incoming Paths Failing Setup Analysis with Multipliers Implemented in Logic ;
++----------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++-------------------------------------------------------------------------------------+
+; TMC-20216 - Paths Failing Setup Analysis with Inferred-RAM Shift Register Endpoints ;
++-------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++-------------------------------------------------------------+
+; TMC-20217 - Paths Failing Setup Analysis with Clock-As-Data ;
++-------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_pulse_width_slack = 0
++-----------------------------------------------------------------+
+; TMC-20219 - DSP Blocks with Restricted Fmax below Required Fmax ;
++-----------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_pulse_width_slack = 0
++-----------------------------------------------------------------+
+; TMC-20220 - RAM Blocks with Restricted Fmax below Required Fmax ;
++-----------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_pulse_width_slack = 0
++---------------------------------------------------------------------------+
+; TMC-20221 - Nodes Failing Minimum Pulse Width Due to Clock Pulse Collapse ;
++---------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_hold_slack = 0
+		to_clock_filter = "*"
++--------------------------------------------------------------------------+
+; TMC-20312 - Paths Failing Hold Analysis with Global Routing in Data Path ;
++--------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_hold_slack = 0
+		to_clock_filter = "*"
++-------------------------------------------------------------------+
+; TMC-20313 - Paths Failing Hold Analysis with Locally Routed Clock ;
++-------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_recovery_slack = 0
+		to_clock_filter = "*"
++------------------------------------------------------------------------------+
+; TMC-20712 - Paths Failing Recovery Analysis with Global Routing in Data Path ;
++------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_recovery_slack = 0
+		to_clock_filter = "*"
++-----------------------------------------------------------------------+
+; TMC-20713 - Paths Failing Recovery Analysis with Locally Routed Clock ;
++-----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_removal_slack = 0
+		to_clock_filter = "*"
++-----------------------------------------------------------------------------+
+; TMC-20812 - Paths Failing Removal Analysis with Global Routing in Data Path ;
++-----------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_removal_slack = 0
+		to_clock_filter = "*"
++----------------------------------------------------------------------+
+; TMC-20813 - Paths Failing Removal Analysis with Locally Routed Clock ;
++----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------------+
+; CDC-50008 - CDC Bus Constructed with Multi-bit Synchronizer Chains ;
++--------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-------------------------------------------------+
+; CDC-50101 - Intra-Clock False Path Synchronizer ;
++-------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------------+
+; CDC-50102 - Synchronizer after CDC Topology with Control Signal ;
++-----------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		max_stage_adjustment = -1
+		min_width = 16
+		min_depth = 3
++------------------------------------------------------------+
+; FLP-40006 - Pipelining Registers That Might Be Recoverable ;
++------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------------+
+; LNT-30010 - Nets Driving both Reset and Clock Enable Signals ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++------------------------------------------------------------+
+; RES-50010 - Reset Synchronizer Chains with Constant Output ;
++------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-------------------------------------------------------+
+; RES-50101 - Intra-Clock False Path Reset Synchronizer ;
++-------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------+
+; TMC-20020 - Invalid Multicycle Assignment ;
++-------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------------------------------------------+
+; TMC-20550 - Automatically Selected Duplication Candidate Rejected for Placement Constraint ;
++--------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		avg_dup_fanout = 1000
++-------------------------------------------------------------------------------------------+
+; TMC-20551 - Automatically Selected Duplication Candidate Likely Requires More Duplication ;
++-------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------------+
+; TMC-20552 - User Selected Duplication Candidate was Rejected ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		minimum_tension = 100000
+		minimum_sinks = 2
++-----------------------------------------------------------+
+; TMC-20601 - Registers with High Immediate Fan-Out Tension ;
++-----------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		minimum_tension = 100000
+		ignore_high_fanout_tension = False
+		minimum_sinks = 2
++--------------------------------------------------------------+
+; TMC-20602 - Registers with High Timing Path Endpoint Tension ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		minimum_span = 250
+		minimum_sinks = 2
++--------------------------------------------------------+
+; TMC-20603 - Registers with High Immediate Fan-Out Span ;
++--------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		minimum_span = 250
+		ignore_high_fanout_span = False
+		minimum_sinks = 2
++-----------------------------------------------------------+
+; TMC-20604 - Registers with High Timing Path Endpoint Span ;
++-----------------------------------------------------------+
+
+

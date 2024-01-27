@@ -1,0 +1,16 @@
+# system info rst_in on 2024.01.25.19:29:13
+system_info:
+name,value
+DEVICE,AGFB014R24B2E2V
+DEVICE_FAMILY,Agilex
+GENERATION_ID,0
+#
+#
+# Files generated for rst_in on 2024.01.25.19:29:13
+files:
+filepath,kind,attributes,module,is_top
+sim/rst_in.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,rst_in,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
