@@ -5,9 +5,9 @@
         <assignment_value text="QSYS_NAME alt_sld_fab_0 HAS_SOPCINFO 1 GENERATION_ID 0 ENTITY_NAME alt_sld_fab SLD_FAB 1 DESIGN_HASH 015f6ae477d858897083"/>
       </assignment_values>
     </sld_info>
-    <sld_info hpath="soc_inst|agilex_hps" library="agilex_hps" name="agilex_hps">
+    <sld_info hpath="soc_inst" library="qsys_top" name="soc_inst">
       <assignment_values>
-        <assignment_value text="QSYS_NAME agilex_hps HAS_SOPCINFO 1 GENERATION_ID 0"/>
+        <assignment_value text="QSYS_NAME qsys_top HAS_SOPCINFO 1 GENERATION_ID 0"/>
       </assignment_values>
     </sld_info>
     <sld_info hpath="soc_inst|clk_100" library="clk_100" name="clk_100">
@@ -60,9 +60,9 @@
         <assignment_value text="QSYS_NAME user_rst_clkgate_0 HAS_SOPCINFO 1 GENERATION_ID 0"/>
       </assignment_values>
     </sld_info>
-    <sld_info hpath="soc_inst" library="qsys_top" name="soc_inst">
+    <sld_info hpath="soc_inst|agilex_hps" library="agilex_hps" name="agilex_hps">
       <assignment_values>
-        <assignment_value text="QSYS_NAME qsys_top HAS_SOPCINFO 1 GENERATION_ID 0"/>
+        <assignment_value text="QSYS_NAME agilex_hps HAS_SOPCINFO 1 GENERATION_ID 0"/>
       </assignment_values>
     </sld_info>
   </sld_infos>

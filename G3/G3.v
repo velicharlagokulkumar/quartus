@@ -2,7 +2,7 @@ module G3(
 //Additional refclk_bti to preserve Etile XCVR
 input    wire          refclk_bti,
 // Clock and Reset
-input    wire [1-1:0]  fpga_clk_100,
+input    wire   fpga_clk_100,
 
 
 output   wire [1:0]  fpga_led_pio,

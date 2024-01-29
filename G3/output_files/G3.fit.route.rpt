@@ -1,5 +1,5 @@
 Fitter Route Stage Report for G3
-Sat Jan 27 12:10:32 2024
+Mon Jan 29 17:28:14 2024
 Quartus Prime Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
 
 
@@ -221,7 +221,7 @@ https://fpgasoftware.intel.com/eula.
 ; hps_jtag_tms                ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
 ; hps_jtag_tdi                ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
 ; hps_ref_clk                 ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
-; fpga_clk_100[0]             ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; fpga_clk_100                ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
 ; emif_hps_oct_oct_rzqin      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
 ; emif_hps_mem_mem_alert_n[0] ; Input    ; 0                   ; --                 ; --             ; 125                               ; --                                  ;
 ; emif_hps_pll_ref_clk        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
@@ -236,62 +236,65 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------+------------------------------+
 ; Routing Resource Type       ; Usage                        ;
 +-----------------------------+------------------------------+
-; Block Input Mux Wrapbacks   ; 1 / 516,600 ( < 1 % )        ;
-; Block Input Muxes           ; 11,880 / 5,658,000 ( < 1 % ) ;
-; Block interconnects         ; 8,853 / 6,625,600 ( < 1 % )  ;
-; C1 interconnects            ; 3,479 / 2,769,200 ( < 1 % )  ;
-; C4 interconnects            ; 687 / 2,640,400 ( < 1 % )    ;
+; Block Input Mux Wrapbacks   ; 6 / 516,600 ( < 1 % )        ;
+; Block Input Muxes           ; 20,869 / 5,658,000 ( < 1 % ) ;
+; Block interconnects         ; 16,409 / 6,625,600 ( < 1 % ) ;
+; C1 interconnects            ; 6,614 / 2,769,200 ( < 1 % )  ;
+; C4 interconnects            ; 3,080 / 2,640,400 ( < 1 % )  ;
 ; C8 interconnects            ; 0 / 264,040 ( 0 % )          ;
 ; DCM_muxes                   ; 1 / 824 ( < 1 % )            ;
 ; DELAY_CHAINs                ; 0 / 17,290 ( 0 % )           ;
-; Direct links                ; 1,843 / 6,625,600 ( < 1 % )  ;
+; Direct links                ; 3,722 / 6,625,600 ( < 1 % )  ;
 ; HIO Buffers                 ; 0 / 45,920 ( 0 % )           ;
 ; Programmable Invert Buffers ; 0 / 480 ( 0 % )              ;
-; Programmable Invert Inputs  ; 430 / 513,810 ( < 1 % )      ;
-; Programmable Inverts        ; 430 / 513,810 ( < 1 % )      ;
-; R0 interconnects            ; 4,565 / 4,620,700 ( < 1 % )  ;
-; R1 interconnects            ; 2,512 / 2,640,400 ( < 1 % )  ;
+; Programmable Invert Inputs  ; 853 / 513,810 ( < 1 % )      ;
+; Programmable Inverts        ; 853 / 513,810 ( < 1 % )      ;
+; R0 interconnects            ; 8,363 / 4,620,700 ( < 1 % )  ;
+; R1 interconnects            ; 5,144 / 2,640,400 ( < 1 % )  ;
 ; R12 interconnects           ; 0 / 396,060 ( 0 % )          ;
-; R2 interconnects            ; 941 / 1,324,300 ( < 1 % )    ;
-; R4 interconnects            ; 471 / 1,332,500 ( < 1 % )    ;
-; R6 interconnects            ; 386 / 1,336,600 ( < 1 % )    ;
+; R2 interconnects            ; 1,887 / 1,324,300 ( < 1 % )  ;
+; R4 interconnects            ; 1,166 / 1,332,500 ( < 1 % )  ;
+; R6 interconnects            ; 2,128 / 1,336,600 ( < 1 % )  ;
 ; Redundancy Muxes            ; 0 / 90,920 ( 0 % )           ;
-; Row Clock Tap-Offs          ; 218 / 396,060 ( < 1 % )      ;
-; Switchbox_clock_muxes       ; 33 / 13,440 ( < 1 % )        ;
-; VIO Buffers                 ; 214 / 19,200 ( 1 % )         ;
-; Vertical_seam_tap_muxes     ; 22 / 6,720 ( < 1 % )         ;
+; Row Clock Tap-Offs          ; 536 / 396,060 ( < 1 % )      ;
+; Switchbox_clock_muxes       ; 78 / 13,440 ( < 1 % )        ;
+; VIO Buffers                 ; 217 / 19,200 ( 1 % )         ;
+; Vertical_seam_tap_muxes     ; 61 / 6,720 ( < 1 % )         ;
 +-----------------------------+------------------------------+
 
 
 +----------------+
 ; Route Messages ;
 +----------------+
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 24 of the 48 processors detected
 Info: *******************************************************************
 Info: Running Quartus Prime Fitter
     Info: Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
-    Info: Processing started: Sat Jan 27 12:01:45 2024
-    Info: System process ID: 4418
+    Info: Processing started: Mon Jan 29 17:02:05 2024
+    Info: System process ID: 80859
 Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off G3 -c G3
 Info: qfit2_default_script.tcl version: #1
 Info: Project  = G3
 Info: Revision = G3
 Info (22300): Design uses Placement Effort Multiplier = 1.0.
 Info (170193): Fitter routing operations beginning
-Info (20215): Router estimated peak short interconnect demand : 2% of down directional wire in region X300_Y200 to X311_Y207
-    Info (20265): Estimated peak short right directional wire demand : 0% in region X168_Y184 to X179_Y191
-    Info (20265): Estimated peak short left directional wire demand : 0% in region X312_Y200 to X323_Y207
-    Info (20265): Estimated peak short up directional wire demand : 0% in region X312_Y192 to X323_Y199
-    Info (20265): Estimated peak short down directional wire demand : 2% in region X300_Y200 to X311_Y207
-Info (20215): Router estimated peak long high speed interconnect demand : 52% of down directional wire in region X300_Y200 to X311_Y207
-    Info (20265): Estimated peak long high speed right directional wire demand : 37% in region X312_Y200 to X323_Y207
-    Info (20265): Estimated peak long high speed left directional wire demand : 37% in region X324_Y200 to X335_Y207
-    Info (20265): Estimated peak long high speed up directional wire demand : 46% in region X312_Y192 to X323_Y199
-    Info (20265): Estimated peak long high speed down directional wire demand : 52% in region X300_Y200 to X311_Y207
+Info (20215): Router estimated peak short interconnect demand : 8% of down directional wire in region X216_Y136 to X227_Y143
+    Info (20265): Estimated peak short right directional wire demand : 0% in region X216_Y136 to X227_Y143
+    Info (20265): Estimated peak short left directional wire demand : 0% in region X312_Y192 to X323_Y199
+    Info (20265): Estimated peak short up directional wire demand : 0% in region X180_Y112 to X191_Y119
+    Info (20265): Estimated peak short down directional wire demand : 8% in region X216_Y136 to X227_Y143
+Info (20215): Router estimated peak long high speed interconnect demand : 56% of up directional wire in region X312_Y192 to X323_Y199
+    Info (20265): Estimated peak long high speed right directional wire demand : 24% in region X300_Y200 to X311_Y207
+    Info (20265): Estimated peak long high speed left directional wire demand : 46% in region X312_Y200 to X323_Y207
+    Info (20265): Estimated peak long high speed up directional wire demand : 56% in region X312_Y192 to X323_Y199
+    Info (20265): Estimated peak long high speed down directional wire demand : 49% in region X216_Y144 to X227_Y151
     Info (20315): Note that the router may use short wires to implement long connections at higher delay
 Info (170239): Router is attempting to preserve 0.03 percent of routes from an earlier compilation, a user specified Routing Constraints File, or internal routing requirements.
-Info (11888): Total time spent on timing analysis during Routing is 0.09 seconds.
-Info (16607): Fitter routing operations ending: elapsed time is 00:02:23
+Info (11888): Total time spent on timing analysis during Routing is 1.72 seconds.
+Info: Constraints on the CDC paths between acquisition clock and communication clock are created in the Signal Tap instance, auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0
+Info: The clock period of 'altera_reserved_tck' used in the Signal Tap instance, auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0 is not defined, setting max delay to 30ns (default 33MHz tck)
+Info: Adding default timing constraints to JTAG signals.  This will help to achieve basic functionality since no such constraints were provided by the user.
+Info (16607): Fitter routing operations ending: elapsed time is 00:06:09
 
 
 --------------------------------------------
@@ -312,202 +315,210 @@ This report is unavailable in plain text report export.
 +-----------------+-----------+-----------------------------------+-------------+
 ; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ;
 +-----------------+-----------+-----------------------------------+-------------+
-; short           ; right     ; [(168, 184), (179, 191)]          ; 0.104 %     ;
-; short           ; left      ; [(312, 200), (323, 207)]          ; 0.089 %     ;
-; short           ; up        ; [(312, 192), (323, 199)]          ; 0.139 %     ;
-; short           ; down      ; [(300, 200), (311, 207)]          ; 2.083 %     ;
-; long high speed ; right     ; [(312, 200), (323, 207)]          ; 37.500 %    ;
-; long high speed ; left      ; [(324, 200), (335, 207)]          ; 37.500 %    ;
-; long high speed ; up        ; [(312, 192), (323, 199)]          ; 46.429 %    ;
-; long high speed ; down      ; [(300, 200), (311, 207)]          ; 52.976 %    ;
+; short           ; right     ; [(216, 136), (227, 143)]          ; 0.208 %     ;
+; short           ; left      ; [(312, 192), (323, 199)]          ; 0.179 %     ;
+; short           ; up        ; [(180, 112), (191, 119)]          ; 0.417 %     ;
+; short           ; down      ; [(216, 136), (227, 143)]          ; 8.472 %     ;
+; long high speed ; right     ; [(300, 200), (311, 207)]          ; 24.662 %    ;
+; long high speed ; left      ; [(312, 200), (323, 207)]          ; 46.875 %    ;
+; long high speed ; up        ; [(312, 192), (323, 199)]          ; 56.548 %    ;
+; long high speed ; down      ; [(216, 144), (227, 151)]          ; 49.405 %    ;
 +-----------------+-----------+-----------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Peak Wire Demand Details                                                                                                                                                                                             ;
-+-----------------+-----------+-----------------------------------+-------------+--------------------------------------------------------------------------------------------------------------------------------------+
-; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ; Net Names                                                                                                                            ;
-+-----------------+-----------+-----------------------------------+-------------+--------------------------------------------------------------------------------------------------------------------------------------+
-; short           ; right     ; [(168, 184), (179, 191)]          ; 0.104 %     ;    High Routing Fan-Out                                                                                                              ;
-;     --          ;           ;                                   ;             ; soc_inst|rst_controller_001|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1]                                                  ;
-; short           ; right     ; [(168, 184), (179, 191)]          ; 0.104 %     ;    Long Distance                                                                                                                     ;
-;     --          ;           ;                                   ;             ; soc_inst|rst_controller_001|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1]                                                  ;
-; short           ; left      ; [(312, 200), (323, 207)]          ; 0.089 %     ;    High Routing Fan-Out                                                                                                              ;
-;     --          ;           ;                                   ;             ; soc_inst|rst_controller|r_sync_rst                                                                                                   ;
-; short           ; left      ; [(312, 200), (323, 207)]          ; 0.089 %     ;    Long Distance                                                                                                                     ;
-;     --          ;           ;                                   ;             ; soc_inst|rst_controller|r_sync_rst                                                                                                   ;
-; short           ; up        ; [(312, 192), (323, 199)]          ; 0.139 %     ;    High Routing Fan-Out                                                                                                              ;
-;     --          ;           ;                                   ;             ; soc_inst|rst_controller|r_sync_rst                                                                                                   ;
-; short           ; up        ; [(312, 192), (323, 199)]          ; 0.139 %     ;    Long Distance                                                                                                                     ;
-;     --          ;           ;                                   ;             ; soc_inst|rst_controller|r_sync_rst                                                                                                   ;
-; short           ; down      ; [(300, 200), (311, 207)]          ; 2.083 %     ;    High Routing Fan-Out                                                                                                              ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux_001|saved_grant[0]                                                                                ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux|saved_grant[0]                                                                                    ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux|saved_grant[1]                                                                                    ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|internal_sclr           ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state.ST_UNCOMP_TRANS               ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent|i344~xsyn                                                                      ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|wlast_q0                                                                  ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[97]         ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[96]         ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent|reduce_or_0                                                                    ;
-; short           ; down      ; [(300, 200), (311, 207)]          ; 2.083 %     ;    Long Distance                                                                                                                     ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux_001|saved_grant[0]                                                                                ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux|saved_grant[0]                                                                                    ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux|saved_grant[1]                                                                                    ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|internal_sclr           ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state.ST_UNCOMP_TRANS               ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent|i344~xsyn                                                                      ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|wlast_q0                                                                  ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[97]         ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[96]         ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent|reduce_or_0                                                                    ;
-; long high speed ; right     ; [(312, 200), (323, 207)]          ; 37.500 %    ;    High Routing Fan-Out                                                                                                              ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux_001|saved_grant[0]                                                                                ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|int_nxt_addr_reg_dly[3] ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|int_nxt_addr_reg_dly[2] ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_cmd_width_adapter|int_output_sel[1]~3                                                ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_cmd_width_adapter|int_output_sel[0]~1                                                ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|int_nxt_addr_reg_dly[4] ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|internal_sclr           ;
-;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|load_payload_length_counter~1                                                             ;
-;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|load_polynomial~1xsyn                                                                     ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|wready~0                                                                  ;
-; long high speed ; right     ; [(312, 200), (323, 207)]          ; 37.500 %    ;    Long Distance                                                                                                                     ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|int_nxt_addr_reg_dly[3] ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|int_nxt_addr_reg_dly[2] ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_cmd_width_adapter|int_output_sel[1]~3                                                ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_cmd_width_adapter|int_output_sel[0]~1                                                ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|int_nxt_addr_reg_dly[4] ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|internal_sclr           ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux_001|saved_grant[0]                                                                                ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|i616~0                  ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|wdata_q0[57]                                                              ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|wdata_q0[31]                                                              ;
-; long high speed ; left      ; [(324, 200), (335, 207)]          ; 37.500 %    ;    High Routing Fan-Out                                                                                                              ;
-;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|Mux_31~4                                                                                  ;
-;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|Mux_31~2                                                                                  ;
-;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|payload_length_counter[2]                                                                 ;
-;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|payload_length_counter[3]                                                                 ;
-;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|payload_length_counter[4]                                                                 ;
-;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|payload_length_counter[7]                                                                 ;
-;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|payload_length_counter[5]                                                                 ;
-;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|payload_length_counter[6]                                                                 ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|wdata_q0[117]                                                             ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|wdata_q0[111]                                                             ;
-; long high speed ; left      ; [(324, 200), (335, 207)]          ; 37.500 %    ;    Long Distance                                                                                                                     ;
-;     --          ;           ;                                   ;             ; soc_inst|agilex_hps|intel_agilex_hps_inst|fpga_interfaces|hps_inst|soc2fpga_w_data[96]                                               ;
-;     --          ;           ;                                   ;             ; soc_inst|agilex_hps|intel_agilex_hps_inst|fpga_interfaces|hps_inst|soc2fpga_w_data[97]                                               ;
-;     --          ;           ;                                   ;             ; soc_inst|agilex_hps|intel_agilex_hps_inst|fpga_interfaces|hps_inst|soc2fpga_w_data[105]                                              ;
-;     --          ;           ;                                   ;             ; soc_inst|agilex_hps|intel_agilex_hps_inst|fpga_interfaces|hps_inst|soc2fpga_w_data[92]                                               ;
-;     --          ;           ;                                   ;             ; soc_inst|agilex_hps|intel_agilex_hps_inst|fpga_interfaces|hps_inst|soc2fpga_w_data[98]                                               ;
-;     --          ;           ;                                   ;             ; soc_inst|agilex_hps|intel_agilex_hps_inst|fpga_interfaces|hps_inst|soc2fpga_w_data[99]                                               ;
-;     --          ;           ;                                   ;             ; soc_inst|agilex_hps|intel_agilex_hps_inst|fpga_interfaces|hps_inst|soc2fpga_w_data[100]                                              ;
-;     --          ;           ;                                   ;             ; soc_inst|agilex_hps|intel_agilex_hps_inst|fpga_interfaces|hps_inst|soc2fpga_w_data[101]                                              ;
-;     --          ;           ;                                   ;             ; soc_inst|agilex_hps|intel_agilex_hps_inst|fpga_interfaces|hps_inst|soc2fpga_w_data[102]                                              ;
-;     --          ;           ;                                   ;             ; soc_inst|agilex_hps|intel_agilex_hps_inst|fpga_interfaces|hps_inst|soc2fpga_w_data[103]                                              ;
-; long high speed ; up        ; [(312, 192), (323, 199)]          ; 46.429 %    ;    High Routing Fan-Out                                                                                                              ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|rsp_mux_001|Select_27~1                                                                                   ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent_rsp_fifo|mem_used[1]                                                           ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_agent_rdata_fifo|mem_used[0]                                                         ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_translator|read_latency_shift_reg[0]                                                 ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_agent_rsp_fifo|mem_used[1]                                                           ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_cmd_width_adapter|int_output_sel[1]~3                                                ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_cmd_width_adapter|int_output_sel[0]~1                                                ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_agent_rdata_fifo|mem_used[1]                                                         ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_rsp_width_adapter|out_data_field[0]~68                                               ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_rsp_width_adapter|out_data_field[0]~34                                               ;
-; long high speed ; up        ; [(312, 192), (323, 199)]          ; 46.429 %    ;    Long Distance                                                                                                                     ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent_rsp_fifo|mem_used[1]                                                           ;
-;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_enable~0                                                                         ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent|uncompressor|burst_uncompress_address_offset[3]                                ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent_rsp_fifo|i298~1                                                                ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|source0_endofpacket~0   ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent_rsp_fifo|mem[0][39]                                                            ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|i625~0                  ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state.ST_COMP_TRANS     ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|out_valid_reg           ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|internal_sclr           ;
-; long high speed ; down      ; [(300, 200), (311, 207)]          ; 52.976 %    ;    High Routing Fan-Out                                                                                                              ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux_001|saved_grant[1]                                                                                ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|new_burst_reg           ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux_002|Select_44~1                                                                                   ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux|Select_44~1                                                                                       ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|awburst_q0[0]                                                             ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|internal_sclr                       ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|awburst_q0[1]                                                             ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux_002|Select_44~0xsyn_5                                                                             ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|pio_0_s1_cmd_width_adapter|LessThan_3~0                                                                   ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_cmd_width_adapter|LessThan_3~0                                                       ;
-; long high speed ; down      ; [(300, 200), (311, 207)]          ; 52.976 %    ;    Long Distance                                                                                                                     ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_byteen_reg[2]        ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_byteen_reg[0]        ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux|Select_44~0                                                                                       ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_byteen_reg[1]        ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_burstwrap_reg[0]     ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux_002|Select_62~8                                                                                   ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_eop_reg              ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|araddr_q0[4]                                                              ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux|Select_62~8                                                                                       ;
-;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_bytecount_reg_zero   ;
-+-----------------+-----------+-----------------------------------+-------------+--------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Peak Wire Demand Details                                                                                                                                                                                                                                                                           ;
++-----------------+-----------+-----------------------------------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ; Net Names                                                                                                                                                                                                          ;
++-----------------+-----------+-----------------------------------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; short           ; right     ; [(216, 136), (227, 143)]          ; 0.208 %     ;    High Routing Fan-Out                                                                                                                                                                                            ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[10]                                                                                                                                                         ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[22]                                                                                                                                                         ;
+; short           ; right     ; [(216, 136), (227, 143)]          ; 0.208 %     ;    Long Distance                                                                                                                                                                                                   ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[10]                                                                                                                                                         ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[22]                                                                                                                                                         ;
+; short           ; left      ; [(312, 192), (323, 199)]          ; 0.179 %     ;    High Routing Fan-Out                                                                                                                                                                                            ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[0]                                                                                        ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[1]                                                                                        ;
+; short           ; left      ; [(312, 192), (323, 199)]          ; 0.179 %     ;    Long Distance                                                                                                                                                                                                   ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[0]                                                                                        ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[1]                                                                                        ;
+; short           ; up        ; [(180, 112), (191, 119)]          ; 0.417 %     ;    High Routing Fan-Out                                                                                                                                                                                            ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|sld_buffer_manager_inst|storage_qualifier_buffer_manager.next_address[7]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|sld_buffer_manager_inst|storage_qualifier_buffer_manager.next_address[9]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|sld_buffer_manager_inst|storage_qualifier_buffer_manager.next_address[11] ;
+; short           ; up        ; [(180, 112), (191, 119)]          ; 0.417 %     ;    Long Distance                                                                                                                                                                                                   ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|sld_buffer_manager_inst|storage_qualifier_buffer_manager.next_address[7]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|sld_buffer_manager_inst|storage_qualifier_buffer_manager.next_address[9]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|sld_buffer_manager_inst|storage_qualifier_buffer_manager.next_address[11] ;
+; short           ; down      ; [(216, 136), (227, 143)]          ; 8.472 %     ;    High Routing Fan-Out                                                                                                                                                                                            ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[16]                                                                                                                                                         ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[22]                                                                                                                                                         ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[27]                                                                                                                                                         ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[28]                                                                                                                                                         ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[29]                                                                                                                                                         ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[4]                                                                                                                                                          ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[7]                                                                                                                                                          ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[10]                                                                                                                                                         ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|acq_data_in_pipe_reg[0][40]                                               ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[100]                                                                                                     ;
+; short           ; down      ; [(216, 136), (227, 143)]          ; 8.472 %     ;    Long Distance                                                                                                                                                                                                   ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[29]                                                                                                      ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|acq_data_in_pipe_reg[0][6]                                                ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[57]                                                                                                      ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[55]                                                                                                      ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|acq_data_in_pipe_reg[0][2]                                                ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[51]                                                                                                      ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[28]                                                                                                      ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|acq_data_in_pipe_reg[0][8]                                                ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[52]                                                                                                      ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[109]                                                                                                     ;
+; long high speed ; right     ; [(300, 200), (311, 207)]          ; 24.662 %    ;    High Routing Fan-Out                                                                                                                                                                                            ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|rsp_demux|src1_valid~1                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|rsp_mux_001|Select_28~1                                                                                                                                                                 ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|rsp_demux_002|src1_valid~1                                                                                                                                                              ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux_002|saved_grant[0]                                                                                                                                                              ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux_002|saved_grant[1]                                                                                                                                                              ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_cmd_width_adapter|use_reg                                                                                                                                          ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_rsp_width_adapter|out_data_field[0]~69                                                                                                                             ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_rsp_width_adapter|out_data_field[0]~1                                                                                                                              ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_rsp_width_adapter|out_data_field[0]~34                                                                                                                             ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_rsp_width_adapter|out_data_field[0]~68                                                                                                                             ;
+; long high speed ; right     ; [(300, 200), (311, 207)]          ; 24.662 %    ;    Long Distance                                                                                                                                                                                                   ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|Mux_24~3xsyn                                                                                                                                            ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent_rdata_fifo|i261~2                                                                                                                                            ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_agent_rdata_fifo|i261~2                                                                                                                                            ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|araddr_q0[4]                                                                                                                                            ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux_001|Select_53~1                                                                                                                                                                 ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|Mux_24~2                                                                                                                                                ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux_001|Select_0~1                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|align_address_to_size|base_address[0]~5                                                                                                                 ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|add_4~11                                                                                                                                                ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|align_address_to_size|Mux_37~0xsyn                                                                                                                      ;
+; long high speed ; left      ; [(312, 200), (323, 207)]          ; 46.875 %    ;    High Routing Fan-Out                                                                                                                                                                                            ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|sop_enable                                                                                                                                              ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent_rdata_fifo|mem_used[0]                                                                                                                                       ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_agent_rdata_fifo|mem_used[0]                                                                                                                                       ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_cmd_width_adapter|int_output_sel[1]~3                                                                                                                              ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_cmd_width_adapter|int_output_sel[0]~1                                                                                                                              ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_translator|read_latency_shift_reg[0]                                                                                                                               ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|awsize_q0[2]                                                                                                                                            ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|awburst_q0[0]                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux|Select_44~1                                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|agilex_hps_h2f_axi_master_agent|awsize_q0[0]                                                                                                                                            ;
+; long high speed ; left      ; [(312, 200), (323, 207)]          ; 46.875 %    ;    Long Distance                                                                                                                                                                                                   ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_agent_rdata_fifo|internal_out_payload[0]~1                                                                                                                         ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[127]                                                                                      ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[3]                                                                                        ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[5]                                                                                        ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[4]                                                                                        ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[9]                                                                                        ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[6]                                                                                        ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[11]                                                                                       ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[10]                                                                                       ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[15]                                                                                       ;
+; long high speed ; up        ; [(312, 192), (323, 199)]          ; 56.548 %    ;    High Routing Fan-Out                                                                                                                                                                                            ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux_001|saved_grant[0]                                                                                                                                                              ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux|saved_grant[0]                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux_001|saved_grant[1]                                                                                                                                                              ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|cmd_mux|saved_grant[1]                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent_rdata_fifo|mem_used[0]                                                                                                                                       ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_translator|read_latency_shift_reg[0]                                                                                                                               ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_translator|read_latency_shift_reg[0]                                                                                                                               ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_cmd_width_adapter|int_output_sel[0]~1                                                                                                                              ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_cmd_width_adapter|int_output_sel[1]~3                                                                                                                              ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent_rdata_fifo|mem_used[1]                                                                                                                                       ;
+; long high speed ; up        ; [(312, 192), (323, 199)]          ; 56.548 %    ;    Long Distance                                                                                                                                                                                                   ;
+;     --          ;           ;                                   ;             ; soc_inst|rst_controller_001|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out                                                                                                                               ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent|uncompressor|source_addr[2]~1                                                                                                                                ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_rsp_width_adapter|LessThan_45~0                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_cmd_width_adapter|i735~0                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent_rdata_fifo|internal_out_payload[0]~1                                                                                                                         ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_cmd_width_adapter|i645~0                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent_rdata_fifo|internal_out_payload[0]~0                                                                                                                         ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|ram_controller_1_csr_agent_rdata_fifo|internal_out_payload[0]~1                                                                                                                         ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_cmd_width_adapter|i727~0                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent|uncompressor|source_addr[2]~0                                                                                                                                ;
+; long high speed ; down      ; [(216, 144), (227, 151)]          ; 49.405 %    ;    High Routing Fan-Out                                                                                                                                                                                            ;
+;     --          ;           ;                                   ;             ; soc_inst|rst_controller|r_sync_rst                                                                                                                                                                                 ;
+;     --          ;           ;                                   ;             ; soc_inst|pattern_writer_1|pattern_writer_1|master_to_st_fifo|auto_generated|dpfifo|rtl~13                                                                                                                          ;
+;     --          ;           ;                                   ;             ; soc_inst|pattern_writer_1|pattern_writer_1|i536                                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; soc_inst|pattern_writer_1|pattern_writer_1|write                                                                                                                                                                   ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_enable_d1                                                                                                                                                      ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[15]                                                                                                                                                         ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[0]                                                                                                                                                          ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[10]                                                                                                                                                         ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[11]                                                                                                                                                         ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_d1[9]                                                                                                                                                          ;
+; long high speed ; down      ; [(216, 144), (227, 151)]          ; 49.405 %    ;    Long Distance                                                                                                                                                                                                   ;
+;     --          ;           ;                                   ;             ; soc_inst|pio_0|pio_0|data_out[0]                                                                                                                                                                                   ;
+;     --          ;           ;                                   ;             ; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_enable~0                                                                                                                                                       ;
+;     --          ;           ;                                   ;             ; soc_inst|rst_controller|r_sync_rst                                                                                                                                                                                 ;
+;     --          ;           ;                                   ;             ; soc_inst|pattern_writer_1|pattern_writer_1|transfer_address[17]                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; soc_inst|pattern_writer_1|pattern_writer_1|transfer_address[11]                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; soc_inst|pattern_writer_1|pattern_writer_1|transfer_address[8]                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; soc_inst|pattern_writer_1|pattern_writer_1|transfer_address[6]                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; soc_inst|pattern_writer_1|pattern_writer_1|transfer_address[5]                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; soc_inst|pattern_writer_1|pattern_writer_1|transfer_address[20]                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; soc_inst|pattern_writer_1|pattern_writer_1|write                                                                                                                                                                   ;
++-----------------+-----------+-----------------------------------+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Peak Total Grid Crossings                                                                                                                                   ;
-+--------------------------------------------------------------------------------------------------------------------------------------+----------------------+
-; Net Name                                                                                                                             ; Total Grid Crossings ;
-+--------------------------------------------------------------------------------------------------------------------------------------+----------------------+
-; soc_inst|pio_0|pio_0|data_out[1]                                                                                                     ; 14                   ;
-; soc_inst|pio_0|pio_0|data_out[0]                                                                                                     ; 14                   ;
-; soc_inst|rst_controller_001|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0]                                                  ; 11                   ;
-; soc_inst|rst_controller|altera_reset_synchronizer_int_chain[2]                                                                       ; 10                   ;
-; soc_inst|rst_controller|altera_reset_synchronizer_int_chain[0]                                                                       ; 9                    ;
-; soc_inst|rst_controller_001|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1]                                                  ; 8                    ;
-; fpga_reset_n[0]~input                                                                                                                ; 6                    ;
-; soc_inst|rst_controller|r_sync_rst                                                                                                   ; 5                    ;
-; soc_inst|prbs_generator_1|prbs_generator_1|start                                                                                     ; 3                    ;
-; soc_inst|mm_interconnect_1|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state.ST_UNCOMP_TRANS               ; 3                    ;
-; soc_inst|mm_interconnect_1|ram_controller_1_csr_cmd_width_adapter|int_output_sel[1]~3                                                ; 3                    ;
-; soc_inst|mm_interconnect_1|ram_controller_1_csr_cmd_width_adapter|int_output_sel[0]~1                                                ; 3                    ;
-; soc_inst|mm_interconnect_1|cmd_mux|saved_grant[1]                                                                                    ; 3                    ;
-; soc_inst|mm_interconnect_1|cmd_mux|saved_grant[0]                                                                                    ; 3                    ;
-; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|i625~0                  ; 3                    ;
-; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|internal_sclr           ; 3                    ;
-; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|out_valid_reg           ; 3                    ;
-; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state.ST_COMP_TRANS     ; 3                    ;
-; soc_inst|mm_interconnect_1|cmd_mux_001|saved_grant[0]                                                                                ; 3                    ;
-; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|internal_sclr           ; 3                    ;
-; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|source0_endofpacket~0   ; 3                    ;
-; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent_rsp_fifo|mem_used[1]                                                           ; 3                    ;
-; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent_rsp_fifo|i298~1                                                                ; 3                    ;
-; soc_inst|rst_controller_001|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out                                                 ; 3                    ;
-; fpga_reset_n_debounced                                                                                                               ; 2                    ;
-; soc_inst|pattern_writer_1|pattern_writer_1|burst_count_d1[1]                                                                         ; 2                    ;
-; soc_inst|mm_interconnect_0|pattern_writer_1_avalon_master_agent|av_waitrequest                                                       ; 2                    ;
-; soc_inst|pattern_writer_1|pattern_writer_1|write                                                                                     ; 2                    ;
-; soc_inst|pattern_writer_1|pattern_writer_1|burst_count_d1[0]                                                                         ; 2                    ;
-; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_enable~0                                                                         ; 2                    ;
-; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent|uncompressor|burst_uncompress_address_offset[3]                                ; 2                    ;
-; soc_inst|mm_interconnect_1|prbs_generator_1_csr_agent_rsp_fifo|mem[0][39]                                                            ; 2                    ;
-; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[126]        ; 2                    ;
-; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|int_nxt_addr_reg_dly[2] ; 2                    ;
-; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|int_nxt_addr_reg_dly[3] ; 2                    ;
-; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[127]        ; 2                    ;
-; soc_inst|mm_interconnect_1|prbs_generator_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[125]        ; 2                    ;
-; soc_inst|mm_interconnect_1|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|out_byte_cnt_reg[2]                 ; 2                    ;
-; soc_inst|mm_interconnect_1|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|i1645~0                             ; 2                    ;
-; soc_inst|mm_interconnect_1|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|reduce_or_1~2xsyn                   ; 2                    ;
-; soc_inst|mm_interconnect_1|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state.ST_UNCOMP_WR_SUBBURST         ; 2                    ;
-; soc_inst|mm_interconnect_1|pio_0_s1_agent|cp_ready~0xsyn                                                                             ; 2                    ;
-; soc_inst|mm_interconnect_1|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|out_valid_reg                       ; 2                    ;
-; soc_inst|mm_interconnect_1|pio_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|internal_sclr                       ; 2                    ;
-; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[1]          ; 2                    ;
-; soc_inst|mm_interconnect_1|ram_controller_1_csr_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|in_data_reg[0]          ; 2                    ;
-; soc_inst|mm_interconnect_1|ram_controller_1_csr_agent_rsp_fifo|i298~1                                                                ; 2                    ;
-; soc_inst|mm_interconnect_1|ram_controller_1_csr_agent_rsp_fifo|mem_used[1]                                                           ; 2                    ;
-; soc_inst|mm_interconnect_1|prbs_generator_1_csr_cmd_width_adapter|int_output_sel[1]~3                                                ; 2                    ;
-; soc_inst|mm_interconnect_1|prbs_generator_1_csr_cmd_width_adapter|int_output_sel[0]~1                                                ; 2                    ;
-+--------------------------------------------------------------------------------------------------------------------------------------+----------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Peak Total Grid Crossings                                                                                                                                                                                                                      ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+; Net Name                                                                                                                                                                                                                ; Total Grid Crossings ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|sldfabric|jtag_hub_gen.real_sld_jtag_hub|node_ena_reg[1]                                                                                                                         ; 23                   ;
+; soc_inst|pio_0|pio_0|data_out[0]                                                                                                                                                                                        ; 22                   ;
+; soc_inst|rst_controller|r_sync_rst                                                                                                                                                                                      ; 21                   ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|reset_all                                                                     ; 20                   ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|reset_all_sync|sld_reset_synchronizer_int_chain_out                   ; 18                   ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|segment_shift_clk_ena                                                          ; 17                   ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|sldfabric|jtag_hub_gen.real_sld_jtag_hub|irf_reg[1][4]                                                                                                                           ; 17                   ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|acq_buf_read_reset~0 ; 16                   ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|config_valid                                                                  ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[31]                                                                                                                                                                 ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[27]                                                                                                                                                                 ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[28]                                                                                                                                                                 ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[26]                                                                                                                                                                 ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[2]                                                                                                                                                                  ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[1]                                                                                                                                                                  ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline_enable~0                                                                                                                                                            ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[30]                                                                                                                                                                 ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[16]                                                                                                                                                                 ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[19]                                                                                                                                                                 ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[14]                                                                                                                                                                 ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[17]                                                                                                                                                                 ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[18]                                                                                                                                                                 ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[29]                                                                                                                                                                 ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[20]                                                                                                                                                                 ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[6]                                                                                                                                                                  ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[7]                                                                                                                                                                  ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[13]                                                                                                                                                                 ; 15                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|start                                                                                                                                                                        ; 14                   ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|sldfabric|jtag_hub_gen.real_sld_jtag_hub|virtual_ir_scan_reg                                                                                                                     ; 14                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[15]                                                                                                                                                                 ; 14                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[3]                                                                                                                                                                  ; 14                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[5]                                                                                                                                                                  ; 14                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[0]                                                                                                                                                                  ; 14                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[4]                                                                                                                                                                  ; 14                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[11]                                                                                                                                                                 ; 14                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[12]                                                                                                                                                                 ; 14                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[22]                                                                                                                                                                 ; 14                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[24]                                                                                                                                                                 ; 14                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[23]                                                                                                                                                                 ; 14                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[9]                                                                                                                                                                  ; 14                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[21]                                                                                                                                                                 ; 14                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[25]                                                                                                                                                                 ; 14                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[10]                                                                                                                                                                 ; 14                   ;
+; soc_inst|prbs_generator_1|prbs_generator_1|pipeline[8]                                                                                                                                                                  ; 14                   ;
+; soc_inst|pio_0|pio_0|data_out[1]                                                                                                                                                                                        ; 14                   ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|sldfabric|jtag_hub_gen.real_sld_jtag_hub|tdo_mux_out~3                                                                                                                           ; 13                   ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|acq_buf_read_reset~1 ; 12                   ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|sldfabric|jtag_hub_gen.real_sld_jtag_hub|i479~0                                                                                                                                  ; 12                   ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|ela_control|storage_on_enable_bit.trigger_condition_deserialize|dffs[0]        ; 11                   ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|sldfabric|jtag_hub_gen.real_sld_jtag_hub|shadow_jsm|state[4]                                                                                                                     ; 11                   ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
 
 

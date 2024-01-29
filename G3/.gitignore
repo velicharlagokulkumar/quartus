@@ -1,2 +1,2 @@
-prbs_gen2.hps.jic
-/output_files/G3.sof
+*.jic
+/output_files/*.sof

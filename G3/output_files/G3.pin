@@ -1796,7 +1796,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : CR54      :        :                   : 1.2V 
 RESERVED_INPUT_WITH_WEAK_PULLUP : CR56      :        :                   : 1.2V    : 2A        :                 : --           
 GND                          : CR58      : gnd    :                   :         :           :                 : --           
 ~ALTERA_AS_nCSO0,ALTERA_MSEL0~ : CR60      : output, input : 1.8 V             : 0V      : SDM       : N               : --           
-TDO                          : CR62      : output :                   : 0V      : SDM       :                 : --           
+altera_reserved_tdo          : CR62      : output : 1.8 V             : 0V      : SDM       : N               : --           
 RESERVED_INPUT_WITH_WEAK_PULLUP : CT1       :        :                   : 1.2V    : 2D        :                 : --           
 RESERVED_INPUT_WITH_WEAK_PULLUP : CT3       :        :                   : 1.2V    : 2D        :                 : --           
 RESERVED_INPUT_WITH_WEAK_PULLUP : CT5       :        :                   : 1.2V    : 2D        :                 : --           
@@ -1827,7 +1827,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : CT53      :        :                   : 1.2V 
 RESERVED_INPUT_WITH_WEAK_PULLUP : CT55      :        :                   : 1.2V    : 2A        :                 : --           
 RESERVED_INPUT_WITH_WEAK_PULLUP : CT57      :        :                   : 1.2V    : 2A        :                 : --           
 ~ALTERA_AS_CLK~              : CT59      : output : 1.8 V             : 0V      : SDM       : N               : --           
-TMS                          : CT61      : input  :                   : 0V      : SDM       :                 : --           
+altera_reserved_tms          : CT61      : input  : 1.8 V             : 0V      : SDM       : N               : --           
 GND                          : CU2       : gnd    :                   :         :           :                 : --           
 RESERVED_INPUT_WITH_WEAK_PULLUP : CU4       :        :                   : 1.2V    : 2D        :                 : --           
 RESERVED_INPUT_WITH_WEAK_PULLUP : CU6       :        :                   : 1.2V    : 2D        :                 : --           
@@ -1858,7 +1858,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : CU54      :        :                   : 1.2V 
 RESERVED_INPUT_WITH_WEAK_PULLUP : CU56      :        :                   : 1.2V    : 2A        :                 : --           
 GND                          : CU58      : gnd    :                   :         :           :                 : --           
 ~ALTERA_AS_DATA1~            : CU60      : bidir  : 1.8 V             : 0V      : SDM       : N               : --           
-TCK                          : CU62      : input  :                   : 0V      : SDM       :                 : --           
+altera_reserved_tck          : CU62      : input  : 1.8 V             : 0V      : SDM       : N               : --           
 RESERVED_INPUT_WITH_WEAK_PULLUP : CV1       :        :                   : 1.2V    : 2D        :                 : --           
 RESERVED_INPUT_WITH_WEAK_PULLUP : CV3       :        :                   : 1.2V    : 2D        :                 : --           
 RESERVED_INPUT_WITH_WEAK_PULLUP : CV5       :        :                   : 1.2V    : 2D        :                 : --           
@@ -1889,7 +1889,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : CV53      :        :                   : 1.2V 
 RESERVED_INPUT_WITH_WEAK_PULLUP : CV55      :        :                   : 1.2V    : 2A        :                 : --           
 RESERVED_INPUT_WITH_WEAK_PULLUP : CV57      :        :                   : 1.2V    : 2A        :                 : --           
 ~ALTERA_AS_nCSO1,ALTERA_MSEL2~ : CV59      : output, input : 1.8 V             : 0V      : SDM       : N               : --           
-TDI                          : CV61      : input  :                   : 0V      : SDM       :                 : --           
+altera_reserved_tdi          : CV61      : input  : 1.8 V             : 0V      : SDM       : N               : --           
 GND                          : CW2       : gnd    :                   :         :           :                 : --           
 GND                          : CW4       : gnd    :                   :         :           :                 : --           
 GND                          : CW6       : gnd    :                   :         :           :                 : --           
@@ -2472,7 +2472,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : U44       :        :                   : 1.2V 
 GND                          : U46       : gnd    :                   :         :           :                 : --           
 RESERVED_INPUT_WITH_WEAK_PULLUP : U48       :        :                   : 1.2V    : 3A        :                 : --           
 RESERVED_INPUT_WITH_WEAK_PULLUP : U50       :        :                   : 1.2V    : 3A        :                 : --           
-fpga_clk_100[0]              : U52       : input  : 1.2 V             : 1.2V    : 3A        : Y               : --           
+fpga_clk_100                 : U52       : input  : 1.2 V             : 1.2V    : 3A        : Y               : --           
 RESERVED_INPUT_WITH_WEAK_PULLUP : U54       :        :                   : 1.2V    : 3A        :                 : --           
 RESERVED_INPUT_WITH_WEAK_PULLUP : U56       :        :                   : 1.2V    : 3A        :                 : --           
 RESERVED_INPUT_WITH_WEAK_PULLUP : U58       :        :                   : 1.2V    : 3A        :                 : --           
