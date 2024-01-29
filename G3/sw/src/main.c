@@ -14,8 +14,6 @@ detected.  With the default settings below this code will fit in an 8kB on-chip 
 */
 
 
-#include "../drivers/inc/prbs_pattern_generator.h"
-#include "../drivers/inc/ram_test_controller.h"
 #include "../include/qsys_top.h"
 #include "../include/prbs.h"
 

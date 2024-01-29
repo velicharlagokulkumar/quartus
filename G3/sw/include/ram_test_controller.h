@@ -1,7 +1,7 @@
 #ifndef __RAM_TEST_CONTROLLER_H__
 #define __RAM_TEST_CONTROLLER_H__
 
-#include "../../include/utils.h"
+#include "utils.h"
 
 // register write functions (functions with return values use error code 0 for pass and 1 for failures)
 void ram_test_controller_set_base_address (u32 *ptr,unsigned long csr_base, unsigned long long ram_base);

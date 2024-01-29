@@ -1,7 +1,7 @@
 #ifndef __PRBS_PATTERN_GENERATOR_H__
 #define __PRBS_PATTERN_GENERATOR_H__
 
-#include "../../include/utils.h"
+#include "utils.h"
 
 // public API to access the hardware
 void prbs_generator_set_payload_length (u32 *ptr, unsigned long base, unsigned long length);
