@@ -1,5 +1,5 @@
 Timing Analyzer report for G3
-Mon Jan 29 17:33:45 2024
+Wed Jan 31 18:41:51 2024
 Quartus Prime Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
 
 
@@ -212,24 +212,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 96     ;
-; Maximum allowed            ; 24     ;
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 6      ;
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; SDC File List                                                                                                                                                                                                                                                                                                                  ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+----------+--------+--------------------------+-----------------+
-; SDC File Path                                                                                                                                                                        ; Instance                                                               ; Promoted ; Status ; Read at                  ; Processing Time ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+----------+--------+--------------------------+-----------------+
-; ip/qsys_top/user_rst_clkgate_0/altera_s10_user_rst_clkgate_1941/synth/altera_s10_user_rst_clkgate_fm.sdc                                                                             ;                                                                        ; No       ; OK     ; Mon Jan 29 17:33:34 2024 ; 00:00:00        ;
-; ip/qsys_top/agilex_hps/intel_agilex_interface_generator_191/synth/agilex_hps_intel_agilex_interface_generator_191_bx75jjy.sdc                                                        ; soc_inst|agilex_hps|intel_agilex_hps_inst|fpga_interfaces              ; Yes      ; OK     ; Mon Jan 29 17:33:34 2024 ; 00:00:00        ;
-; ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc                                                                                      ;                                                                        ; No       ; OK     ; Mon Jan 29 17:33:35 2024 ; 00:00:01        ;
-; qsys_top/altera_reset_controller_1921/synth/altera_reset_controller.sdc                                                                                                              ;                                                                        ; No       ; OK     ; Mon Jan 29 17:33:35 2024 ; 00:00:00        ;
-; /home/wisig/Videos/quartus/G3/qdb/_compiler/G3/_flat/22.4.0/partitioned/1/.temp/sld_fabrics/ipgen/alt_sld_fab_0/alt_sld_fab_0/altera_signaltap_agent_1920/synth/intel_signal_tap.sdc ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0 ; No       ; OK     ; Mon Jan 29 17:33:41 2024 ; 00:00:06        ;
-; /home/wisig/intelFPGA_pro/22.4/ip/altera/sld/jtag/altera_jtag_wys_atom/default_jtag.sdc                                                                                              ;                                                                        ; No       ; OK     ; Mon Jan 29 17:33:41 2024 ; 00:00:00        ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+----------+--------+--------------------------+-----------------+
-Note: All paths for non-entity SDC files are reported relative to the project directory (/home/wisig/Videos/quartus/G3/).
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SDC File List                                                                                                                                                                                                                                                                                                                     ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+----------+--------+--------------------------+-----------------+
+; SDC File Path                                                                                                                                                                           ; Instance                                                               ; Promoted ; Status ; Read at                  ; Processing Time ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+----------+--------+--------------------------+-----------------+
+; ip/qsys_top/user_rst_clkgate_0/altera_s10_user_rst_clkgate_1941/synth/altera_s10_user_rst_clkgate_fm.sdc                                                                                ;                                                                        ; No       ; OK     ; Wed Jan 31 18:41:44 2024 ; 00:00:00        ;
+; ip/qsys_top/agilex_hps/intel_agilex_interface_generator_191/synth/agilex_hps_intel_agilex_interface_generator_191_wu6x2ny.sdc                                                           ; soc_inst|agilex_hps|intel_agilex_hps_inst|fpga_interfaces              ; Yes      ; OK     ; Wed Jan 31 18:41:44 2024 ; 00:00:00        ;
+; ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc                                                                                         ;                                                                        ; No       ; OK     ; Wed Jan 31 18:41:44 2024 ; 00:00:00        ;
+; qsys_top/altera_reset_controller_1921/synth/altera_reset_controller.sdc                                                                                                                 ;                                                                        ; No       ; OK     ; Wed Jan 31 18:41:44 2024 ; 00:00:00        ;
+; /home/wisig321/Videos/quartus/G3/qdb/_compiler/G3/_flat/22.4.0/partitioned/1/.temp/sld_fabrics/ipgen/alt_sld_fab_0/alt_sld_fab_0/altera_signaltap_agent_1920/synth/intel_signal_tap.sdc ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0 ; No       ; OK     ; Wed Jan 31 18:41:47 2024 ; 00:00:03        ;
+; /home/wisig321/intelFPGA_pro/22.4/ip/altera/sld/jtag/altera_jtag_wys_atom/default_jtag.sdc                                                                                              ;                                                                        ; No       ; OK     ; Wed Jan 31 18:41:47 2024 ; 00:00:00        ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+----------+--------+--------------------------+-----------------+
+Note: All paths for non-entity SDC files are reported relative to the project directory (/home/wisig321/Videos/quartus/G3/).
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3076,18 +3076,18 @@ Note: Negative delays are omitted from totals when calculating percentages
 +--------------------------+
 ; Timing Analyzer Messages ;
 +--------------------------+
-Info (20030): Parallel compilation is enabled and will use 24 of the 48 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
-    Info: Processing started: Mon Jan 29 17:33:04 2024
-    Info: System process ID: 85211
+    Info: Processing started: Wed Jan 31 18:41:30 2024
+    Info: System process ID: 14272
 Info: Command: quartus_sta G3 -c G3 --mode=finalize
 Info: qsta_default_script.tcl version: #1
 Info (16677): Loading final database.
 Info (16734): Loading "final" snapshot for partition "root_partition".
 Info (16734): Loading "final" snapshot for partition "auto_fab_0".
-Info (16678): Successfully loaded final database: elapsed time is 00:00:26.
+Info (16678): Successfully loaded final database: elapsed time is 00:00:12.
 Info (21076): High junction temperature operating condition is not set. Assuming a default value of '100'.
 Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
 Info (332164): Evaluating HDL-embedded SDC commands
@@ -3095,17 +3095,17 @@ Info (332164): Evaluating HDL-embedded SDC commands
         Info (332166): set_false_path -to [get_keepers {*sld_synchronizer_no_reset:*|din_s1}]
 Info (19539): Reading the HDL-embedded SDC files elapsed 00:00:00.
 Info (332104): Reading SDC File: 'ip/qsys_top/user_rst_clkgate_0/altera_s10_user_rst_clkgate_1941/synth/altera_s10_user_rst_clkgate_fm.sdc'
-Info (18794): Reading SDC File: 'ip/qsys_top/agilex_hps/intel_agilex_interface_generator_191/synth/agilex_hps_intel_agilex_interface_generator_191_bx75jjy.sdc' for instance: 'soc_inst|agilex_hps|intel_agilex_hps_inst|fpga_interfaces'
+Info (18794): Reading SDC File: 'ip/qsys_top/agilex_hps/intel_agilex_interface_generator_191/synth/agilex_hps_intel_agilex_interface_generator_191_wu6x2ny.sdc' for instance: 'soc_inst|agilex_hps|intel_agilex_hps_inst|fpga_interfaces'
 Info (332104): Reading SDC File: 'ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc'
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
 Info: Initializing DDR database for CORE emif_hps_altera_emif_arch_fm_191_ky5ybpi
 Info: Finding port-to-pin mapping for CORE: emif_hps_altera_emif_arch_fm_191_ky5ybpi INSTANCE: soc_inst|emif_hps|altera_emif_fm_hps_inst
 Info (332104): Reading SDC File: 'qsys_top/altera_reset_controller_1921/synth/altera_reset_controller.sdc'
-Info (18794): Reading SDC File: '/home/wisig/Videos/quartus/G3/qdb/_compiler/G3/_flat/22.4.0/partitioned/1/.temp/sld_fabrics/ipgen/alt_sld_fab_0/alt_sld_fab_0/altera_signaltap_agent_1920/synth/intel_signal_tap.sdc' for instance: 'auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0'
+Info (18794): Reading SDC File: '/home/wisig321/Videos/quartus/G3/qdb/_compiler/G3/_flat/22.4.0/partitioned/1/.temp/sld_fabrics/ipgen/alt_sld_fab_0/alt_sld_fab_0/altera_signaltap_agent_1920/synth/intel_signal_tap.sdc' for instance: 'auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0'
 Info: Constraints on the CDC paths between acquisition clock and communication clock are created in the Signal Tap instance, auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0
 Info: The clock period of 'altera_reserved_tck' used in the Signal Tap instance, auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0 is not defined, setting max delay to 30ns (default 33MHz tck)
-Info (332104): Reading SDC File: '/home/wisig/intelFPGA_pro/22.4/ip/altera/sld/jtag/altera_jtag_wys_atom/default_jtag.sdc'
-Info (19449): Reading SDC files elapsed 00:00:07.
+Info (332104): Reading SDC File: '/home/wisig321/intelFPGA_pro/22.4/ip/altera/sld/jtag/altera_jtag_wys_atom/default_jtag.sdc'
+Info (19449): Reading SDC files elapsed 00:00:03.
 Warning (332060): Node: fpga_clk_100 was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register soc_inst|agilex_hps|intel_agilex_hps_inst|fpga_interfaces|hps_inst|s2f_module~soc_hps_wrapper/s1_b_18__vio_mlab_core_periphery__clk[0].reg is being clocked by fpga_clk_100
 Warning (332060): Node: altera_reserved_tck was determined to be a clock but was found without an associated clock assignment.
@@ -3194,15 +3194,15 @@ Info (332171): The following clock uncertainty values are less than the recommen
     Info (332172): Hold clock transfer from soc_inst|emif_hps|altera_emif_fm_hps_inst_phy_clk_0 (Rise) to soc_inst|emif_hps|altera_emif_fm_hps_inst_phy_clk_0 (Rise) has uncertainty 0.020 that is less than the recommended uncertainty 0.030
 Info: No waiver waived any violations
 Info (22360): Design Assistant Results: 81 of 87 enabled rules passed, and 6 rules was disabled, in snapshot 'final'
-Warning (21620): Design Assistant Results: 3 of 36 High severity rules issued violations in snapshot 'final'. Please refer to DRC report '/home/wisig/Videos/quartus/G3/output_files/G3.tq.drc.signoff.rpt' for more information
-Info (21621): Design Assistant Results: 2 of 35 Medium severity rules issued violations in snapshot 'final'. Please refer to DRC report '/home/wisig/Videos/quartus/G3/output_files/G3.tq.drc.signoff.rpt' for more information
-Info (21622): Design Assistant Results: 1 of 16 Low severity rules issued violations in snapshot 'final'. Please refer to DRC report '/home/wisig/Videos/quartus/G3/output_files/G3.tq.drc.signoff.rpt' for more information
+Warning (21620): Design Assistant Results: 3 of 36 High severity rules issued violations in snapshot 'final'. Please refer to DRC report '/home/wisig321/Videos/quartus/G3/output_files/G3.tq.drc.signoff.rpt' for more information
+Info (21621): Design Assistant Results: 2 of 35 Medium severity rules issued violations in snapshot 'final'. Please refer to DRC report '/home/wisig321/Videos/quartus/G3/output_files/G3.tq.drc.signoff.rpt' for more information
+Info (21622): Design Assistant Results: 1 of 16 Low severity rules issued violations in snapshot 'final'. Please refer to DRC report '/home/wisig321/Videos/quartus/G3/output_files/G3.tq.drc.signoff.rpt' for more information
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 3217 megabytes
-    Info: Processing ended: Mon Jan 29 17:33:45 2024
-    Info: Elapsed time: 00:00:41
-    Info: System process ID: 85211
-Info (19538): Reading SDC files took 00:00:07 cumulatively in this process.
+    Info: Peak virtual memory: 3161 megabytes
+    Info: Processing ended: Wed Jan 31 18:41:51 2024
+    Info: Elapsed time: 00:00:21
+    Info: System process ID: 14272
+Info (19538): Reading SDC files took 00:00:03 cumulatively in this process.
 
 
 +------------------------------------------------------------------+
@@ -3213,7 +3213,7 @@ Info (19538): Reading SDC files took 00:00:07 cumulatively in this process.
 ; Illegal Clocks                                    ; 0     ; 0    ;
 ; Unconstrained Clocks                              ; 2     ; 2    ;
 ; Unconstrained Input Ports                         ; 3     ; 3    ;
-; Paths from Unconstrained Input Ports (Pairs-Only) ; 101   ; 101  ;
+; Paths from Unconstrained Input Ports (Pairs-Only) ; 98    ; 98   ;
 ; Unconstrained Output Ports                        ; 3     ; 3    ;
 ; Paths to Unconstrained Output Ports (Pairs-Only)  ; 4     ; 4    ;
 +---------------------------------------------------+-------+------+
@@ -3669,12 +3669,12 @@ Rule Parameters:      	max_violations = 5000
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+------------------------------------------------------------+--------+
 ; Assignment                                                                                                                                                                                                                                      ; Reason                                                   ; Location                                                   ; Waived ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+------------------------------------------------------------+--------+
+; -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*lane_c2p_ufi_i|*ufi_read_reg}]  -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*phy_reg*}]   ; Min delay for this path exists but no max delay was set. ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:756 (from IP) ;        ;
 ; -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*phy_reg*}]  -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*ecc_p2c_ufi_i|*ufi_write_reg}]   ; Min delay for this path exists but no max delay was set. ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:750 (from IP) ;        ;
 ; -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*phy_reg*}]  -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*lane_p2c_ufi_i|*ufi_write_reg}]  ; Min delay for this path exists but no max delay was set. ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:762 (from IP) ;        ;
 ; -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*seq_c2p_ufi_i|*ufi_read_reg}]  -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*hmc_reg*}]    ; Min delay for this path exists but no max delay was set. ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:732 (from IP) ;        ;
 ; -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*hmc_reg*}]  -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*seq_p2c_ufi_i|*ufi_write_reg}]   ; Min delay for this path exists but no max delay was set. ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:738 (from IP) ;        ;
 ; -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*ecc_c2p_ufi_i|*ufi_read_reg}]  -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*phy_reg*}]    ; Min delay for this path exists but no max delay was set. ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:744 (from IP) ;        ;
-; -from [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|fm_ufis|*lane_c2p_ufi_i|*ufi_read_reg}]  -to [get_keepers {soc_inst|emif_hps|altera_emif_fm_hps_inst|arch|arch_inst|io_tiles_wrap_inst|io_tiles_inst|*phy_reg*}]   ; Min delay for this path exists but no max delay was set. ; emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc:756 (from IP) ;        ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+------------------------------------------------------------+--------+
 
 

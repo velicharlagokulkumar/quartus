@@ -88,7 +88,48 @@ module agilex_hps (
 		input  wire [1:0]    h2f_RRESP,            //               .rresp
 		input  wire          h2f_RLAST,            //               .rlast
 		input  wire          h2f_RVALID,           //               .rvalid
-		output wire          h2f_RREADY            //               .rready
+		output wire          h2f_RREADY,           //               .rready
+		input  wire          f2h_axi_clk,          //  f2h_axi_clock.clk
+		input  wire          f2h_axi_rst_n,        //  f2h_axi_reset.reset_n
+		input  wire [4:0]    f2h_AWID,             //  f2h_axi_slave.awid
+		input  wire [31:0]   f2h_AWADDR,           //               .awaddr
+		input  wire [7:0]    f2h_AWLEN,            //               .awlen
+		input  wire [2:0]    f2h_AWSIZE,           //               .awsize
+		input  wire [1:0]    f2h_AWBURST,          //               .awburst
+		input  wire          f2h_AWLOCK,           //               .awlock
+		input  wire [3:0]    f2h_AWCACHE,          //               .awcache
+		input  wire [2:0]    f2h_AWPROT,           //               .awprot
+		input  wire          f2h_AWVALID,          //               .awvalid
+		output wire          f2h_AWREADY,          //               .awready
+		input  wire [3:0]    f2h_AWQOS,            //               .awqos
+		input  wire [511:0]  f2h_WDATA,            //               .wdata
+		input  wire [63:0]   f2h_WSTRB,            //               .wstrb
+		input  wire          f2h_WLAST,            //               .wlast
+		input  wire          f2h_WVALID,           //               .wvalid
+		output wire          f2h_WREADY,           //               .wready
+		output wire [4:0]    f2h_BID,              //               .bid
+		output wire [1:0]    f2h_BRESP,            //               .bresp
+		output wire          f2h_BVALID,           //               .bvalid
+		input  wire          f2h_BREADY,           //               .bready
+		input  wire [4:0]    f2h_ARID,             //               .arid
+		input  wire [31:0]   f2h_ARADDR,           //               .araddr
+		input  wire [7:0]    f2h_ARLEN,            //               .arlen
+		input  wire [2:0]    f2h_ARSIZE,           //               .arsize
+		input  wire [1:0]    f2h_ARBURST,          //               .arburst
+		input  wire          f2h_ARLOCK,           //               .arlock
+		input  wire [3:0]    f2h_ARCACHE,          //               .arcache
+		input  wire [2:0]    f2h_ARPROT,           //               .arprot
+		input  wire          f2h_ARVALID,          //               .arvalid
+		output wire          f2h_ARREADY,          //               .arready
+		input  wire [3:0]    f2h_ARQOS,            //               .arqos
+		output wire [4:0]    f2h_RID,              //               .rid
+		output wire [511:0]  f2h_RDATA,            //               .rdata
+		output wire [1:0]    f2h_RRESP,            //               .rresp
+		output wire          f2h_RLAST,            //               .rlast
+		output wire          f2h_RVALID,           //               .rvalid
+		input  wire          f2h_RREADY,           //               .rready
+		input  wire [22:0]   f2h_ARUSER,           //               .aruser
+		input  wire [22:0]   f2h_AWUSER            //               .awuser
 	);
 endmodule
 

@@ -89,7 +89,48 @@
 			h2f_RRESP            : in    std_logic_vector(1 downto 0)    := (others => 'X'); -- rresp
 			h2f_RLAST            : in    std_logic                       := 'X';             -- rlast
 			h2f_RVALID           : in    std_logic                       := 'X';             -- rvalid
-			h2f_RREADY           : out   std_logic                                           -- rready
+			h2f_RREADY           : out   std_logic;                                          -- rready
+			f2h_axi_clk          : in    std_logic                       := 'X';             -- clk
+			f2h_axi_rst_n        : in    std_logic                       := 'X';             -- reset_n
+			f2h_AWID             : in    std_logic_vector(4 downto 0)    := (others => 'X'); -- awid
+			f2h_AWADDR           : in    std_logic_vector(31 downto 0)   := (others => 'X'); -- awaddr
+			f2h_AWLEN            : in    std_logic_vector(7 downto 0)    := (others => 'X'); -- awlen
+			f2h_AWSIZE           : in    std_logic_vector(2 downto 0)    := (others => 'X'); -- awsize
+			f2h_AWBURST          : in    std_logic_vector(1 downto 0)    := (others => 'X'); -- awburst
+			f2h_AWLOCK           : in    std_logic                       := 'X';             -- awlock
+			f2h_AWCACHE          : in    std_logic_vector(3 downto 0)    := (others => 'X'); -- awcache
+			f2h_AWPROT           : in    std_logic_vector(2 downto 0)    := (others => 'X'); -- awprot
+			f2h_AWVALID          : in    std_logic                       := 'X';             -- awvalid
+			f2h_AWREADY          : out   std_logic;                                          -- awready
+			f2h_AWQOS            : in    std_logic_vector(3 downto 0)    := (others => 'X'); -- awqos
+			f2h_WDATA            : in    std_logic_vector(511 downto 0)  := (others => 'X'); -- wdata
+			f2h_WSTRB            : in    std_logic_vector(63 downto 0)   := (others => 'X'); -- wstrb
+			f2h_WLAST            : in    std_logic                       := 'X';             -- wlast
+			f2h_WVALID           : in    std_logic                       := 'X';             -- wvalid
+			f2h_WREADY           : out   std_logic;                                          -- wready
+			f2h_BID              : out   std_logic_vector(4 downto 0);                       -- bid
+			f2h_BRESP            : out   std_logic_vector(1 downto 0);                       -- bresp
+			f2h_BVALID           : out   std_logic;                                          -- bvalid
+			f2h_BREADY           : in    std_logic                       := 'X';             -- bready
+			f2h_ARID             : in    std_logic_vector(4 downto 0)    := (others => 'X'); -- arid
+			f2h_ARADDR           : in    std_logic_vector(31 downto 0)   := (others => 'X'); -- araddr
+			f2h_ARLEN            : in    std_logic_vector(7 downto 0)    := (others => 'X'); -- arlen
+			f2h_ARSIZE           : in    std_logic_vector(2 downto 0)    := (others => 'X'); -- arsize
+			f2h_ARBURST          : in    std_logic_vector(1 downto 0)    := (others => 'X'); -- arburst
+			f2h_ARLOCK           : in    std_logic                       := 'X';             -- arlock
+			f2h_ARCACHE          : in    std_logic_vector(3 downto 0)    := (others => 'X'); -- arcache
+			f2h_ARPROT           : in    std_logic_vector(2 downto 0)    := (others => 'X'); -- arprot
+			f2h_ARVALID          : in    std_logic                       := 'X';             -- arvalid
+			f2h_ARREADY          : out   std_logic;                                          -- arready
+			f2h_ARQOS            : in    std_logic_vector(3 downto 0)    := (others => 'X'); -- arqos
+			f2h_RID              : out   std_logic_vector(4 downto 0);                       -- rid
+			f2h_RDATA            : out   std_logic_vector(511 downto 0);                     -- rdata
+			f2h_RRESP            : out   std_logic_vector(1 downto 0);                       -- rresp
+			f2h_RLAST            : out   std_logic;                                          -- rlast
+			f2h_RVALID           : out   std_logic;                                          -- rvalid
+			f2h_RREADY           : in    std_logic                       := 'X';             -- rready
+			f2h_ARUSER           : in    std_logic_vector(22 downto 0)   := (others => 'X'); -- aruser
+			f2h_AWUSER           : in    std_logic_vector(22 downto 0)   := (others => 'X')  -- awuser
 		);
 	end component agilex_hps;
 
@@ -184,6 +225,47 @@
 			h2f_RRESP            => CONNECTED_TO_h2f_RRESP,            --               .rresp
 			h2f_RLAST            => CONNECTED_TO_h2f_RLAST,            --               .rlast
 			h2f_RVALID           => CONNECTED_TO_h2f_RVALID,           --               .rvalid
-			h2f_RREADY           => CONNECTED_TO_h2f_RREADY            --               .rready
+			h2f_RREADY           => CONNECTED_TO_h2f_RREADY,           --               .rready
+			f2h_axi_clk          => CONNECTED_TO_f2h_axi_clk,          --  f2h_axi_clock.clk
+			f2h_axi_rst_n        => CONNECTED_TO_f2h_axi_rst_n,        --  f2h_axi_reset.reset_n
+			f2h_AWID             => CONNECTED_TO_f2h_AWID,             --  f2h_axi_slave.awid
+			f2h_AWADDR           => CONNECTED_TO_f2h_AWADDR,           --               .awaddr
+			f2h_AWLEN            => CONNECTED_TO_f2h_AWLEN,            --               .awlen
+			f2h_AWSIZE           => CONNECTED_TO_f2h_AWSIZE,           --               .awsize
+			f2h_AWBURST          => CONNECTED_TO_f2h_AWBURST,          --               .awburst
+			f2h_AWLOCK           => CONNECTED_TO_f2h_AWLOCK,           --               .awlock
+			f2h_AWCACHE          => CONNECTED_TO_f2h_AWCACHE,          --               .awcache
+			f2h_AWPROT           => CONNECTED_TO_f2h_AWPROT,           --               .awprot
+			f2h_AWVALID          => CONNECTED_TO_f2h_AWVALID,          --               .awvalid
+			f2h_AWREADY          => CONNECTED_TO_f2h_AWREADY,          --               .awready
+			f2h_AWQOS            => CONNECTED_TO_f2h_AWQOS,            --               .awqos
+			f2h_WDATA            => CONNECTED_TO_f2h_WDATA,            --               .wdata
+			f2h_WSTRB            => CONNECTED_TO_f2h_WSTRB,            --               .wstrb
+			f2h_WLAST            => CONNECTED_TO_f2h_WLAST,            --               .wlast
+			f2h_WVALID           => CONNECTED_TO_f2h_WVALID,           --               .wvalid
+			f2h_WREADY           => CONNECTED_TO_f2h_WREADY,           --               .wready
+			f2h_BID              => CONNECTED_TO_f2h_BID,              --               .bid
+			f2h_BRESP            => CONNECTED_TO_f2h_BRESP,            --               .bresp
+			f2h_BVALID           => CONNECTED_TO_f2h_BVALID,           --               .bvalid
+			f2h_BREADY           => CONNECTED_TO_f2h_BREADY,           --               .bready
+			f2h_ARID             => CONNECTED_TO_f2h_ARID,             --               .arid
+			f2h_ARADDR           => CONNECTED_TO_f2h_ARADDR,           --               .araddr
+			f2h_ARLEN            => CONNECTED_TO_f2h_ARLEN,            --               .arlen
+			f2h_ARSIZE           => CONNECTED_TO_f2h_ARSIZE,           --               .arsize
+			f2h_ARBURST          => CONNECTED_TO_f2h_ARBURST,          --               .arburst
+			f2h_ARLOCK           => CONNECTED_TO_f2h_ARLOCK,           --               .arlock
+			f2h_ARCACHE          => CONNECTED_TO_f2h_ARCACHE,          --               .arcache
+			f2h_ARPROT           => CONNECTED_TO_f2h_ARPROT,           --               .arprot
+			f2h_ARVALID          => CONNECTED_TO_f2h_ARVALID,          --               .arvalid
+			f2h_ARREADY          => CONNECTED_TO_f2h_ARREADY,          --               .arready
+			f2h_ARQOS            => CONNECTED_TO_f2h_ARQOS,            --               .arqos
+			f2h_RID              => CONNECTED_TO_f2h_RID,              --               .rid
+			f2h_RDATA            => CONNECTED_TO_f2h_RDATA,            --               .rdata
+			f2h_RRESP            => CONNECTED_TO_f2h_RRESP,            --               .rresp
+			f2h_RLAST            => CONNECTED_TO_f2h_RLAST,            --               .rlast
+			f2h_RVALID           => CONNECTED_TO_f2h_RVALID,           --               .rvalid
+			f2h_RREADY           => CONNECTED_TO_f2h_RREADY,           --               .rready
+			f2h_ARUSER           => CONNECTED_TO_f2h_ARUSER,           --               .aruser
+			f2h_AWUSER           => CONNECTED_TO_f2h_AWUSER            --               .awuser
 		);
 

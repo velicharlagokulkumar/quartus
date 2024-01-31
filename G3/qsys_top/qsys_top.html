@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2024.01.25.19:30:28</td>
+    <td class="l">2024.01.31.18:27:51</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -119,7 +119,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -164,10 +164,28 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
+       <a href="#module_pattern_writer_1">pattern_writer_1</a>
+      </td>
+      <td class="from">avalon_master&#160;&#160;</td>
+      <td class="main" rowspan="26">agilex_hps</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;f2h_axi_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
        <a href="#module_clk_100">clk_100</a>
       </td>
       <td class="from">out_clk&#160;&#160;</td>
-      <td class="main" rowspan="16">agilex_hps</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;f2h_axi_clock</td>
+     </tr>
+     <tr>
+      <td class="from">out_clk&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;h2f_axi_clock</td>
@@ -188,9 +206,15 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="2">
+      <td class="neighbor" rowspan="4">
        <a href="#module_rst_in">rst_in</a>
       </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;f2h_axi_reset</td>
+     </tr>
+     <tr>
       <td class="from">out_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -234,6 +258,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">h2f_axi_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
        <a href="#module_pio_0">pio_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">h2f_axi_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_onchip_memory2_0">onchip_memory2_0</a>
       </td>
      </tr>
      <tr>
@@ -425,9 +465,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_pattern_writer_1">pattern_writer_1</a>
+       <a href="#module_agilex_hps">agilex_hps</a>
       </td>
-      <td class="from">avalon_master&#160;&#160;</td>
+      <td class="from">h2f_axi_master&#160;&#160;</td>
       <td class="main" rowspan="8">onchip_memory2_0</td>
      </tr>
      <tr>
@@ -602,13 +642,13 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">avalon_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_onchip_memory2_0">onchip_memory2_0</a>
+       <a href="#module_agilex_hps">agilex_hps</a>
       </td>
      </tr>
      <tr>
       <td></td>
       <td></td>
-      <td class="to">&#160;&#160;s1</td>
+      <td class="to">&#160;&#160;f2h_axi_slave</td>
      </tr>
     </table>
    </div>
@@ -967,7 +1007,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0.00 seconds</td>
-    <td class="r">rendering took 0.02 seconds</td>
+    <td class="r">rendering took 0.03 seconds</td>
    </tr>
   </table>
  </body>

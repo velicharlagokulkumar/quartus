@@ -11,8 +11,8 @@
 // agreement for further details.
 
 
-module agilex_hps_intel_agilex_interface_generator_191_bx75jjy #(
-	parameter F2S_DATA_WIDTH = 0 ,
+module agilex_hps_intel_agilex_interface_generator_191_wu6x2ny #(
+	parameter F2S_DATA_WIDTH = 512 ,
 	parameter F2S_ADDRESS_WIDTH = 32 ,
 	parameter S2F_DATA_WIDTH = 0 ,
 	parameter S2F_ADDRESS_WIDTH = 32 ,
@@ -26,6 +26,50 @@ module agilex_hps_intel_agilex_interface_generator_191_bx75jjy #(
  ,output wire [4096 - 1 : 0 ] hps_emif_hps_to_emif
  ,input wire [1 - 1 : 0 ] hps_emif_emif_to_gp
  ,output wire [2 - 1 : 0 ] hps_emif_gp_to_emif
+// f2h_axi_clock
+ ,input wire [1 - 1 : 0 ] f2h_axi_clk
+// f2h_axi_reset
+ ,input wire [1 - 1 : 0 ] f2h_axi_rst_n
+// f2h_axi_slave
+ ,input wire [4 - 1 : 0 ] f2h_AWCACHE
+ ,input wire [4 - 1 : 0 ] f2h_ARCACHE
+ ,input wire [5 - 1 : 0 ] f2h_AWID
+ ,input wire [32 - 1 : 0 ] f2h_AWADDR
+ ,input wire [8 - 1 : 0 ] f2h_AWLEN
+ ,input wire [3 - 1 : 0 ] f2h_AWSIZE
+ ,input wire [2 - 1 : 0 ] f2h_AWBURST
+ ,input wire [1 - 1 : 0 ] f2h_AWLOCK
+ ,input wire [3 - 1 : 0 ] f2h_AWPROT
+ ,input wire [1 - 1 : 0 ] f2h_AWVALID
+ ,output wire [1 - 1 : 0 ] f2h_AWREADY
+ ,input wire [4 - 1 : 0 ] f2h_AWQOS
+ ,input wire [512 - 1 : 0 ] f2h_WDATA
+ ,input wire [64 - 1 : 0 ] f2h_WSTRB
+ ,input wire [1 - 1 : 0 ] f2h_WLAST
+ ,input wire [1 - 1 : 0 ] f2h_WVALID
+ ,output wire [1 - 1 : 0 ] f2h_WREADY
+ ,output wire [5 - 1 : 0 ] f2h_BID
+ ,output wire [2 - 1 : 0 ] f2h_BRESP
+ ,output wire [1 - 1 : 0 ] f2h_BVALID
+ ,input wire [1 - 1 : 0 ] f2h_BREADY
+ ,input wire [5 - 1 : 0 ] f2h_ARID
+ ,input wire [32 - 1 : 0 ] f2h_ARADDR
+ ,input wire [8 - 1 : 0 ] f2h_ARLEN
+ ,input wire [3 - 1 : 0 ] f2h_ARSIZE
+ ,input wire [2 - 1 : 0 ] f2h_ARBURST
+ ,input wire [1 - 1 : 0 ] f2h_ARLOCK
+ ,input wire [3 - 1 : 0 ] f2h_ARPROT
+ ,input wire [1 - 1 : 0 ] f2h_ARVALID
+ ,output wire [1 - 1 : 0 ] f2h_ARREADY
+ ,input wire [4 - 1 : 0 ] f2h_ARQOS
+ ,output wire [5 - 1 : 0 ] f2h_RID
+ ,output wire [512 - 1 : 0 ] f2h_RDATA
+ ,output wire [2 - 1 : 0 ] f2h_RRESP
+ ,output wire [1 - 1 : 0 ] f2h_RLAST
+ ,output wire [1 - 1 : 0 ] f2h_RVALID
+ ,input wire [1 - 1 : 0 ] f2h_RREADY
+ ,input wire [23 - 1 : 0 ] f2h_ARUSER
+ ,input wire [23 - 1 : 0 ] f2h_AWUSER
 // h2f_axi_clock
  ,input wire [1 - 1 : 0 ] h2f_axi_clk
 // h2f_axi_reset
@@ -623,6 +667,12 @@ tennm_io_obuf hps_gpio1_io21_obuf(
 );
 
 
+assign wsb_ssd_term[4:0] = f2h_AWUSER[22:18];
+assign rsb_sid_term[9:0] = f2h_ARUSER[17:8];
+assign aruser_term[7:0] = f2h_ARUSER[7:0];
+assign wsb_sid_term[9:0] = f2h_AWUSER[17:8];
+assign awuser_term[7:0] = f2h_AWUSER[7:0];
+assign rsb_ssd_term[4:0] = f2h_ARUSER[22:18];
 
 tennm_hps_hps_wrapper hps_inst(
  .HPS_IOA_17_O({
@@ -990,11 +1040,168 @@ one_hps_interface_ddr emif_interface(
 
 
 tennm_hps_mpfe_wrapper mpfe_inst(
- .f2s_0_port_size_config({
+ .f2s_0_awuser({
+    8'b11100000 // 7:0
+  })
+,.f2s_0_awsnoop({
+    3'b000 // 2:0
+  })
+,.f2s_0_bready({
+    f2h_BREADY[0:0] // 0:0
+  })
+,.f2s_0_awlock({
+    f2h_AWLOCK[0:0] // 0:0
+  })
+,.f2s_0_clk({
+    f2h_axi_clk[0:0] // 0:0
+  })
+,.f2s_0_rvalid({
+    f2h_RVALID[0:0] // 0:0
+  })
+,.f2s_0_awqos({
+    f2h_AWQOS[3:0] // 3:0
+  })
+,.f2s_0_awaddr({
+    8'b00000000 // 39:32
+   ,f2h_AWADDR[31:0] // 31:0
+  })
+,.f2s_0_wsb_ssd({
+    5'b00000 // 4:0
+  })
+,.f2s_0_awbar({
+    2'b00 // 1:0
+  })
+,.f2s_0_arqos({
+    f2h_ARQOS[3:0] // 3:0
+  })
+,.f2s_0_arcache({
+    f2h_ARCACHE[3:0] // 3:0
+  })
+,.f2s_0_awdomain({
     2'b11 // 1:0
+  })
+,.f2s_0_arbar({
+    2'b00 // 1:0
+  })
+,.f2s_0_wdata({
+    f2h_WDATA[511:0] // 511:0
+  })
+,.f2s_0_arburst({
+    f2h_ARBURST[1:0] // 1:0
+  })
+,.f2s_0_port_size_config({
+    2'b10 // 1:0
+  })
+,.f2s_0_rresp({
+    f2h_RRESP[1:0] // 1:0
+  })
+,.f2s_0_awprot({
+    f2h_AWPROT[2:0] // 2:0
+  })
+,.f2s_0_awlen({
+    f2h_AWLEN[7:0] // 7:0
+  })
+,.f2s_0_wvalid({
+    f2h_WVALID[0:0] // 0:0
+  })
+,.f2s_0_bid({
+    f2h_BID[4:0] // 4:0
+  })
+,.f2s_0_rready({
+    f2h_RREADY[0:0] // 0:0
+  })
+,.f2s_0_rsb_ssd({
+    5'b00000 // 4:0
+  })
+,.f2s_0_arlen({
+    f2h_ARLEN[7:0] // 7:0
+  })
+,.f2s_0_awsize({
+    f2h_AWSIZE[2:0] // 2:0
+  })
+,.f2s_0_ardomain({
+    2'b11 // 1:0
+  })
+,.f2s_0_awcache({
+    f2h_AWCACHE[3:0] // 3:0
+  })
+,.f2s_0_awburst({
+    f2h_AWBURST[1:0] // 1:0
+  })
+,.f2s_0_aruser({
+    8'b11100000 // 7:0
+  })
+,.f2s_0_wlast({
+    f2h_WLAST[0:0] // 0:0
+  })
+,.f2s_0_arvalid({
+    f2h_ARVALID[0:0] // 0:0
+  })
+,.f2s_0_wready({
+    f2h_WREADY[0:0] // 0:0
+  })
+,.f2s_0_arlock({
+    f2h_ARLOCK[0:0] // 0:0
+  })
+,.f2s_0_araddr({
+    8'b00000000 // 39:32
+   ,f2h_ARADDR[31:0] // 31:0
+  })
+,.f2s_0_rid({
+    f2h_RID[4:0] // 4:0
+  })
+,.f2s_0_arid({
+    f2h_ARID[4:0] // 4:0
+  })
+,.f2s_0_rdata({
+    f2h_RDATA[511:0] // 511:0
+  })
+,.f2s_0_arready({
+    f2h_ARREADY[0:0] // 0:0
+  })
+,.f2s_0_arprot({
+    f2h_ARPROT[2:0] // 2:0
+  })
+,.f2s_0_awvalid({
+    f2h_AWVALID[0:0] // 0:0
+  })
+,.f2s_0_wsb_sid({
+    10'b0000000000 // 9:0
+  })
+,.f2s_0_rst_n({
+    f2h_axi_rst_n[0:0] // 0:0
+  })
+,.f2s_0_arsize({
+    f2h_ARSIZE[2:0] // 2:0
+  })
+,.f2s_0_wstrb({
+    f2h_WSTRB[63:0] // 63:0
+  })
+,.f2s_0_bvalid({
+    f2h_BVALID[0:0] // 0:0
+  })
+,.f2s_0_arsnoop({
+    4'b0000 // 3:0
+  })
+,.f2s_0_awid({
+    f2h_AWID[4:0] // 4:0
+  })
+,.f2s_0_awready({
+    f2h_AWREADY[0:0] // 0:0
+  })
+,.f2s_0_rlast({
+    f2h_RLAST[0:0] // 0:0
+  })
+,.f2s_0_rsb_sid({
+    10'b0000000000 // 9:0
+  })
+,.f2s_0_bresp({
+    f2h_BRESP[1:0] // 1:0
   })
 );
 
 defparam mpfe_inst.TILEC = "tilec_mpfe";
+defparam mpfe_inst.WDTH = 512;
+defparam mpfe_inst.ADDR = 32;
 endmodule
 

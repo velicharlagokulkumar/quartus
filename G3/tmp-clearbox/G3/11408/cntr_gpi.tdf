@@ -1,4 +1,4 @@
---lpm_counter CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" CBX_SINGLE_OUTPUT_FILE="OFF" DEVICE_FAMILY="Agilex" lpm_modulus=141 lpm_port_updown="PORT_UNUSED" lpm_width=8 clk_en clock q sclr CARRY_CHAIN="MANUAL"
+--lpm_counter CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" CBX_SINGLE_OUTPUT_FILE="OFF" DEVICE_FAMILY="Agilex" lpm_modulus=149 lpm_port_updown="PORT_UNUSED" lpm_width=8 clk_en clock q sclr CARRY_CHAIN="MANUAL"
 --VERSION_BEGIN 22.4 cbx_lpm_add_sub 2022:11:23:20:36:22:SC cbx_lpm_compare 2022:11:23:20:36:22:SC cbx_lpm_counter 2022:11:23:20:36:22:SC cbx_lpm_decode 2022:11:23:20:36:22:SC cbx_mgl 2022:11:23:20:36:26:SC cbx_nadder 2022:11:23:20:36:22:SC cbx_stratix 2022:11:23:20:36:22:SC cbx_stratixii 2022:11:23:20:36:22:SC  VERSION_END
 
 
@@ -25,7 +25,7 @@ WITH ( DONT_TOUCH, EXTENDED_LUT, LUT_MASK)
 RETURNS ( combout, cout, sumout);
 
 --synthesis_resources = lut 8 reg 8 
-SUBDESIGN cntr_8pi
+SUBDESIGN cntr_gpi
 ( 
 	clk_en	:	input;
 	clock	:	input;
@@ -105,7 +105,7 @@ BEGIN
 	data[] = GND;
 	external_cin = B"1";
 	lsb_cin = B"0";
-	modulus_bus[] = B"10001100";
+	modulus_bus[] = B"10010100";
 	modulus_trigger = cout_actual;
 	q[] = safe_q[];
 	s_val[] = B"11111111";

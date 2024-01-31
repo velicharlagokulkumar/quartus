@@ -1,5 +1,5 @@
 Fitter Retime Stage Report for G3
-Mon Jan 29 17:29:14 2024
+Wed Jan 31 18:39:54 2024
 Quartus Prime Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
 
 
@@ -108,12 +108,12 @@ Clock Domain altera_reserved_tck (Meets timing requirements: No further analysis
 +-----------------+
 ; Retime Messages ;
 +-----------------+
-Info (20030): Parallel compilation is enabled and will use 24 of the 48 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info: *******************************************************************
 Info: Running Quartus Prime Fitter
     Info: Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
-    Info: Processing started: Mon Jan 29 17:02:05 2024
-    Info: System process ID: 80859
+    Info: Processing started: Wed Jan 31 18:30:48 2024
+    Info: System process ID: 11857
 Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off G3 -c G3
 Info: qfit2_default_script.tcl version: #1
 Info: Project  = G3
@@ -121,7 +121,7 @@ Info: Revision = G3
 Info (17966): Starting Hyper-Retimer operations.
 Info (18914): The Hyper-Retimer was unable to optimize the design due to retiming restrictions. Run Fast Forward Timing Closure Recommendations to see step-by-step suggestions for design changes and show the estimated performance improvement from making these changes.
 Info (17968): Completed Hyper-Retimer operations.
-Info (18821): Fitter Hyper-Retimer operations ending: elapsed time is 00:00:08
+Info (18821): Fitter Hyper-Retimer operations ending: elapsed time is 00:00:03
 Info: Constraints on the CDC paths between acquisition clock and communication clock are created in the Signal Tap instance, auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0
 Info: The clock period of 'altera_reserved_tck' used in the Signal Tap instance, auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0 is not defined, setting max delay to 30ns (default 33MHz tck)
 Info: Adding default timing constraints to JTAG signals.  This will help to achieve basic functionality since no such constraints were provided by the user.

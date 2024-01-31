@@ -21,7 +21,7 @@
 #endif
 
 
-void program_prbs_pattern_payload_length (u32 *ptr,unsigned long pattern_length)
+void program_prbs_pattern_payload_length (u32 *ptr, unsigned long pattern_length)
 {
   prbs_generator_set_payload_length (ptr,PRBS_PATTERN_GENERATOR_BASE, pattern_length);  
   prbs_generator_enable_start (ptr,PRBS_PATTERN_GENERATOR_BASE);

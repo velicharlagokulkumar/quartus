@@ -52,19 +52,18 @@ int main()
                 return -1;
         }
 
-  printf("Starting test.\n");
-
   // throughout all the tests there will be a finite payload size used and the checker cores will not stop on a failure (test software will exit when the transfer completes)
   prbs_generator_disable_infinite_payload_length (h2f_ptr,PRBS_PATTERN_GENERATOR_BASE);
-  ram_test_controller_set_timer_resolution(h2f_ptr,RAM_TEST_CONTROLLER_BASE, TIMER_RESOLUTION);
+  //ram_test_controller_set_timer_resolution(h2f_ptr,RAM_TEST_CONTROLLER_BASE, TIMER_RESOLUTION);
   program_prbs_pattern_payload_length (h2f_ptr,RAM_LENGTH_MINIMUM);  
-  ram_test_controller_set_timer(h2f_ptr,RAM_TEST_CONTROLLER_BASE, 0);  // reset the timer built into the test controller to 0
-  start_test(h2f_ptr,RAM_BASE, RAM_LENGTH_MINIMUM, BLOCK_SIZE_MINIMUM, BLOCK_TRAIL_DISTANCE_MINIMUM, CONCURRENT_ACCESS_ENABLE);
+  //ram_test_controller_set_timer(h2f_ptr,RAM_TEST_CONTROLLER_BASE, 0);  // reset the timer built into the test controller to 0
+  printf("Starting.....\n");
+  //start_test(h2f_ptr,RAM_BASE, RAM_LENGTH_MINIMUM, BLOCK_SIZE_MINIMUM, BLOCK_TRAIL_DISTANCE_MINIMUM, CONCURRENT_ACCESS_ENABLE);
 
+  printf("Finishing test.\n");
+  //test_time = ram_test_controller_read_timer(h2f_ptr, RAM_TEST_CONTROLLER_BASE);  // the timer only runs while the masters are moving data so we can read the timer result here
 
-  test_time = ram_test_controller_read_timer(h2f_ptr, RAM_TEST_CONTROLLER_BASE);  // the timer only runs while the masters are moving data so we can read the timer result here
-
-   printf("%d bytes transferred in %lu clock cycles\n", 2*RAM_LENGTH_MINIMUM, test_time*TIMER_RESOLUTION); 
+  // printf("%d bytes transferred in %lu clock cycles\n", 2*RAM_LENGTH_MINIMUM, test_time * TIMER_RESOLUTION); 
 
       if (failure_detected != 0)
       {
@@ -75,6 +74,6 @@ int main()
         printf("\nTest cycle complete.\n");
       }
 
-    printf("Entire test is complete.\n\n %c", 0x4);
+    printf("Entire test is complete\n");
     return failure_detected;  // returns 1 if a failure was detected, a 2 if any of the tests time out, otherwise 0 is return if all the tests pass on time
 }

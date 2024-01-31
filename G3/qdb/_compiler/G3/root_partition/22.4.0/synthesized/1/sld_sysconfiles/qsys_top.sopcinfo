@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="qsys_top" kind="qsys_top" version="1.0" fabric="QSYS">
  <!-- Format version 22.4 94 (Future versions may contain additional information.) -->
- <!-- 2024.01.25.19:30:30 -->
+ <!-- 2024.01.31.18:27:55 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -1141,6 +1141,479 @@ the requested settings for a module instance. -->
                     <cmsisVars/>
                 </cmsisInfo>
             </interface>
+            <interface>
+                <name>f2h_axi_clock</name>
+                <type>clock</type>
+                <isStart>false</isStart>
+                <ports>
+                    <port>
+                        <name>f2h_axi_clk</name>
+                        <role>clk</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap/>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>clockRate</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>externallyDriven</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>ptfSchematicName</key>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
+            <interface>
+                <name>f2h_axi_reset</name>
+                <type>reset</type>
+                <isStart>false</isStart>
+                <ports>
+                    <port>
+                        <name>f2h_axi_rst_n</name>
+                        <role>reset_n</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap/>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>associatedClock</key>
+                            <value>f2h_axi_clock</value>
+                        </entry>
+                        <entry>
+                            <key>synchronousEdges</key>
+                            <value>DEASSERT</value>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
+            <interface>
+                <name>f2h_axi_slave</name>
+                <type>axi4</type>
+                <isStart>false</isStart>
+                <ports>
+                    <port>
+                        <name>f2h_AWID</name>
+                        <role>awid</role>
+                        <direction>Input</direction>
+                        <width>5</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_AWADDR</name>
+                        <role>awaddr</role>
+                        <direction>Input</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_AWLEN</name>
+                        <role>awlen</role>
+                        <direction>Input</direction>
+                        <width>8</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_AWSIZE</name>
+                        <role>awsize</role>
+                        <direction>Input</direction>
+                        <width>3</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_AWBURST</name>
+                        <role>awburst</role>
+                        <direction>Input</direction>
+                        <width>2</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_AWLOCK</name>
+                        <role>awlock</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_AWCACHE</name>
+                        <role>awcache</role>
+                        <direction>Input</direction>
+                        <width>4</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_AWPROT</name>
+                        <role>awprot</role>
+                        <direction>Input</direction>
+                        <width>3</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_AWVALID</name>
+                        <role>awvalid</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_AWREADY</name>
+                        <role>awready</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_AWQOS</name>
+                        <role>awqos</role>
+                        <direction>Input</direction>
+                        <width>4</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_WDATA</name>
+                        <role>wdata</role>
+                        <direction>Input</direction>
+                        <width>512</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_WSTRB</name>
+                        <role>wstrb</role>
+                        <direction>Input</direction>
+                        <width>64</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_WLAST</name>
+                        <role>wlast</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_WVALID</name>
+                        <role>wvalid</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_WREADY</name>
+                        <role>wready</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_BID</name>
+                        <role>bid</role>
+                        <direction>Output</direction>
+                        <width>5</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_BRESP</name>
+                        <role>bresp</role>
+                        <direction>Output</direction>
+                        <width>2</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_BVALID</name>
+                        <role>bvalid</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_BREADY</name>
+                        <role>bready</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_ARID</name>
+                        <role>arid</role>
+                        <direction>Input</direction>
+                        <width>5</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_ARADDR</name>
+                        <role>araddr</role>
+                        <direction>Input</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_ARLEN</name>
+                        <role>arlen</role>
+                        <direction>Input</direction>
+                        <width>8</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_ARSIZE</name>
+                        <role>arsize</role>
+                        <direction>Input</direction>
+                        <width>3</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_ARBURST</name>
+                        <role>arburst</role>
+                        <direction>Input</direction>
+                        <width>2</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_ARLOCK</name>
+                        <role>arlock</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_ARCACHE</name>
+                        <role>arcache</role>
+                        <direction>Input</direction>
+                        <width>4</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_ARPROT</name>
+                        <role>arprot</role>
+                        <direction>Input</direction>
+                        <width>3</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_ARVALID</name>
+                        <role>arvalid</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_ARREADY</name>
+                        <role>arready</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_ARQOS</name>
+                        <role>arqos</role>
+                        <direction>Input</direction>
+                        <width>4</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_RID</name>
+                        <role>rid</role>
+                        <direction>Output</direction>
+                        <width>5</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_RDATA</name>
+                        <role>rdata</role>
+                        <direction>Output</direction>
+                        <width>512</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_RRESP</name>
+                        <role>rresp</role>
+                        <direction>Output</direction>
+                        <width>2</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_RLAST</name>
+                        <role>rlast</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_RVALID</name>
+                        <role>rvalid</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_RREADY</name>
+                        <role>rready</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_ARUSER</name>
+                        <role>aruser</role>
+                        <direction>Input</direction>
+                        <width>23</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>f2h_AWUSER</name>
+                        <role>awuser</role>
+                        <direction>Input</direction>
+                        <width>23</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap/>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>associatedClock</key>
+                            <value>f2h_axi_clock</value>
+                        </entry>
+                        <entry>
+                            <key>associatedReset</key>
+                            <value>f2h_axi_reset</value>
+                        </entry>
+                        <entry>
+                            <key>trustzoneAware</key>
+                            <value>true</value>
+                        </entry>
+                        <entry>
+                            <key>maximumOutstandingReads</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>maximumOutstandingWrites</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>maximumOutstandingTransactions</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>readAcceptanceCapability</key>
+                            <value>8</value>
+                        </entry>
+                        <entry>
+                            <key>writeAcceptanceCapability</key>
+                            <value>8</value>
+                        </entry>
+                        <entry>
+                            <key>combinedAcceptanceCapability</key>
+                            <value>16</value>
+                        </entry>
+                        <entry>
+                            <key>readDataReorderingDepth</key>
+                            <value>8</value>
+                        </entry>
+                        <entry>
+                            <key>bridgesToMaster</key>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
         </interfaces>
     </boundary>
     <originalModuleInfo>
@@ -1403,6 +1876,40 @@ the requested settings for a module instance. -->
     </systemInfoParameterDescriptors>
     <systemInfos>
         <connPtSystemInfos>
+            <entry>
+                <key>f2h_axi_clock</key>
+                <value>
+                    <connectionPointName>f2h_axi_clock</connectionPointName>
+                    <suppliedSystemInfos/>
+                    <consumedSystemInfos>
+                        <entry>
+                            <key>CLOCK_RATE</key>
+                            <value>100000000</value>
+                        </entry>
+                    </consumedSystemInfos>
+                </value>
+            </entry>
+            <entry>
+                <key>f2h_axi_slave</key>
+                <value>
+                    <connectionPointName>f2h_axi_slave</connectionPointName>
+                    <suppliedSystemInfos>
+                        <entry>
+                            <key>ADDRESS_MAP</key>
+                            <value>&lt;address-map&gt;&lt;slave name='f2h_axi_slave' start='0x0' end='0x100000000' datawidth='512' /&gt;&lt;/address-map&gt;</value>
+                        </entry>
+                        <entry>
+                            <key>ADDRESS_WIDTH</key>
+                            <value>32</value>
+                        </entry>
+                        <entry>
+                            <key>MAX_SLAVE_DATA_WIDTH</key>
+                            <value>512</value>
+                        </entry>
+                    </suppliedSystemInfos>
+                    <consumedSystemInfos/>
+                </value>
+            </entry>
             <entry>
                 <key>h2f_axi_clock</key>
                 <value>
@@ -2486,6 +2993,479 @@ the requested settings for a module instance. -->
                 <cmsisVars/>
             </cmsisInfo>
         </interface>
+        <interface>
+            <name>f2h_axi_clock</name>
+            <type>clock</type>
+            <isStart>false</isStart>
+            <ports>
+                <port>
+                    <name>f2h_axi_clk</name>
+                    <role>clk</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap/>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>clockRate</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>externallyDriven</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>ptfSchematicName</key>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
+        <interface>
+            <name>f2h_axi_reset</name>
+            <type>reset</type>
+            <isStart>false</isStart>
+            <ports>
+                <port>
+                    <name>f2h_axi_rst_n</name>
+                    <role>reset_n</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap/>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>associatedClock</key>
+                        <value>f2h_axi_clock</value>
+                    </entry>
+                    <entry>
+                        <key>synchronousEdges</key>
+                        <value>DEASSERT</value>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
+        <interface>
+            <name>f2h_axi_slave</name>
+            <type>axi4</type>
+            <isStart>false</isStart>
+            <ports>
+                <port>
+                    <name>f2h_AWID</name>
+                    <role>awid</role>
+                    <direction>Input</direction>
+                    <width>5</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_AWADDR</name>
+                    <role>awaddr</role>
+                    <direction>Input</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_AWLEN</name>
+                    <role>awlen</role>
+                    <direction>Input</direction>
+                    <width>8</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_AWSIZE</name>
+                    <role>awsize</role>
+                    <direction>Input</direction>
+                    <width>3</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_AWBURST</name>
+                    <role>awburst</role>
+                    <direction>Input</direction>
+                    <width>2</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_AWLOCK</name>
+                    <role>awlock</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_AWCACHE</name>
+                    <role>awcache</role>
+                    <direction>Input</direction>
+                    <width>4</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_AWPROT</name>
+                    <role>awprot</role>
+                    <direction>Input</direction>
+                    <width>3</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_AWVALID</name>
+                    <role>awvalid</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_AWREADY</name>
+                    <role>awready</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_AWQOS</name>
+                    <role>awqos</role>
+                    <direction>Input</direction>
+                    <width>4</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_WDATA</name>
+                    <role>wdata</role>
+                    <direction>Input</direction>
+                    <width>512</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_WSTRB</name>
+                    <role>wstrb</role>
+                    <direction>Input</direction>
+                    <width>64</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_WLAST</name>
+                    <role>wlast</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_WVALID</name>
+                    <role>wvalid</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_WREADY</name>
+                    <role>wready</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_BID</name>
+                    <role>bid</role>
+                    <direction>Output</direction>
+                    <width>5</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_BRESP</name>
+                    <role>bresp</role>
+                    <direction>Output</direction>
+                    <width>2</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_BVALID</name>
+                    <role>bvalid</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_BREADY</name>
+                    <role>bready</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_ARID</name>
+                    <role>arid</role>
+                    <direction>Input</direction>
+                    <width>5</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_ARADDR</name>
+                    <role>araddr</role>
+                    <direction>Input</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_ARLEN</name>
+                    <role>arlen</role>
+                    <direction>Input</direction>
+                    <width>8</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_ARSIZE</name>
+                    <role>arsize</role>
+                    <direction>Input</direction>
+                    <width>3</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_ARBURST</name>
+                    <role>arburst</role>
+                    <direction>Input</direction>
+                    <width>2</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_ARLOCK</name>
+                    <role>arlock</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_ARCACHE</name>
+                    <role>arcache</role>
+                    <direction>Input</direction>
+                    <width>4</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_ARPROT</name>
+                    <role>arprot</role>
+                    <direction>Input</direction>
+                    <width>3</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_ARVALID</name>
+                    <role>arvalid</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_ARREADY</name>
+                    <role>arready</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_ARQOS</name>
+                    <role>arqos</role>
+                    <direction>Input</direction>
+                    <width>4</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_RID</name>
+                    <role>rid</role>
+                    <direction>Output</direction>
+                    <width>5</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_RDATA</name>
+                    <role>rdata</role>
+                    <direction>Output</direction>
+                    <width>512</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_RRESP</name>
+                    <role>rresp</role>
+                    <direction>Output</direction>
+                    <width>2</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_RLAST</name>
+                    <role>rlast</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_RVALID</name>
+                    <role>rvalid</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_RREADY</name>
+                    <role>rready</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_ARUSER</name>
+                    <role>aruser</role>
+                    <direction>Input</direction>
+                    <width>23</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>f2h_AWUSER</name>
+                    <role>awuser</role>
+                    <direction>Input</direction>
+                    <width>23</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap/>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>associatedClock</key>
+                        <value>f2h_axi_clock</value>
+                    </entry>
+                    <entry>
+                        <key>associatedReset</key>
+                        <value>f2h_axi_reset</value>
+                    </entry>
+                    <entry>
+                        <key>trustzoneAware</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>maximumOutstandingReads</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>maximumOutstandingWrites</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>maximumOutstandingTransactions</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>readAcceptanceCapability</key>
+                        <value>8</value>
+                    </entry>
+                    <entry>
+                        <key>writeAcceptanceCapability</key>
+                        <value>8</value>
+                    </entry>
+                    <entry>
+                        <key>combinedAcceptanceCapability</key>
+                        <value>16</value>
+                    </entry>
+                    <entry>
+                        <key>readDataReorderingDepth</key>
+                        <value>8</value>
+                    </entry>
+                    <entry>
+                        <key>bridgesToMaster</key>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
     </interfaces>
 </boundaryDefinition>]]></value>
    <derived>false</derived>
@@ -2530,7 +3510,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="F2H_AXI_CLOCK_FREQ">
    <type>java.lang.Integer</type>
-   <value>100</value>
+   <value>100000000</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -3836,6 +4816,473 @@ parameters are a RESULT of the module parameters. -->
     <baseAddress>12288</baseAddress>
     <span>16</span>
    </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>onchip_memory2_0</moduleName>
+    <slaveName>s1</slaveName>
+    <name>onchip_memory2_0.s1</name>
+    <baseAddress>4096</baseAddress>
+    <span>4096</span>
+   </memoryBlock>
+  </interface>
+  <interface name="f2h_axi_clock" kind="clock_sink" version="22.4">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="externallyDriven">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="ptfSchematicName">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="clockRateKnown">
+    <type>java.lang.Boolean</type>
+    <value>true</value>
+    <derived>true</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="clockRate">
+    <type>java.lang.Long</type>
+    <value>100000000</value>
+    <derived>true</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>clock</type>
+   <isStart>false</isStart>
+   <port>
+    <name>f2h_axi_clk</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>clk</role>
+   </port>
+  </interface>
+  <interface name="f2h_axi_reset" kind="reset_sink" version="22.4">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value>f2h_axi_clock</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="synchronousEdges">
+    <type>com.altera.sopcmodel.reset.Reset$Edges</type>
+    <value>DEASSERT</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>reset</type>
+   <isStart>false</isStart>
+   <port>
+    <name>f2h_axi_rst_n</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>reset_n</role>
+   </port>
+  </interface>
+  <interface name="f2h_axi_slave" kind="altera_axi4_slave" version="22.4">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value>f2h_axi_clock</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value>f2h_axi_reset</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="trustzoneAware">
+    <type>boolean</type>
+    <value>true</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="maximumOutstandingReads">
+    <type>java.lang.Integer</type>
+    <value>1</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="maximumOutstandingWrites">
+    <type>java.lang.Integer</type>
+    <value>1</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="maximumOutstandingTransactions">
+    <type>java.lang.Integer</type>
+    <value>1</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="readAcceptanceCapability">
+    <type>java.lang.Integer</type>
+    <value>8</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="writeAcceptanceCapability">
+    <type>java.lang.Integer</type>
+    <value>8</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="combinedAcceptanceCapability">
+    <type>java.lang.Integer</type>
+    <value>16</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="readDataReorderingDepth">
+    <type>java.lang.Integer</type>
+    <value>8</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="bridgesToMaster">
+    <type>com.altera.entityinterfaces.IConnectionPoint</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="addressSpan">
+    <type>java.math.BigInteger</type>
+    <value>4294967296</value>
+    <derived>true</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>axi4</type>
+   <isStart>false</isStart>
+   <port>
+    <name>f2h_AWID</name>
+    <direction>Input</direction>
+    <width>5</width>
+    <role>awid</role>
+   </port>
+   <port>
+    <name>f2h_AWADDR</name>
+    <direction>Input</direction>
+    <width>32</width>
+    <role>awaddr</role>
+   </port>
+   <port>
+    <name>f2h_AWLEN</name>
+    <direction>Input</direction>
+    <width>8</width>
+    <role>awlen</role>
+   </port>
+   <port>
+    <name>f2h_AWSIZE</name>
+    <direction>Input</direction>
+    <width>3</width>
+    <role>awsize</role>
+   </port>
+   <port>
+    <name>f2h_AWBURST</name>
+    <direction>Input</direction>
+    <width>2</width>
+    <role>awburst</role>
+   </port>
+   <port>
+    <name>f2h_AWLOCK</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>awlock</role>
+   </port>
+   <port>
+    <name>f2h_AWCACHE</name>
+    <direction>Input</direction>
+    <width>4</width>
+    <role>awcache</role>
+   </port>
+   <port>
+    <name>f2h_AWPROT</name>
+    <direction>Input</direction>
+    <width>3</width>
+    <role>awprot</role>
+   </port>
+   <port>
+    <name>f2h_AWVALID</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>awvalid</role>
+   </port>
+   <port>
+    <name>f2h_AWREADY</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>awready</role>
+   </port>
+   <port>
+    <name>f2h_AWQOS</name>
+    <direction>Input</direction>
+    <width>4</width>
+    <role>awqos</role>
+   </port>
+   <port>
+    <name>f2h_WDATA</name>
+    <direction>Input</direction>
+    <width>512</width>
+    <role>wdata</role>
+   </port>
+   <port>
+    <name>f2h_WSTRB</name>
+    <direction>Input</direction>
+    <width>64</width>
+    <role>wstrb</role>
+   </port>
+   <port>
+    <name>f2h_WLAST</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>wlast</role>
+   </port>
+   <port>
+    <name>f2h_WVALID</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>wvalid</role>
+   </port>
+   <port>
+    <name>f2h_WREADY</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>wready</role>
+   </port>
+   <port>
+    <name>f2h_BID</name>
+    <direction>Output</direction>
+    <width>5</width>
+    <role>bid</role>
+   </port>
+   <port>
+    <name>f2h_BRESP</name>
+    <direction>Output</direction>
+    <width>2</width>
+    <role>bresp</role>
+   </port>
+   <port>
+    <name>f2h_BVALID</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>bvalid</role>
+   </port>
+   <port>
+    <name>f2h_BREADY</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>bready</role>
+   </port>
+   <port>
+    <name>f2h_ARID</name>
+    <direction>Input</direction>
+    <width>5</width>
+    <role>arid</role>
+   </port>
+   <port>
+    <name>f2h_ARADDR</name>
+    <direction>Input</direction>
+    <width>32</width>
+    <role>araddr</role>
+   </port>
+   <port>
+    <name>f2h_ARLEN</name>
+    <direction>Input</direction>
+    <width>8</width>
+    <role>arlen</role>
+   </port>
+   <port>
+    <name>f2h_ARSIZE</name>
+    <direction>Input</direction>
+    <width>3</width>
+    <role>arsize</role>
+   </port>
+   <port>
+    <name>f2h_ARBURST</name>
+    <direction>Input</direction>
+    <width>2</width>
+    <role>arburst</role>
+   </port>
+   <port>
+    <name>f2h_ARLOCK</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>arlock</role>
+   </port>
+   <port>
+    <name>f2h_ARCACHE</name>
+    <direction>Input</direction>
+    <width>4</width>
+    <role>arcache</role>
+   </port>
+   <port>
+    <name>f2h_ARPROT</name>
+    <direction>Input</direction>
+    <width>3</width>
+    <role>arprot</role>
+   </port>
+   <port>
+    <name>f2h_ARVALID</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>arvalid</role>
+   </port>
+   <port>
+    <name>f2h_ARREADY</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>arready</role>
+   </port>
+   <port>
+    <name>f2h_ARQOS</name>
+    <direction>Input</direction>
+    <width>4</width>
+    <role>arqos</role>
+   </port>
+   <port>
+    <name>f2h_RID</name>
+    <direction>Output</direction>
+    <width>5</width>
+    <role>rid</role>
+   </port>
+   <port>
+    <name>f2h_RDATA</name>
+    <direction>Output</direction>
+    <width>512</width>
+    <role>rdata</role>
+   </port>
+   <port>
+    <name>f2h_RRESP</name>
+    <direction>Output</direction>
+    <width>2</width>
+    <role>rresp</role>
+   </port>
+   <port>
+    <name>f2h_RLAST</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>rlast</role>
+   </port>
+   <port>
+    <name>f2h_RVALID</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>rvalid</role>
+   </port>
+   <port>
+    <name>f2h_RREADY</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>rready</role>
+   </port>
+   <port>
+    <name>f2h_ARUSER</name>
+    <direction>Input</direction>
+    <width>23</width>
+    <role>aruser</role>
+   </port>
+   <port>
+    <name>f2h_AWUSER</name>
+    <direction>Input</direction>
+    <width>23</width>
+    <role>awuser</role>
+   </port>
   </interface>
  </module>
  <module
@@ -4358,6 +5805,12 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>pattern_writer_1</moduleName>
     <slaveName>clock</slaveName>
     <name>pattern_writer_1.clock</name>
+   </clockDomainMember>
+   <clockDomainMember>
+    <isBridge>false</isBridge>
+    <moduleName>agilex_hps</moduleName>
+    <slaveName>f2h_axi_clock</slaveName>
+    <name>agilex_hps.f2h_axi_clock</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -9000,7 +10453,7 @@ the requested settings for a module instance. -->
    <value><![CDATA[<hdlParameterDescriptorDefinitionList>
     <hdlParameterDescriptorDefinition>
         <enabled>true</enabled>
-        <exported>true</exported>
+        <exported>false</exported>
         <parameterHdlType>INTEGER</parameterHdlType>
         <parameterName>ADDRESS_WIDTH</parameterName>
         <parameterType>java.lang.Integer</parameterType>
@@ -9008,7 +10461,7 @@ the requested settings for a module instance. -->
     </hdlParameterDescriptorDefinition>
     <hdlParameterDescriptorDefinition>
         <enabled>true</enabled>
-        <exported>true</exported>
+        <exported>false</exported>
         <parameterHdlType>INTEGER</parameterHdlType>
         <parameterName>LENGTH_WIDTH</parameterName>
         <parameterType>java.lang.Integer</parameterType>
@@ -9016,7 +10469,7 @@ the requested settings for a module instance. -->
     </hdlParameterDescriptorDefinition>
     <hdlParameterDescriptorDefinition>
         <enabled>true</enabled>
-        <exported>true</exported>
+        <exported>false</exported>
         <parameterHdlType>INTEGER</parameterHdlType>
         <parameterName>DATA_WIDTH</parameterName>
         <parameterType>java.lang.Integer</parameterType>
@@ -9024,7 +10477,7 @@ the requested settings for a module instance. -->
     </hdlParameterDescriptorDefinition>
     <hdlParameterDescriptorDefinition>
         <enabled>true</enabled>
-        <exported>true</exported>
+        <exported>false</exported>
         <parameterHdlType>INTEGER</parameterHdlType>
         <parameterName>BYTE_ENABLE_WIDTH</parameterName>
         <parameterType>java.lang.Integer</parameterType>
@@ -9032,7 +10485,7 @@ the requested settings for a module instance. -->
     </hdlParameterDescriptorDefinition>
     <hdlParameterDescriptorDefinition>
         <enabled>true</enabled>
-        <exported>true</exported>
+        <exported>false</exported>
         <parameterHdlType>INTEGER</parameterHdlType>
         <parameterName>BYTE_ENABLE_WIDTH_LOG2</parameterName>
         <parameterType>java.lang.Integer</parameterType>
@@ -9040,7 +10493,7 @@ the requested settings for a module instance. -->
     </hdlParameterDescriptorDefinition>
     <hdlParameterDescriptorDefinition>
         <enabled>true</enabled>
-        <exported>true</exported>
+        <exported>false</exported>
         <parameterHdlType>INTEGER</parameterHdlType>
         <parameterName>BURST_ENABLE</parameterName>
         <parameterType>java.lang.Integer</parameterType>
@@ -9048,7 +10501,7 @@ the requested settings for a module instance. -->
     </hdlParameterDescriptorDefinition>
     <hdlParameterDescriptorDefinition>
         <enabled>true</enabled>
-        <exported>true</exported>
+        <exported>false</exported>
         <parameterHdlType>INTEGER</parameterHdlType>
         <parameterName>MAX_BURST_COUNT</parameterName>
         <parameterType>java.lang.Integer</parameterType>
@@ -9056,7 +10509,7 @@ the requested settings for a module instance. -->
     </hdlParameterDescriptorDefinition>
     <hdlParameterDescriptorDefinition>
         <enabled>true</enabled>
-        <exported>true</exported>
+        <exported>false</exported>
         <parameterHdlType>INTEGER</parameterHdlType>
         <parameterName>BURST_WIDTH</parameterName>
         <parameterType>java.lang.Integer</parameterType>
@@ -9064,7 +10517,7 @@ the requested settings for a module instance. -->
     </hdlParameterDescriptorDefinition>
     <hdlParameterDescriptorDefinition>
         <enabled>true</enabled>
-        <exported>true</exported>
+        <exported>false</exported>
         <parameterHdlType>INTEGER</parameterHdlType>
         <parameterName>FIFO_DEPTH</parameterName>
         <parameterType>java.lang.Integer</parameterType>
@@ -9072,7 +10525,7 @@ the requested settings for a module instance. -->
     </hdlParameterDescriptorDefinition>
     <hdlParameterDescriptorDefinition>
         <enabled>true</enabled>
-        <exported>true</exported>
+        <exported>false</exported>
         <parameterHdlType>INTEGER</parameterHdlType>
         <parameterName>FIFO_DEPTH_LOG2</parameterName>
         <parameterType>java.lang.Integer</parameterType>
@@ -9080,7 +10533,7 @@ the requested settings for a module instance. -->
     </hdlParameterDescriptorDefinition>
     <hdlParameterDescriptorDefinition>
         <enabled>true</enabled>
-        <exported>true</exported>
+        <exported>false</exported>
         <parameterHdlType>INTEGER</parameterHdlType>
         <parameterName>BURST_REALIGN_ENABLE</parameterName>
         <parameterType>java.lang.Integer</parameterType>
@@ -9663,11 +11116,11 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>onchip_memory2_0</moduleName>
-    <slaveName>s1</slaveName>
-    <name>onchip_memory2_0.s1</name>
+    <moduleName>agilex_hps</moduleName>
+    <slaveName>f2h_axi_slave</slaveName>
+    <name>agilex_hps.f2h_axi_slave</name>
     <baseAddress>0</baseAddress>
-    <span>4096</span>
+    <span>4294967296</span>
    </memoryBlock>
   </interface>
  </module>
@@ -15280,11 +16733,11 @@ parameters are a RESULT of the module parameters. -->
   </interface>
  </module>
  <connection
-   name="pattern_writer_1.avalon_master/onchip_memory2_0.s1"
+   name="pattern_writer_1.avalon_master/agilex_hps.f2h_axi_slave"
    kind="avalon"
    version="22.4"
    start="pattern_writer_1.avalon_master"
-   end="onchip_memory2_0.s1">
+   end="agilex_hps.f2h_axi_slave">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -15474,8 +16927,8 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>pattern_writer_1</startModule>
   <startConnectionPoint>avalon_master</startConnectionPoint>
-  <endModule>onchip_memory2_0</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
+  <endModule>agilex_hps</endModule>
+  <endConnectionPoint>f2h_axi_slave</endConnectionPoint>
  </connection>
  <connection
    name="agilex_hps.h2f_axi_master/ram_controller_1.csr"
@@ -16072,6 +17525,204 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
+   name="agilex_hps.h2f_axi_master/onchip_memory2_0.s1"
+   kind="avalon"
+   version="22.4"
+   start="agilex_hps.h2f_axi_master"
+   end="onchip_memory2_0.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x1000</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="domainAlias">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="slaveDataWidthSysInfo">
+   <type>java.lang.Integer</type>
+   <value>-1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>MAX_SLAVE_DATA_WIDTH</sysinfo_type>
+  </parameter>
+  <parameter name="addressMapSysInfo">
+   <type>com.altera.entityinterfaces.moduleext.AddressMap</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>ADDRESS_MAP</sysinfo_type>
+  </parameter>
+  <parameter name="addressWidthSysInfo">
+   <type>com.altera.entityinterfaces.moduleext.AddressWidthType</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>ADDRESS_WIDTH</sysinfo_type>
+  </parameter>
+  <parameter name="qsys_mm.piplineType">
+   <type>java.lang.String</type>
+   <value>PIPELINE_STAGE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.enableAllPipelines">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.maxAdditionalLatency">
+   <type>java.lang.String</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.clockCrossingAdapter">
+   <type>java.lang.String</type>
+   <value>HANDSHAKE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.insertDefaultSlave">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.enableInstrumentation">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.interconnectResetSource">
+   <type>java.lang.String</type>
+   <value>DEFAULT</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.burstAdapterImplementation">
+   <type>java.lang.String</type>
+   <value>GENERIC_CONVERTER</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.widthAdapterImplementation">
+   <type>java.lang.String</type>
+   <value>GENERIC_CONVERTER</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.enableEccProtection">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.interconnectType">
+   <type>java.lang.String</type>
+   <value>STANDARD</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.syncResets">
+   <type>java.lang.String</type>
+   <value>TRUE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.optimizeRdFifoSize">
+   <type>java.lang.String</type>
+   <value>FALSE</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="qsys_mm.responseFifoType">
+   <type>java.lang.String</type>
+   <value>REGISTER_BASED</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>agilex_hps</startModule>
+  <startConnectionPoint>h2f_axi_master</startConnectionPoint>
+  <endModule>onchip_memory2_0</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
    name="prbs_generator_1.src_master/pattern_writer_1.snk_data_slave"
    kind="axi4stream"
    version="22.4"
@@ -16504,6 +18155,69 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clock</endConnectionPoint>
  </connection>
  <connection
+   name="clk_100.out_clk/agilex_hps.f2h_axi_clock"
+   kind="clock"
+   version="22.4"
+   start="clk_100.out_clk"
+   end="agilex_hps.f2h_axi_clock">
+  <parameter name="clockRateSysInfo">
+   <type>java.lang.Long</type>
+   <value>100000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>CLOCK_RATE</sysinfo_type>
+  </parameter>
+  <parameter name="clockDomainSysInfo">
+   <type>java.lang.Integer</type>
+   <value>-1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>CLOCK_DOMAIN</sysinfo_type>
+  </parameter>
+  <parameter name="resetDomainSysInfo">
+   <type>java.lang.Integer</type>
+   <value>-1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>RESET_DOMAIN</sysinfo_type>
+  </parameter>
+  <parameter name="clockResetSysInfo">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>CLOCK_RESET_INFO</sysinfo_type>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>clk_100</startModule>
+  <startConnectionPoint>out_clk</startConnectionPoint>
+  <endModule>agilex_hps</endModule>
+  <endConnectionPoint>f2h_axi_clock</endConnectionPoint>
+ </connection>
+ <connection
    name="clk_100.out_clk/agilex_hps.h2f_axi_clock"
    kind="clock"
    version="22.4"
@@ -16699,6 +18413,60 @@ parameters are a RESULT of the module parameters. -->
   <startConnectionPoint>hps_emif</startConnectionPoint>
   <endModule>agilex_hps</endModule>
   <endConnectionPoint>hps_emif</endConnectionPoint>
+ </connection>
+ <connection
+   name="rst_in.out_reset/agilex_hps.f2h_axi_reset"
+   kind="reset"
+   version="22.4"
+   start="rst_in.out_reset"
+   end="agilex_hps.f2h_axi_reset">
+  <parameter name="resetDomainSysInfo">
+   <type>java.lang.Integer</type>
+   <value>-1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>RESET_DOMAIN</sysinfo_type>
+  </parameter>
+  <parameter name="clockDomainSysInfo">
+   <type>java.lang.Integer</type>
+   <value>-1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>CLOCK_DOMAIN</sysinfo_type>
+  </parameter>
+  <parameter name="clockResetSysInfo">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>CLOCK_RESET_INFO</sysinfo_type>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>rst_in</startModule>
+  <startConnectionPoint>out_reset</startConnectionPoint>
+  <endModule>agilex_hps</endModule>
+  <endConnectionPoint>f2h_axi_reset</endConnectionPoint>
  </connection>
  <connection
    name="rst_in.out_reset/agilex_hps.h2f_axi_reset"
@@ -17049,7 +18817,7 @@ parameters are a RESULT of the module parameters. -->
   <version>22.4</version>
  </plugin>
  <plugin>
-  <instanceCount>9</instanceCount>
+  <instanceCount>10</instanceCount>
   <name>clock_sink</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
@@ -17057,7 +18825,7 @@ parameters are a RESULT of the module parameters. -->
   <version>22.4</version>
  </plugin>
  <plugin>
-  <instanceCount>7</instanceCount>
+  <instanceCount>8</instanceCount>
   <name>reset_sink</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
@@ -17070,6 +18838,14 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>AXI4 Manager</displayName>
+  <version>22.4</version>
+ </plugin>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>altera_axi4_slave</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>AXI4 Subordinate</displayName>
   <version>22.4</version>
  </plugin>
  <plugin>
@@ -17113,7 +18889,7 @@ parameters are a RESULT of the module parameters. -->
   <version>22.4</version>
  </plugin>
  <plugin>
-  <instanceCount>4</instanceCount>
+  <instanceCount>5</instanceCount>
   <name>avalon</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>
@@ -17129,7 +18905,7 @@ parameters are a RESULT of the module parameters. -->
   <version>22.4</version>
  </plugin>
  <plugin>
-  <instanceCount>7</instanceCount>
+  <instanceCount>8</instanceCount>
   <name>clock</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>
@@ -17145,7 +18921,7 @@ parameters are a RESULT of the module parameters. -->
   <version>22.4</version>
  </plugin>
  <plugin>
-  <instanceCount>6</instanceCount>
+  <instanceCount>7</instanceCount>
   <name>reset</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>

@@ -89,7 +89,48 @@
 			h2f_RRESP            : in    std_logic_vector(1 downto 0)    := (others => 'X'); -- rresp
 			h2f_RLAST            : in    std_logic                       := 'X';             -- rlast
 			h2f_RVALID           : in    std_logic                       := 'X';             -- rvalid
-			h2f_RREADY           : out   std_logic                                           -- rready
+			h2f_RREADY           : out   std_logic;                                          -- rready
+			f2h_axi_clk          : in    std_logic                       := 'X';             -- clk
+			f2h_axi_rst_n        : in    std_logic                       := 'X';             -- reset_n
+			f2h_AWID             : in    std_logic_vector(4 downto 0)    := (others => 'X'); -- awid
+			f2h_AWADDR           : in    std_logic_vector(31 downto 0)   := (others => 'X'); -- awaddr
+			f2h_AWLEN            : in    std_logic_vector(7 downto 0)    := (others => 'X'); -- awlen
+			f2h_AWSIZE           : in    std_logic_vector(2 downto 0)    := (others => 'X'); -- awsize
+			f2h_AWBURST          : in    std_logic_vector(1 downto 0)    := (others => 'X'); -- awburst
+			f2h_AWLOCK           : in    std_logic                       := 'X';             -- awlock
+			f2h_AWCACHE          : in    std_logic_vector(3 downto 0)    := (others => 'X'); -- awcache
+			f2h_AWPROT           : in    std_logic_vector(2 downto 0)    := (others => 'X'); -- awprot
+			f2h_AWVALID          : in    std_logic                       := 'X';             -- awvalid
+			f2h_AWREADY          : out   std_logic;                                          -- awready
+			f2h_AWQOS            : in    std_logic_vector(3 downto 0)    := (others => 'X'); -- awqos
+			f2h_WDATA            : in    std_logic_vector(511 downto 0)  := (others => 'X'); -- wdata
+			f2h_WSTRB            : in    std_logic_vector(63 downto 0)   := (others => 'X'); -- wstrb
+			f2h_WLAST            : in    std_logic                       := 'X';             -- wlast
+			f2h_WVALID           : in    std_logic                       := 'X';             -- wvalid
+			f2h_WREADY           : out   std_logic;                                          -- wready
+			f2h_BID              : out   std_logic_vector(4 downto 0);                       -- bid
+			f2h_BRESP            : out   std_logic_vector(1 downto 0);                       -- bresp
+			f2h_BVALID           : out   std_logic;                                          -- bvalid
+			f2h_BREADY           : in    std_logic                       := 'X';             -- bready
+			f2h_ARID             : in    std_logic_vector(4 downto 0)    := (others => 'X'); -- arid
+			f2h_ARADDR           : in    std_logic_vector(31 downto 0)   := (others => 'X'); -- araddr
+			f2h_ARLEN            : in    std_logic_vector(7 downto 0)    := (others => 'X'); -- arlen
+			f2h_ARSIZE           : in    std_logic_vector(2 downto 0)    := (others => 'X'); -- arsize
+			f2h_ARBURST          : in    std_logic_vector(1 downto 0)    := (others => 'X'); -- arburst
+			f2h_ARLOCK           : in    std_logic                       := 'X';             -- arlock
+			f2h_ARCACHE          : in    std_logic_vector(3 downto 0)    := (others => 'X'); -- arcache
+			f2h_ARPROT           : in    std_logic_vector(2 downto 0)    := (others => 'X'); -- arprot
+			f2h_ARVALID          : in    std_logic                       := 'X';             -- arvalid
+			f2h_ARREADY          : out   std_logic;                                          -- arready
+			f2h_ARQOS            : in    std_logic_vector(3 downto 0)    := (others => 'X'); -- arqos
+			f2h_RID              : out   std_logic_vector(4 downto 0);                       -- rid
+			f2h_RDATA            : out   std_logic_vector(511 downto 0);                     -- rdata
+			f2h_RRESP            : out   std_logic_vector(1 downto 0);                       -- rresp
+			f2h_RLAST            : out   std_logic;                                          -- rlast
+			f2h_RVALID           : out   std_logic;                                          -- rvalid
+			f2h_RREADY           : in    std_logic                       := 'X';             -- rready
+			f2h_ARUSER           : in    std_logic_vector(22 downto 0)   := (others => 'X'); -- aruser
+			f2h_AWUSER           : in    std_logic_vector(22 downto 0)   := (others => 'X')  -- awuser
 		);
 	end component agilex_hps;
 

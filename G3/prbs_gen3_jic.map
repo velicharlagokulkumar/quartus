@@ -10,6 +10,6 @@ Configuration mode: Active Serial x4
 
 Notes:
 
-- Data checksum for this conversion is 0xE02910E5
+- Data checksum for this conversion is 0xE0290CAA
 
 - All the addresses in this file are byte addresses

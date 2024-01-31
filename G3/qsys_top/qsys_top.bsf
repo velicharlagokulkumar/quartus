@@ -562,7 +562,7 @@ https://fpgasoftware.intel.com/eula.
 		(text "reset_n" (rect 209 1921 460 3852)(font "SansSerif" (color 0 0 0)))
 		(text "ninit_done" (rect 145 1946 350 3905)(font "SansSerif" (color 128 0 0)(font_size 9)))
 		(text "ninit_done" (rect 209 1971 478 3952)(font "SansSerif" (color 0 0 0)))
-		(text " system " (rect 543 2001 1134 4012)(font "SansSerif" ))
+		(text " qsys_top " (rect 535 2001 1130 4012)(font "SansSerif" ))
 		(line (pt 204 34)(pt 340 34)(line_width 1))
 		(line (pt 340 34)(pt 340 2001)(line_width 1))
 		(line (pt 204 2001)(pt 340 2001)(line_width 1))

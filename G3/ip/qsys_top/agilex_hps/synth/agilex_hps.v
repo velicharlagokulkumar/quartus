@@ -9,6 +9,47 @@ module agilex_hps (
 		output wire [4095:0] hps_emif_hps_to_emif, //               .hps_to_emif
 		input  wire          hps_emif_emif_to_gp,  //               .emif_to_gp
 		output wire [1:0]    hps_emif_gp_to_emif,  //               .gp_to_emif
+		input  wire          f2h_axi_clk,          //  f2h_axi_clock.clk
+		input  wire          f2h_axi_rst_n,        //  f2h_axi_reset.reset_n
+		input  wire [3:0]    f2h_AWCACHE,          //  f2h_axi_slave.awcache
+		input  wire [3:0]    f2h_ARCACHE,          //               .arcache
+		input  wire [4:0]    f2h_AWID,             //               .awid
+		input  wire [31:0]   f2h_AWADDR,           //               .awaddr
+		input  wire [7:0]    f2h_AWLEN,            //               .awlen
+		input  wire [2:0]    f2h_AWSIZE,           //               .awsize
+		input  wire [1:0]    f2h_AWBURST,          //               .awburst
+		input  wire          f2h_AWLOCK,           //               .awlock
+		input  wire [2:0]    f2h_AWPROT,           //               .awprot
+		input  wire          f2h_AWVALID,          //               .awvalid
+		output wire          f2h_AWREADY,          //               .awready
+		input  wire [3:0]    f2h_AWQOS,            //               .awqos
+		input  wire [511:0]  f2h_WDATA,            //               .wdata
+		input  wire [63:0]   f2h_WSTRB,            //               .wstrb
+		input  wire          f2h_WLAST,            //               .wlast
+		input  wire          f2h_WVALID,           //               .wvalid
+		output wire          f2h_WREADY,           //               .wready
+		output wire [4:0]    f2h_BID,              //               .bid
+		output wire [1:0]    f2h_BRESP,            //               .bresp
+		output wire          f2h_BVALID,           //               .bvalid
+		input  wire          f2h_BREADY,           //               .bready
+		input  wire [4:0]    f2h_ARID,             //               .arid
+		input  wire [31:0]   f2h_ARADDR,           //               .araddr
+		input  wire [7:0]    f2h_ARLEN,            //               .arlen
+		input  wire [2:0]    f2h_ARSIZE,           //               .arsize
+		input  wire [1:0]    f2h_ARBURST,          //               .arburst
+		input  wire          f2h_ARLOCK,           //               .arlock
+		input  wire [2:0]    f2h_ARPROT,           //               .arprot
+		input  wire          f2h_ARVALID,          //               .arvalid
+		output wire          f2h_ARREADY,          //               .arready
+		input  wire [3:0]    f2h_ARQOS,            //               .arqos
+		output wire [4:0]    f2h_RID,              //               .rid
+		output wire [511:0]  f2h_RDATA,            //               .rdata
+		output wire [1:0]    f2h_RRESP,            //               .rresp
+		output wire          f2h_RLAST,            //               .rlast
+		output wire          f2h_RVALID,           //               .rvalid
+		input  wire          f2h_RREADY,           //               .rready
+		input  wire [22:0]   f2h_ARUSER,           //               .aruser
+		input  wire [22:0]   f2h_AWUSER,           //               .awuser
 		input  wire          h2f_axi_clk,          //  h2f_axi_clock.clk
 		input  wire          h2f_axi_rst_n,        //  h2f_axi_reset.reset_n
 		output wire [3:0]    h2f_AWID,             // h2f_axi_master.awid
@@ -96,12 +137,53 @@ module agilex_hps (
 		inout  wire          gpio1_io21            //               .gpio1_io21
 	);
 
-	agilex_hps_intel_agilex_hps_2300_ccgkh6q intel_agilex_hps_inst (
+	agilex_hps_intel_agilex_hps_2300_rbhhspa intel_agilex_hps_inst (
 		.h2f_rst              (h2f_rst),              //  output,     width = 1,      h2f_reset.reset
 		.hps_emif_emif_to_hps (hps_emif_emif_to_hps), //   input,  width = 4096,       hps_emif.emif_to_hps
 		.hps_emif_hps_to_emif (hps_emif_hps_to_emif), //  output,  width = 4096,               .hps_to_emif
 		.hps_emif_emif_to_gp  (hps_emif_emif_to_gp),  //   input,     width = 1,               .emif_to_gp
 		.hps_emif_gp_to_emif  (hps_emif_gp_to_emif),  //  output,     width = 2,               .gp_to_emif
+		.f2h_axi_clk          (f2h_axi_clk),          //   input,     width = 1,  f2h_axi_clock.clk
+		.f2h_axi_rst_n        (f2h_axi_rst_n),        //   input,     width = 1,  f2h_axi_reset.reset_n
+		.f2h_AWCACHE          (f2h_AWCACHE),          //   input,     width = 4,  f2h_axi_slave.awcache
+		.f2h_ARCACHE          (f2h_ARCACHE),          //   input,     width = 4,               .arcache
+		.f2h_AWID             (f2h_AWID),             //   input,     width = 5,               .awid
+		.f2h_AWADDR           (f2h_AWADDR),           //   input,    width = 32,               .awaddr
+		.f2h_AWLEN            (f2h_AWLEN),            //   input,     width = 8,               .awlen
+		.f2h_AWSIZE           (f2h_AWSIZE),           //   input,     width = 3,               .awsize
+		.f2h_AWBURST          (f2h_AWBURST),          //   input,     width = 2,               .awburst
+		.f2h_AWLOCK           (f2h_AWLOCK),           //   input,     width = 1,               .awlock
+		.f2h_AWPROT           (f2h_AWPROT),           //   input,     width = 3,               .awprot
+		.f2h_AWVALID          (f2h_AWVALID),          //   input,     width = 1,               .awvalid
+		.f2h_AWREADY          (f2h_AWREADY),          //  output,     width = 1,               .awready
+		.f2h_AWQOS            (f2h_AWQOS),            //   input,     width = 4,               .awqos
+		.f2h_WDATA            (f2h_WDATA),            //   input,   width = 512,               .wdata
+		.f2h_WSTRB            (f2h_WSTRB),            //   input,    width = 64,               .wstrb
+		.f2h_WLAST            (f2h_WLAST),            //   input,     width = 1,               .wlast
+		.f2h_WVALID           (f2h_WVALID),           //   input,     width = 1,               .wvalid
+		.f2h_WREADY           (f2h_WREADY),           //  output,     width = 1,               .wready
+		.f2h_BID              (f2h_BID),              //  output,     width = 5,               .bid
+		.f2h_BRESP            (f2h_BRESP),            //  output,     width = 2,               .bresp
+		.f2h_BVALID           (f2h_BVALID),           //  output,     width = 1,               .bvalid
+		.f2h_BREADY           (f2h_BREADY),           //   input,     width = 1,               .bready
+		.f2h_ARID             (f2h_ARID),             //   input,     width = 5,               .arid
+		.f2h_ARADDR           (f2h_ARADDR),           //   input,    width = 32,               .araddr
+		.f2h_ARLEN            (f2h_ARLEN),            //   input,     width = 8,               .arlen
+		.f2h_ARSIZE           (f2h_ARSIZE),           //   input,     width = 3,               .arsize
+		.f2h_ARBURST          (f2h_ARBURST),          //   input,     width = 2,               .arburst
+		.f2h_ARLOCK           (f2h_ARLOCK),           //   input,     width = 1,               .arlock
+		.f2h_ARPROT           (f2h_ARPROT),           //   input,     width = 3,               .arprot
+		.f2h_ARVALID          (f2h_ARVALID),          //   input,     width = 1,               .arvalid
+		.f2h_ARREADY          (f2h_ARREADY),          //  output,     width = 1,               .arready
+		.f2h_ARQOS            (f2h_ARQOS),            //   input,     width = 4,               .arqos
+		.f2h_RID              (f2h_RID),              //  output,     width = 5,               .rid
+		.f2h_RDATA            (f2h_RDATA),            //  output,   width = 512,               .rdata
+		.f2h_RRESP            (f2h_RRESP),            //  output,     width = 2,               .rresp
+		.f2h_RLAST            (f2h_RLAST),            //  output,     width = 1,               .rlast
+		.f2h_RVALID           (f2h_RVALID),           //  output,     width = 1,               .rvalid
+		.f2h_RREADY           (f2h_RREADY),           //   input,     width = 1,               .rready
+		.f2h_ARUSER           (f2h_ARUSER),           //   input,    width = 23,               .aruser
+		.f2h_AWUSER           (f2h_AWUSER),           //   input,    width = 23,               .awuser
 		.h2f_axi_clk          (h2f_axi_clk),          //   input,     width = 1,  h2f_axi_clock.clk
 		.h2f_axi_rst_n        (h2f_axi_rst_n),        //   input,     width = 1,  h2f_axi_reset.reset_n
 		.h2f_AWID             (h2f_AWID),             //  output,     width = 4, h2f_axi_master.awid

@@ -36,21 +36,47 @@
 #define S2MM_DDR_SIZE 0x80000 // 256 KB // MSGDMA_S2MM_MAX_BYTE
 
 
-u32 reg_read(u32 *addr, u32 offset)
+u32 reg_read_32(u32 *addr, u32 offset)
 {
     return *((int *)(addr + offset/4));
 }
 
-void reg_write(u32 *addr, u32 offset, u32 value)
+void reg_write_32(u32 *addr, u32 offset, u32 value)
 {
     // printf("INFO: writing %x to %x + %x\n", value, addr, offset);
     *((int *)(addr + offset/4)) = value;
+}
+
+void reg_write_16(u32 *addr, u32 offset, u32 value)
+{
+    // printf("INFO: writing %x to %x + %x\n", value, addr, offset);
+    *(((uint16_t*)(addr)) + offset/2) = value;
+}
+
+void reg_write_8(u32 *addr, u32 offset, u32 value)
+{
+    // printf("INFO: writing %x to %x + %x\n", value, addr, offset);
+    *(((uint8_t*)(addr)) + offset) = value;
 }
 
 
 u32* init_h2f(int fd)
 {
     u32 *ptr;
+    off_t base = (off_t) H2F_BASE;
+    // mmap devices connected to h2f into user space
+    // TODO: use a MACRO generated automatically instead of 0x40220
+    ptr = mmap(NULL, 0x40220, PROT_READ|PROT_WRITE, MAP_SHARED, fd, base);
+    if (ptr == MAP_FAILED) {
+        printf("mmap failed\n");
+        return NULL;
+    }
+    return ptr;
+}
+
+u8* init_h2f_8(int fd)
+{
+    u8 *ptr;
     off_t base = (off_t) H2F_BASE;
     // mmap devices connected to h2f into user space
     // TODO: use a MACRO generated automatically instead of 0x40220
@@ -90,22 +116,20 @@ u32* init_dma2ddr_space(int fd)
 
 void prbs_generator_set_payload_length (u32 *ptr, unsigned long base, unsigned long length)
 {
-    reg_write(ptr, base + (PRBS_GENERATOR_PAYLOAD_LENGTH_REG), length);
+    reg_write_32((ptr + base), (PRBS_GENERATOR_PAYLOAD_LENGTH_REG), length);
   //IOWR_32DIRECT(base, PRBS_GENERATOR_PAYLOAD_LENGTH_REG, length);
 
 }
 
 void prbs_generator_disable_infinite_payload_length (u32 *ptr,unsigned long base)
 {
-   reg_write(ptr, base +(PRBS_GENERATOR_CONTROL_REG + PRBS_GENERATOR_INFINITE_PAYLOAD_LENGTH_ENABLE_BYTE_OFFSET), 0);
+    reg_write_8((ptr+ base) , (PRBS_GENERATOR_CONTROL_REG + PRBS_GENERATOR_INFINITE_PAYLOAD_LENGTH_ENABLE_BYTE_OFFSET), 0);
   //IOWR_8DIRECT(base, (PRBS_GENERATOR_CONTROL_REG + PRBS_GENERATOR_INFINITE_PAYLOAD_LENGTH_ENABLE_BYTE_OFFSET), 0);
 }
 
 void prbs_generator_enable_start (u32 *ptr,unsigned long base)
 {
-
-    reg_write(ptr, base + (PRBS_GENERATOR_CONTROL_REG + PRBS_GENERATOR_RUN_BYTE_OFFSET), 1);
-  //reg_write(ptr, base + (PRBS_GENERATOR_CONTROL_REG + PRBS_GENERATOR_RUN_BYTE_OFFSET), 1);
+  reg_write_8((ptr+ base) , (PRBS_GENERATOR_CONTROL_REG + PRBS_GENERATOR_RUN_BYTE_OFFSET), 1);
   //IOWR_8DIRECT(base, (PRBS_GENERATOR_CONTROL_REG + PRBS_GENERATOR_RUN_BYTE_OFFSET), 1);
 }
 
@@ -114,8 +138,8 @@ void ram_test_controller_set_base_address (u32 *ptr,unsigned long csr_base, unsi
 {
   //IOWR_32DIRECT(csr_base, RAM_TEST_CONTROLLER_LOW_BASE_REG, ram_base & 0xFFFFFFFF);
   //IOWR_32DIRECT(csr_base, RAM_TEST_CONTROLLER_HIGH_BASE_REG, (ram_base >> 32) & 0xFFFFFFFF);
-  reg_write(ptr, csr_base + RAM_TEST_CONTROLLER_LOW_BASE_REG, ram_base & 0xFFFFFFFF);
-  reg_write(ptr, csr_base + RAM_TEST_CONTROLLER_HIGH_BASE_REG, (ram_base >> 32) & 0xFFFFFFFF);
+  reg_write_32(ptr, csr_base + RAM_TEST_CONTROLLER_LOW_BASE_REG, ram_base & 0xFFFFFFFF);
+  reg_write_32(ptr, csr_base + RAM_TEST_CONTROLLER_HIGH_BASE_REG, (ram_base >> 32) & 0xFFFFFFFF);
 }
 
 int ram_test_controller_set_transfer_length (u32 *ptr,unsigned long csr_base, unsigned long length)
@@ -127,7 +151,7 @@ int ram_test_controller_set_transfer_length (u32 *ptr,unsigned long csr_base, un
     fail = 1;
   }
   //IOWR_32DIRECT(csr_base, RAM_TEST_CONTROLLER_LENGTH_REG, length);
-  reg_write(ptr, csr_base + RAM_TEST_CONTROLLER_LENGTH_REG, length);
+  reg_write_32((ptr+csr_base) , RAM_TEST_CONTROLLER_LENGTH_REG, length);
   return fail;  // returns 0 when a valid transfer length is passed in otherwise 1 will be returned
 }
 
@@ -141,8 +165,8 @@ int ram_test_controller_set_block_size (u32 *ptr,unsigned long csr_base, unsigne
   }
   //IOWR_16DIRECT(csr_base, (RAM_TEST_CONTROLLER_BLOCK_REG + RAM_TEST_CONTROLLER_BLOCK_SIZE_BYTE_OFFSET), block_size & 0x0000FFFF);
   //IOWR_8DIRECT(csr_base, (RAM_TEST_CONTROLLER_BLOCK_REG + RAM_TEST_CONTROLLER_BLOCK_SIZE_BYTE_OFFSET + 2), (block_size >> 16) & 0x000000FF);
-  reg_write(ptr, csr_base + (RAM_TEST_CONTROLLER_BLOCK_REG + RAM_TEST_CONTROLLER_BLOCK_SIZE_BYTE_OFFSET), block_size & 0x0000FFFF);
-  reg_write(ptr, csr_base + (RAM_TEST_CONTROLLER_BLOCK_REG + RAM_TEST_CONTROLLER_BLOCK_SIZE_BYTE_OFFSET + 2), (block_size >> 16) & 0x000000FF);
+  reg_write_16(ptr, csr_base + (RAM_TEST_CONTROLLER_BLOCK_REG + RAM_TEST_CONTROLLER_BLOCK_SIZE_BYTE_OFFSET), block_size & 0x0000FFFF);
+  reg_write_8(ptr, csr_base + (RAM_TEST_CONTROLLER_BLOCK_REG + RAM_TEST_CONTROLLER_BLOCK_SIZE_BYTE_OFFSET), (block_size >> 16) & 0x000000FF);
   return fail;  // returns 0 when a valid block size is passed in otherwise 1 will be returned
 }
 
@@ -154,32 +178,39 @@ int ram_test_controller_set_block_trail_distance (u32 *ptr,unsigned long csr_bas
     trail_distance = 1;    // default that the hardware uses
     fail = 1;
   }
+  reg_write_8((ptr+csr_base), (RAM_TEST_CONTROLLER_BLOCK_REG + RAM_TEST_CONTROLLER_BLOCK_TRAIL_DISTANCE_BYTE_OFFSET), trail_distance);
   //IOWR_8DIRECT(csr_base, (RAM_TEST_CONTROLLER_BLOCK_REG + RAM_TEST_CONTROLLER_BLOCK_TRAIL_DISTANCE_BYTE_OFFSET), trail_distance);
-  reg_write(ptr, csr_base + (RAM_TEST_CONTROLLER_BLOCK_REG + RAM_TEST_CONTROLLER_BLOCK_TRAIL_DISTANCE_BYTE_OFFSET), trail_distance);
   return fail;  // returns 0 when a valid trail distance is passed in otherwise 1 will be returned
 }
 
 void ram_test_controller_enable_concurrent_accesses (u32 *ptr,unsigned long csr_base)
 {
-   reg_write(ptr, csr_base + (RAM_TEST_CONTROLLER_CONTROL_REG + RAM_TEST_CONTROLLER_CONTROL_CONCURRENT_ACCESS_BYTE_OFFSET), 1);
+   reg_write_8((ptr+csr_base) , (RAM_TEST_CONTROLLER_CONTROL_REG + RAM_TEST_CONTROLLER_CONTROL_CONCURRENT_ACCESS_BYTE_OFFSET), 1);
   //IOWR_8DIRECT(csr_base, (RAM_TEST_CONTROLLER_CONTROL_REG + RAM_TEST_CONTROLLER_CONTROL_CONCURRENT_ACCESS_BYTE_OFFSET), 1);
 }
 
 void ram_test_controller_disable_concurrent_accesses (u32 *ptr,unsigned long csr_base)
 {
-  reg_write(ptr, csr_base + (RAM_TEST_CONTROLLER_CONTROL_REG + RAM_TEST_CONTROLLER_CONTROL_CONCURRENT_ACCESS_BYTE_OFFSET), 0);
+  reg_write_8((ptr+csr_base) , (RAM_TEST_CONTROLLER_CONTROL_REG + RAM_TEST_CONTROLLER_CONTROL_CONCURRENT_ACCESS_BYTE_OFFSET), 0);
   //IOWR_8DIRECT(csr_base, (RAM_TEST_CONTROLLER_CONTROL_REG + RAM_TEST_CONTROLLER_CONTROL_CONCURRENT_ACCESS_BYTE_OFFSET), 0);
 }
 
 void ram_test_controller_enable_start (u32 *ptr,unsigned long csr_base)
 {
-  reg_write(ptr, csr_base + (RAM_TEST_CONTROLLER_CONTROL_REG + RAM_TEST_CONTROLLER_CONTROL_START_BYTE_OFFSET), 1);
+   /* u32 a= reg_read (ptr,csr_base + (RAM_TEST_CONTROLLER_CONTROL_REG));
+   //printf("out data1 :%x\n",a);
+    a = (a | 0x01000000);
+     //printf("out data3 :%x\n",a);
+    reg_write(ptr,csr_base + (RAM_TEST_CONTROLLER_CONTROL_REG), a);
+*/
+   
+   reg_write_8((ptr+csr_base) , (RAM_TEST_CONTROLLER_CONTROL_REG + RAM_TEST_CONTROLLER_CONTROL_START_BYTE_OFFSET), 1);
   //IOWR_8DIRECT(csr_base, (RAM_TEST_CONTROLLER_CONTROL_REG + RAM_TEST_CONTROLLER_CONTROL_START_BYTE_OFFSET), 1);
 }
 
 void ram_test_controller_disable_start (u32 *ptr,unsigned long csr_base)
 {
-  reg_write(ptr, csr_base + (RAM_TEST_CONTROLLER_CONTROL_REG + RAM_TEST_CONTROLLER_CONTROL_START_BYTE_OFFSET), 0);
+  reg_write_8((ptr+csr_base) , (RAM_TEST_CONTROLLER_CONTROL_REG + RAM_TEST_CONTROLLER_CONTROL_START_BYTE_OFFSET), 0);
  // IOWR_8DIRECT(csr_base, (RAM_TEST_CONTROLLER_CONTROL_REG + RAM_TEST_CONTROLLER_CONTROL_START_BYTE_OFFSET), 0);
 }
 
@@ -192,20 +223,20 @@ int ram_test_controller_set_timer_resolution (u32 *ptr,unsigned long csr_base, u
     fail = 1;
   }
   //IOWR_16DIRECT(csr_base, RAM_TEST_CONTROLLER_TIMER_RES_REG, resolution);
-  reg_write(ptr, csr_base + RAM_TEST_CONTROLLER_TIMER_RES_REG, resolution);
+  reg_write_16((ptr+csr_base) , RAM_TEST_CONTROLLER_TIMER_RES_REG, resolution);
   return fail;  // returns 0 when a valid timer resolution is passed in otherwise 1 will be returned
 }
 
 void ram_test_controller_set_timer (u32 *ptr, unsigned long csr_base, unsigned long timer)  // use this to reset the timer by passing in timer = 0
 {
   //IOWR_32DIRECT(csr_base, RAM_TEST_CONTROLLER_TIMER_REG, timer);
-  reg_write(ptr, csr_base + RAM_TEST_CONTROLLER_TIMER_REG, timer);
+  reg_write_32((ptr+csr_base) , RAM_TEST_CONTROLLER_TIMER_REG, timer);
 }
 
 
 unsigned long ram_test_controller_read_timer (u32 *ptr, unsigned long csr_base) 
 {
-   reg_read(ptr, csr_base);
+   reg_read_32((ptr+csr_base) , RAM_TEST_CONTROLLER_TIMER_REG);
   //return IORD_32DIRECT(csr_base, RAM_TEST_CONTROLLER_TIMER_REG);
 }
 

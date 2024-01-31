@@ -1,4 +1,4 @@
-Fitter Status : Successful - Mon Jan 29 17:31:57 2024
+Fitter Status : Successful - Wed Jan 31 18:41:05 2024
 Quartus Prime Version : 22.4.0 Build 94 12/07/2022 SC Pro Edition
 Revision Name : G3
 Top-level Entity Name : G3
@@ -7,11 +7,11 @@ Device : AGFB014R24B2E2V
 Timing Models : Final
 Power Models : Final
 Device Status : Final
-Logic utilization (in ALMs) : 2,957 / 487,200 ( < 1 % )
-Total dedicated logic registers : 5453
+Logic utilization (in ALMs) : 3,719 / 487,200 ( < 1 % )
+Total dedicated logic registers : 6135
 Total pins : 185 / 924 ( 20 % )
-Total block memory bits : 594,944 / 145,612,800 ( < 1 % )
-Total RAM Blocks : 33 / 7,110 ( < 1 % )
+Total block memory bits : 660,480 / 145,612,800 ( < 1 % )
+Total RAM Blocks : 35 / 7,110 ( < 1 % )
 Total DSP Blocks : 0 / 4,510 ( 0 % )
 Total eSRAMs : 0 / 2 ( 0 % )
 Total HSSI P-Tiles : 0 / 1 ( 0 % )

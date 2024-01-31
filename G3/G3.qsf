@@ -331,3 +331,4 @@ set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to hps_gpio1_io21 -entit
 set_global_assignment -name ENABLE_SIGNALTAP ON
 set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
 set_global_assignment -name SIGNALTAP_FILE stp1.stp
+set_global_assignment -name IP_SEARCH_PATHS custom_ip/**/*

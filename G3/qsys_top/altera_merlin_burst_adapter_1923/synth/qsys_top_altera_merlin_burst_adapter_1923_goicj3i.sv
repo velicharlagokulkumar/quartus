@@ -248,7 +248,7 @@ module qsys_top_altera_merlin_burst_adapter_1923_goicj3i
 
 
         if(PIPE_INPUTS == 1) begin: pipe_inputs
-            qsys_top_altera_merlin_burst_adapter_altera_avalon_st_pipeline_stage_1923_hlxpvda # (
+            qsys_top_altera_merlin_burst_adapter_altera_avalon_st_pipeline_stage_1923_pv3aubi # (
                 .SYMBOLS_PER_BEAT (1),
                 .BITS_PER_SYMBOL  (ST_DATA_W),
                 .USE_PACKETS      (1),

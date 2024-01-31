@@ -21,10 +21,10 @@ include:
 
 clean:
 	rm -rf ${OUTS}
-	rm -rf prbs
+	rm -rf prbs prbs2 prbs3
 
 prbs: $(LIBSOURCES) $(LIBSOURCES2)
-	$(CC) -o prbs $(EXTRA_COMPILER_FLAGS) $(LIBSOURCES) $(INCLUDES)
+	$(CC) -o prbs2 $(EXTRA_COMPILER_FLAGS) $(LIBSOURCES) $(INCLUDES)
 
 scp:
-	scp prbs root@192.168.166.13:/;md5sum dma
+	scp prbs2 root@192.168.166.13: ;md5sum prbs2
