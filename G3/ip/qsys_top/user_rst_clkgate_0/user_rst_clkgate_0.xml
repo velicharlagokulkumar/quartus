@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2024.01.31.18:27:47"
- outputDirectory="/home/wisig321/Videos/quartus/G3/ip/qsys_top/user_rst_clkgate_0/">
+ date="2024.05.09.16:57:45"
+ outputDirectory="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/user_rst_clkgate_0/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -24,7 +24,7 @@
   <parameter
      name="AUTO_DEVICE"
      type="String"
-     defaultValue="AGFB014R24B2E2V"
+     defaultValue="AGFB027R24C2E2VR2"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -42,27 +42,27 @@
  </perimeter>
  <entity kind="user_rst_clkgate_0" version="1.0" name="user_rst_clkgate_0">
   <parameter name="AUTO_GENERATION_ID" value="0" />
-  <parameter name="AUTO_DEVICE" value="AGFB014R24B2E2V" />
+  <parameter name="AUTO_DEVICE" value="AGFB027R24C2E2VR2" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
   <generatedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/user_rst_clkgate_0/synth/user_rst_clkgate_0.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/user_rst_clkgate_0/synth/user_rst_clkgate_0.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/user_rst_clkgate_0/synth/user_rst_clkgate_0.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/user_rst_clkgate_0/synth/user_rst_clkgate_0.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/user_rst_clkgate_0.ip" />
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/user_rst_clkgate_0.ip" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/pgm/altera_s10_user_rst_clkgate/altera_s10_user_rst_clkgate_hw.tcl" />
+       path="/home/wisig/Quartus_prime_pro/ip/altera/pgm/altera_s10_user_rst_clkgate/altera_s10_user_rst_clkgate_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="user_rst_clkgate_0">"Generating: user_rst_clkgate_0"</message>
@@ -78,23 +78,23 @@
   <parameter name="outputType" value="Conduit Interface" />
   <generatedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/user_rst_clkgate_0/altera_s10_user_rst_clkgate_1941/synth/altera_s10_user_rst_clkgate.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/user_rst_clkgate_0/altera_s10_user_rst_clkgate_1941/synth/altera_s10_user_rst_clkgate.sv"
        attributes="TOP_LEVEL_FILE" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/user_rst_clkgate_0/altera_s10_user_rst_clkgate_1941/synth/altera_s10_user_rst_clkgate_fm.sdc"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/user_rst_clkgate_0/altera_s10_user_rst_clkgate_1941/synth/altera_s10_user_rst_clkgate_fm.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/user_rst_clkgate_0/altera_s10_user_rst_clkgate_1941/synth/altera_s10_user_rst_clkgate.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/user_rst_clkgate_0/altera_s10_user_rst_clkgate_1941/synth/altera_s10_user_rst_clkgate.sv"
        attributes="TOP_LEVEL_FILE" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/user_rst_clkgate_0/altera_s10_user_rst_clkgate_1941/synth/altera_s10_user_rst_clkgate_fm.sdc"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/user_rst_clkgate_0/altera_s10_user_rst_clkgate_1941/synth/altera_s10_user_rst_clkgate_fm.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/pgm/altera_s10_user_rst_clkgate/altera_s10_user_rst_clkgate_hw.tcl" />
+       path="/home/wisig/Quartus_prime_pro/ip/altera/pgm/altera_s10_user_rst_clkgate/altera_s10_user_rst_clkgate_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator

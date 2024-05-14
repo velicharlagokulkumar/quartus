@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2024.01.31.18:28:06"
- outputDirectory="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/">
+ date="2024.05.09.16:58:15"
+ outputDirectory="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -24,7 +24,7 @@
   <parameter
      name="AUTO_DEVICE"
      type="String"
-     defaultValue="AGFB014R24B2E2V"
+     defaultValue="AGFB027R24C2E2VR2"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -139,7 +139,7 @@
  </perimeter>
  <entity kind="emif_hps" version="1.0" name="emif_hps">
   <parameter name="AUTO_GENERATION_ID" value="0" />
-  <parameter name="AUTO_DEVICE" value="AGFB014R24B2E2V" />
+  <parameter name="AUTO_DEVICE" value="AGFB027R24C2E2VR2" />
   <parameter name="AUTO_EMIF_CALBUS_CLK_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_EMIF_CALBUS_CLK_RESET_DOMAIN" value="-1" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
@@ -151,33 +151,33 @@
   <parameter name="AUTO_PLL_REF_CLK_CLOCK_DOMAIN" value="-1" />
   <generatedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/synth/emif_hps.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/synth/emif_hps.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/synth/emif_hps.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/synth/emif_hps.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps.ip" />
+   <file path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps.ip" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/emif/hwtcl/altera_emif_fm_hps/altera_emif_fm_hps_hw.tcl" />
+       path="/home/wisig/Quartus_prime_pro/ip/altera/emif/hwtcl/altera_emif_fm_hps/altera_emif_fm_hps_hw.tcl" />
    <file
-       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/emif/ip_arch_fm/altera_emif_arch_fm_hw.tcl" />
+       path="/home/wisig/Quartus_prime_pro/ip/altera/emif/ip_arch_fm/altera_emif_arch_fm_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="emif_hps">"Generating: emif_hps"</message>
-   <message level="Info" culprit="emif_hps">"Generating: emif_hps_altera_emif_fm_hps_262_ijg2uvy"</message>
-   <message level="Info" culprit="emif_hps">"Generating: emif_hps_altera_emif_arch_fm_191_ky5ybpi"</message>
+   <message level="Info" culprit="emif_hps">"Generating: emif_hps_altera_emif_fm_hps_262_o22t3qa"</message>
+   <message level="Info" culprit="emif_hps">"Generating: emif_hps_altera_emif_arch_fm_191_ecinooy"</message>
   </messages>
  </entity>
  <entity
    kind="altera_emif_fm_hps"
    version="2.6.2"
-   name="emif_hps_altera_emif_fm_hps_262_ijg2uvy">
+   name="emif_hps_altera_emif_fm_hps_262_o22t3qa">
   <parameter name="PHY_DDRT_IO_VOLTAGE" value="1.2" />
   <parameter name="BOARD_QDR4_USE_DEFAULT_SLEW_RATES" value="true" />
   <parameter name="CTRL_QDR4_WAR_TURNAROUND_DELAY_CYC" value="11" />
@@ -1097,7 +1097,7 @@
   <parameter name="CTRL_DDR3_ECC_STATUS_EN" value="false" />
   <parameter name="PHY_QDR4_AC_DEEMPHASIS_ENUM" value="unset" />
   <parameter name="BOARD_RLD3_USE_DEFAULT_SLEW_RATES" value="true" />
-  <parameter name="SYS_INFO_DEVICE" value="AGFB014R24B2E2V" />
+  <parameter name="SYS_INFO_DEVICE" value="AGFB027R24C2E2VR2" />
   <parameter name="PHY_QDR4_USER_DLL_CORE_UPDN_EN" value="true" />
   <parameter name="PHY_RLD3_AC_SLEW_RATE_ENUM" value="unset" />
   <parameter name="MEM_DDR3_TDQSCKDS" value="450" />
@@ -1715,7 +1715,7 @@
   <parameter name="DIAG_QDR2_USER_USE_SIM_MEMORY_VALIDATION_TG" value="true" />
   <parameter
      name="SYS_INFO_DEVICE_DIE_REVISIONS"
-     value="HSSI_WHR_REVA,HSSI_CRETE3_REVA,MAIN_FM6_REVB" />
+     value="HSSI_GDR_REVB,MAIN_FM8_REVA" />
   <parameter name="PHY_QDR2_USER_STARTING_VREFIN" value="70.0" />
   <parameter name="MEM_DDR3_CFG_GEN_DBE" value="false" />
   <parameter name="MEM_DDR4_RCD_COMMAND_LATENCY" value="1" />
@@ -2726,32 +2726,32 @@
   <parameter name="MEM_DDRT_W_ODT0_4X4" value="on,on,off,off" />
   <generatedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_fm_hps_262/synth/emif_hps_altera_emif_fm_hps_262_ijg2uvy.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_fm_hps_262/synth/emif_hps_altera_emif_fm_hps_262_o22t3qa.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_fm_hps_262/synth/emif_hps_altera_emif_fm_hps_262_ijg2uvy.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_fm_hps_262/synth/emif_hps_altera_emif_fm_hps_262_o22t3qa.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/emif/hwtcl/altera_emif_fm_hps/altera_emif_fm_hps_hw.tcl" />
+       path="/home/wisig/Quartus_prime_pro/ip/altera/emif/hwtcl/altera_emif_fm_hps/altera_emif_fm_hps_hw.tcl" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/emif/ip_arch_fm/altera_emif_arch_fm_hw.tcl" />
+       path="/home/wisig/Quartus_prime_pro/ip/altera/emif/ip_arch_fm/altera_emif_arch_fm_hw.tcl" />
   </childSourceFiles>
   <instantiator instantiator="emif_hps" as="altera_emif_fm_hps_inst" />
   <messages>
-   <message level="Info" culprit="emif_hps">"Generating: emif_hps_altera_emif_fm_hps_262_ijg2uvy"</message>
-   <message level="Info" culprit="emif_hps">"Generating: emif_hps_altera_emif_arch_fm_191_ky5ybpi"</message>
+   <message level="Info" culprit="emif_hps">"Generating: emif_hps_altera_emif_fm_hps_262_o22t3qa"</message>
+   <message level="Info" culprit="emif_hps">"Generating: emif_hps_altera_emif_arch_fm_191_ecinooy"</message>
   </messages>
  </entity>
  <entity
    kind="altera_emif_arch_fm"
    version="19.1"
-   name="emif_hps_altera_emif_arch_fm_191_ky5ybpi">
+   name="emif_hps_altera_emif_arch_fm_191_ecinooy">
   <parameter name="SEC_HMC_CFG_DBC1_REORDER_RDATA" value="disable" />
   <parameter name="SEC_HMC_CFG_WR_TO_WR_DIFF_CHIP" value="2" />
   <parameter name="CTRL_QDR4_WAR_TURNAROUND_DELAY_CYC" value="11" />
@@ -5511,7 +5511,7 @@
   <parameter name="PHY_RLD2_PLL_REF_CLK_IO_STD_ENUM" value="unset" />
   <parameter name="CTRL_DDR3_ECC_STATUS_EN" value="false" />
   <parameter name="PHY_QDR4_AC_DEEMPHASIS_ENUM" value="unset" />
-  <parameter name="SYS_INFO_DEVICE" value="AGFB014R24B2E2V" />
+  <parameter name="SYS_INFO_DEVICE" value="AGFB027R24C2E2VR2" />
   <parameter name="PHY_QDR4_USER_DLL_CORE_UPDN_EN" value="true" />
   <parameter name="PHY_RLD3_AC_SLEW_RATE_ENUM" value="unset" />
   <parameter name="MEM_DDR3_TDQSCKDS" value="450" />
@@ -6057,7 +6057,7 @@
   <parameter name="PORT_MEM_BA_PINLOC_0" value="86066178" />
   <parameter
      name="SYS_INFO_DEVICE_DIE_REVISIONS"
-     value="HSSI_WHR_REVA,HSSI_CRETE3_REVA,MAIN_FM6_REVB" />
+     value="HSSI_GDR_REVB,MAIN_FM8_REVA" />
   <parameter name="PINS_DCC_SPLIT_AUTOGEN_WCNT" value="13" />
   <parameter name="PRI_HMC_CFG_PDN_TO_VALID" value="3" />
   <parameter name="MEM_DDR3_CFG_GEN_DBE" value="false" />
@@ -7049,304 +7049,304 @@
   <parameter name="SEC_HMC_MEM_IF_RD_PREAMBLE" value="0" />
   <generatedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_top.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_top.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_bufs.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_bufs.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_ufis.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_ufis.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_ufi_wrapper.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_ufi_wrapper.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_se_i.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_se_i.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_se_o.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_se_o.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_df_i.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_df_i.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_df_o.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_df_o.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_cp_i.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_cp_i.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_bdir_df.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_bdir_df.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_bdir_se.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_bdir_se.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_unused.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_unused.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_cal_counter.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_cal_counter.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_pll.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_pll.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_pll_fast_sim.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_pll_fast_sim.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_pll_extra_clks.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_pll_extra_clks.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_oct.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_oct.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_core_clks_rsts.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_core_clks_rsts.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hps_clks_rsts.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hps_clks_rsts.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_local_reset.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_local_reset.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_io_tiles_wrap.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_io_tiles_wrap.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_io_tiles.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_io_tiles.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_io_lane_remap.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_io_lane_remap.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_avl_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_avl_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_sideband_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_sideband_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_mmr_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_mmr_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_amm_data_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_amm_data_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_phylite_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_phylite_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_ast_data_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_ast_data_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_afi_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_afi_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_seq_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_seq_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_regs.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_regs.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_std_synchronizer_nocut.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_std_synchronizer_nocut.v"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_ip_parameters.dat"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_ip_parameters.dat"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_spice_files.zip"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_spice_files.zip"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_ip_parameters.tcl"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_ip_parameters.tcl"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_utils.tcl"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_utils.tcl"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_parameters.tcl"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_parameters.tcl"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_pin_map.tcl"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_pin_map.tcl"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_report_io_timing.tcl"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_report_io_timing.tcl"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_report_timing.tcl"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_report_timing.tcl"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_report_timing_core.tcl"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_report_timing_core.tcl"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_seq_params_synth.hex"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_seq_params_synth.hex"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_seq_params_synth.txt"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_seq_params_synth.txt"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_seq_params_sim.txt"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_seq_params_sim.txt"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_readme.txt"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_readme.txt"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_top.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_top.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_bufs.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_bufs.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_ufis.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_ufis.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_ufi_wrapper.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_ufi_wrapper.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_se_i.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_se_i.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_se_o.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_se_o.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_df_i.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_df_i.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_df_o.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_df_o.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_cp_i.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_udir_cp_i.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_bdir_df.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_bdir_df.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_bdir_se.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_bdir_se.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_unused.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_buf_unused.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_cal_counter.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_cal_counter.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_pll.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_pll.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_pll_fast_sim.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_pll_fast_sim.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_pll_extra_clks.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_pll_extra_clks.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_oct.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_oct.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_core_clks_rsts.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_core_clks_rsts.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hps_clks_rsts.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hps_clks_rsts.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_local_reset.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_local_reset.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_io_tiles_wrap.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_io_tiles_wrap.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_io_tiles.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_io_tiles.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_io_lane_remap.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_io_lane_remap.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_avl_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_avl_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_sideband_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_sideband_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_mmr_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_mmr_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_amm_data_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_amm_data_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_phylite_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_phylite_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_ast_data_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_hmc_ast_data_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_afi_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_afi_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_seq_if.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_seq_if.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_regs.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_emif_arch_fm_regs.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_std_synchronizer_nocut.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/altera_std_synchronizer_nocut.v"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_ip_parameters.dat"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_ip_parameters.dat"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_spice_files.zip"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_spice_files.zip"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_ip_parameters.tcl"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_ip_parameters.tcl"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_utils.tcl"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_utils.tcl"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_parameters.tcl"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_parameters.tcl"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_pin_map.tcl"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_pin_map.tcl"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_report_io_timing.tcl"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_report_io_timing.tcl"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_report_timing.tcl"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_report_timing.tcl"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_report_timing_core.tcl"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_report_timing_core.tcl"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi.sdc"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_seq_params_synth.hex"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_seq_params_synth.hex"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_seq_params_synth.txt"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_seq_params_synth.txt"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_seq_params_sim.txt"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_seq_params_sim.txt"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ky5ybpi_readme.txt"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_hps/altera_emif_arch_fm_191/synth/emif_hps_altera_emif_arch_fm_191_ecinooy_readme.txt"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/emif/ip_arch_fm/altera_emif_arch_fm_hw.tcl" />
+       path="/home/wisig/Quartus_prime_pro/ip/altera/emif/ip_arch_fm/altera_emif_arch_fm_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
-  <instantiator instantiator="emif_hps_altera_emif_fm_hps_262_ijg2uvy" as="arch" />
+  <instantiator instantiator="emif_hps_altera_emif_fm_hps_262_o22t3qa" as="arch" />
   <messages>
-   <message level="Info" culprit="emif_hps">"Generating: emif_hps_altera_emif_arch_fm_191_ky5ybpi"</message>
+   <message level="Info" culprit="emif_hps">"Generating: emif_hps_altera_emif_arch_fm_191_ecinooy"</message>
   </messages>
  </entity>
 </deploy>

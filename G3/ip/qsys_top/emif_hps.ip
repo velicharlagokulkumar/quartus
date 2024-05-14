@@ -905,7 +905,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="SYS_INFO_DEVICE" type="string">
           <ipxact:name>SYS_INFO_DEVICE</ipxact:name>
           <ipxact:displayName>PARAM_SYS_INFO_DEVICE_NAME</ipxact:displayName>
-          <ipxact:value>AGFB014R24B2E2V</ipxact:value>
+          <ipxact:value>AGFB027R24C2E2VR2</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="SYS_INFO_DEVICE_SPEEDGRADE" type="string">
           <ipxact:name>SYS_INFO_DEVICE_SPEEDGRADE</ipxact:name>
@@ -925,7 +925,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="SYS_INFO_DEVICE_DIE_REVISIONS" type="string">
           <ipxact:name>SYS_INFO_DEVICE_DIE_REVISIONS</ipxact:name>
           <ipxact:displayName>PARAM_SYS_INFO_DEVICE_DIE_REVISIONS_NAME</ipxact:displayName>
-          <ipxact:value>HSSI_WHR_REVA,HSSI_CRETE3_REVA,MAIN_FM6_REVB</ipxact:value>
+          <ipxact:value>HSSI_GDR_REVB,MAIN_FM8_REVA</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="TRAIT_SUPPORTS_VID" type="string">
           <ipxact:name>TRAIT_SUPPORTS_VID</ipxact:name>
@@ -8829,7 +8829,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="device" type="string">
           <ipxact:name>device</ipxact:name>
           <ipxact:displayName>Device</ipxact:displayName>
-          <ipxact:value>AGFB014R24B2E2V</ipxact:value>
+          <ipxact:value>AGFB027R24C2E2VR2</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceFamily" type="string">
           <ipxact:name>deviceFamily</ipxact:name>

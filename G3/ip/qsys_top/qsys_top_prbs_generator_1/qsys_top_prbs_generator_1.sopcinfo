@@ -5,7 +5,7 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 22.4 94 (Future versions may contain additional information.) -->
- <!-- 2024.01.31.18:27:48 -->
+ <!-- 2024.05.09.19:47:59 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -36,7 +36,7 @@
  </parameter>
  <parameter name="AUTO_DEVICE">
   <type>java.lang.String</type>
-  <value>AGFB014R24B2E2V</value>
+  <value>AGFB027R24C2E2VR2</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>

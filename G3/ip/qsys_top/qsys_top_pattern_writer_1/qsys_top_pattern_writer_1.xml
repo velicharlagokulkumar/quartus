@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2024.01.31.18:27:50"
- outputDirectory="/home/wisig321/Videos/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_1/">
+ date="2024.05.09.19:47:59"
+ outputDirectory="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_1/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -24,7 +24,7 @@
   <parameter
      name="AUTO_DEVICE"
      type="String"
-     defaultValue="AGFB014R24B2E2V"
+     defaultValue="AGFB027R24C2E2VR2"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -155,7 +155,7 @@
   <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
-  <parameter name="AUTO_DEVICE" value="AGFB014R24B2E2V" />
+  <parameter name="AUTO_DEVICE" value="AGFB027R24C2E2VR2" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
   <parameter name="AUTO_AVALON_MASTER_ADDRESS_WIDTH" value="-1" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
@@ -163,21 +163,21 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
   <generatedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_1/synth/qsys_top_pattern_writer_1.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_1/synth/qsys_top_pattern_writer_1.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_1/synth/qsys_top_pattern_writer_1.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_1/synth/qsys_top_pattern_writer_1.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_1.ip" />
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_1.ip" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/custom_ip/pattern_writer/pattern_writer_hw.tcl" />
+       path="/home/wisig/Videos/gokul/quartus/G3/custom_ip/pattern_writer/pattern_writer_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="qsys_top_pattern_writer_1">"Generating: qsys_top_pattern_writer_1"</message>
@@ -187,17 +187,17 @@
  <entity kind="pattern_writer" version="1.0" name="pattern_writer">
   <generatedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_1/pattern_writer_10/synth/pattern_writer.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_1/pattern_writer_10/synth/pattern_writer.v"
        attributes="TOP_LEVEL_FILE" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_1/pattern_writer_10/synth/pattern_writer.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/qsys_top_pattern_writer_1/pattern_writer_10/synth/pattern_writer.v"
        attributes="TOP_LEVEL_FILE" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/custom_ip/pattern_writer/pattern_writer_hw.tcl" />
+       path="/home/wisig/Videos/gokul/quartus/G3/custom_ip/pattern_writer/pattern_writer_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="qsys_top_pattern_writer_1" as="pattern_writer_1" />

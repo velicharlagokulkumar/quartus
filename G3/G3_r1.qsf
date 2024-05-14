@@ -1,0 +1,397 @@
+set_global_assignment -name TOP_LEVEL_ENTITY G3
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.4.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:22:27  NOVEMBER 15, 2023"
+set_global_assignment -name LAST_QUARTUS_VERSION "22.4.0 Pro Edition"
+set_global_assignment -name FAMILY Agilex
+set_global_assignment -name DEVICE AGFB027R24C2E2VR2
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY build/
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name EDA_SIMULATION_TOOL "<None>"
+set_global_assignment -name USE_PWRMGT_SCL SDM_IO14
+set_global_assignment -name USE_PWRMGT_SDA SDM_IO11
+set_global_assignment -name USE_CONF_DONE SDM_IO16
+set_global_assignment -name USE_INIT_DONE SDM_IO0
+set_global_assignment -name PWRMGT_SLAVE_DEVICE_TYPE OTHER
+set_global_assignment -name PWRMGT_VOLTAGE_OUTPUT_FORMAT "LINEAR FORMAT"
+set_global_assignment -name PWRMGT_LINEAR_FORMAT_N "-10"
+set_global_assignment -name PWRMGT_PAGE_COMMAND_ENABLE ON
+set_global_assignment -name PWRMGT_PAGE_COMMAND_PAYLOAD 0
+set_global_assignment -name ACTIVE_SERIAL_CLOCK AS_FREQ_125MHZ
+set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "ACTIVE SERIAL X4"
+set_global_assignment -name PWRMGT_SLAVE_DEVICE0_ADDRESS 6D
+set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
+set_global_assignment -name DEVICE_INITIALIZATION_CLOCK OSC_CLK_1_125MHZ
+set_global_assignment -name HPS_INITIALIZATION "HPS FIRST"
+
+
+set_location_assignment PIN_CY48 -to fpga_clk_100
+set_location_assignment PIN_DF46 -to fpga_reset_n
+
+
+set_location_assignment PIN_AC15 -to SDMMC_CCLK
+set_location_assignment PIN_AL15 -to SDMMC_CMD
+set_location_assignment PIN_AJ11 -to SDMMC_D0
+set_location_assignment PIN_AM16 -to SDMMC_D1
+set_location_assignment PIN_AH12 -to SDMMC_D2
+set_location_assignment PIN_AN15 -to SDMMC_D3
+set_location_assignment PIN_AG13 -to SDMMC_D4
+set_location_assignment PIN_AP16 -to SDMMC_D5
+set_location_assignment PIN_AF14 -to SDMMC_D6
+set_location_assignment PIN_AT16 -to SDMMC_D7
+
+
+set_location_assignment PIN_AF10 -to EMAC1_TX_CLK
+set_location_assignment PIN_AU11 -to EMAC1_TX_CTL
+set_location_assignment PIN_AG7 -to EMAC1_TXD0
+set_location_assignment PIN_AP12 -to EMAC1_TXD1
+set_location_assignment PIN_AD12 -to EMAC1_TXD2
+set_location_assignment PIN_AM12 -to EMAC1_TXD3
+set_location_assignment PIN_AF8 -to EMAC1_RX_CLK
+set_location_assignment PIN_AT12 -to EMAC1_RX_CTL
+set_location_assignment PIN_AC13 -to EMAC1_RXD0
+set_location_assignment PIN_AN11 -to EMAC1_RXD1
+set_location_assignment PIN_AD10 -to EMAC1_RXD2
+set_location_assignment PIN_AL11 -to EMAC1_RXD3
+set_location_assignment PIN_AB10 -to EMAC1_MDIO
+set_location_assignment PIN_AJ13 -to EMAC1_MDC
+
+set_location_assignment PIN_AC11 -to I2C1_SDA
+set_location_assignment PIN_AT10 -to I2C1_SCL
+
+set_location_assignment PIN_AB14 -to SPIM0_CLK
+set_location_assignment PIN_AH14 -to SPIM0_MOSI
+set_location_assignment PIN_AB12 -to SPIM0_MISO
+set_location_assignment PIN_AJ9 -to SPIM0_SS0_N
+set_location_assignment PIN_AG9 -to SPIM1_CLK
+set_location_assignment PIN_AT14 -to SPIM1_MOSI
+set_location_assignment PIN_AF12 -to SPIM1_MISO
+set_location_assignment PIN_AU13 -to SPIM1_SS0_N
+set_location_assignment PIN_AP14 -to SPIM1_SS1_N
+
+set_location_assignment PIN_AD8 -to UART1_TX
+set_location_assignment PIN_AP10 -to UART1_RX
+set_location_assignment PIN_AH10 -to hps_ref_clk
+
+set_location_assignment PIN_AU15 -to gpio0_io11
+set_location_assignment PIN_AJ7 -to gpio0_io12
+set_location_assignment PIN_AL13 -to gpio0_io13
+set_location_assignment PIN_AH8 -to gpio0_io14
+set_location_assignment PIN_AM14 -to gpio0_io15
+set_location_assignment PIN_AD14 -to gpio0_io16
+set_location_assignment PIN_AN13 -to gpio0_io17
+set_location_assignment PIN_AG11 -to gpio0_io18
+set_location_assignment PIN_AC9 -to gpio1_io16
+set_location_assignment PIN_AM10 -to gpio1_io17
+
+set_location_assignment PIN_U5 -to emif_hps_pll_ref_clk
+
+set_location_assignment PIN_L7 -to emif_hps_mem_mem_ck[0]
+set_location_assignment PIN_M8 -to emif_hps_mem_mem_ck_n[0]
+
+set_location_assignment PIN_U11 -to emif_hps_mem_mem_a[0]
+set_location_assignment PIN_T12 -to emif_hps_mem_mem_a[1]
+set_location_assignment PIN_W11 -to emif_hps_mem_mem_a[2]
+set_location_assignment PIN_Y12 -to emif_hps_mem_mem_a[3]
+set_location_assignment PIN_U9 -to emif_hps_mem_mem_a[4]
+set_location_assignment PIN_T10 -to emif_hps_mem_mem_a[5]
+set_location_assignment PIN_W9 -to emif_hps_mem_mem_a[6]
+set_location_assignment PIN_Y10 -to emif_hps_mem_mem_a[7]
+set_location_assignment PIN_U7 -to emif_hps_mem_mem_a[8]
+set_location_assignment PIN_T8 -to emif_hps_mem_mem_a[9]
+set_location_assignment PIN_W7 -to emif_hps_mem_mem_a[10]
+set_location_assignment PIN_Y8 -to emif_hps_mem_mem_a[11]
+set_location_assignment PIN_Y6 -to emif_hps_mem_mem_a[12]
+set_location_assignment PIN_U3 -to emif_hps_mem_mem_a[13]
+set_location_assignment PIN_T4 -to emif_hps_mem_mem_a[14]
+set_location_assignment PIN_W3 -to emif_hps_mem_mem_a[15]
+set_location_assignment PIN_Y4 -to emif_hps_mem_mem_a[16]
+
+set_location_assignment PIN_P12 -to emif_hps_mem_mem_act_n[0]
+
+set_location_assignment PIN_T2 -to emif_hps_mem_mem_ba[0]
+set_location_assignment PIN_W1 -to emif_hps_mem_mem_ba[1]
+
+set_location_assignment PIN_Y2 -to emif_hps_mem_mem_bg[0]
+set_location_assignment PIN_R9 -to emif_hps_mem_mem_cke[0]
+
+set_location_assignment PIN_R11 -to emif_hps_mem_mem_cs_n[0]
+set_location_assignment PIN_R7 -to emif_hps_mem_mem_cs_n[1]
+
+
+set_location_assignment PIN_L9 -to emif_hps_mem_mem_odt[0]
+set_location_assignment PIN_M12 -to emif_hps_mem_mem_reset_n[0]
+set_location_assignment PIN_P8 -to emif_hps_mem_mem_par[0]
+set_location_assignment PIN_W5 -to emif_hps_oct_oct_rzqin
+set_location_assignment PIN_U1 -to emif_hps_mem_mem_alert_n[0]
+
+set_location_assignment PIN_L3 -to emif_hps_mem_mem_dqs[0]
+set_location_assignment PIN_G3 -to emif_hps_mem_mem_dqs[1]
+set_location_assignment PIN_U15 -to emif_hps_mem_mem_dqs[2]
+set_location_assignment PIN_L15 -to emif_hps_mem_mem_dqs[3]
+set_location_assignment PIN_A7 -to emif_hps_mem_mem_dqs[4]
+set_location_assignment PIN_G9 -to emif_hps_mem_mem_dqs[5]
+set_location_assignment PIN_L21 -to emif_hps_mem_mem_dqs[6]
+set_location_assignment PIN_U21 -to emif_hps_mem_mem_dqs[7]
+set_location_assignment PIN_AA5 -to emif_hps_mem_mem_dqs[8]
+
+set_location_assignment PIN_M4 -to emif_hps_mem_mem_dqs_n[0]
+set_location_assignment PIN_F4 -to emif_hps_mem_mem_dqs_n[1]
+set_location_assignment PIN_T16 -to emif_hps_mem_mem_dqs_n[2]
+set_location_assignment PIN_M16 -to emif_hps_mem_mem_dqs_n[3]
+set_location_assignment PIN_B8 -to emif_hps_mem_mem_dqs_n[4]
+set_location_assignment PIN_F10 -to emif_hps_mem_mem_dqs_n[5]
+set_location_assignment PIN_M22 -to emif_hps_mem_mem_dqs_n[6]
+set_location_assignment PIN_T22 -to emif_hps_mem_mem_dqs_n[7]
+set_location_assignment PIN_AB6 -to emif_hps_mem_mem_dqs_n[8]
+
+set_location_assignment PIN_L1 -to emif_hps_mem_mem_dq[0]
+set_location_assignment PIN_M6 -to emif_hps_mem_mem_dq[1]
+set_location_assignment PIN_R1 -to emif_hps_mem_mem_dq[2]
+set_location_assignment PIN_P2 -to emif_hps_mem_mem_dq[3]
+set_location_assignment PIN_R5 -to emif_hps_mem_mem_dq[4]
+set_location_assignment PIN_M2 -to emif_hps_mem_mem_dq[5]
+set_location_assignment PIN_P6 -to emif_hps_mem_mem_dq[6]
+set_location_assignment PIN_L5 -to emif_hps_mem_mem_dq[7]
+set_location_assignment PIN_G5 -to emif_hps_mem_mem_dq[8]
+set_location_assignment PIN_F6 -to emif_hps_mem_mem_dq[9]
+set_location_assignment PIN_G1 -to emif_hps_mem_mem_dq[10]
+set_location_assignment PIN_J5 -to emif_hps_mem_mem_dq[11]
+set_location_assignment PIN_F2 -to emif_hps_mem_mem_dq[12]
+set_location_assignment PIN_K2 -to emif_hps_mem_mem_dq[13]
+set_location_assignment PIN_J1 -to emif_hps_mem_mem_dq[14]
+set_location_assignment PIN_K6 -to emif_hps_mem_mem_dq[15]
+set_location_assignment PIN_U13 -to emif_hps_mem_mem_dq[16]
+set_location_assignment PIN_T18 -to emif_hps_mem_mem_dq[17]
+set_location_assignment PIN_Y14 -to emif_hps_mem_mem_dq[18]
+set_location_assignment PIN_U17 -to emif_hps_mem_mem_dq[19]
+set_location_assignment PIN_W13 -to emif_hps_mem_mem_dq[20]
+set_location_assignment PIN_Y18 -to emif_hps_mem_mem_dq[21]
+set_location_assignment PIN_T14 -to emif_hps_mem_mem_dq[22]
+set_location_assignment PIN_W17 -to emif_hps_mem_mem_dq[23]
+set_location_assignment PIN_M18 -to emif_hps_mem_mem_dq[24]
+set_location_assignment PIN_L17 -to emif_hps_mem_mem_dq[25]
+set_location_assignment PIN_R17 -to emif_hps_mem_mem_dq[26]
+set_location_assignment PIN_L13 -to emif_hps_mem_mem_dq[27]
+set_location_assignment PIN_M14 -to emif_hps_mem_mem_dq[28]
+set_location_assignment PIN_R13 -to emif_hps_mem_mem_dq[29]
+set_location_assignment PIN_P18 -to emif_hps_mem_mem_dq[30]
+set_location_assignment PIN_P14 -to emif_hps_mem_mem_dq[31]
+set_location_assignment PIN_D6 -to emif_hps_mem_mem_dq[32]
+set_location_assignment PIN_E5 -to emif_hps_mem_mem_dq[33]
+set_location_assignment PIN_E9 -to emif_hps_mem_mem_dq[34]
+set_location_assignment PIN_C5 -to emif_hps_mem_mem_dq[35]
+set_location_assignment PIN_D10 -to emif_hps_mem_mem_dq[36]
+set_location_assignment PIN_B6 -to emif_hps_mem_mem_dq[37]
+set_location_assignment PIN_B10 -to emif_hps_mem_mem_dq[38]
+set_location_assignment PIN_A9 -to emif_hps_mem_mem_dq[39]
+set_location_assignment PIN_F12 -to emif_hps_mem_mem_dq[40]
+set_location_assignment PIN_J11 -to emif_hps_mem_mem_dq[41]
+set_location_assignment PIN_G7 -to emif_hps_mem_mem_dq[42]
+set_location_assignment PIN_K8 -to emif_hps_mem_mem_dq[43]
+set_location_assignment PIN_F8 -to emif_hps_mem_mem_dq[44]
+set_location_assignment PIN_G11 -to emif_hps_mem_mem_dq[45]
+set_location_assignment PIN_J7 -to emif_hps_mem_mem_dq[46]
+set_location_assignment PIN_K12 -to emif_hps_mem_mem_dq[47]
+set_location_assignment PIN_R19 -to emif_hps_mem_mem_dq[48]
+set_location_assignment PIN_P20 -to emif_hps_mem_mem_dq[49]
+set_location_assignment PIN_M20 -to emif_hps_mem_mem_dq[50]
+set_location_assignment PIN_L19 -to emif_hps_mem_mem_dq[51]
+set_location_assignment PIN_L23 -to emif_hps_mem_mem_dq[52]
+set_location_assignment PIN_R23 -to emif_hps_mem_mem_dq[53]
+set_location_assignment PIN_P24 -to emif_hps_mem_mem_dq[54]
+set_location_assignment PIN_M24 -to emif_hps_mem_mem_dq[55]
+set_location_assignment PIN_W19 -to emif_hps_mem_mem_dq[56]
+set_location_assignment PIN_T20 -to emif_hps_mem_mem_dq[57]
+set_location_assignment PIN_W23 -to emif_hps_mem_mem_dq[58]
+set_location_assignment PIN_U23 -to emif_hps_mem_mem_dq[59]
+set_location_assignment PIN_Y24 -to emif_hps_mem_mem_dq[60]
+set_location_assignment PIN_T24 -to emif_hps_mem_mem_dq[61]
+set_location_assignment PIN_Y20 -to emif_hps_mem_mem_dq[62]
+set_location_assignment PIN_U19 -to emif_hps_mem_mem_dq[63]
+set_location_assignment PIN_AA1 -to emif_hps_mem_mem_dq[64]
+set_location_assignment PIN_AD2 -to emif_hps_mem_mem_dq[65]
+set_location_assignment PIN_AD6 -to emif_hps_mem_mem_dq[66]
+set_location_assignment PIN_AE7 -to emif_hps_mem_mem_dq[67]
+set_location_assignment PIN_AE1 -to emif_hps_mem_mem_dq[68]
+set_location_assignment PIN_AB8 -to emif_hps_mem_mem_dq[69]
+set_location_assignment PIN_AA7 -to emif_hps_mem_mem_dq[70]
+set_location_assignment PIN_AB2 -to emif_hps_mem_mem_dq[71]
+
+
+set_location_assignment PIN_R3 -to emif_hps_mem_mem_dbi_n[0]
+set_location_assignment PIN_J3 -to emif_hps_mem_mem_dbi_n[1]
+set_location_assignment PIN_W15 -to emif_hps_mem_mem_dbi_n[2]
+set_location_assignment PIN_R15 -to emif_hps_mem_mem_dbi_n[3]
+set_location_assignment PIN_E7 -to emif_hps_mem_mem_dbi_n[4]
+set_location_assignment PIN_J9 -to emif_hps_mem_mem_dbi_n[5]
+set_location_assignment PIN_R21 -to emif_hps_mem_mem_dbi_n[6]
+set_location_assignment PIN_W21 -to emif_hps_mem_mem_dbi_n[7]
+set_location_assignment PIN_AA3 -to emif_hps_mem_mem_dbi_n[8]
+
+
+set_global_assignment -name VERILOG_FILE custom_ip/debounce/debounce.v
+set_global_assignment -name IP_FILE ip/qsys_top/clk_100.ip
+set_global_assignment -name IP_FILE ip/qsys_top/rst_in.ip
+set_global_assignment -name IP_FILE ip/qsys_top/user_rst_clkgate_0.ip
+set_global_assignment -name IP_FILE ip/qsys_top/agilex_hps.ip
+set_global_assignment -name IP_FILE ip/qsys_top/emif_hps.ip
+set_global_assignment -name IP_FILE ip/qsys_top/emif_calbus_0.ip
+set_global_assignment -name QSYS_FILE qsys_top.qsys
+set_global_assignment -name IP_FILE ip/qsys_top/qsys_top_pio_0.ip
+set_global_assignment -name IP_FILE ip/qsys_top/qsys_top_prbs_generator_0.ip
+set_global_assignment -name IP_FILE ip/qsys_top/qsys_top_ram_controller_1.ip
+set_global_assignment -name IP_FILE ip/qsys_top/qsys_top_prbs_generator_1.ip
+set_global_assignment -name IP_FILE ip/qsys_top/qsys_top_pattern_writer_1.ip
+set_global_assignment -name IP_FILE ip/qsys_top/qsys_top_onchip_memory2_0.ip
+
+
+set_global_assignment -name POWER_APPLY_THERMAL_MARGIN ADDITIONAL
+
+set_instance_assignment -name IO_STANDARD "1.2 V" -to fpga_clk_100 -entity G3
+set_instance_assignment -name IO_STANDARD "1.2 V" -to fpga_reset_n -entity G3
+
+
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to SDMMC_CMD -entity G3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to SDMMC_CCLK -entity G3
+
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SDMMC_CMD -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SDMMC_CCLK -entity G3
+
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SDMMC_CMD -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to SDMMC_D0 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SDMMC_D0 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SDMMC_D0 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to SDMMC_D1 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SDMMC_D1 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SDMMC_D1 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to SDMMC_D2 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SDMMC_D2 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SDMMC_D2 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to SDMMC_D3 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SDMMC_D3 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SDMMC_D3 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to SDMMC_D4 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SDMMC_D4 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SDMMC_D4 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to SDMMC_D7 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SDMMC_D7 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SDMMC_D7 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to SDMMC_D5 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SDMMC_D5 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SDMMC_D5 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to SDMMC_D6 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SDMMC_D6 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SDMMC_D6 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to EMAC1_TX_CLK -entity G3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to EMAC1_TX_CTL -entity G3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to EMAC1_RX_CLK -entity G3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to EMAC1_RX_CTL -entity G3
+
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to EMAC1_TX_CLK -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to EMAC1_TX_CTL -entity G3
+
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to EMAC1_RX_CLK -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to EMAC1_RX_CTL -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to EMAC1_RXD0 -entity G3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to EMAC1_TXD0 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to EMAC1_TXD0 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to EMAC1_RXD0 -entity G3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to EMAC1_RXD1 -entity G3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to EMAC1_TXD1 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to EMAC1_TXD1 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to EMAC1_RXD1 -entity G3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to EMAC1_RXD2 -entity G3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to EMAC1_TXD2 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to EMAC1_TXD2 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to EMAC1_RXD2 -entity G3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to EMAC1_RXD3 -entity G3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to EMAC1_TXD3 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to EMAC1_TXD3 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to EMAC1_RXD3 -entity G3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to EMAC1_MDIO -entity G3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to EMAC1_MDC -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to EMAC1_MDIO -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to EMAC1_MDC -entity G3
+set_instance_assignment -name AUTO_OPEN_DRAIN_PINS ON -to EMAC1_MDIO -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to EMAC1_MDIO -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to UART1_TX -entity G3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to UART1_RX -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to UART1_TX -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to UART1_RX -entity G3
+
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to I2C1_SDA -entity G3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to I2C1_SCL -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to I2C1_SDA -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to I2C1_SCL -entity G3
+set_instance_assignment -name AUTO_OPEN_DRAIN_PINS ON -to I2C1_SDA -entity G3
+set_instance_assignment -name AUTO_OPEN_DRAIN_PINS ON -to I2C1_SCL -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to I2C1_SDA -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to I2C1_SCL -entity G3
+
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to gpio0_io11 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to gpio0_io11 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to gpio0_io11 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to gpio0_io12 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to gpio0_io12 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to gpio0_io12 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to gpio0_io13 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to gpio0_io13 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to gpio0_io13 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to gpio0_io14 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to gpio0_io14 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to gpio0_io14 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to gpio0_io15 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to gpio0_io15 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to gpio0_io15 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to gpio0_io16 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to gpio0_io16 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to gpio0_io16 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to gpio0_io17 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to gpio0_io17 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to gpio0_io17 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to gpio0_io18 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to gpio0_io18 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to gpio0_io18 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to gpio1_io16 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to gpio1_io16 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to gpio1_io16 -entity G3
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to gpio1_io17 -entity G3
+set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to gpio1_io17 -entity G3
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to gpio1_io17 -entity G3
+
+
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
+set_global_assignment -name SIGNALTAP_FILE stp1.stp
+set_global_assignment -name IP_SEARCH_PATHS custom_ip/**/*
+
+set_global_assignment -name IP_FILE ip/qsys_top/qsys_top_axil_interconnect_0.ip
+set_instance_assignment -name IO_STANDARD "1.2 V" -to fpga_led_pio[0] -disable
+set_instance_assignment -name SLEW_RATE 0 -to fpga_led_pio[0] -disable
+set_instance_assignment -name IO_STANDARD "1.2 V" -to fpga_led_pio[1] -disable
+set_instance_assignment -name SLEW_RATE 0 -to fpga_led_pio[1] -disable

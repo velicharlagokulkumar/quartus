@@ -35,7 +35,7 @@ module emif_hps (
 		input  wire          calbus_clk            // emif_calbus_clk.clk,                  EMIF Calibration component bus for the clock
 	);
 
-	emif_hps_altera_emif_fm_hps_262_ijg2uvy altera_emif_fm_hps_inst (
+	emif_hps_altera_emif_fm_hps_262_o22t3qa altera_emif_fm_hps_inst (
 		.pll_ref_clk          (pll_ref_clk),          //   input,     width = 1,     pll_ref_clk.clk
 		.oct_rzqin            (oct_rzqin),            //   input,     width = 1,             oct.oct_rzqin
 		.mem_ck               (mem_ck),               //  output,     width = 1,             mem.mem_ck

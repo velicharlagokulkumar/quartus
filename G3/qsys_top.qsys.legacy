@@ -32,6 +32,14 @@ https://fpgasoftware.intel.com/eula.-->
          type = "int";
       }
    }
+   element axil_interconnect_0
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
    element clk_100
    {
       datum _sortIndex
@@ -162,7 +170,7 @@ https://fpgasoftware.intel.com/eula.-->
 }
 ]]></parameter>
  <parameter name="designId" value="" />
- <parameter name="device" value="AGFB014R24B2E2V" />
+ <parameter name="device" value="AGFB027R24C2E2VR2" />
  <parameter name="deviceFamily" value="Agilex" />
  <parameter name="deviceSpeedGrade" value="2" />
  <parameter name="fabricMode" value="QSYS" />
@@ -176,6 +184,32 @@ https://fpgasoftware.intel.com/eula.-->
  <parameter name="systemHash" value="0" />
  <parameter name="systemInfos"><![CDATA[<systemInfosDefinition>
     <connPtSystemInfos>
+        <entry>
+            <key>agilex_hps_h2f_user0_clock</key>
+            <value>
+                <connectionPointName>agilex_hps_h2f_user0_clock</connectionPointName>
+                <suppliedSystemInfos/>
+                <consumedSystemInfos>
+                    <entry>
+                        <key>CLOCK_RATE</key>
+                        <value>50000000</value>
+                    </entry>
+                </consumedSystemInfos>
+            </value>
+        </entry>
+        <entry>
+            <key>agilex_hps_h2f_user1_clock</key>
+            <value>
+                <connectionPointName>agilex_hps_h2f_user1_clock</connectionPointName>
+                <suppliedSystemInfos/>
+                <consumedSystemInfos>
+                    <entry>
+                        <key>CLOCK_RATE</key>
+                        <value>125000000</value>
+                    </entry>
+                </consumedSystemInfos>
+            </value>
+        </entry>
         <entry>
             <key>clk_100</key>
             <value>
@@ -199,6 +233,16 @@ https://fpgasoftware.intel.com/eula.-->
    name="agilex_hps_f2h_stm_hw_events"
    internal="agilex_hps.f2h_stm_hw_events" />
  <interface name="agilex_hps_h2f_cs" internal="agilex_hps.h2f_cs" />
+ <interface
+   name="agilex_hps_h2f_user0_clock"
+   internal="agilex_hps.h2f_user0_clock"
+   type="clock"
+   dir="start" />
+ <interface
+   name="agilex_hps_h2f_user1_clock"
+   internal="agilex_hps.h2f_user1_clock"
+   type="clock"
+   dir="start" />
  <interface name="clk_100" internal="clk_100.in_clk" type="clock" dir="end" />
  <interface name="emif_hps_mem" internal="emif_hps.mem" type="conduit" dir="end" />
  <interface name="emif_hps_oct" internal="emif_hps.oct" type="conduit" dir="end" />
@@ -207,7 +251,11 @@ https://fpgasoftware.intel.com/eula.-->
    internal="emif_hps.pll_ref_clk"
    type="clock"
    dir="end" />
- <interface name="f2h_irq1" internal="agilex_hps.f2h_irq1" />
+ <interface
+   name="f2h_irq1"
+   internal="agilex_hps.f2h_irq1"
+   type="interrupt"
+   dir="start" />
  <interface
    name="h2f_reset"
    internal="agilex_hps.h2f_reset"
@@ -220,6 +268,9 @@ https://fpgasoftware.intel.com/eula.-->
    type="conduit"
    dir="end" />
  <interface
+   name="pattern_writer_1_snk_data_slave"
+   internal="pattern_writer_1.snk_data_slave" />
+ <interface
    name="pio_0_external_connection"
    internal="pio_0.external_connection"
    type="conduit"
@@ -227,6 +278,11 @@ https://fpgasoftware.intel.com/eula.-->
  <interface
    name="ram_controller_1_src_read_cmd"
    internal="ram_controller_1.src_read_cmd"
+   type="axi4stream"
+   dir="start" />
+ <interface
+   name="ram_controller_1_src_write_cmd"
+   internal="ram_controller_1.src_write_cmd"
    type="axi4stream"
    dir="start" />
  <interface name="reset" internal="rst_in.in_reset" type="reset" dir="end" />
@@ -239,6 +295,88 @@ https://fpgasoftware.intel.com/eula.-->
   <parameter name="componentDefinition"><![CDATA[<componentDefinition>
     <boundary>
         <interfaces>
+            <interface>
+                <name>h2f_user0_clock</name>
+                <type>clock</type>
+                <isStart>true</isStart>
+                <ports>
+                    <port>
+                        <name>s2f_user_clk0_hio</name>
+                        <role>clk</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap/>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>associatedDirectClock</key>
+                        </entry>
+                        <entry>
+                            <key>clockRate</key>
+                            <value>50000000</value>
+                        </entry>
+                        <entry>
+                            <key>clockRateKnown</key>
+                            <value>true</value>
+                        </entry>
+                        <entry>
+                            <key>externallyDriven</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>ptfSchematicName</key>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
+            <interface>
+                <name>h2f_user1_clock</name>
+                <type>clock</type>
+                <isStart>true</isStart>
+                <ports>
+                    <port>
+                        <name>s2f_user_clk1_hio</name>
+                        <role>clk</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap/>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>associatedDirectClock</key>
+                        </entry>
+                        <entry>
+                            <key>clockRate</key>
+                            <value>125000000</value>
+                        </entry>
+                        <entry>
+                            <key>clockRateKnown</key>
+                            <value>true</value>
+                        </entry>
+                        <entry>
+                            <key>externallyDriven</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>ptfSchematicName</key>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
             <interface>
                 <name>hps_emif</name>
                 <type>conduit</type>
@@ -305,8 +443,8 @@ https://fpgasoftware.intel.com/eula.-->
                 <isStart>false</isStart>
                 <ports>
                     <port>
-                        <name>EMAC0_TX_CLK</name>
-                        <role>EMAC0_TX_CLK</role>
+                        <name>EMAC1_TX_CLK</name>
+                        <role>EMAC1_TX_CLK</role>
                         <direction>Output</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -314,8 +452,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>EMAC0_TXD0</name>
-                        <role>EMAC0_TXD0</role>
+                        <name>EMAC1_TXD0</name>
+                        <role>EMAC1_TXD0</role>
                         <direction>Output</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -323,8 +461,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>EMAC0_TXD1</name>
-                        <role>EMAC0_TXD1</role>
+                        <name>EMAC1_TXD1</name>
+                        <role>EMAC1_TXD1</role>
                         <direction>Output</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -332,8 +470,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>EMAC0_TXD2</name>
-                        <role>EMAC0_TXD2</role>
+                        <name>EMAC1_TXD2</name>
+                        <role>EMAC1_TXD2</role>
                         <direction>Output</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -341,8 +479,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>EMAC0_TXD3</name>
-                        <role>EMAC0_TXD3</role>
+                        <name>EMAC1_TXD3</name>
+                        <role>EMAC1_TXD3</role>
                         <direction>Output</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -350,8 +488,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>EMAC0_RX_CTL</name>
-                        <role>EMAC0_RX_CTL</role>
+                        <name>EMAC1_RX_CTL</name>
+                        <role>EMAC1_RX_CTL</role>
                         <direction>Input</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -359,8 +497,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>EMAC0_TX_CTL</name>
-                        <role>EMAC0_TX_CTL</role>
+                        <name>EMAC1_TX_CTL</name>
+                        <role>EMAC1_TX_CTL</role>
                         <direction>Output</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -368,8 +506,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>EMAC0_RX_CLK</name>
-                        <role>EMAC0_RX_CLK</role>
+                        <name>EMAC1_RX_CLK</name>
+                        <role>EMAC1_RX_CLK</role>
                         <direction>Input</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -377,8 +515,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>EMAC0_RXD0</name>
-                        <role>EMAC0_RXD0</role>
+                        <name>EMAC1_RXD0</name>
+                        <role>EMAC1_RXD0</role>
                         <direction>Input</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -386,8 +524,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>EMAC0_RXD1</name>
-                        <role>EMAC0_RXD1</role>
+                        <name>EMAC1_RXD1</name>
+                        <role>EMAC1_RXD1</role>
                         <direction>Input</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -395,8 +533,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>EMAC0_RXD2</name>
-                        <role>EMAC0_RXD2</role>
+                        <name>EMAC1_RXD2</name>
+                        <role>EMAC1_RXD2</role>
                         <direction>Input</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -404,8 +542,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>EMAC0_RXD3</name>
-                        <role>EMAC0_RXD3</role>
+                        <name>EMAC1_RXD3</name>
+                        <role>EMAC1_RXD3</role>
                         <direction>Input</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -413,8 +551,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>EMAC0_MDIO</name>
-                        <role>EMAC0_MDIO</role>
+                        <name>EMAC1_MDIO</name>
+                        <role>EMAC1_MDIO</role>
                         <direction>Bidir</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -422,8 +560,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>EMAC0_MDC</name>
-                        <role>EMAC0_MDC</role>
+                        <name>EMAC1_MDC</name>
+                        <role>EMAC1_MDC</role>
                         <direction>Output</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -476,6 +614,42 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
+                        <name>SDMMC_D4</name>
+                        <role>SDMMC_D4</role>
+                        <direction>Bidir</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>SDMMC_D5</name>
+                        <role>SDMMC_D5</role>
+                        <direction>Bidir</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>SDMMC_D6</name>
+                        <role>SDMMC_D6</role>
+                        <direction>Bidir</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>SDMMC_D7</name>
+                        <role>SDMMC_D7</role>
+                        <direction>Bidir</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
                         <name>SDMMC_CCLK</name>
                         <role>SDMMC_CCLK</role>
                         <direction>Output</direction>
@@ -485,89 +659,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>USB0_DATA0</name>
-                        <role>USB0_DATA0</role>
-                        <direction>Bidir</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>USB0_DATA1</name>
-                        <role>USB0_DATA1</role>
-                        <direction>Bidir</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>USB0_DATA2</name>
-                        <role>USB0_DATA2</role>
-                        <direction>Bidir</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>USB0_DATA3</name>
-                        <role>USB0_DATA3</role>
-                        <direction>Bidir</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>USB0_DATA4</name>
-                        <role>USB0_DATA4</role>
-                        <direction>Bidir</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>USB0_DATA5</name>
-                        <role>USB0_DATA5</role>
-                        <direction>Bidir</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>USB0_DATA6</name>
-                        <role>USB0_DATA6</role>
-                        <direction>Bidir</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>USB0_DATA7</name>
-                        <role>USB0_DATA7</role>
-                        <direction>Bidir</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>USB0_CLK</name>
-                        <role>USB0_CLK</role>
-                        <direction>Input</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>USB0_STP</name>
-                        <role>USB0_STP</role>
+                        <name>SPIM0_CLK</name>
+                        <role>SPIM0_CLK</role>
                         <direction>Output</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -575,8 +668,17 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>USB0_DIR</name>
-                        <role>USB0_DIR</role>
+                        <name>SPIM0_MOSI</name>
+                        <role>SPIM0_MOSI</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>SPIM0_MISO</name>
+                        <role>SPIM0_MISO</role>
                         <direction>Input</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -584,8 +686,35 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>USB0_NXT</name>
-                        <role>USB0_NXT</role>
+                        <name>SPIM0_SS0_N</name>
+                        <role>SPIM0_SS0_N</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>SPIM1_CLK</name>
+                        <role>SPIM1_CLK</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>SPIM1_MOSI</name>
+                        <role>SPIM1_MOSI</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>SPIM1_MISO</name>
+                        <role>SPIM1_MISO</role>
                         <direction>Input</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -593,8 +722,26 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>UART0_RX</name>
-                        <role>UART0_RX</role>
+                        <name>SPIM1_SS0_N</name>
+                        <role>SPIM1_SS0_N</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>SPIM1_SS1_N</name>
+                        <role>SPIM1_SS1_N</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>UART1_RX</name>
+                        <role>UART1_RX</role>
                         <direction>Input</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -602,8 +749,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>UART0_TX</name>
-                        <role>UART0_TX</role>
+                        <name>UART1_TX</name>
+                        <role>UART1_TX</role>
                         <direction>Output</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -629,78 +776,6 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>gpio1_io0</name>
-                        <role>gpio1_io0</role>
-                        <direction>Bidir</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>gpio1_io1</name>
-                        <role>gpio1_io1</role>
-                        <direction>Bidir</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>gpio1_io4</name>
-                        <role>gpio1_io4</role>
-                        <direction>Bidir</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>gpio1_io5</name>
-                        <role>gpio1_io5</role>
-                        <direction>Bidir</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>jtag_tck</name>
-                        <role>jtag_tck</role>
-                        <direction>Input</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>jtag_tms</name>
-                        <role>jtag_tms</role>
-                        <direction>Input</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>jtag_tdo</name>
-                        <role>jtag_tdo</role>
-                        <direction>Output</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>jtag_tdi</name>
-                        <role>jtag_tdi</role>
-                        <direction>Input</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
                         <name>hps_osc_clk</name>
                         <role>hps_osc_clk</role>
                         <direction>Input</direction>
@@ -710,8 +785,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>gpio1_io19</name>
-                        <role>gpio1_io19</role>
+                        <name>gpio0_io11</name>
+                        <role>gpio0_io11</role>
                         <direction>Bidir</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -719,8 +794,8 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>gpio1_io20</name>
-                        <role>gpio1_io20</role>
+                        <name>gpio0_io12</name>
+                        <role>gpio0_io12</role>
                         <direction>Bidir</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -728,8 +803,71 @@ https://fpgasoftware.intel.com/eula.-->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>gpio1_io21</name>
-                        <role>gpio1_io21</role>
+                        <name>gpio0_io13</name>
+                        <role>gpio0_io13</role>
+                        <direction>Bidir</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>gpio0_io14</name>
+                        <role>gpio0_io14</role>
+                        <direction>Bidir</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>gpio0_io15</name>
+                        <role>gpio0_io15</role>
+                        <direction>Bidir</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>gpio0_io16</name>
+                        <role>gpio0_io16</role>
+                        <direction>Bidir</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>gpio0_io17</name>
+                        <role>gpio0_io17</role>
+                        <direction>Bidir</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>gpio0_io18</name>
+                        <role>gpio0_io18</role>
+                        <direction>Bidir</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>gpio1_io16</name>
+                        <role>gpio1_io16</role>
+                        <direction>Bidir</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>gpio1_io17</name>
+                        <role>gpio1_io17</role>
                         <direction>Bidir</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -956,7 +1094,7 @@ https://fpgasoftware.intel.com/eula.-->
                         <name>h2f_WDATA</name>
                         <role>wdata</role>
                         <direction>Output</direction>
-                        <width>128</width>
+                        <width>32</width>
                         <lowerBound>0</lowerBound>
                         <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                         <terminationValue>0</terminationValue>
@@ -965,7 +1103,7 @@ https://fpgasoftware.intel.com/eula.-->
                         <name>h2f_WSTRB</name>
                         <role>wstrb</role>
                         <direction>Output</direction>
-                        <width>16</width>
+                        <width>4</width>
                         <lowerBound>0</lowerBound>
                         <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                         <terminationValue>0</terminationValue>
@@ -1136,7 +1274,7 @@ https://fpgasoftware.intel.com/eula.-->
                         <name>h2f_RDATA</name>
                         <role>rdata</role>
                         <direction>Input</direction>
-                        <width>128</width>
+                        <width>32</width>
                         <lowerBound>0</lowerBound>
                         <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                         <terminationValue>0</terminationValue>
@@ -1712,6 +1850,104 @@ https://fpgasoftware.intel.com/eula.-->
                     </parameterValueMap>
                 </parameters>
             </interface>
+            <interface>
+                <name>f2h_irq0</name>
+                <type>interrupt</type>
+                <isStart>true</isStart>
+                <ports>
+                    <port>
+                        <name>f2h_irq_p0</name>
+                        <role>irq</role>
+                        <direction>Input</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap>
+                        <entry>
+                            <key>embeddedsw.dts.irq.rx_offset</key>
+                            <value>19</value>
+                        </entry>
+                        <entry>
+                            <key>embeddedsw.dts.irq.rx_type</key>
+                            <value>arm_gic_spi</value>
+                        </entry>
+                    </assignmentValueMap>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>associatedAddressablePoint</key>
+                        </entry>
+                        <entry>
+                            <key>associatedClock</key>
+                        </entry>
+                        <entry>
+                            <key>associatedReset</key>
+                            <value></value>
+                        </entry>
+                        <entry>
+                            <key>irqMap</key>
+                        </entry>
+                        <entry>
+                            <key>irqScheme</key>
+                            <value>INDIVIDUAL_REQUESTS</value>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
+            <interface>
+                <name>f2h_irq1</name>
+                <type>interrupt</type>
+                <isStart>true</isStart>
+                <ports>
+                    <port>
+                        <name>f2h_irq_p1</name>
+                        <role>irq</role>
+                        <direction>Input</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap>
+                        <entry>
+                            <key>embeddedsw.dts.irq.rx_offset</key>
+                            <value>51</value>
+                        </entry>
+                        <entry>
+                            <key>embeddedsw.dts.irq.rx_type</key>
+                            <value>arm_gic_spi</value>
+                        </entry>
+                    </assignmentValueMap>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>associatedAddressablePoint</key>
+                        </entry>
+                        <entry>
+                            <key>associatedClock</key>
+                        </entry>
+                        <entry>
+                            <key>associatedReset</key>
+                            <value></value>
+                        </entry>
+                        <entry>
+                            <key>irqMap</key>
+                        </entry>
+                        <entry>
+                            <key>irqScheme</key>
+                            <value>INDIVIDUAL_REQUESTS</value>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
         </interfaces>
     </boundary>
     <originalModuleInfo>
@@ -2021,11 +2257,119 @@ https://fpgasoftware.intel.com/eula.-->
                     </consumedSystemInfos>
                 </value>
             </entry>
+            <entry>
+                <key>h2f_user0_clock</key>
+                <value>
+                    <connectionPointName>h2f_user0_clock</connectionPointName>
+                    <suppliedSystemInfos>
+                        <entry>
+                            <key>CLOCK_RATE</key>
+                            <value>50000000</value>
+                        </entry>
+                    </suppliedSystemInfos>
+                    <consumedSystemInfos/>
+                </value>
+            </entry>
+            <entry>
+                <key>h2f_user1_clock</key>
+                <value>
+                    <connectionPointName>h2f_user1_clock</connectionPointName>
+                    <suppliedSystemInfos>
+                        <entry>
+                            <key>CLOCK_RATE</key>
+                            <value>125000000</value>
+                        </entry>
+                    </suppliedSystemInfos>
+                    <consumedSystemInfos/>
+                </value>
+            </entry>
         </connPtSystemInfos>
     </systemInfos>
 </componentDefinition>]]></parameter>
   <parameter name="defaultBoundary"><![CDATA[<boundaryDefinition>
     <interfaces>
+        <interface>
+            <name>h2f_user0_clock</name>
+            <type>clock</type>
+            <isStart>true</isStart>
+            <ports>
+                <port>
+                    <name>s2f_user_clk0_hio</name>
+                    <role>clk</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap/>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>associatedDirectClock</key>
+                    </entry>
+                    <entry>
+                        <key>clockRate</key>
+                        <value>50000000</value>
+                    </entry>
+                    <entry>
+                        <key>clockRateKnown</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>externallyDriven</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>ptfSchematicName</key>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
+        <interface>
+            <name>h2f_user1_clock</name>
+            <type>clock</type>
+            <isStart>true</isStart>
+            <ports>
+                <port>
+                    <name>s2f_user_clk1_hio</name>
+                    <role>clk</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap/>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>associatedDirectClock</key>
+                    </entry>
+                    <entry>
+                        <key>clockRate</key>
+                        <value>125000000</value>
+                    </entry>
+                    <entry>
+                        <key>clockRateKnown</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>externallyDriven</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>ptfSchematicName</key>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
         <interface>
             <name>hps_emif</name>
             <type>conduit</type>
@@ -2092,8 +2436,8 @@ https://fpgasoftware.intel.com/eula.-->
             <isStart>false</isStart>
             <ports>
                 <port>
-                    <name>EMAC0_TX_CLK</name>
-                    <role>EMAC0_TX_CLK</role>
+                    <name>EMAC1_TX_CLK</name>
+                    <role>EMAC1_TX_CLK</role>
                     <direction>Output</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2101,8 +2445,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>EMAC0_TXD0</name>
-                    <role>EMAC0_TXD0</role>
+                    <name>EMAC1_TXD0</name>
+                    <role>EMAC1_TXD0</role>
                     <direction>Output</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2110,8 +2454,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>EMAC0_TXD1</name>
-                    <role>EMAC0_TXD1</role>
+                    <name>EMAC1_TXD1</name>
+                    <role>EMAC1_TXD1</role>
                     <direction>Output</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2119,8 +2463,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>EMAC0_TXD2</name>
-                    <role>EMAC0_TXD2</role>
+                    <name>EMAC1_TXD2</name>
+                    <role>EMAC1_TXD2</role>
                     <direction>Output</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2128,8 +2472,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>EMAC0_TXD3</name>
-                    <role>EMAC0_TXD3</role>
+                    <name>EMAC1_TXD3</name>
+                    <role>EMAC1_TXD3</role>
                     <direction>Output</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2137,8 +2481,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>EMAC0_RX_CTL</name>
-                    <role>EMAC0_RX_CTL</role>
+                    <name>EMAC1_RX_CTL</name>
+                    <role>EMAC1_RX_CTL</role>
                     <direction>Input</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2146,8 +2490,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>EMAC0_TX_CTL</name>
-                    <role>EMAC0_TX_CTL</role>
+                    <name>EMAC1_TX_CTL</name>
+                    <role>EMAC1_TX_CTL</role>
                     <direction>Output</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2155,8 +2499,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>EMAC0_RX_CLK</name>
-                    <role>EMAC0_RX_CLK</role>
+                    <name>EMAC1_RX_CLK</name>
+                    <role>EMAC1_RX_CLK</role>
                     <direction>Input</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2164,8 +2508,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>EMAC0_RXD0</name>
-                    <role>EMAC0_RXD0</role>
+                    <name>EMAC1_RXD0</name>
+                    <role>EMAC1_RXD0</role>
                     <direction>Input</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2173,8 +2517,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>EMAC0_RXD1</name>
-                    <role>EMAC0_RXD1</role>
+                    <name>EMAC1_RXD1</name>
+                    <role>EMAC1_RXD1</role>
                     <direction>Input</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2182,8 +2526,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>EMAC0_RXD2</name>
-                    <role>EMAC0_RXD2</role>
+                    <name>EMAC1_RXD2</name>
+                    <role>EMAC1_RXD2</role>
                     <direction>Input</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2191,8 +2535,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>EMAC0_RXD3</name>
-                    <role>EMAC0_RXD3</role>
+                    <name>EMAC1_RXD3</name>
+                    <role>EMAC1_RXD3</role>
                     <direction>Input</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2200,8 +2544,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>EMAC0_MDIO</name>
-                    <role>EMAC0_MDIO</role>
+                    <name>EMAC1_MDIO</name>
+                    <role>EMAC1_MDIO</role>
                     <direction>Bidir</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2209,8 +2553,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>EMAC0_MDC</name>
-                    <role>EMAC0_MDC</role>
+                    <name>EMAC1_MDC</name>
+                    <role>EMAC1_MDC</role>
                     <direction>Output</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2263,6 +2607,42 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
+                    <name>SDMMC_D4</name>
+                    <role>SDMMC_D4</role>
+                    <direction>Bidir</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>SDMMC_D5</name>
+                    <role>SDMMC_D5</role>
+                    <direction>Bidir</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>SDMMC_D6</name>
+                    <role>SDMMC_D6</role>
+                    <direction>Bidir</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>SDMMC_D7</name>
+                    <role>SDMMC_D7</role>
+                    <direction>Bidir</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
                     <name>SDMMC_CCLK</name>
                     <role>SDMMC_CCLK</role>
                     <direction>Output</direction>
@@ -2272,89 +2652,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>USB0_DATA0</name>
-                    <role>USB0_DATA0</role>
-                    <direction>Bidir</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>USB0_DATA1</name>
-                    <role>USB0_DATA1</role>
-                    <direction>Bidir</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>USB0_DATA2</name>
-                    <role>USB0_DATA2</role>
-                    <direction>Bidir</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>USB0_DATA3</name>
-                    <role>USB0_DATA3</role>
-                    <direction>Bidir</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>USB0_DATA4</name>
-                    <role>USB0_DATA4</role>
-                    <direction>Bidir</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>USB0_DATA5</name>
-                    <role>USB0_DATA5</role>
-                    <direction>Bidir</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>USB0_DATA6</name>
-                    <role>USB0_DATA6</role>
-                    <direction>Bidir</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>USB0_DATA7</name>
-                    <role>USB0_DATA7</role>
-                    <direction>Bidir</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>USB0_CLK</name>
-                    <role>USB0_CLK</role>
-                    <direction>Input</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>USB0_STP</name>
-                    <role>USB0_STP</role>
+                    <name>SPIM0_CLK</name>
+                    <role>SPIM0_CLK</role>
                     <direction>Output</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2362,8 +2661,17 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>USB0_DIR</name>
-                    <role>USB0_DIR</role>
+                    <name>SPIM0_MOSI</name>
+                    <role>SPIM0_MOSI</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>SPIM0_MISO</name>
+                    <role>SPIM0_MISO</role>
                     <direction>Input</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2371,8 +2679,35 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>USB0_NXT</name>
-                    <role>USB0_NXT</role>
+                    <name>SPIM0_SS0_N</name>
+                    <role>SPIM0_SS0_N</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>SPIM1_CLK</name>
+                    <role>SPIM1_CLK</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>SPIM1_MOSI</name>
+                    <role>SPIM1_MOSI</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>SPIM1_MISO</name>
+                    <role>SPIM1_MISO</role>
                     <direction>Input</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2380,8 +2715,26 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>UART0_RX</name>
-                    <role>UART0_RX</role>
+                    <name>SPIM1_SS0_N</name>
+                    <role>SPIM1_SS0_N</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>SPIM1_SS1_N</name>
+                    <role>SPIM1_SS1_N</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>UART1_RX</name>
+                    <role>UART1_RX</role>
                     <direction>Input</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2389,8 +2742,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>UART0_TX</name>
-                    <role>UART0_TX</role>
+                    <name>UART1_TX</name>
+                    <role>UART1_TX</role>
                     <direction>Output</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2416,78 +2769,6 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>gpio1_io0</name>
-                    <role>gpio1_io0</role>
-                    <direction>Bidir</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>gpio1_io1</name>
-                    <role>gpio1_io1</role>
-                    <direction>Bidir</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>gpio1_io4</name>
-                    <role>gpio1_io4</role>
-                    <direction>Bidir</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>gpio1_io5</name>
-                    <role>gpio1_io5</role>
-                    <direction>Bidir</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>jtag_tck</name>
-                    <role>jtag_tck</role>
-                    <direction>Input</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>jtag_tms</name>
-                    <role>jtag_tms</role>
-                    <direction>Input</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>jtag_tdo</name>
-                    <role>jtag_tdo</role>
-                    <direction>Output</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
-                    <name>jtag_tdi</name>
-                    <role>jtag_tdi</role>
-                    <direction>Input</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-                <port>
                     <name>hps_osc_clk</name>
                     <role>hps_osc_clk</role>
                     <direction>Input</direction>
@@ -2497,8 +2778,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>gpio1_io19</name>
-                    <role>gpio1_io19</role>
+                    <name>gpio0_io11</name>
+                    <role>gpio0_io11</role>
                     <direction>Bidir</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2506,8 +2787,8 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>gpio1_io20</name>
-                    <role>gpio1_io20</role>
+                    <name>gpio0_io12</name>
+                    <role>gpio0_io12</role>
                     <direction>Bidir</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2515,8 +2796,71 @@ https://fpgasoftware.intel.com/eula.-->
                     <terminationValue>0</terminationValue>
                 </port>
                 <port>
-                    <name>gpio1_io21</name>
-                    <role>gpio1_io21</role>
+                    <name>gpio0_io13</name>
+                    <role>gpio0_io13</role>
+                    <direction>Bidir</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>gpio0_io14</name>
+                    <role>gpio0_io14</role>
+                    <direction>Bidir</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>gpio0_io15</name>
+                    <role>gpio0_io15</role>
+                    <direction>Bidir</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>gpio0_io16</name>
+                    <role>gpio0_io16</role>
+                    <direction>Bidir</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>gpio0_io17</name>
+                    <role>gpio0_io17</role>
+                    <direction>Bidir</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>gpio0_io18</name>
+                    <role>gpio0_io18</role>
+                    <direction>Bidir</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>gpio1_io16</name>
+                    <role>gpio1_io16</role>
+                    <direction>Bidir</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>gpio1_io17</name>
+                    <role>gpio1_io17</role>
                     <direction>Bidir</direction>
                     <width>1</width>
                     <lowerBound>0</lowerBound>
@@ -2743,7 +3087,7 @@ https://fpgasoftware.intel.com/eula.-->
                     <name>h2f_WDATA</name>
                     <role>wdata</role>
                     <direction>Output</direction>
-                    <width>128</width>
+                    <width>32</width>
                     <lowerBound>0</lowerBound>
                     <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                     <terminationValue>0</terminationValue>
@@ -2752,7 +3096,7 @@ https://fpgasoftware.intel.com/eula.-->
                     <name>h2f_WSTRB</name>
                     <role>wstrb</role>
                     <direction>Output</direction>
-                    <width>16</width>
+                    <width>4</width>
                     <lowerBound>0</lowerBound>
                     <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                     <terminationValue>0</terminationValue>
@@ -2923,7 +3267,7 @@ https://fpgasoftware.intel.com/eula.-->
                     <name>h2f_RDATA</name>
                     <role>rdata</role>
                     <direction>Input</direction>
-                    <width>128</width>
+                    <width>32</width>
                     <lowerBound>0</lowerBound>
                     <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                     <terminationValue>0</terminationValue>
@@ -3499,6 +3843,104 @@ https://fpgasoftware.intel.com/eula.-->
                 </parameterValueMap>
             </parameters>
         </interface>
+        <interface>
+            <name>f2h_irq0</name>
+            <type>interrupt</type>
+            <isStart>true</isStart>
+            <ports>
+                <port>
+                    <name>f2h_irq_p0</name>
+                    <role>irq</role>
+                    <direction>Input</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap>
+                    <entry>
+                        <key>embeddedsw.dts.irq.rx_offset</key>
+                        <value>19</value>
+                    </entry>
+                    <entry>
+                        <key>embeddedsw.dts.irq.rx_type</key>
+                        <value>arm_gic_spi</value>
+                    </entry>
+                </assignmentValueMap>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>associatedAddressablePoint</key>
+                    </entry>
+                    <entry>
+                        <key>associatedClock</key>
+                    </entry>
+                    <entry>
+                        <key>associatedReset</key>
+                        <value></value>
+                    </entry>
+                    <entry>
+                        <key>irqMap</key>
+                    </entry>
+                    <entry>
+                        <key>irqScheme</key>
+                        <value>INDIVIDUAL_REQUESTS</value>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
+        <interface>
+            <name>f2h_irq1</name>
+            <type>interrupt</type>
+            <isStart>true</isStart>
+            <ports>
+                <port>
+                    <name>f2h_irq_p1</name>
+                    <role>irq</role>
+                    <direction>Input</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap>
+                    <entry>
+                        <key>embeddedsw.dts.irq.rx_offset</key>
+                        <value>51</value>
+                    </entry>
+                    <entry>
+                        <key>embeddedsw.dts.irq.rx_type</key>
+                        <value>arm_gic_spi</value>
+                    </entry>
+                </assignmentValueMap>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>associatedAddressablePoint</key>
+                    </entry>
+                    <entry>
+                        <key>associatedClock</key>
+                    </entry>
+                    <entry>
+                        <key>associatedReset</key>
+                        <value></value>
+                    </entry>
+                    <entry>
+                        <key>irqMap</key>
+                    </entry>
+                    <entry>
+                        <key>irqScheme</key>
+                        <value>INDIVIDUAL_REQUESTS</value>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
     </interfaces>
 </boundaryDefinition>]]></parameter>
   <parameter name="generationInfoDefinition"><![CDATA[<generationInfoDefinition>
@@ -3539,6 +3981,1196 @@ https://fpgasoftware.intel.com/eula.-->
   <parameter name="hdlParameters"><![CDATA[<hdlParameterDescriptorDefinitionList/>]]></parameter>
   <parameter name="hlsFile" value="" />
   <parameter name="logicalView">ip/qsys_top/agilex_hps.ip</parameter>
+  <parameter name="moduleAssignmentDefinition"><![CDATA[<assignmentDefinition>
+    <assignmentValueMap/>
+</assignmentDefinition>]]></parameter>
+  <parameter name="svInterfaceDefinition" value="" />
+ </module>
+ <module
+   name="axil_interconnect_0"
+   kind="altera_generic_component"
+   version="1.0"
+   enabled="0">
+  <parameter name="componentDefinition"><![CDATA[<componentDefinition>
+    <boundary>
+        <interfaces>
+            <interface>
+                <name>clock</name>
+                <type>clock</type>
+                <isStart>false</isStart>
+                <ports>
+                    <port>
+                        <name>clk</name>
+                        <role>clk</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap/>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>clockRate</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>externallyDriven</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>ptfSchematicName</key>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
+            <interface>
+                <name>reset_sink</name>
+                <type>reset</type>
+                <isStart>false</isStart>
+                <ports>
+                    <port>
+                        <name>rst</name>
+                        <role>reset</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap/>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>associatedClock</key>
+                            <value>clock</value>
+                        </entry>
+                        <entry>
+                            <key>synchronousEdges</key>
+                            <value>DEASSERT</value>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
+            <interface>
+                <name>altera_axi4lite_slave</name>
+                <type>axi4lite</type>
+                <isStart>false</isStart>
+                <ports>
+                    <port>
+                        <name>s_axil_awprot</name>
+                        <role>awprot</role>
+                        <direction>Input</direction>
+                        <width>3</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_awaddr</name>
+                        <role>awaddr</role>
+                        <direction>Input</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_awvalid</name>
+                        <role>awvalid</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_awready</name>
+                        <role>awready</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_wdata</name>
+                        <role>wdata</role>
+                        <direction>Input</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_wstrb</name>
+                        <role>wstrb</role>
+                        <direction>Input</direction>
+                        <width>4</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_wvalid</name>
+                        <role>wvalid</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_wready</name>
+                        <role>wready</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_bresp</name>
+                        <role>bresp</role>
+                        <direction>Output</direction>
+                        <width>2</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_bvalid</name>
+                        <role>bvalid</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_bready</name>
+                        <role>bready</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_araddr</name>
+                        <role>araddr</role>
+                        <direction>Input</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_arprot</name>
+                        <role>arprot</role>
+                        <direction>Input</direction>
+                        <width>3</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_arvalid</name>
+                        <role>arvalid</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_arready</name>
+                        <role>arready</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_rdata</name>
+                        <role>rdata</role>
+                        <direction>Output</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_rresp</name>
+                        <role>rresp</role>
+                        <direction>Output</direction>
+                        <width>2</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_rvalid</name>
+                        <role>rvalid</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>s_axil_rready</name>
+                        <role>rready</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap/>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>associatedClock</key>
+                            <value>clock</value>
+                        </entry>
+                        <entry>
+                            <key>associatedReset</key>
+                            <value>reset_sink</value>
+                        </entry>
+                        <entry>
+                            <key>trustzoneAware</key>
+                            <value>true</value>
+                        </entry>
+                        <entry>
+                            <key>maximumOutstandingReads</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>maximumOutstandingWrites</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>maximumOutstandingTransactions</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>readAcceptanceCapability</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>writeAcceptanceCapability</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>combinedAcceptanceCapability</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>readDataReorderingDepth</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>bridgesToMaster</key>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
+            <interface>
+                <name>altera_axi4lite_master</name>
+                <type>axi4lite</type>
+                <isStart>true</isStart>
+                <ports>
+                    <port>
+                        <name>m_axil_bready</name>
+                        <role>bready</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_araddr</name>
+                        <role>araddr</role>
+                        <direction>Output</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_arprot</name>
+                        <role>arprot</role>
+                        <direction>Output</direction>
+                        <width>3</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_arvalid</name>
+                        <role>arvalid</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_arready</name>
+                        <role>arready</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_rdata</name>
+                        <role>rdata</role>
+                        <direction>Input</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_rresp</name>
+                        <role>rresp</role>
+                        <direction>Input</direction>
+                        <width>2</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_rvalid</name>
+                        <role>rvalid</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_rready</name>
+                        <role>rready</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_awaddr</name>
+                        <role>awaddr</role>
+                        <direction>Output</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_awprot</name>
+                        <role>awprot</role>
+                        <direction>Output</direction>
+                        <width>3</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_awvalid</name>
+                        <role>awvalid</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_awready</name>
+                        <role>awready</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_wdata</name>
+                        <role>wdata</role>
+                        <direction>Output</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_wstrb</name>
+                        <role>wstrb</role>
+                        <direction>Output</direction>
+                        <width>4</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_wvalid</name>
+                        <role>wvalid</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_wready</name>
+                        <role>wready</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_bresp</name>
+                        <role>bresp</role>
+                        <direction>Input</direction>
+                        <width>2</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>m_axil_bvalid</name>
+                        <role>bvalid</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap/>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>associatedClock</key>
+                            <value>clock</value>
+                        </entry>
+                        <entry>
+                            <key>associatedReset</key>
+                            <value>reset_sink</value>
+                        </entry>
+                        <entry>
+                            <key>trustzoneAware</key>
+                            <value>true</value>
+                        </entry>
+                        <entry>
+                            <key>maximumOutstandingReads</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>maximumOutstandingWrites</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>maximumOutstandingTransactions</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>readIssuingCapability</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>writeIssuingCapability</key>
+                            <value>1</value>
+                        </entry>
+                        <entry>
+                            <key>combinedIssuingCapability</key>
+                            <value>1</value>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
+        </interfaces>
+    </boundary>
+    <originalModuleInfo>
+        <className>axil_interconnect</className>
+        <version>1.0</version>
+        <displayName>axil_interconnect</displayName>
+    </originalModuleInfo>
+    <systemInfoParameterDescriptors>
+        <descriptors/>
+    </systemInfoParameterDescriptors>
+    <systemInfos>
+        <connPtSystemInfos/>
+    </systemInfos>
+</componentDefinition>]]></parameter>
+  <parameter name="defaultBoundary"><![CDATA[<boundaryDefinition>
+    <interfaces>
+        <interface>
+            <name>clock</name>
+            <type>clock</type>
+            <isStart>false</isStart>
+            <ports>
+                <port>
+                    <name>clk</name>
+                    <role>clk</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap/>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>clockRate</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>externallyDriven</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>ptfSchematicName</key>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
+        <interface>
+            <name>reset_sink</name>
+            <type>reset</type>
+            <isStart>false</isStart>
+            <ports>
+                <port>
+                    <name>rst</name>
+                    <role>reset</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap/>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>associatedClock</key>
+                        <value>clock</value>
+                    </entry>
+                    <entry>
+                        <key>synchronousEdges</key>
+                        <value>DEASSERT</value>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
+        <interface>
+            <name>altera_axi4lite_slave</name>
+            <type>axi4lite</type>
+            <isStart>false</isStart>
+            <ports>
+                <port>
+                    <name>s_axil_awprot</name>
+                    <role>awprot</role>
+                    <direction>Input</direction>
+                    <width>3</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_awaddr</name>
+                    <role>awaddr</role>
+                    <direction>Input</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_awvalid</name>
+                    <role>awvalid</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_awready</name>
+                    <role>awready</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_wdata</name>
+                    <role>wdata</role>
+                    <direction>Input</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_wstrb</name>
+                    <role>wstrb</role>
+                    <direction>Input</direction>
+                    <width>4</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_wvalid</name>
+                    <role>wvalid</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_wready</name>
+                    <role>wready</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_bresp</name>
+                    <role>bresp</role>
+                    <direction>Output</direction>
+                    <width>2</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_bvalid</name>
+                    <role>bvalid</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_bready</name>
+                    <role>bready</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_araddr</name>
+                    <role>araddr</role>
+                    <direction>Input</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_arprot</name>
+                    <role>arprot</role>
+                    <direction>Input</direction>
+                    <width>3</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_arvalid</name>
+                    <role>arvalid</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_arready</name>
+                    <role>arready</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_rdata</name>
+                    <role>rdata</role>
+                    <direction>Output</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_rresp</name>
+                    <role>rresp</role>
+                    <direction>Output</direction>
+                    <width>2</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_rvalid</name>
+                    <role>rvalid</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>s_axil_rready</name>
+                    <role>rready</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap/>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>associatedClock</key>
+                        <value>clock</value>
+                    </entry>
+                    <entry>
+                        <key>associatedReset</key>
+                        <value>reset_sink</value>
+                    </entry>
+                    <entry>
+                        <key>trustzoneAware</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>maximumOutstandingReads</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>maximumOutstandingWrites</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>maximumOutstandingTransactions</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>readAcceptanceCapability</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>writeAcceptanceCapability</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>combinedAcceptanceCapability</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>readDataReorderingDepth</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>bridgesToMaster</key>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
+        <interface>
+            <name>altera_axi4lite_master</name>
+            <type>axi4lite</type>
+            <isStart>true</isStart>
+            <ports>
+                <port>
+                    <name>m_axil_bready</name>
+                    <role>bready</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_araddr</name>
+                    <role>araddr</role>
+                    <direction>Output</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_arprot</name>
+                    <role>arprot</role>
+                    <direction>Output</direction>
+                    <width>3</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_arvalid</name>
+                    <role>arvalid</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_arready</name>
+                    <role>arready</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_rdata</name>
+                    <role>rdata</role>
+                    <direction>Input</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_rresp</name>
+                    <role>rresp</role>
+                    <direction>Input</direction>
+                    <width>2</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_rvalid</name>
+                    <role>rvalid</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_rready</name>
+                    <role>rready</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_awaddr</name>
+                    <role>awaddr</role>
+                    <direction>Output</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_awprot</name>
+                    <role>awprot</role>
+                    <direction>Output</direction>
+                    <width>3</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_awvalid</name>
+                    <role>awvalid</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_awready</name>
+                    <role>awready</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_wdata</name>
+                    <role>wdata</role>
+                    <direction>Output</direction>
+                    <width>32</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_wstrb</name>
+                    <role>wstrb</role>
+                    <direction>Output</direction>
+                    <width>4</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_wvalid</name>
+                    <role>wvalid</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_wready</name>
+                    <role>wready</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_bresp</name>
+                    <role>bresp</role>
+                    <direction>Input</direction>
+                    <width>2</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+                <port>
+                    <name>m_axil_bvalid</name>
+                    <role>bvalid</role>
+                    <direction>Input</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap/>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>associatedClock</key>
+                        <value>clock</value>
+                    </entry>
+                    <entry>
+                        <key>associatedReset</key>
+                        <value>reset_sink</value>
+                    </entry>
+                    <entry>
+                        <key>trustzoneAware</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>maximumOutstandingReads</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>maximumOutstandingWrites</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>maximumOutstandingTransactions</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>readIssuingCapability</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>writeIssuingCapability</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>combinedIssuingCapability</key>
+                        <value>1</value>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
+    </interfaces>
+</boundaryDefinition>]]></parameter>
+  <parameter name="generationInfoDefinition"><![CDATA[<generationInfoDefinition>
+    <hdlLibraryName>qsys_top_axil_interconnect_0</hdlLibraryName>
+    <fileSets>
+        <fileSet>
+            <fileSetName>qsys_top_axil_interconnect_0</fileSetName>
+            <fileSetFixedName>qsys_top_axil_interconnect_0</fileSetFixedName>
+            <fileSetKind>QUARTUS_SYNTH</fileSetKind>
+            <fileSetFiles/>
+        </fileSet>
+        <fileSet>
+            <fileSetName>qsys_top_axil_interconnect_0</fileSetName>
+            <fileSetFixedName>qsys_top_axil_interconnect_0</fileSetFixedName>
+            <fileSetKind>SIM_VERILOG</fileSetKind>
+            <fileSetFiles/>
+        </fileSet>
+        <fileSet>
+            <fileSetName>qsys_top_axil_interconnect_0</fileSetName>
+            <fileSetFixedName>qsys_top_axil_interconnect_0</fileSetFixedName>
+            <fileSetKind>SIM_VHDL</fileSetKind>
+            <fileSetFiles/>
+        </fileSet>
+        <fileSet>
+            <fileSetName>qsys_top_axil_interconnect_0</fileSetName>
+            <fileSetFixedName>qsys_top_axil_interconnect_0</fileSetFixedName>
+            <fileSetKind>CDC</fileSetKind>
+            <fileSetFiles/>
+        </fileSet>
+        <fileSet>
+            <fileSetName>qsys_top_axil_interconnect_0</fileSetName>
+            <fileSetFixedName>qsys_top_axil_interconnect_0</fileSetFixedName>
+            <fileSetKind>CDC_VHDL</fileSetKind>
+            <fileSetFiles/>
+        </fileSet>
+    </fileSets>
+</generationInfoDefinition>]]></parameter>
+  <parameter name="hdlParameters"><![CDATA[<hdlParameterDescriptorDefinitionList>
+    <hdlParameterDescriptorDefinition>
+        <description></description>
+        <enabled>true</enabled>
+        <exported>false</exported>
+        <parameterHdlType>INTEGER</parameterHdlType>
+        <parameterName>S_COUNT</parameterName>
+        <parameterType>java.lang.Integer</parameterType>
+        <parameterValue>1</parameterValue>
+    </hdlParameterDescriptorDefinition>
+    <hdlParameterDescriptorDefinition>
+        <description></description>
+        <enabled>true</enabled>
+        <exported>false</exported>
+        <parameterHdlType>INTEGER</parameterHdlType>
+        <parameterName>M_COUNT</parameterName>
+        <parameterType>java.lang.Integer</parameterType>
+        <parameterValue>2</parameterValue>
+    </hdlParameterDescriptorDefinition>
+    <hdlParameterDescriptorDefinition>
+        <enabled>true</enabled>
+        <exported>false</exported>
+        <parameterHdlType>INTEGER</parameterHdlType>
+        <parameterName>DATA_WIDTH</parameterName>
+        <parameterType>java.lang.Integer</parameterType>
+        <parameterValue>32</parameterValue>
+    </hdlParameterDescriptorDefinition>
+    <hdlParameterDescriptorDefinition>
+        <description></description>
+        <enabled>true</enabled>
+        <exported>false</exported>
+        <parameterHdlType>INTEGER</parameterHdlType>
+        <parameterName>ADDR_WIDTH</parameterName>
+        <parameterType>java.lang.Integer</parameterType>
+        <parameterValue>12</parameterValue>
+    </hdlParameterDescriptorDefinition>
+    <hdlParameterDescriptorDefinition>
+        <description></description>
+        <enabled>true</enabled>
+        <exported>false</exported>
+        <parameterHdlType>INTEGER</parameterHdlType>
+        <parameterName>STRB_WIDTH</parameterName>
+        <parameterType>java.lang.Integer</parameterType>
+        <parameterValue>4</parameterValue>
+    </hdlParameterDescriptorDefinition>
+    <hdlParameterDescriptorDefinition>
+        <enabled>true</enabled>
+        <exported>false</exported>
+        <parameterHdlType>INTEGER</parameterHdlType>
+        <parameterName>M_REGIONS</parameterName>
+        <parameterType>java.lang.Integer</parameterType>
+        <parameterValue>1</parameterValue>
+    </hdlParameterDescriptorDefinition>
+    <hdlParameterDescriptorDefinition>
+        <enabled>true</enabled>
+        <exported>false</exported>
+        <parameterHdlType>INTEGER</parameterHdlType>
+        <parameterName>M_BASE_ADDR</parameterName>
+        <parameterType>java.lang.Integer</parameterType>
+        <parameterValue>0</parameterValue>
+    </hdlParameterDescriptorDefinition>
+    <hdlParameterDescriptorDefinition>
+        <enabled>true</enabled>
+        <exported>false</exported>
+        <parameterHdlType>INTEGER</parameterHdlType>
+        <parameterName>M_ADDR_WIDTH</parameterName>
+        <parameterType>java.lang.Integer</parameterType>
+        <parameterValue>0</parameterValue>
+    </hdlParameterDescriptorDefinition>
+    <hdlParameterDescriptorDefinition>
+        <enabled>true</enabled>
+        <exported>false</exported>
+        <parameterHdlType>INTEGER</parameterHdlType>
+        <parameterName>M_CONNECT_READ</parameterName>
+        <parameterType>java.lang.Integer</parameterType>
+        <parameterValue>0</parameterValue>
+    </hdlParameterDescriptorDefinition>
+    <hdlParameterDescriptorDefinition>
+        <enabled>true</enabled>
+        <exported>false</exported>
+        <parameterHdlType>INTEGER</parameterHdlType>
+        <parameterName>M_CONNECT_WRITE</parameterName>
+        <parameterType>java.lang.Integer</parameterType>
+        <parameterValue>0</parameterValue>
+    </hdlParameterDescriptorDefinition>
+    <hdlParameterDescriptorDefinition>
+        <enabled>true</enabled>
+        <exported>false</exported>
+        <parameterHdlType>INTEGER</parameterHdlType>
+        <parameterName>M_SECURE</parameterName>
+        <parameterType>java.lang.Integer</parameterType>
+        <parameterValue>0</parameterValue>
+    </hdlParameterDescriptorDefinition>
+</hdlParameterDescriptorDefinitionList>]]></parameter>
+  <parameter name="hlsFile" value="" />
+  <parameter name="logicalView">ip/qsys_top/qsys_top_axil_interconnect_0.ip</parameter>
   <parameter name="moduleAssignmentDefinition"><![CDATA[<assignmentDefinition>
     <assignmentValueMap/>
 </assignmentDefinition>]]></parameter>
@@ -5097,7 +6729,7 @@ https://fpgasoftware.intel.com/eula.-->
    name="onchip_memory2_0"
    kind="altera_generic_component"
    version="1.0"
-   enabled="1">
+   enabled="0">
   <parameter name="componentDefinition"><![CDATA[<componentDefinition>
     <boundary>
         <interfaces>
@@ -5966,7 +7598,7 @@ https://fpgasoftware.intel.com/eula.-->
    name="pattern_writer_1"
    kind="altera_generic_component"
    version="1.0"
-   enabled="1">
+   enabled="0">
   <parameter name="componentDefinition"><![CDATA[<componentDefinition>
     <boundary>
         <interfaces>
@@ -7163,6 +8795,133 @@ https://fpgasoftware.intel.com/eula.-->
                         </entry>
                     </parameterValueMap>
                 </parameters>
+                <cmsisInfo>
+                    <cmsisSrcFileContents>&lt;?xml version="1.0" encoding="utf-8"?&gt;    
+&lt;device schemaVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd" &gt;
+  &lt;peripherals&gt;
+   &lt;peripheral&gt;
+      &lt;name&gt;altera_avalon_pio&lt;/name&gt;&lt;baseAddress&gt;0x00000000&lt;/baseAddress&gt; 
+      &lt;addressBlock&gt;
+        &lt;offset&gt;0x0&lt;/offset&gt;
+        &lt;size&gt;32&lt;/size&gt;
+        &lt;usage&gt;registers&lt;/usage&gt;
+      &lt;/addressBlock&gt;
+      &lt;registers&gt;
+        &lt;register&gt;     
+         &lt;name&gt;DATA&lt;/name&gt;  
+         &lt;displayName&gt;Data&lt;/displayName&gt;
+         &lt;description&gt;Reading from data returns the value present at the input ports. If the PIO core hardware is configured in output-only mode, reading from data returns an undefined value. Writing to data stores the value to a register that drives the output ports. If the PIO core hardware is configured in input-only mode, writing to data has no effect. If the PIO core hardware is in bidirectional mode, the registered value appears on an output port only when the corresponding bit in the direction register is set to 1 (output).&lt;/description&gt;
+         &lt;addressOffset&gt;0x0&lt;/addressOffset&gt;
+         &lt;size&gt;32&lt;/size&gt;
+         &lt;access&gt;read-write&lt;/access&gt;
+         &lt;resetValue&gt;0x0&lt;/resetValue&gt;
+         &lt;resetMask&gt;0xffffffff&lt;/resetMask&gt; 
+         &lt;fields&gt;
+           &lt;field&gt;&lt;name&gt;data&lt;/name&gt;
+           &lt;description&gt;Reads: Data value currently on PIO inputs. Writes: New value to drive on PIO outputs.&lt;/description&gt;
+            &lt;bitOffset&gt;0x0&lt;/bitOffset&gt;
+            &lt;bitWidth&gt;32&lt;/bitWidth&gt;
+            &lt;access&gt;read-write&lt;/access&gt;
+        &lt;/field&gt;
+       &lt;/fields&gt;
+     &lt;/register&gt; 
+        &lt;register&gt;     
+         &lt;name&gt;DIRECTION&lt;/name&gt;  
+         &lt;displayName&gt;Direction&lt;/displayName&gt;
+         &lt;description&gt;The direction register controls the data direction for each PIO port, assuming the port is bidirectional. When bit n in direction is set to 1, port n drives out the value in the corresponding bit of the data register The direction register only exists when the PIO core hardware is configured in bidirectional mode. The mode (input, output, or bidirectional) is specified at system generation time, and cannot be changed at runtime. In input-only or output-only mode, the direction register does not exist. In this case, reading direction returns an undefined value, writing direction has no effect. After reset, all bits of direction are 0, so that all bidirectional I/O ports are configured as inputs. If those PIO ports are connected to device pins, the pins are held in a high-impedance state. In bi-directional mode, to change the direction of the PIO port, reprogram the direction register.&lt;/description&gt;
+         &lt;addressOffset&gt;0x4&lt;/addressOffset&gt;
+         &lt;size&gt;32&lt;/size&gt;
+         &lt;access&gt;read-write&lt;/access&gt;
+         &lt;resetValue&gt;0x0&lt;/resetValue&gt;
+         &lt;resetMask&gt;0xffffffff&lt;/resetMask&gt; 
+         &lt;fields&gt;
+           &lt;field&gt;&lt;name&gt;direction&lt;/name&gt;
+            &lt;description&gt;Individual direction control for each I/O port. A value of 0 sets the direction to input; 1 sets the direction to output.&lt;/description&gt;
+            &lt;bitOffset&gt;0x0&lt;/bitOffset&gt;
+            &lt;bitWidth&gt;32&lt;/bitWidth&gt;
+            &lt;access&gt;read-write&lt;/access&gt;
+        &lt;/field&gt;
+       &lt;/fields&gt;
+     &lt;/register&gt; 
+        &lt;register&gt;     
+         &lt;name&gt;IRQ_MASK&lt;/name&gt;  
+         &lt;displayName&gt;Interrupt mask&lt;/displayName&gt;
+         &lt;description&gt;Setting a bit in the interruptmask register to 1 enables interrupts for the corresponding PIO input port. Interrupt behavior depends on the hardware configuration of the PIO core. The interruptmask register only exists when the hardware is configured to generate IRQs. If the core cannot generate IRQs, reading interruptmask returns an undefined value, and writing to interruptmask has no effect. After reset, all bits of interruptmask are zero, so that interrupts are disabled for all PIO ports.&lt;/description&gt;
+         &lt;addressOffset&gt;0x8&lt;/addressOffset&gt;
+         &lt;size&gt;32&lt;/size&gt;
+         &lt;access&gt;read-write&lt;/access&gt;
+         &lt;resetValue&gt;0x0&lt;/resetValue&gt;
+         &lt;resetMask&gt;0xffffffff&lt;/resetMask&gt; 
+         &lt;fields&gt;
+           &lt;field&gt;&lt;name&gt;interruptmask&lt;/name&gt;
+            &lt;description&gt;IRQ enable/disable for each input port. Setting a bit to 1 enables interrupts for the corresponding port.&lt;/description&gt;
+            &lt;bitOffset&gt;0x0&lt;/bitOffset&gt;
+            &lt;bitWidth&gt;32&lt;/bitWidth&gt;
+            &lt;access&gt;read-write&lt;/access&gt;
+        &lt;/field&gt;
+       &lt;/fields&gt;
+     &lt;/register&gt; 
+        &lt;register&gt;     
+         &lt;name&gt;EDGE_CAP&lt;/name&gt;  
+         &lt;displayName&gt;Edge capture&lt;/displayName&gt;
+         &lt;description&gt;Bit n in the edgecapture register is set to 1 whenever an edge is detected on input port n. An Avalon-MM master peripheral can read the edgecapture register to determine if an edge has occurred on any of the PIO input ports. If the option Enable bit-clearing for edge capture register is turned off, writing any value to the edgecapture register clears all bits in the register. Otherwise, writing a 1 to a particular bit in the register clears only that bit. The type of edge(s) to detect is fixed in hardware at system generation time. The edgecapture register only exists when the hardware is configured to capture edges. If the core is not configured to capture edges, reading from edgecapture returns an undefined value, and writing to edgecapture has no effect.&lt;/description&gt;
+         &lt;addressOffset&gt;0xc&lt;/addressOffset&gt;
+         &lt;size&gt;32&lt;/size&gt;
+         &lt;access&gt;read-write&lt;/access&gt;
+         &lt;resetValue&gt;0x0&lt;/resetValue&gt;
+         &lt;resetMask&gt;0xffffffff&lt;/resetMask&gt; 
+         &lt;fields&gt;
+           &lt;field&gt;&lt;name&gt;edgecapture&lt;/name&gt;
+            &lt;description&gt;Edge detection for each input port.&lt;/description&gt;
+            &lt;bitOffset&gt;0x0&lt;/bitOffset&gt;
+            &lt;bitWidth&gt;32&lt;/bitWidth&gt;
+            &lt;access&gt;read-write&lt;/access&gt;
+        &lt;/field&gt;
+       &lt;/fields&gt;
+     &lt;/register&gt; 
+        &lt;register&gt;
+         &lt;name&gt;SET_BIT&lt;/name&gt;  
+         &lt;displayName&gt;Outset&lt;/displayName&gt;
+         &lt;description&gt;You can use the outset register to set individual bits of the output port. For example, to set bit 6 of the output port, write 0x40 to the outset register. This register is only present when the option Enable individual bit set/clear output register is turned on.&lt;/description&gt;
+         &lt;addressOffset&gt;0x10&lt;/addressOffset&gt;
+         &lt;size&gt;32&lt;/size&gt;
+         &lt;access&gt;write-only&lt;/access&gt;
+         &lt;resetValue&gt;0x0&lt;/resetValue&gt;
+         &lt;resetMask&gt;0xffffffff&lt;/resetMask&gt; 
+         &lt;fields&gt;
+           &lt;field&gt;&lt;name&gt;outset&lt;/name&gt;
+            &lt;description&gt;Specifies which bit of the output port to set.&lt;/description&gt;
+            &lt;bitOffset&gt;0x0&lt;/bitOffset&gt;
+            &lt;bitWidth&gt;32&lt;/bitWidth&gt;
+            &lt;access&gt;write-only&lt;/access&gt;
+        &lt;/field&gt;
+       &lt;/fields&gt;
+     &lt;/register&gt; 
+        &lt;register&gt;     
+         &lt;name&gt;CLEAR_BITS&lt;/name&gt;  
+         &lt;displayName&gt;Outclear&lt;/displayName&gt;
+         &lt;description&gt;You can use the outclear register to clear individual bits of the output port. For example, writing 0x08 to the outclear register clears bit 3 of the output port. This register is only present when the option Enable individual bit set/clear output register is turned on.&lt;/description&gt;
+         &lt;addressOffset&gt;0x14&lt;/addressOffset&gt;
+         &lt;size&gt;32&lt;/size&gt;
+         &lt;access&gt;write-only&lt;/access&gt;
+         &lt;resetValue&gt;0x0&lt;/resetValue&gt;
+         &lt;resetMask&gt;0xffffffff&lt;/resetMask&gt; 
+         &lt;fields&gt;
+           &lt;field&gt;&lt;name&gt;outclear&lt;/name&gt;
+            &lt;description&gt;Specifies which output bit to clear.&lt;/description&gt;
+            &lt;bitOffset&gt;0x0&lt;/bitOffset&gt;
+            &lt;bitWidth&gt;32&lt;/bitWidth&gt;
+            &lt;access&gt;write-only&lt;/access&gt;
+        &lt;/field&gt;
+       &lt;/fields&gt;
+     &lt;/register&gt;            
+    &lt;/registers&gt;
+   &lt;/peripheral&gt;
+  &lt;/peripherals&gt;
+&lt;/device&gt; </cmsisSrcFileContents>
+                    <addressGroup></addressGroup>
+                    <cmsisVars/>
+                </cmsisInfo>
             </interface>
             <interface>
                 <name>external_connection</name>
@@ -7852,7 +9611,7 @@ https://fpgasoftware.intel.com/eula.-->
    name="prbs_generator_1"
    kind="altera_generic_component"
    version="1.0"
-   enabled="1">
+   enabled="0">
   <parameter name="componentDefinition"><![CDATA[<componentDefinition>
     <boundary>
         <interfaces>
@@ -10011,6 +11770,30 @@ https://fpgasoftware.intel.com/eula.-->
    kind="avalon"
    version="22.4"
    start="agilex_hps.h2f_axi_master"
+   end="axil_interconnect_0.altera_axi4lite_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+  <parameter name="domainAlias" value="" />
+  <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
+  <parameter name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+  <parameter name="qsys_mm.enableAllPipelines" value="FALSE" />
+  <parameter name="qsys_mm.enableEccProtection" value="FALSE" />
+  <parameter name="qsys_mm.enableInstrumentation" value="FALSE" />
+  <parameter name="qsys_mm.insertDefaultSlave" value="FALSE" />
+  <parameter name="qsys_mm.interconnectResetSource" value="DEFAULT" />
+  <parameter name="qsys_mm.interconnectType" value="STANDARD" />
+  <parameter name="qsys_mm.maxAdditionalLatency" value="1" />
+  <parameter name="qsys_mm.optimizeRdFifoSize" value="FALSE" />
+  <parameter name="qsys_mm.piplineType" value="PIPELINE_STAGE" />
+  <parameter name="qsys_mm.responseFifoType" value="REGISTER_BASED" />
+  <parameter name="qsys_mm.syncResets" value="TRUE" />
+  <parameter name="qsys_mm.widthAdapterImplementation" value="GENERIC_CONVERTER" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="22.4"
+   start="agilex_hps.h2f_axi_master"
    end="ram_controller_1.csr">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0020" />
@@ -10143,6 +11926,11 @@ https://fpgasoftware.intel.com/eula.-->
    kind="clock"
    version="22.4"
    start="clk_100.out_clk"
+   end="axil_interconnect_0.clock" />
+ <connection
+   kind="clock"
+   version="22.4"
+   start="clk_100.out_clk"
    end="agilex_hps.f2h_axi_clock" />
  <connection
    kind="clock"
@@ -10206,4 +11994,9 @@ https://fpgasoftware.intel.com/eula.-->
    version="22.4"
    start="rst_in.out_reset"
    end="onchip_memory2_0.reset1" />
+ <connection
+   kind="reset"
+   version="22.4"
+   start="rst_in.out_reset"
+   end="axil_interconnect_0.reset_sink" />
 </system>

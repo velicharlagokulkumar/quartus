@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2024.01.31.18:27:51"
- outputDirectory="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/">
+ date="2024.05.09.17:01:05"
+ outputDirectory="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -24,7 +24,7 @@
   <parameter
      name="AUTO_DEVICE"
      type="String"
-     defaultValue="AGFB014R24B2E2V"
+     defaultValue="AGFB027R24C2E2VR2"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -75,28 +75,29 @@
  </perimeter>
  <entity kind="emif_calbus_0" version="1.0" name="emif_calbus_0">
   <parameter name="AUTO_GENERATION_ID" value="0" />
-  <parameter name="AUTO_DEVICE" value="AGFB014R24B2E2V" />
+  <parameter name="AUTO_DEVICE" value="AGFB027R24C2E2VR2" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
   <generatedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/synth/emif_calbus_0.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/synth/emif_calbus_0.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/synth/emif_calbus_0.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/synth/emif_calbus_0.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0.ip" />
+   <file
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0.ip" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/emif/ip_emif_cal/altera_emif_cal_hw.tcl" />
+       path="/home/wisig/Quartus_prime_pro/ip/altera/emif/ip_emif_cal/altera_emif_cal_hw.tcl" />
    <file
-       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/emif/ip_emif_cal_iossm/altera_emif_cal_iossm_hw.tcl" />
+       path="/home/wisig/Quartus_prime_pro/ip/altera/emif/ip_emif_cal_iossm/altera_emif_cal_iossm_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="emif_calbus_0">"Generating: emif_calbus_0"</message>
@@ -119,7 +120,7 @@
   <parameter name="DIAG_EXTRA_CONFIGS" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
   <parameter name="PHY_DDRT_EXPORT_CLK_STP_IF" value="false" />
-  <parameter name="AUTO_DEVICE" value="AGFB014R24B2E2V" />
+  <parameter name="AUTO_DEVICE" value="AGFB027R24C2E2VR2" />
   <parameter name="AXM_ID_NUM" value="0" />
   <parameter name="NUM_CALBUS_INTERFACE" value="1" />
   <parameter name="DIAG_EXPORT_VJI" value="false" />
@@ -127,21 +128,21 @@
   <parameter name="DIAG_SIM_VERBOSE" value="false" />
   <generatedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_262/synth/emif_calbus_0_altera_emif_cal_262_nkkelhq.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_262/synth/emif_calbus_0_altera_emif_cal_262_nkkelhq.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_262/synth/emif_calbus_0_altera_emif_cal_262_nkkelhq.v"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_262/synth/emif_calbus_0_altera_emif_cal_262_nkkelhq.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/emif/ip_emif_cal/altera_emif_cal_hw.tcl" />
+       path="/home/wisig/Quartus_prime_pro/ip/altera/emif/ip_emif_cal/altera_emif_cal_hw.tcl" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/emif/ip_emif_cal_iossm/altera_emif_cal_iossm_hw.tcl" />
+       path="/home/wisig/Quartus_prime_pro/ip/altera/emif/ip_emif_cal_iossm/altera_emif_cal_iossm_hw.tcl" />
   </childSourceFiles>
   <instantiator instantiator="emif_calbus_0" as="altera_emif_cal_inst" />
   <messages>
@@ -193,65 +194,65 @@
   <parameter name="PORT_CAL_DEBUG_WDATA_WIDTH" value="32" />
   <generatedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/altera_emif_cal_iossm.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/altera_emif_cal_iossm.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/altera_emif_f2c_gearbox.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/altera_emif_f2c_gearbox.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_code.hex"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_code.hex"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_sim_global_param_tbl.hex"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_sim_global_param_tbl.hex"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_sim_global_param_tbl.txt"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_sim_global_param_tbl.txt"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_synth_global_param_tbl.hex"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_synth_global_param_tbl.hex"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_synth_global_param_tbl.txt"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_synth_global_param_tbl.txt"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_arch.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_arch.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da.sv"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/altera_emif_cal_iossm.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/altera_emif_cal_iossm.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/altera_emif_f2c_gearbox.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/altera_emif_f2c_gearbox.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_code.hex"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_code.hex"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_sim_global_param_tbl.hex"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_sim_global_param_tbl.hex"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_sim_global_param_tbl.txt"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_sim_global_param_tbl.txt"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_synth_global_param_tbl.hex"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_synth_global_param_tbl.hex"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_synth_global_param_tbl.txt"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_synth_global_param_tbl.txt"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_arch.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da_arch.sv"
        attributes="" />
    <file
-       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da.sv"
+       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/emif_calbus_0/altera_emif_cal_iossm_262/synth/emif_calbus_0_altera_emif_cal_iossm_262_xlix7da.sv"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/home/wisig321/intelFPGA_pro/22.4/ip/altera/emif/ip_emif_cal_iossm/altera_emif_cal_iossm_hw.tcl" />
+       path="/home/wisig/Quartus_prime_pro/ip/altera/emif/ip_emif_cal_iossm/altera_emif_cal_iossm_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator

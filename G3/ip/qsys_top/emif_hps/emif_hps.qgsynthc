@@ -9342,11 +9342,11 @@
           </parameter>
           <parameter>
             <name>SYS_INFO_DEVICE</name>
-            <value>AGFB014R24B2E2V</value>
+            <value>AGFB027R24C2E2VR2</value>
           </parameter>
           <parameter>
             <name>SYS_INFO_DEVICE_DIE_REVISIONS</name>
-            <value>HSSI_WHR_REVA,HSSI_CRETE3_REVA,MAIN_FM6_REVB</value>
+            <value>HSSI_GDR_REVB,MAIN_FM8_REVA</value>
           </parameter>
           <parameter>
             <name>SYS_INFO_DEVICE_FAMILY</name>
@@ -9381,7 +9381,7 @@
         <className>altera_emif_fm_hps</className>
         <version>2.6.2</version>
         <name>altera_emif_fm_hps_inst</name>
-        <uniqueName>emif_hps_altera_emif_fm_hps_262_ijg2uvy</uniqueName>
+        <uniqueName>emif_hps_altera_emif_fm_hps_262_o22t3qa</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>emif_hps.altera_emif_fm_hps_inst</path>
@@ -25125,11 +25125,11 @@
               </parameter>
               <parameter>
                 <name>SYS_INFO_DEVICE</name>
-                <value>AGFB014R24B2E2V</value>
+                <value>AGFB027R24C2E2VR2</value>
               </parameter>
               <parameter>
                 <name>SYS_INFO_DEVICE_DIE_REVISIONS</name>
-                <value>HSSI_WHR_REVA,HSSI_CRETE3_REVA,MAIN_FM6_REVB</value>
+                <value>HSSI_GDR_REVB,MAIN_FM8_REVA</value>
               </parameter>
               <parameter>
                 <name>SYS_INFO_DEVICE_FAMILY</name>
@@ -25736,7 +25736,7 @@
             <className>altera_emif_arch_fm</className>
             <version>19.1</version>
             <name>arch</name>
-            <uniqueName>emif_hps_altera_emif_arch_fm_191_ky5ybpi</uniqueName>
+            <uniqueName>emif_hps_altera_emif_arch_fm_191_ecinooy</uniqueName>
             <nonce>0</nonce>
             <incidentConnections></incidentConnections>
             <path>emif_hps.altera_emif_fm_hps_inst.arch</path>
