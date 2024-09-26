@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2024.05.09.16:57:44"
- outputDirectory="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/clk_100/">
+ date="2024.01.31.18:27:49"
+ outputDirectory="/home/wisig321/Videos/quartus/G3/ip/qsys_top/clk_100/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -24,7 +24,7 @@
   <parameter
      name="AUTO_DEVICE"
      type="String"
-     defaultValue="AGFB027R24C2E2VR2"
+     defaultValue="AGFB014R24B2E2V"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -68,7 +68,7 @@
  </perimeter>
  <entity kind="clk_100" version="1.0" name="clk_100">
   <parameter name="AUTO_GENERATION_ID" value="0" />
-  <parameter name="AUTO_DEVICE" value="AGFB027R24C2E2VR2" />
+  <parameter name="AUTO_DEVICE" value="AGFB014R24B2E2V" />
   <parameter name="AUTO_IN_CLK_CLOCK_RATE" value="-1" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
   <parameter name="AUTO_IN_CLK_RESET_DOMAIN" value="-1" />
@@ -77,16 +77,16 @@
   <parameter name="AUTO_IN_CLK_CLOCK_DOMAIN" value="-1" />
   <generatedFiles>
    <file
-       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/clk_100/synth/clk_100.v"
+       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/clk_100/synth/clk_100.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/clk_100/synth/clk_100.v"
+       path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/clk_100/synth/clk_100.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="/home/wisig/Videos/gokul/quartus/G3/ip/qsys_top/clk_100.ip" />
+   <file path="/home/wisig321/Videos/quartus/G3/ip/qsys_top/clk_100.ip" />
   </sourceFiles>
   <childSourceFiles/>
   <messages>

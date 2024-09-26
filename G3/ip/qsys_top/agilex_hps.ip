@@ -15,103 +15,9 @@ https://fpgasoftware.intel.com/eula.-->
 <ipxact:component xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014">
   <ipxact:vendor>Intel Corporation</ipxact:vendor>
   <ipxact:library>agilex_hps</ipxact:library>
-  <ipxact:name>agilex_hps</ipxact:name>
+  <ipxact:name>intel_agilex_hps_inst</ipxact:name>
   <ipxact:version>23.0.0</ipxact:version>
   <ipxact:busInterfaces>
-    <ipxact:busInterface>
-      <ipxact:name>h2f_user0_clock</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="clock" version="22.4"></ipxact:busType>
-      <ipxact:abstractionTypes>
-        <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="clock" version="22.4"></ipxact:abstractionRef>
-          <ipxact:portMaps>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>clk</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>s2f_user_clk0_hio</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-          </ipxact:portMaps>
-        </ipxact:abstractionType>
-      </ipxact:abstractionTypes>
-      <ipxact:master></ipxact:master>
-      <ipxact:parameters>
-        <ipxact:parameter parameterId="associatedDirectClock" type="string">
-          <ipxact:name>associatedDirectClock</ipxact:name>
-          <ipxact:displayName>Associated direct clock</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="clockRate" type="longint">
-          <ipxact:name>clockRate</ipxact:name>
-          <ipxact:displayName>Clock rate</ipxact:displayName>
-          <ipxact:value>50000000</ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="clockRateKnown" type="bit">
-          <ipxact:name>clockRateKnown</ipxact:name>
-          <ipxact:displayName>Clock rate known</ipxact:displayName>
-          <ipxact:value>true</ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="externallyDriven" type="bit">
-          <ipxact:name>externallyDriven</ipxact:name>
-          <ipxact:displayName>Externally driven</ipxact:displayName>
-          <ipxact:value>false</ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="ptfSchematicName" type="string">
-          <ipxact:name>ptfSchematicName</ipxact:name>
-          <ipxact:displayName>PTF schematic name</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-      </ipxact:parameters>
-    </ipxact:busInterface>
-    <ipxact:busInterface>
-      <ipxact:name>h2f_user1_clock</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="clock" version="22.4"></ipxact:busType>
-      <ipxact:abstractionTypes>
-        <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="clock" version="22.4"></ipxact:abstractionRef>
-          <ipxact:portMaps>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>clk</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>s2f_user_clk1_hio</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-          </ipxact:portMaps>
-        </ipxact:abstractionType>
-      </ipxact:abstractionTypes>
-      <ipxact:master></ipxact:master>
-      <ipxact:parameters>
-        <ipxact:parameter parameterId="associatedDirectClock" type="string">
-          <ipxact:name>associatedDirectClock</ipxact:name>
-          <ipxact:displayName>Associated direct clock</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="clockRate" type="longint">
-          <ipxact:name>clockRate</ipxact:name>
-          <ipxact:displayName>Clock rate</ipxact:displayName>
-          <ipxact:value>125000000</ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="clockRateKnown" type="bit">
-          <ipxact:name>clockRateKnown</ipxact:name>
-          <ipxact:displayName>Clock rate known</ipxact:displayName>
-          <ipxact:value>true</ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="externallyDriven" type="bit">
-          <ipxact:name>externallyDriven</ipxact:name>
-          <ipxact:displayName>Externally driven</ipxact:displayName>
-          <ipxact:value>false</ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="ptfSchematicName" type="string">
-          <ipxact:name>ptfSchematicName</ipxact:name>
-          <ipxact:displayName>PTF schematic name</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-      </ipxact:parameters>
-    </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>hps_emif</ipxact:name>
       <ipxact:busType vendor="intel" library="intel" name="conduit" version="22.4"></ipxact:busType>
@@ -182,114 +88,114 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>EMAC1_TX_CLK</ipxact:name>
+                <ipxact:name>EMAC0_TX_CLK</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>EMAC1_TX_CLK</ipxact:name>
+                <ipxact:name>EMAC0_TX_CLK</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>EMAC1_TXD0</ipxact:name>
+                <ipxact:name>EMAC0_TXD0</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>EMAC1_TXD0</ipxact:name>
+                <ipxact:name>EMAC0_TXD0</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>EMAC1_TXD1</ipxact:name>
+                <ipxact:name>EMAC0_TXD1</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>EMAC1_TXD1</ipxact:name>
+                <ipxact:name>EMAC0_TXD1</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>EMAC1_TXD2</ipxact:name>
+                <ipxact:name>EMAC0_TXD2</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>EMAC1_TXD2</ipxact:name>
+                <ipxact:name>EMAC0_TXD2</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>EMAC1_TXD3</ipxact:name>
+                <ipxact:name>EMAC0_TXD3</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>EMAC1_TXD3</ipxact:name>
+                <ipxact:name>EMAC0_TXD3</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>EMAC1_RX_CTL</ipxact:name>
+                <ipxact:name>EMAC0_RX_CTL</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>EMAC1_RX_CTL</ipxact:name>
+                <ipxact:name>EMAC0_RX_CTL</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>EMAC1_TX_CTL</ipxact:name>
+                <ipxact:name>EMAC0_TX_CTL</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>EMAC1_TX_CTL</ipxact:name>
+                <ipxact:name>EMAC0_TX_CTL</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>EMAC1_RX_CLK</ipxact:name>
+                <ipxact:name>EMAC0_RX_CLK</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>EMAC1_RX_CLK</ipxact:name>
+                <ipxact:name>EMAC0_RX_CLK</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>EMAC1_RXD0</ipxact:name>
+                <ipxact:name>EMAC0_RXD0</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>EMAC1_RXD0</ipxact:name>
+                <ipxact:name>EMAC0_RXD0</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>EMAC1_RXD1</ipxact:name>
+                <ipxact:name>EMAC0_RXD1</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>EMAC1_RXD1</ipxact:name>
+                <ipxact:name>EMAC0_RXD1</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>EMAC1_RXD2</ipxact:name>
+                <ipxact:name>EMAC0_RXD2</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>EMAC1_RXD2</ipxact:name>
+                <ipxact:name>EMAC0_RXD2</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>EMAC1_RXD3</ipxact:name>
+                <ipxact:name>EMAC0_RXD3</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>EMAC1_RXD3</ipxact:name>
+                <ipxact:name>EMAC0_RXD3</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>EMAC1_MDIO</ipxact:name>
+                <ipxact:name>EMAC0_MDIO</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>EMAC1_MDIO</ipxact:name>
+                <ipxact:name>EMAC0_MDIO</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>EMAC1_MDC</ipxact:name>
+                <ipxact:name>EMAC0_MDC</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>EMAC1_MDC</ipxact:name>
+                <ipxact:name>EMAC0_MDC</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
@@ -334,38 +240,6 @@ https://fpgasoftware.intel.com/eula.-->
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>SDMMC_D4</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>SDMMC_D4</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>SDMMC_D5</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>SDMMC_D5</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>SDMMC_D6</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>SDMMC_D6</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>SDMMC_D7</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>SDMMC_D7</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
                 <ipxact:name>SDMMC_CCLK</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
@@ -374,90 +248,114 @@ https://fpgasoftware.intel.com/eula.-->
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>SPIM0_CLK</ipxact:name>
+                <ipxact:name>USB0_DATA0</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>SPIM0_CLK</ipxact:name>
+                <ipxact:name>USB0_DATA0</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>SPIM0_MOSI</ipxact:name>
+                <ipxact:name>USB0_DATA1</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>SPIM0_MOSI</ipxact:name>
+                <ipxact:name>USB0_DATA1</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>SPIM0_MISO</ipxact:name>
+                <ipxact:name>USB0_DATA2</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>SPIM0_MISO</ipxact:name>
+                <ipxact:name>USB0_DATA2</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>SPIM0_SS0_N</ipxact:name>
+                <ipxact:name>USB0_DATA3</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>SPIM0_SS0_N</ipxact:name>
+                <ipxact:name>USB0_DATA3</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>SPIM1_CLK</ipxact:name>
+                <ipxact:name>USB0_DATA4</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>SPIM1_CLK</ipxact:name>
+                <ipxact:name>USB0_DATA4</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>SPIM1_MOSI</ipxact:name>
+                <ipxact:name>USB0_DATA5</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>SPIM1_MOSI</ipxact:name>
+                <ipxact:name>USB0_DATA5</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>SPIM1_MISO</ipxact:name>
+                <ipxact:name>USB0_DATA6</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>SPIM1_MISO</ipxact:name>
+                <ipxact:name>USB0_DATA6</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>SPIM1_SS0_N</ipxact:name>
+                <ipxact:name>USB0_DATA7</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>SPIM1_SS0_N</ipxact:name>
+                <ipxact:name>USB0_DATA7</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>SPIM1_SS1_N</ipxact:name>
+                <ipxact:name>USB0_CLK</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>SPIM1_SS1_N</ipxact:name>
+                <ipxact:name>USB0_CLK</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>UART1_RX</ipxact:name>
+                <ipxact:name>USB0_STP</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>UART1_RX</ipxact:name>
+                <ipxact:name>USB0_STP</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>UART1_TX</ipxact:name>
+                <ipxact:name>USB0_DIR</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>UART1_TX</ipxact:name>
+                <ipxact:name>USB0_DIR</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>USB0_NXT</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>USB0_NXT</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>UART0_RX</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>UART0_RX</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>UART0_TX</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>UART0_TX</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
@@ -478,6 +376,70 @@ https://fpgasoftware.intel.com/eula.-->
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
+                <ipxact:name>gpio1_io0</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>gpio1_io0</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>gpio1_io1</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>gpio1_io1</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>gpio1_io4</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>gpio1_io4</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>gpio1_io5</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>gpio1_io5</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>jtag_tck</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>jtag_tck</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>jtag_tms</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>jtag_tms</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>jtag_tdo</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>jtag_tdo</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>jtag_tdi</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>jtag_tdi</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
                 <ipxact:name>hps_osc_clk</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
@@ -486,82 +448,26 @@ https://fpgasoftware.intel.com/eula.-->
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>gpio0_io11</ipxact:name>
+                <ipxact:name>gpio1_io19</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>gpio0_io11</ipxact:name>
+                <ipxact:name>gpio1_io19</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>gpio0_io12</ipxact:name>
+                <ipxact:name>gpio1_io20</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>gpio0_io12</ipxact:name>
+                <ipxact:name>gpio1_io20</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
             <ipxact:portMap>
               <ipxact:logicalPort>
-                <ipxact:name>gpio0_io13</ipxact:name>
+                <ipxact:name>gpio1_io21</ipxact:name>
               </ipxact:logicalPort>
               <ipxact:physicalPort>
-                <ipxact:name>gpio0_io13</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>gpio0_io14</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>gpio0_io14</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>gpio0_io15</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>gpio0_io15</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>gpio0_io16</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>gpio0_io16</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>gpio0_io17</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>gpio0_io17</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>gpio0_io18</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>gpio0_io18</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>gpio1_io16</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>gpio1_io16</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>gpio1_io17</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>gpio1_io17</ipxact:name>
+                <ipxact:name>gpio1_io21</ipxact:name>
               </ipxact:physicalPort>
             </ipxact:portMap>
           </ipxact:portMaps>
@@ -1501,128 +1407,6 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:parameter>
       </ipxact:parameters>
     </ipxact:busInterface>
-    <ipxact:busInterface>
-      <ipxact:name>f2h_irq0</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="interrupt" version="22.4"></ipxact:busType>
-      <ipxact:abstractionTypes>
-        <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="interrupt" version="22.4"></ipxact:abstractionRef>
-          <ipxact:portMaps>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>irq</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>f2h_irq_p0</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-          </ipxact:portMaps>
-        </ipxact:abstractionType>
-      </ipxact:abstractionTypes>
-      <ipxact:master></ipxact:master>
-      <ipxact:parameters>
-        <ipxact:parameter parameterId="associatedAddressablePoint" type="string">
-          <ipxact:name>associatedAddressablePoint</ipxact:name>
-          <ipxact:displayName>Associated addressable interface</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="associatedClock" type="string">
-          <ipxact:name>associatedClock</ipxact:name>
-          <ipxact:displayName>Associated clock</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="associatedReset" type="string">
-          <ipxact:name>associatedReset</ipxact:name>
-          <ipxact:displayName>Associated reset</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="irqMap" type="string">
-          <ipxact:name>irqMap</ipxact:name>
-          <ipxact:displayName>IRQ Map</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="irqScheme" type="string">
-          <ipxact:name>irqScheme</ipxact:name>
-          <ipxact:displayName>Interrupt scheme</ipxact:displayName>
-          <ipxact:value>INDIVIDUAL_REQUESTS</ipxact:value>
-        </ipxact:parameter>
-      </ipxact:parameters>
-      <ipxact:vendorExtensions>
-        <altera:altera_assignments>
-          <ipxact:parameters>
-            <ipxact:parameter parameterId="embeddedsw.dts.irq.rx_offset" type="string">
-              <ipxact:name>embeddedsw.dts.irq.rx_offset</ipxact:name>
-              <ipxact:value>19</ipxact:value>
-            </ipxact:parameter>
-            <ipxact:parameter parameterId="embeddedsw.dts.irq.rx_type" type="string">
-              <ipxact:name>embeddedsw.dts.irq.rx_type</ipxact:name>
-              <ipxact:value>arm_gic_spi</ipxact:value>
-            </ipxact:parameter>
-          </ipxact:parameters>
-        </altera:altera_assignments>
-      </ipxact:vendorExtensions>
-    </ipxact:busInterface>
-    <ipxact:busInterface>
-      <ipxact:name>f2h_irq1</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="interrupt" version="22.4"></ipxact:busType>
-      <ipxact:abstractionTypes>
-        <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="interrupt" version="22.4"></ipxact:abstractionRef>
-          <ipxact:portMaps>
-            <ipxact:portMap>
-              <ipxact:logicalPort>
-                <ipxact:name>irq</ipxact:name>
-              </ipxact:logicalPort>
-              <ipxact:physicalPort>
-                <ipxact:name>f2h_irq_p1</ipxact:name>
-              </ipxact:physicalPort>
-            </ipxact:portMap>
-          </ipxact:portMaps>
-        </ipxact:abstractionType>
-      </ipxact:abstractionTypes>
-      <ipxact:master></ipxact:master>
-      <ipxact:parameters>
-        <ipxact:parameter parameterId="associatedAddressablePoint" type="string">
-          <ipxact:name>associatedAddressablePoint</ipxact:name>
-          <ipxact:displayName>Associated addressable interface</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="associatedClock" type="string">
-          <ipxact:name>associatedClock</ipxact:name>
-          <ipxact:displayName>Associated clock</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="associatedReset" type="string">
-          <ipxact:name>associatedReset</ipxact:name>
-          <ipxact:displayName>Associated reset</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="irqMap" type="string">
-          <ipxact:name>irqMap</ipxact:name>
-          <ipxact:displayName>IRQ Map</ipxact:displayName>
-          <ipxact:value></ipxact:value>
-        </ipxact:parameter>
-        <ipxact:parameter parameterId="irqScheme" type="string">
-          <ipxact:name>irqScheme</ipxact:name>
-          <ipxact:displayName>Interrupt scheme</ipxact:displayName>
-          <ipxact:value>INDIVIDUAL_REQUESTS</ipxact:value>
-        </ipxact:parameter>
-      </ipxact:parameters>
-      <ipxact:vendorExtensions>
-        <altera:altera_assignments>
-          <ipxact:parameters>
-            <ipxact:parameter parameterId="embeddedsw.dts.irq.rx_offset" type="string">
-              <ipxact:name>embeddedsw.dts.irq.rx_offset</ipxact:name>
-              <ipxact:value>51</ipxact:value>
-            </ipxact:parameter>
-            <ipxact:parameter parameterId="embeddedsw.dts.irq.rx_type" type="string">
-              <ipxact:name>embeddedsw.dts.irq.rx_type</ipxact:name>
-              <ipxact:value>arm_gic_spi</ipxact:value>
-            </ipxact:parameter>
-          </ipxact:parameters>
-        </altera:altera_assignments>
-      </ipxact:vendorExtensions>
-    </ipxact:busInterface>
   </ipxact:busInterfaces>
   <ipxact:model>
     <ipxact:views>
@@ -1643,32 +1427,6 @@ https://fpgasoftware.intel.com/eula.-->
       </ipxact:componentInstantiation>
     </ipxact:instantiations>
     <ipxact:ports>
-      <ipxact:port>
-        <ipxact:name>s2f_user_clk0_hio</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>out</ipxact:direction>
-          <ipxact:vectors></ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
-        <ipxact:name>s2f_user_clk1_hio</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>out</ipxact:direction>
-          <ipxact:vectors></ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
       <ipxact:port>
         <ipxact:name>hps_emif_emif_to_hps</ipxact:name>
         <ipxact:wire>
@@ -1737,7 +1495,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>EMAC1_TX_CLK</ipxact:name>
+        <ipxact:name>EMAC0_TX_CLK</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -1750,7 +1508,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>EMAC1_TXD0</ipxact:name>
+        <ipxact:name>EMAC0_TXD0</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -1763,7 +1521,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>EMAC1_TXD1</ipxact:name>
+        <ipxact:name>EMAC0_TXD1</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -1776,7 +1534,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>EMAC1_TXD2</ipxact:name>
+        <ipxact:name>EMAC0_TXD2</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -1789,7 +1547,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>EMAC1_TXD3</ipxact:name>
+        <ipxact:name>EMAC0_TXD3</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -1802,7 +1560,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>EMAC1_RX_CTL</ipxact:name>
+        <ipxact:name>EMAC0_RX_CTL</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -1815,7 +1573,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>EMAC1_TX_CTL</ipxact:name>
+        <ipxact:name>EMAC0_TX_CTL</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -1828,7 +1586,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>EMAC1_RX_CLK</ipxact:name>
+        <ipxact:name>EMAC0_RX_CLK</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -1841,7 +1599,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>EMAC1_RXD0</ipxact:name>
+        <ipxact:name>EMAC0_RXD0</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -1854,7 +1612,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>EMAC1_RXD1</ipxact:name>
+        <ipxact:name>EMAC0_RXD1</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -1867,7 +1625,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>EMAC1_RXD2</ipxact:name>
+        <ipxact:name>EMAC0_RXD2</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -1880,7 +1638,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>EMAC1_RXD3</ipxact:name>
+        <ipxact:name>EMAC0_RXD3</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -1893,7 +1651,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>EMAC1_MDIO</ipxact:name>
+        <ipxact:name>EMAC0_MDIO</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>inout</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -1906,7 +1664,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>EMAC1_MDC</ipxact:name>
+        <ipxact:name>EMAC0_MDC</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -1984,58 +1742,6 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>SDMMC_D4</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>inout</ipxact:direction>
-          <ipxact:vectors></ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
-        <ipxact:name>SDMMC_D5</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>inout</ipxact:direction>
-          <ipxact:vectors></ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
-        <ipxact:name>SDMMC_D6</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>inout</ipxact:direction>
-          <ipxact:vectors></ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
-        <ipxact:name>SDMMC_D7</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>inout</ipxact:direction>
-          <ipxact:vectors></ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
         <ipxact:name>SDMMC_CCLK</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
@@ -2049,9 +1755,9 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>SPIM0_CLK</ipxact:name>
+        <ipxact:name>USB0_DATA0</ipxact:name>
         <ipxact:wire>
-          <ipxact:direction>out</ipxact:direction>
+          <ipxact:direction>inout</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
@@ -2062,9 +1768,9 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>SPIM0_MOSI</ipxact:name>
+        <ipxact:name>USB0_DATA1</ipxact:name>
         <ipxact:wire>
-          <ipxact:direction>out</ipxact:direction>
+          <ipxact:direction>inout</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
@@ -2075,9 +1781,9 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>SPIM0_MISO</ipxact:name>
+        <ipxact:name>USB0_DATA2</ipxact:name>
         <ipxact:wire>
-          <ipxact:direction>in</ipxact:direction>
+          <ipxact:direction>inout</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
@@ -2088,9 +1794,9 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>SPIM0_SS0_N</ipxact:name>
+        <ipxact:name>USB0_DATA3</ipxact:name>
         <ipxact:wire>
-          <ipxact:direction>out</ipxact:direction>
+          <ipxact:direction>inout</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
@@ -2101,9 +1807,9 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>SPIM1_CLK</ipxact:name>
+        <ipxact:name>USB0_DATA4</ipxact:name>
         <ipxact:wire>
-          <ipxact:direction>out</ipxact:direction>
+          <ipxact:direction>inout</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
@@ -2114,9 +1820,9 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>SPIM1_MOSI</ipxact:name>
+        <ipxact:name>USB0_DATA5</ipxact:name>
         <ipxact:wire>
-          <ipxact:direction>out</ipxact:direction>
+          <ipxact:direction>inout</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
@@ -2127,9 +1833,9 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>SPIM1_MISO</ipxact:name>
+        <ipxact:name>USB0_DATA6</ipxact:name>
         <ipxact:wire>
-          <ipxact:direction>in</ipxact:direction>
+          <ipxact:direction>inout</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
@@ -2140,9 +1846,9 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>SPIM1_SS0_N</ipxact:name>
+        <ipxact:name>USB0_DATA7</ipxact:name>
         <ipxact:wire>
-          <ipxact:direction>out</ipxact:direction>
+          <ipxact:direction>inout</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
@@ -2153,20 +1859,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>SPIM1_SS1_N</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>out</ipxact:direction>
-          <ipxact:vectors></ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
-        <ipxact:name>UART1_RX</ipxact:name>
+        <ipxact:name>USB0_CLK</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -2179,7 +1872,59 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>UART1_TX</ipxact:name>
+        <ipxact:name>USB0_STP</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>USB0_DIR</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>USB0_NXT</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>UART0_RX</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>UART0_TX</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -2218,6 +1963,110 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
+        <ipxact:name>gpio1_io0</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>inout</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>gpio1_io1</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>inout</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>gpio1_io4</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>inout</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>gpio1_io5</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>inout</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>jtag_tck</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>jtag_tms</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>jtag_tdo</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>jtag_tdi</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
         <ipxact:name>hps_osc_clk</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
@@ -2231,7 +2080,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>gpio0_io11</ipxact:name>
+        <ipxact:name>gpio1_io19</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>inout</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -2244,7 +2093,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>gpio0_io12</ipxact:name>
+        <ipxact:name>gpio1_io20</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>inout</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -2257,98 +2106,7 @@ https://fpgasoftware.intel.com/eula.-->
         </ipxact:wire>
       </ipxact:port>
       <ipxact:port>
-        <ipxact:name>gpio0_io13</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>inout</ipxact:direction>
-          <ipxact:vectors></ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
-        <ipxact:name>gpio0_io14</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>inout</ipxact:direction>
-          <ipxact:vectors></ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
-        <ipxact:name>gpio0_io15</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>inout</ipxact:direction>
-          <ipxact:vectors></ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
-        <ipxact:name>gpio0_io16</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>inout</ipxact:direction>
-          <ipxact:vectors></ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
-        <ipxact:name>gpio0_io17</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>inout</ipxact:direction>
-          <ipxact:vectors></ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
-        <ipxact:name>gpio0_io18</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>inout</ipxact:direction>
-          <ipxact:vectors></ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
-        <ipxact:name>gpio1_io16</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>inout</ipxact:direction>
-          <ipxact:vectors></ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
-        <ipxact:name>gpio1_io17</ipxact:name>
+        <ipxact:name>gpio1_io21</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>inout</ipxact:direction>
           <ipxact:vectors></ipxact:vectors>
@@ -2571,7 +2329,7 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:vectors>
             <ipxact:vector>
               <ipxact:left>0</ipxact:left>
-              <ipxact:right>31</ipxact:right>
+              <ipxact:right>127</ipxact:right>
             </ipxact:vector>
           </ipxact:vectors>
           <ipxact:wireTypeDefs>
@@ -2589,7 +2347,7 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:vectors>
             <ipxact:vector>
               <ipxact:left>0</ipxact:left>
-              <ipxact:right>3</ipxact:right>
+              <ipxact:right>15</ipxact:right>
             </ipxact:vector>
           </ipxact:vectors>
           <ipxact:wireTypeDefs>
@@ -2891,7 +2649,7 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:vectors>
             <ipxact:vector>
               <ipxact:left>0</ipxact:left>
-              <ipxact:right>31</ipxact:right>
+              <ipxact:right>127</ipxact:right>
             </ipxact:vector>
           </ipxact:vectors>
           <ipxact:wireTypeDefs>
@@ -3617,42 +3375,6 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:wireTypeDefs>
         </ipxact:wire>
       </ipxact:port>
-      <ipxact:port>
-        <ipxact:name>f2h_irq_p0</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>in</ipxact:direction>
-          <ipxact:vectors>
-            <ipxact:vector>
-              <ipxact:left>0</ipxact:left>
-              <ipxact:right>31</ipxact:right>
-            </ipxact:vector>
-          </ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC_VECTOR</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
-      <ipxact:port>
-        <ipxact:name>f2h_irq_p1</ipxact:name>
-        <ipxact:wire>
-          <ipxact:direction>in</ipxact:direction>
-          <ipxact:vectors>
-            <ipxact:vector>
-              <ipxact:left>0</ipxact:left>
-              <ipxact:right>31</ipxact:right>
-            </ipxact:vector>
-          </ipxact:vectors>
-          <ipxact:wireTypeDefs>
-            <ipxact:wireTypeDef>
-              <ipxact:typeName>STD_LOGIC_VECTOR</ipxact:typeName>
-              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
-            </ipxact:wireTypeDef>
-          </ipxact:wireTypeDefs>
-        </ipxact:wire>
-      </ipxact:port>
     </ipxact:ports>
   </ipxact:model>
   <ipxact:vendorExtensions>
@@ -3732,7 +3454,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="S2F_Width" type="int">
           <ipxact:name>S2F_Width</ipxact:name>
           <ipxact:displayName>Enable/Data width</ipxact:displayName>
-          <ipxact:value>1</ipxact:value>
+          <ipxact:value>3</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="S2F_ADDRESS_WIDTH" type="int">
           <ipxact:name>S2F_ADDRESS_WIDTH</ipxact:name>
@@ -3827,7 +3549,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="F2SINTERRUPT_Enable" type="bit">
           <ipxact:name>F2SINTERRUPT_Enable</ipxact:name>
           <ipxact:displayName>Enable FPGA-to-HPS Interrupts</ipxact:displayName>
-          <ipxact:value>true</ipxact:value>
+          <ipxact:value>false</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="S2FINTERRUPT_CLOCKPERIPHERAL_Enable" type="bit">
           <ipxact:name>S2FINTERRUPT_CLOCKPERIPHERAL_Enable</ipxact:name>
@@ -4227,22 +3949,22 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="H2F_USER0_CLK_Enable" type="bit">
           <ipxact:name>H2F_USER0_CLK_Enable</ipxact:name>
           <ipxact:displayName>Enable HPS-to-FPGA User0 clock</ipxact:displayName>
-          <ipxact:value>true</ipxact:value>
+          <ipxact:value>false</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="H2F_USER0_CLK_FREQ" type="int">
           <ipxact:name>H2F_USER0_CLK_FREQ</ipxact:name>
           <ipxact:displayName>H2F user0 clock frequency</ipxact:displayName>
-          <ipxact:value>50</ipxact:value>
+          <ipxact:value>500</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="H2F_USER1_CLK_Enable" type="bit">
           <ipxact:name>H2F_USER1_CLK_Enable</ipxact:name>
           <ipxact:displayName>Enable HPS-to-FPGA User1 clock</ipxact:displayName>
-          <ipxact:value>true</ipxact:value>
+          <ipxact:value>false</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="H2F_USER1_CLK_FREQ" type="int">
           <ipxact:name>H2F_USER1_CLK_FREQ</ipxact:name>
           <ipxact:displayName>H2F user1 clock frequency</ipxact:displayName>
-          <ipxact:value>125</ipxact:value>
+          <ipxact:value>500</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="PSI_CLK_FREQ" type="int">
           <ipxact:name>PSI_CLK_FREQ</ipxact:name>
@@ -4477,7 +4199,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="IO_INPUT_DELAY1" type="int">
           <ipxact:name>IO_INPUT_DELAY1</ipxact:name>
           <ipxact:displayName>HPS_IOA_2 input path delay chain</ipxact:displayName>
-          <ipxact:value>0</ipxact:value>
+          <ipxact:value>126</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="IO_OUTPUT_DELAY1" type="int">
           <ipxact:name>IO_OUTPUT_DELAY1</ipxact:name>
@@ -4487,7 +4209,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="IO_INPUT_DELAY2" type="int">
           <ipxact:name>IO_INPUT_DELAY2</ipxact:name>
           <ipxact:displayName>HPS_IOA_3 input path delay chain</ipxact:displayName>
-          <ipxact:value>0</ipxact:value>
+          <ipxact:value>126</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="IO_OUTPUT_DELAY2" type="int">
           <ipxact:name>IO_OUTPUT_DELAY2</ipxact:name>
@@ -4497,7 +4219,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="IO_INPUT_DELAY3" type="int">
           <ipxact:name>IO_INPUT_DELAY3</ipxact:name>
           <ipxact:displayName>HPS_IOA_4 input path delay chain</ipxact:displayName>
-          <ipxact:value>0</ipxact:value>
+          <ipxact:value>126</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="IO_OUTPUT_DELAY3" type="int">
           <ipxact:name>IO_OUTPUT_DELAY3</ipxact:name>
@@ -4507,7 +4229,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="IO_INPUT_DELAY4" type="int">
           <ipxact:name>IO_INPUT_DELAY4</ipxact:name>
           <ipxact:displayName>HPS_IOA_5 input path delay chain</ipxact:displayName>
-          <ipxact:value>0</ipxact:value>
+          <ipxact:value>126</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="IO_OUTPUT_DELAY4" type="int">
           <ipxact:name>IO_OUTPUT_DELAY4</ipxact:name>
@@ -4517,7 +4239,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="IO_INPUT_DELAY5" type="int">
           <ipxact:name>IO_INPUT_DELAY5</ipxact:name>
           <ipxact:displayName>HPS_IOA_6 input path delay chain</ipxact:displayName>
-          <ipxact:value>0</ipxact:value>
+          <ipxact:value>126</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="IO_OUTPUT_DELAY5" type="int">
           <ipxact:name>IO_OUTPUT_DELAY5</ipxact:name>
@@ -4527,7 +4249,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="IO_INPUT_DELAY6" type="int">
           <ipxact:name>IO_INPUT_DELAY6</ipxact:name>
           <ipxact:displayName>HPS_IOA_7 input path delay chain</ipxact:displayName>
-          <ipxact:value>0</ipxact:value>
+          <ipxact:value>126</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="IO_OUTPUT_DELAY6" type="int">
           <ipxact:name>IO_OUTPUT_DELAY6</ipxact:name>
@@ -4537,7 +4259,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="IO_INPUT_DELAY7" type="int">
           <ipxact:name>IO_INPUT_DELAY7</ipxact:name>
           <ipxact:displayName>HPS_IOA_8 input path delay chain</ipxact:displayName>
-          <ipxact:value>0</ipxact:value>
+          <ipxact:value>126</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="IO_OUTPUT_DELAY7" type="int">
           <ipxact:name>IO_OUTPUT_DELAY7</ipxact:name>
@@ -4547,7 +4269,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="IO_INPUT_DELAY8" type="int">
           <ipxact:name>IO_INPUT_DELAY8</ipxact:name>
           <ipxact:displayName>HPS_IOA_9 input path delay chain</ipxact:displayName>
-          <ipxact:value>0</ipxact:value>
+          <ipxact:value>126</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="IO_OUTPUT_DELAY8" type="int">
           <ipxact:name>IO_OUTPUT_DELAY8</ipxact:name>
@@ -4557,7 +4279,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="IO_INPUT_DELAY9" type="int">
           <ipxact:name>IO_INPUT_DELAY9</ipxact:name>
           <ipxact:displayName>HPS_IOA_10 input path delay chain</ipxact:displayName>
-          <ipxact:value>0</ipxact:value>
+          <ipxact:value>126</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="IO_OUTPUT_DELAY9" type="int">
           <ipxact:name>IO_OUTPUT_DELAY9</ipxact:name>
@@ -4567,7 +4289,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="IO_INPUT_DELAY10" type="int">
           <ipxact:name>IO_INPUT_DELAY10</ipxact:name>
           <ipxact:displayName>HPS_IOA_11 input path delay chain</ipxact:displayName>
-          <ipxact:value>0</ipxact:value>
+          <ipxact:value>126</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="IO_OUTPUT_DELAY10" type="int">
           <ipxact:name>IO_OUTPUT_DELAY10</ipxact:name>
@@ -4577,7 +4299,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="IO_INPUT_DELAY11" type="int">
           <ipxact:name>IO_INPUT_DELAY11</ipxact:name>
           <ipxact:displayName>HPS_IOA_12 input path delay chain</ipxact:displayName>
-          <ipxact:value>0</ipxact:value>
+          <ipxact:value>126</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="IO_OUTPUT_DELAY11" type="int">
           <ipxact:name>IO_OUTPUT_DELAY11</ipxact:name>
@@ -4592,7 +4314,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="IO_OUTPUT_DELAY12" type="int">
           <ipxact:name>IO_OUTPUT_DELAY12</ipxact:name>
           <ipxact:displayName>HPS_IOA_13 output path delay chain</ipxact:displayName>
-          <ipxact:value>0</ipxact:value>
+          <ipxact:value>45</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="IO_INPUT_DELAY13" type="int">
           <ipxact:name>IO_INPUT_DELAY13</ipxact:name>
@@ -5202,22 +4924,22 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="EMAC0_PinMuxing" type="string">
           <ipxact:name>EMAC0_PinMuxing</ipxact:name>
           <ipxact:displayName>EMAC0 pin</ipxact:displayName>
-          <ipxact:value>Unused</ipxact:value>
+          <ipxact:value>IO</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="EMAC0_Mode" type="string">
           <ipxact:name>EMAC0_Mode</ipxact:name>
           <ipxact:displayName>EMAC0 mode</ipxact:displayName>
-          <ipxact:value>N/A</ipxact:value>
+          <ipxact:value>RGMII_with_MDIO</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="EMAC1_PinMuxing" type="string">
           <ipxact:name>EMAC1_PinMuxing</ipxact:name>
           <ipxact:displayName>EMAC1 pin</ipxact:displayName>
-          <ipxact:value>IO</ipxact:value>
+          <ipxact:value>Unused</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="EMAC1_Mode" type="string">
           <ipxact:name>EMAC1_Mode</ipxact:name>
           <ipxact:displayName>EMAC1 mode</ipxact:displayName>
-          <ipxact:value>RGMII_with_MDIO</ipxact:value>
+          <ipxact:value>N/A</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="EMAC2_PinMuxing" type="string">
           <ipxact:name>EMAC2_PinMuxing</ipxact:name>
@@ -5247,17 +4969,17 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="SDMMC_Mode" type="string">
           <ipxact:name>SDMMC_Mode</ipxact:name>
           <ipxact:displayName>SDMMC mode</ipxact:displayName>
-          <ipxact:value>8-bit</ipxact:value>
+          <ipxact:value>4-bit</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="USB0_PinMuxing" type="string">
           <ipxact:name>USB0_PinMuxing</ipxact:name>
           <ipxact:displayName>USB0 pin</ipxact:displayName>
-          <ipxact:value>Unused</ipxact:value>
+          <ipxact:value>IO</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="USB0_Mode" type="string">
           <ipxact:name>USB0_Mode</ipxact:name>
           <ipxact:displayName>USB0 PHY interface mode</ipxact:displayName>
-          <ipxact:value>N/A</ipxact:value>
+          <ipxact:value>default</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="USB1_PinMuxing" type="string">
           <ipxact:name>USB1_PinMuxing</ipxact:name>
@@ -5272,22 +4994,22 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="SPIM0_PinMuxing" type="string">
           <ipxact:name>SPIM0_PinMuxing</ipxact:name>
           <ipxact:displayName>SPIM0 pin</ipxact:displayName>
-          <ipxact:value>IO</ipxact:value>
+          <ipxact:value>Unused</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="SPIM0_Mode" type="string">
           <ipxact:name>SPIM0_Mode</ipxact:name>
           <ipxact:displayName>SPIM0 mode</ipxact:displayName>
-          <ipxact:value>Single_slave_selects</ipxact:value>
+          <ipxact:value>N/A</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="SPIM1_PinMuxing" type="string">
           <ipxact:name>SPIM1_PinMuxing</ipxact:name>
           <ipxact:displayName>SPIM1 pin</ipxact:displayName>
-          <ipxact:value>IO</ipxact:value>
+          <ipxact:value>Unused</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="SPIM1_Mode" type="string">
           <ipxact:name>SPIM1_Mode</ipxact:name>
           <ipxact:displayName>SPIM1 mode</ipxact:displayName>
-          <ipxact:value>Dual_slave_selects</ipxact:value>
+          <ipxact:value>N/A</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="SPIS0_PinMuxing" type="string">
           <ipxact:name>SPIS0_PinMuxing</ipxact:name>
@@ -5312,22 +5034,22 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="UART0_PinMuxing" type="string">
           <ipxact:name>UART0_PinMuxing</ipxact:name>
           <ipxact:displayName>UART0 pin</ipxact:displayName>
-          <ipxact:value>Unused</ipxact:value>
+          <ipxact:value>IO</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="UART0_Mode" type="string">
           <ipxact:name>UART0_Mode</ipxact:name>
           <ipxact:displayName>UART0 mode</ipxact:displayName>
-          <ipxact:value>N/A</ipxact:value>
+          <ipxact:value>No_flow_control</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="UART1_PinMuxing" type="string">
           <ipxact:name>UART1_PinMuxing</ipxact:name>
           <ipxact:displayName>UART1 pin</ipxact:displayName>
-          <ipxact:value>IO</ipxact:value>
+          <ipxact:value>Unused</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="UART1_Mode" type="string">
           <ipxact:name>UART1_Mode</ipxact:name>
           <ipxact:displayName>UART1 mode</ipxact:displayName>
-          <ipxact:value>No_flow_control</ipxact:value>
+          <ipxact:value>N/A</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="I2C0_PinMuxing" type="string">
           <ipxact:name>I2C0_PinMuxing</ipxact:name>
@@ -5427,7 +5149,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="HPS_IO_Enable" type="string">
           <ipxact:name>HPS_IO_Enable</ipxact:name>
           <ipxact:displayName>HPSIO Enabled</ipxact:displayName>
-          <ipxact:value>SDMMC:CCLK,SDMMC:CMD,SDMMC:D0,SDMMC:D1,SDMMC:D2,SDMMC:D3,SDMMC:D4,SDMMC:D5,SDMMC:D6,SDMMC:D7,HPS_OSC_CLK,GPIO,GPIO,GPIO,GPIO,GPIO,GPIO,GPIO,GPIO,SPIM1:SS1_N,SPIM1:CLK,SPIM1:MOSI,SPIM1:MISO,SPIM1:SS0_N,EMAC1:TX_CLK,EMAC1:TX_CTL,EMAC1:RX_CLK,EMAC1:RX_CTL,EMAC1:TXD0,EMAC1:TXD1,EMAC1:RXD0,EMAC1:RXD1,EMAC1:TXD2,EMAC1:TXD3,EMAC1:RXD2,EMAC1:RXD3,I2C1:SDA,I2C1:SCL,UART1:TX,UART1:RX,GPIO,GPIO,MDIO1:MDIO,MDIO1:MDC,SPIM0:CLK,SPIM0:MOSI,SPIM0:MISO,SPIM0:SS0_N</ipxact:value>
+          <ipxact:value>USB0:CLK,USB0:STP,USB0:DIR,USB0:DATA0,USB0:DATA1,USB0:NXT,USB0:DATA2,USB0:DATA3,USB0:DATA4,USB0:DATA5,USB0:DATA6,USB0:DATA7,EMAC0:TX_CLK,EMAC0:TX_CTL,EMAC0:RX_CLK,EMAC0:RX_CTL,EMAC0:TXD0,EMAC0:TXD1,EMAC0:RXD0,EMAC0:RXD1,EMAC0:TXD2,EMAC0:TXD3,EMAC0:RXD2,EMAC0:RXD3,GPIO,GPIO,UART0:TX,UART0:RX,GPIO,GPIO,I2C1:SDA,I2C1:SCL,JTAG:TCK,JTAG:TMS,JTAG:TDO,JTAG:TDI,SDMMC:D0,SDMMC:CMD,SDMMC:CCLK,SDMMC:D1,SDMMC:D2,SDMMC:D3,HPS_OSC_CLK,GPIO,GPIO,GPIO,MDIO0:MDIO,MDIO0:MDC</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="TPIU_Select" type="string">
           <ipxact:name>TPIU_Select</ipxact:name>
@@ -5437,7 +5159,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="device_name" type="string">
           <ipxact:name>device_name</ipxact:name>
           <ipxact:displayName>device_name</ipxact:displayName>
-          <ipxact:value>AGFB027R24C2E2VR2</ipxact:value>
+          <ipxact:value>AGFB014R24B2E2V</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="quartus_ini_hps_ip_enable_test_interface" type="bit">
           <ipxact:name>quartus_ini_hps_ip_enable_test_interface</ipxact:name>
@@ -5481,7 +5203,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="device" type="string">
           <ipxact:name>device</ipxact:name>
           <ipxact:displayName>Device</ipxact:displayName>
-          <ipxact:value>AGFB027R24C2E2VR2</ipxact:value>
+          <ipxact:value>AGFB014R24B2E2V</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceFamily" type="string">
           <ipxact:name>deviceFamily</ipxact:name>
@@ -5511,8 +5233,13 @@ https://fpgasoftware.intel.com/eula.-->
          type = "String";
       }
    }
-   element agilex_hps
+   element intel_agilex_hps_inst
    {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
    }
 }
 </ipxact:value>
@@ -5527,88 +5254,6 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:displayName>lockedInterfaceDefinition</ipxact:displayName>
           <ipxact:value>&lt;boundaryDefinition&gt;
     &lt;interfaces&gt;
-        &lt;interface&gt;
-            &lt;name&gt;h2f_user0_clock&lt;/name&gt;
-            &lt;type&gt;clock&lt;/type&gt;
-            &lt;isStart&gt;true&lt;/isStart&gt;
-            &lt;ports&gt;
-                &lt;port&gt;
-                    &lt;name&gt;s2f_user_clk0_hio&lt;/name&gt;
-                    &lt;role&gt;clk&lt;/role&gt;
-                    &lt;direction&gt;Output&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-            &lt;/ports&gt;
-            &lt;assignments&gt;
-                &lt;assignmentValueMap/&gt;
-            &lt;/assignments&gt;
-            &lt;parameters&gt;
-                &lt;parameterValueMap&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;associatedDirectClock&lt;/key&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;clockRate&lt;/key&gt;
-                        &lt;value&gt;50000000&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;clockRateKnown&lt;/key&gt;
-                        &lt;value&gt;true&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;externallyDriven&lt;/key&gt;
-                        &lt;value&gt;false&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;ptfSchematicName&lt;/key&gt;
-                    &lt;/entry&gt;
-                &lt;/parameterValueMap&gt;
-            &lt;/parameters&gt;
-        &lt;/interface&gt;
-        &lt;interface&gt;
-            &lt;name&gt;h2f_user1_clock&lt;/name&gt;
-            &lt;type&gt;clock&lt;/type&gt;
-            &lt;isStart&gt;true&lt;/isStart&gt;
-            &lt;ports&gt;
-                &lt;port&gt;
-                    &lt;name&gt;s2f_user_clk1_hio&lt;/name&gt;
-                    &lt;role&gt;clk&lt;/role&gt;
-                    &lt;direction&gt;Output&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-            &lt;/ports&gt;
-            &lt;assignments&gt;
-                &lt;assignmentValueMap/&gt;
-            &lt;/assignments&gt;
-            &lt;parameters&gt;
-                &lt;parameterValueMap&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;associatedDirectClock&lt;/key&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;clockRate&lt;/key&gt;
-                        &lt;value&gt;125000000&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;clockRateKnown&lt;/key&gt;
-                        &lt;value&gt;true&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;externallyDriven&lt;/key&gt;
-                        &lt;value&gt;false&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;ptfSchematicName&lt;/key&gt;
-                    &lt;/entry&gt;
-                &lt;/parameterValueMap&gt;
-            &lt;/parameters&gt;
-        &lt;/interface&gt;
         &lt;interface&gt;
             &lt;name&gt;hps_emif&lt;/name&gt;
             &lt;type&gt;conduit&lt;/type&gt;
@@ -5675,8 +5320,8 @@ https://fpgasoftware.intel.com/eula.-->
             &lt;isStart&gt;false&lt;/isStart&gt;
             &lt;ports&gt;
                 &lt;port&gt;
-                    &lt;name&gt;EMAC1_TX_CLK&lt;/name&gt;
-                    &lt;role&gt;EMAC1_TX_CLK&lt;/role&gt;
+                    &lt;name&gt;EMAC0_TX_CLK&lt;/name&gt;
+                    &lt;role&gt;EMAC0_TX_CLK&lt;/role&gt;
                     &lt;direction&gt;Output&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5684,8 +5329,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;EMAC1_TXD0&lt;/name&gt;
-                    &lt;role&gt;EMAC1_TXD0&lt;/role&gt;
+                    &lt;name&gt;EMAC0_TXD0&lt;/name&gt;
+                    &lt;role&gt;EMAC0_TXD0&lt;/role&gt;
                     &lt;direction&gt;Output&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5693,8 +5338,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;EMAC1_TXD1&lt;/name&gt;
-                    &lt;role&gt;EMAC1_TXD1&lt;/role&gt;
+                    &lt;name&gt;EMAC0_TXD1&lt;/name&gt;
+                    &lt;role&gt;EMAC0_TXD1&lt;/role&gt;
                     &lt;direction&gt;Output&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5702,8 +5347,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;EMAC1_TXD2&lt;/name&gt;
-                    &lt;role&gt;EMAC1_TXD2&lt;/role&gt;
+                    &lt;name&gt;EMAC0_TXD2&lt;/name&gt;
+                    &lt;role&gt;EMAC0_TXD2&lt;/role&gt;
                     &lt;direction&gt;Output&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5711,8 +5356,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;EMAC1_TXD3&lt;/name&gt;
-                    &lt;role&gt;EMAC1_TXD3&lt;/role&gt;
+                    &lt;name&gt;EMAC0_TXD3&lt;/name&gt;
+                    &lt;role&gt;EMAC0_TXD3&lt;/role&gt;
                     &lt;direction&gt;Output&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5720,8 +5365,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;EMAC1_RX_CTL&lt;/name&gt;
-                    &lt;role&gt;EMAC1_RX_CTL&lt;/role&gt;
+                    &lt;name&gt;EMAC0_RX_CTL&lt;/name&gt;
+                    &lt;role&gt;EMAC0_RX_CTL&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5729,8 +5374,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;EMAC1_TX_CTL&lt;/name&gt;
-                    &lt;role&gt;EMAC1_TX_CTL&lt;/role&gt;
+                    &lt;name&gt;EMAC0_TX_CTL&lt;/name&gt;
+                    &lt;role&gt;EMAC0_TX_CTL&lt;/role&gt;
                     &lt;direction&gt;Output&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5738,8 +5383,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;EMAC1_RX_CLK&lt;/name&gt;
-                    &lt;role&gt;EMAC1_RX_CLK&lt;/role&gt;
+                    &lt;name&gt;EMAC0_RX_CLK&lt;/name&gt;
+                    &lt;role&gt;EMAC0_RX_CLK&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5747,8 +5392,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;EMAC1_RXD0&lt;/name&gt;
-                    &lt;role&gt;EMAC1_RXD0&lt;/role&gt;
+                    &lt;name&gt;EMAC0_RXD0&lt;/name&gt;
+                    &lt;role&gt;EMAC0_RXD0&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5756,8 +5401,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;EMAC1_RXD1&lt;/name&gt;
-                    &lt;role&gt;EMAC1_RXD1&lt;/role&gt;
+                    &lt;name&gt;EMAC0_RXD1&lt;/name&gt;
+                    &lt;role&gt;EMAC0_RXD1&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5765,8 +5410,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;EMAC1_RXD2&lt;/name&gt;
-                    &lt;role&gt;EMAC1_RXD2&lt;/role&gt;
+                    &lt;name&gt;EMAC0_RXD2&lt;/name&gt;
+                    &lt;role&gt;EMAC0_RXD2&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5774,8 +5419,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;EMAC1_RXD3&lt;/name&gt;
-                    &lt;role&gt;EMAC1_RXD3&lt;/role&gt;
+                    &lt;name&gt;EMAC0_RXD3&lt;/name&gt;
+                    &lt;role&gt;EMAC0_RXD3&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5783,8 +5428,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;EMAC1_MDIO&lt;/name&gt;
-                    &lt;role&gt;EMAC1_MDIO&lt;/role&gt;
+                    &lt;name&gt;EMAC0_MDIO&lt;/name&gt;
+                    &lt;role&gt;EMAC0_MDIO&lt;/role&gt;
                     &lt;direction&gt;Bidir&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5792,8 +5437,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;EMAC1_MDC&lt;/name&gt;
-                    &lt;role&gt;EMAC1_MDC&lt;/role&gt;
+                    &lt;name&gt;EMAC0_MDC&lt;/name&gt;
+                    &lt;role&gt;EMAC0_MDC&lt;/role&gt;
                     &lt;direction&gt;Output&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5846,42 +5491,6 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;SDMMC_D4&lt;/name&gt;
-                    &lt;role&gt;SDMMC_D4&lt;/role&gt;
-                    &lt;direction&gt;Bidir&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-                &lt;port&gt;
-                    &lt;name&gt;SDMMC_D5&lt;/name&gt;
-                    &lt;role&gt;SDMMC_D5&lt;/role&gt;
-                    &lt;direction&gt;Bidir&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-                &lt;port&gt;
-                    &lt;name&gt;SDMMC_D6&lt;/name&gt;
-                    &lt;role&gt;SDMMC_D6&lt;/role&gt;
-                    &lt;direction&gt;Bidir&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-                &lt;port&gt;
-                    &lt;name&gt;SDMMC_D7&lt;/name&gt;
-                    &lt;role&gt;SDMMC_D7&lt;/role&gt;
-                    &lt;direction&gt;Bidir&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-                &lt;port&gt;
                     &lt;name&gt;SDMMC_CCLK&lt;/name&gt;
                     &lt;role&gt;SDMMC_CCLK&lt;/role&gt;
                     &lt;direction&gt;Output&lt;/direction&gt;
@@ -5891,26 +5500,80 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;SPIM0_CLK&lt;/name&gt;
-                    &lt;role&gt;SPIM0_CLK&lt;/role&gt;
-                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;name&gt;USB0_DATA0&lt;/name&gt;
+                    &lt;role&gt;USB0_DATA0&lt;/role&gt;
+                    &lt;direction&gt;Bidir&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;SPIM0_MOSI&lt;/name&gt;
-                    &lt;role&gt;SPIM0_MOSI&lt;/role&gt;
-                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;name&gt;USB0_DATA1&lt;/name&gt;
+                    &lt;role&gt;USB0_DATA1&lt;/role&gt;
+                    &lt;direction&gt;Bidir&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;SPIM0_MISO&lt;/name&gt;
-                    &lt;role&gt;SPIM0_MISO&lt;/role&gt;
+                    &lt;name&gt;USB0_DATA2&lt;/name&gt;
+                    &lt;role&gt;USB0_DATA2&lt;/role&gt;
+                    &lt;direction&gt;Bidir&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;USB0_DATA3&lt;/name&gt;
+                    &lt;role&gt;USB0_DATA3&lt;/role&gt;
+                    &lt;direction&gt;Bidir&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;USB0_DATA4&lt;/name&gt;
+                    &lt;role&gt;USB0_DATA4&lt;/role&gt;
+                    &lt;direction&gt;Bidir&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;USB0_DATA5&lt;/name&gt;
+                    &lt;role&gt;USB0_DATA5&lt;/role&gt;
+                    &lt;direction&gt;Bidir&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;USB0_DATA6&lt;/name&gt;
+                    &lt;role&gt;USB0_DATA6&lt;/role&gt;
+                    &lt;direction&gt;Bidir&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;USB0_DATA7&lt;/name&gt;
+                    &lt;role&gt;USB0_DATA7&lt;/role&gt;
+                    &lt;direction&gt;Bidir&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;USB0_CLK&lt;/name&gt;
+                    &lt;role&gt;USB0_CLK&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5918,8 +5581,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;SPIM0_SS0_N&lt;/name&gt;
-                    &lt;role&gt;SPIM0_SS0_N&lt;/role&gt;
+                    &lt;name&gt;USB0_STP&lt;/name&gt;
+                    &lt;role&gt;USB0_STP&lt;/role&gt;
                     &lt;direction&gt;Output&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5927,26 +5590,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;SPIM1_CLK&lt;/name&gt;
-                    &lt;role&gt;SPIM1_CLK&lt;/role&gt;
-                    &lt;direction&gt;Output&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-                &lt;port&gt;
-                    &lt;name&gt;SPIM1_MOSI&lt;/name&gt;
-                    &lt;role&gt;SPIM1_MOSI&lt;/role&gt;
-                    &lt;direction&gt;Output&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-                &lt;port&gt;
-                    &lt;name&gt;SPIM1_MISO&lt;/name&gt;
-                    &lt;role&gt;SPIM1_MISO&lt;/role&gt;
+                    &lt;name&gt;USB0_DIR&lt;/name&gt;
+                    &lt;role&gt;USB0_DIR&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5954,26 +5599,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;SPIM1_SS0_N&lt;/name&gt;
-                    &lt;role&gt;SPIM1_SS0_N&lt;/role&gt;
-                    &lt;direction&gt;Output&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-                &lt;port&gt;
-                    &lt;name&gt;SPIM1_SS1_N&lt;/name&gt;
-                    &lt;role&gt;SPIM1_SS1_N&lt;/role&gt;
-                    &lt;direction&gt;Output&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-                &lt;port&gt;
-                    &lt;name&gt;UART1_RX&lt;/name&gt;
-                    &lt;role&gt;UART1_RX&lt;/role&gt;
+                    &lt;name&gt;USB0_NXT&lt;/name&gt;
+                    &lt;role&gt;USB0_NXT&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -5981,8 +5608,17 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;UART1_TX&lt;/name&gt;
-                    &lt;role&gt;UART1_TX&lt;/role&gt;
+                    &lt;name&gt;UART0_RX&lt;/name&gt;
+                    &lt;role&gt;UART0_RX&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;UART0_TX&lt;/name&gt;
+                    &lt;role&gt;UART0_TX&lt;/role&gt;
                     &lt;direction&gt;Output&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -6008,6 +5644,78 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
+                    &lt;name&gt;gpio1_io0&lt;/name&gt;
+                    &lt;role&gt;gpio1_io0&lt;/role&gt;
+                    &lt;direction&gt;Bidir&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;gpio1_io1&lt;/name&gt;
+                    &lt;role&gt;gpio1_io1&lt;/role&gt;
+                    &lt;direction&gt;Bidir&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;gpio1_io4&lt;/name&gt;
+                    &lt;role&gt;gpio1_io4&lt;/role&gt;
+                    &lt;direction&gt;Bidir&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;gpio1_io5&lt;/name&gt;
+                    &lt;role&gt;gpio1_io5&lt;/role&gt;
+                    &lt;direction&gt;Bidir&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;jtag_tck&lt;/name&gt;
+                    &lt;role&gt;jtag_tck&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;jtag_tms&lt;/name&gt;
+                    &lt;role&gt;jtag_tms&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;jtag_tdo&lt;/name&gt;
+                    &lt;role&gt;jtag_tdo&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
+                    &lt;name&gt;jtag_tdi&lt;/name&gt;
+                    &lt;role&gt;jtag_tdi&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+                &lt;port&gt;
                     &lt;name&gt;hps_osc_clk&lt;/name&gt;
                     &lt;role&gt;hps_osc_clk&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
@@ -6017,8 +5725,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;gpio0_io11&lt;/name&gt;
-                    &lt;role&gt;gpio0_io11&lt;/role&gt;
+                    &lt;name&gt;gpio1_io19&lt;/name&gt;
+                    &lt;role&gt;gpio1_io19&lt;/role&gt;
                     &lt;direction&gt;Bidir&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -6026,8 +5734,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;gpio0_io12&lt;/name&gt;
-                    &lt;role&gt;gpio0_io12&lt;/role&gt;
+                    &lt;name&gt;gpio1_io20&lt;/name&gt;
+                    &lt;role&gt;gpio1_io20&lt;/role&gt;
                     &lt;direction&gt;Bidir&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -6035,71 +5743,8 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
                 &lt;/port&gt;
                 &lt;port&gt;
-                    &lt;name&gt;gpio0_io13&lt;/name&gt;
-                    &lt;role&gt;gpio0_io13&lt;/role&gt;
-                    &lt;direction&gt;Bidir&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-                &lt;port&gt;
-                    &lt;name&gt;gpio0_io14&lt;/name&gt;
-                    &lt;role&gt;gpio0_io14&lt;/role&gt;
-                    &lt;direction&gt;Bidir&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-                &lt;port&gt;
-                    &lt;name&gt;gpio0_io15&lt;/name&gt;
-                    &lt;role&gt;gpio0_io15&lt;/role&gt;
-                    &lt;direction&gt;Bidir&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-                &lt;port&gt;
-                    &lt;name&gt;gpio0_io16&lt;/name&gt;
-                    &lt;role&gt;gpio0_io16&lt;/role&gt;
-                    &lt;direction&gt;Bidir&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-                &lt;port&gt;
-                    &lt;name&gt;gpio0_io17&lt;/name&gt;
-                    &lt;role&gt;gpio0_io17&lt;/role&gt;
-                    &lt;direction&gt;Bidir&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-                &lt;port&gt;
-                    &lt;name&gt;gpio0_io18&lt;/name&gt;
-                    &lt;role&gt;gpio0_io18&lt;/role&gt;
-                    &lt;direction&gt;Bidir&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-                &lt;port&gt;
-                    &lt;name&gt;gpio1_io16&lt;/name&gt;
-                    &lt;role&gt;gpio1_io16&lt;/role&gt;
-                    &lt;direction&gt;Bidir&lt;/direction&gt;
-                    &lt;width&gt;1&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-                &lt;port&gt;
-                    &lt;name&gt;gpio1_io17&lt;/name&gt;
-                    &lt;role&gt;gpio1_io17&lt;/role&gt;
+                    &lt;name&gt;gpio1_io21&lt;/name&gt;
+                    &lt;role&gt;gpio1_io21&lt;/role&gt;
                     &lt;direction&gt;Bidir&lt;/direction&gt;
                     &lt;width&gt;1&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
@@ -6326,7 +5971,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;name&gt;h2f_WDATA&lt;/name&gt;
                     &lt;role&gt;wdata&lt;/role&gt;
                     &lt;direction&gt;Output&lt;/direction&gt;
-                    &lt;width&gt;32&lt;/width&gt;
+                    &lt;width&gt;128&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
@@ -6335,7 +5980,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;name&gt;h2f_WSTRB&lt;/name&gt;
                     &lt;role&gt;wstrb&lt;/role&gt;
                     &lt;direction&gt;Output&lt;/direction&gt;
-                    &lt;width&gt;4&lt;/width&gt;
+                    &lt;width&gt;16&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
@@ -6506,7 +6151,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;name&gt;h2f_RDATA&lt;/name&gt;
                     &lt;role&gt;rdata&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
-                    &lt;width&gt;32&lt;/width&gt;
+                    &lt;width&gt;128&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
@@ -7082,104 +6727,6 @@ https://fpgasoftware.intel.com/eula.-->
                 &lt;/parameterValueMap&gt;
             &lt;/parameters&gt;
         &lt;/interface&gt;
-        &lt;interface&gt;
-            &lt;name&gt;f2h_irq0&lt;/name&gt;
-            &lt;type&gt;interrupt&lt;/type&gt;
-            &lt;isStart&gt;true&lt;/isStart&gt;
-            &lt;ports&gt;
-                &lt;port&gt;
-                    &lt;name&gt;f2h_irq_p0&lt;/name&gt;
-                    &lt;role&gt;irq&lt;/role&gt;
-                    &lt;direction&gt;Input&lt;/direction&gt;
-                    &lt;width&gt;32&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-            &lt;/ports&gt;
-            &lt;assignments&gt;
-                &lt;assignmentValueMap&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;embeddedsw.dts.irq.rx_offset&lt;/key&gt;
-                        &lt;value&gt;19&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;embeddedsw.dts.irq.rx_type&lt;/key&gt;
-                        &lt;value&gt;arm_gic_spi&lt;/value&gt;
-                    &lt;/entry&gt;
-                &lt;/assignmentValueMap&gt;
-            &lt;/assignments&gt;
-            &lt;parameters&gt;
-                &lt;parameterValueMap&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;associatedAddressablePoint&lt;/key&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;associatedClock&lt;/key&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;associatedReset&lt;/key&gt;
-                        &lt;value&gt;&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;irqMap&lt;/key&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;irqScheme&lt;/key&gt;
-                        &lt;value&gt;INDIVIDUAL_REQUESTS&lt;/value&gt;
-                    &lt;/entry&gt;
-                &lt;/parameterValueMap&gt;
-            &lt;/parameters&gt;
-        &lt;/interface&gt;
-        &lt;interface&gt;
-            &lt;name&gt;f2h_irq1&lt;/name&gt;
-            &lt;type&gt;interrupt&lt;/type&gt;
-            &lt;isStart&gt;true&lt;/isStart&gt;
-            &lt;ports&gt;
-                &lt;port&gt;
-                    &lt;name&gt;f2h_irq_p1&lt;/name&gt;
-                    &lt;role&gt;irq&lt;/role&gt;
-                    &lt;direction&gt;Input&lt;/direction&gt;
-                    &lt;width&gt;32&lt;/width&gt;
-                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
-                    &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
-                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
-                &lt;/port&gt;
-            &lt;/ports&gt;
-            &lt;assignments&gt;
-                &lt;assignmentValueMap&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;embeddedsw.dts.irq.rx_offset&lt;/key&gt;
-                        &lt;value&gt;51&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;embeddedsw.dts.irq.rx_type&lt;/key&gt;
-                        &lt;value&gt;arm_gic_spi&lt;/value&gt;
-                    &lt;/entry&gt;
-                &lt;/assignmentValueMap&gt;
-            &lt;/assignments&gt;
-            &lt;parameters&gt;
-                &lt;parameterValueMap&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;associatedAddressablePoint&lt;/key&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;associatedClock&lt;/key&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;associatedReset&lt;/key&gt;
-                        &lt;value&gt;&lt;/value&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;irqMap&lt;/key&gt;
-                    &lt;/entry&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;irqScheme&lt;/key&gt;
-                        &lt;value&gt;INDIVIDUAL_REQUESTS&lt;/value&gt;
-                    &lt;/entry&gt;
-                &lt;/parameterValueMap&gt;
-            &lt;/parameters&gt;
-        &lt;/interface&gt;
     &lt;/interfaces&gt;
 &lt;/boundaryDefinition&gt;</ipxact:value>
         </ipxact:parameter>
@@ -7235,45 +6782,19 @@ https://fpgasoftware.intel.com/eula.-->
                 &lt;consumedSystemInfos/&gt;
             &lt;/value&gt;
         &lt;/entry&gt;
-        &lt;entry&gt;
-            &lt;key&gt;h2f_user0_clock&lt;/key&gt;
-            &lt;value&gt;
-                &lt;connectionPointName&gt;h2f_user0_clock&lt;/connectionPointName&gt;
-                &lt;suppliedSystemInfos/&gt;
-                &lt;consumedSystemInfos&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;CLOCK_RATE&lt;/key&gt;
-                        &lt;value&gt;50000000&lt;/value&gt;
-                    &lt;/entry&gt;
-                &lt;/consumedSystemInfos&gt;
-            &lt;/value&gt;
-        &lt;/entry&gt;
-        &lt;entry&gt;
-            &lt;key&gt;h2f_user1_clock&lt;/key&gt;
-            &lt;value&gt;
-                &lt;connectionPointName&gt;h2f_user1_clock&lt;/connectionPointName&gt;
-                &lt;suppliedSystemInfos/&gt;
-                &lt;consumedSystemInfos&gt;
-                    &lt;entry&gt;
-                        &lt;key&gt;CLOCK_RATE&lt;/key&gt;
-                        &lt;value&gt;125000000&lt;/value&gt;
-                    &lt;/entry&gt;
-                &lt;/consumedSystemInfos&gt;
-            &lt;/value&gt;
-        &lt;/entry&gt;
     &lt;/connPtSystemInfos&gt;
 &lt;/systemInfosDefinition&gt;</ipxact:value>
         </ipxact:parameter>
       </ipxact:parameters>
     </altera:altera_system_parameters>
     <altera:altera_interface_boundary>
-      <altera:interface_mapping altera:name="f2h_axi_clock" altera:internal="agilex_hps.f2h_axi_clock" altera:type="clock" altera:dir="end">
+      <altera:interface_mapping altera:name="f2h_axi_clock" altera:internal="intel_agilex_hps_inst.f2h_axi_clock" altera:type="clock" altera:dir="end">
         <altera:port_mapping altera:name="f2h_axi_clk" altera:internal="f2h_axi_clk"></altera:port_mapping>
       </altera:interface_mapping>
-      <altera:interface_mapping altera:name="f2h_axi_reset" altera:internal="agilex_hps.f2h_axi_reset" altera:type="reset" altera:dir="end">
+      <altera:interface_mapping altera:name="f2h_axi_reset" altera:internal="intel_agilex_hps_inst.f2h_axi_reset" altera:type="reset" altera:dir="end">
         <altera:port_mapping altera:name="f2h_axi_rst_n" altera:internal="f2h_axi_rst_n"></altera:port_mapping>
       </altera:interface_mapping>
-      <altera:interface_mapping altera:name="f2h_axi_slave" altera:internal="agilex_hps.f2h_axi_slave" altera:type="axi4" altera:dir="end">
+      <altera:interface_mapping altera:name="f2h_axi_slave" altera:internal="intel_agilex_hps_inst.f2h_axi_slave" altera:type="axi4" altera:dir="end">
         <altera:port_mapping altera:name="f2h_ARADDR" altera:internal="f2h_ARADDR"></altera:port_mapping>
         <altera:port_mapping altera:name="f2h_ARBURST" altera:internal="f2h_ARBURST"></altera:port_mapping>
         <altera:port_mapping altera:name="f2h_ARCACHE" altera:internal="f2h_ARCACHE"></altera:port_mapping>
@@ -7314,16 +6835,13 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:port_mapping altera:name="f2h_WSTRB" altera:internal="f2h_WSTRB"></altera:port_mapping>
         <altera:port_mapping altera:name="f2h_WVALID" altera:internal="f2h_WVALID"></altera:port_mapping>
       </altera:interface_mapping>
-      <altera:interface_mapping altera:name="f2h_irq0" altera:internal="agilex_hps.f2h_irq0" altera:type="interrupt" altera:dir="start">
-        <altera:port_mapping altera:name="f2h_irq_p0" altera:internal="f2h_irq_p0"></altera:port_mapping>
-      </altera:interface_mapping>
-      <altera:interface_mapping altera:name="f2h_irq1" altera:internal="agilex_hps.f2h_irq1" altera:type="interrupt" altera:dir="start">
-        <altera:port_mapping altera:name="f2h_irq_p1" altera:internal="f2h_irq_p1"></altera:port_mapping>
-      </altera:interface_mapping>
-      <altera:interface_mapping altera:name="h2f_axi_clock" altera:internal="agilex_hps.h2f_axi_clock" altera:type="clock" altera:dir="end">
+      <altera:interface_mapping altera:name="f2h_irq0" altera:internal="intel_agilex_hps_inst.f2h_irq0"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="f2h_irq1" altera:internal="intel_agilex_hps_inst.f2h_irq1"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="f2h_stm_hw_events" altera:internal="intel_agilex_hps_inst.f2h_stm_hw_events"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="h2f_axi_clock" altera:internal="intel_agilex_hps_inst.h2f_axi_clock" altera:type="clock" altera:dir="end">
         <altera:port_mapping altera:name="h2f_axi_clk" altera:internal="h2f_axi_clk"></altera:port_mapping>
       </altera:interface_mapping>
-      <altera:interface_mapping altera:name="h2f_axi_master" altera:internal="agilex_hps.h2f_axi_master" altera:type="axi4" altera:dir="start">
+      <altera:interface_mapping altera:name="h2f_axi_master" altera:internal="intel_agilex_hps_inst.h2f_axi_master" altera:type="axi4" altera:dir="start">
         <altera:port_mapping altera:name="h2f_ARADDR" altera:internal="h2f_ARADDR"></altera:port_mapping>
         <altera:port_mapping altera:name="h2f_ARBURST" altera:internal="h2f_ARBURST"></altera:port_mapping>
         <altera:port_mapping altera:name="h2f_ARCACHE" altera:internal="h2f_ARCACHE"></altera:port_mapping>
@@ -7360,42 +6878,39 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:port_mapping altera:name="h2f_WSTRB" altera:internal="h2f_WSTRB"></altera:port_mapping>
         <altera:port_mapping altera:name="h2f_WVALID" altera:internal="h2f_WVALID"></altera:port_mapping>
       </altera:interface_mapping>
-      <altera:interface_mapping altera:name="h2f_axi_reset" altera:internal="agilex_hps.h2f_axi_reset" altera:type="reset" altera:dir="end">
+      <altera:interface_mapping altera:name="h2f_axi_reset" altera:internal="intel_agilex_hps_inst.h2f_axi_reset" altera:type="reset" altera:dir="end">
         <altera:port_mapping altera:name="h2f_axi_rst_n" altera:internal="h2f_axi_rst_n"></altera:port_mapping>
       </altera:interface_mapping>
-      <altera:interface_mapping altera:name="h2f_lw_axi_clock" altera:internal="agilex_hps.h2f_lw_axi_clock"></altera:interface_mapping>
-      <altera:interface_mapping altera:name="h2f_lw_axi_master" altera:internal="agilex_hps.h2f_lw_axi_master"></altera:interface_mapping>
-      <altera:interface_mapping altera:name="h2f_lw_axi_reset" altera:internal="agilex_hps.h2f_lw_axi_reset"></altera:interface_mapping>
-      <altera:interface_mapping altera:name="h2f_reset" altera:internal="agilex_hps.h2f_reset" altera:type="reset" altera:dir="start">
+      <altera:interface_mapping altera:name="h2f_cs" altera:internal="intel_agilex_hps_inst.h2f_cs"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="h2f_lw_axi_clock" altera:internal="intel_agilex_hps_inst.h2f_lw_axi_clock"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="h2f_lw_axi_master" altera:internal="intel_agilex_hps_inst.h2f_lw_axi_master"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="h2f_lw_axi_reset" altera:internal="intel_agilex_hps_inst.h2f_lw_axi_reset"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="h2f_mpu_events" altera:internal="intel_agilex_hps_inst.h2f_mpu_events"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="h2f_reset" altera:internal="intel_agilex_hps_inst.h2f_reset" altera:type="reset" altera:dir="start">
         <altera:port_mapping altera:name="h2f_rst" altera:internal="h2f_rst"></altera:port_mapping>
       </altera:interface_mapping>
-      <altera:interface_mapping altera:name="h2f_user0_clock" altera:internal="agilex_hps.h2f_user0_clock" altera:type="clock" altera:dir="start">
-        <altera:port_mapping altera:name="s2f_user_clk0_hio" altera:internal="s2f_user_clk0_hio"></altera:port_mapping>
-      </altera:interface_mapping>
-      <altera:interface_mapping altera:name="h2f_user1_clock" altera:internal="agilex_hps.h2f_user1_clock" altera:type="clock" altera:dir="start">
-        <altera:port_mapping altera:name="s2f_user_clk1_hio" altera:internal="s2f_user_clk1_hio"></altera:port_mapping>
-      </altera:interface_mapping>
-      <altera:interface_mapping altera:name="hps_emif" altera:internal="agilex_hps.hps_emif" altera:type="conduit" altera:dir="end">
+      <altera:interface_mapping altera:name="h2f_watchdog_rst" altera:internal="intel_agilex_hps_inst.h2f_watchdog_rst"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="hps_emif" altera:internal="intel_agilex_hps_inst.hps_emif" altera:type="conduit" altera:dir="end">
         <altera:port_mapping altera:name="hps_emif_emif_to_gp" altera:internal="hps_emif_emif_to_gp"></altera:port_mapping>
         <altera:port_mapping altera:name="hps_emif_emif_to_hps" altera:internal="hps_emif_emif_to_hps"></altera:port_mapping>
         <altera:port_mapping altera:name="hps_emif_gp_to_emif" altera:internal="hps_emif_gp_to_emif"></altera:port_mapping>
         <altera:port_mapping altera:name="hps_emif_hps_to_emif" altera:internal="hps_emif_hps_to_emif"></altera:port_mapping>
       </altera:interface_mapping>
-      <altera:interface_mapping altera:name="hps_io" altera:internal="agilex_hps.hps_io" altera:type="conduit" altera:dir="end">
-        <altera:port_mapping altera:name="EMAC1_MDC" altera:internal="EMAC1_MDC"></altera:port_mapping>
-        <altera:port_mapping altera:name="EMAC1_MDIO" altera:internal="EMAC1_MDIO"></altera:port_mapping>
-        <altera:port_mapping altera:name="EMAC1_RXD0" altera:internal="EMAC1_RXD0"></altera:port_mapping>
-        <altera:port_mapping altera:name="EMAC1_RXD1" altera:internal="EMAC1_RXD1"></altera:port_mapping>
-        <altera:port_mapping altera:name="EMAC1_RXD2" altera:internal="EMAC1_RXD2"></altera:port_mapping>
-        <altera:port_mapping altera:name="EMAC1_RXD3" altera:internal="EMAC1_RXD3"></altera:port_mapping>
-        <altera:port_mapping altera:name="EMAC1_RX_CLK" altera:internal="EMAC1_RX_CLK"></altera:port_mapping>
-        <altera:port_mapping altera:name="EMAC1_RX_CTL" altera:internal="EMAC1_RX_CTL"></altera:port_mapping>
-        <altera:port_mapping altera:name="EMAC1_TXD0" altera:internal="EMAC1_TXD0"></altera:port_mapping>
-        <altera:port_mapping altera:name="EMAC1_TXD1" altera:internal="EMAC1_TXD1"></altera:port_mapping>
-        <altera:port_mapping altera:name="EMAC1_TXD2" altera:internal="EMAC1_TXD2"></altera:port_mapping>
-        <altera:port_mapping altera:name="EMAC1_TXD3" altera:internal="EMAC1_TXD3"></altera:port_mapping>
-        <altera:port_mapping altera:name="EMAC1_TX_CLK" altera:internal="EMAC1_TX_CLK"></altera:port_mapping>
-        <altera:port_mapping altera:name="EMAC1_TX_CTL" altera:internal="EMAC1_TX_CTL"></altera:port_mapping>
+      <altera:interface_mapping altera:name="hps_io" altera:internal="intel_agilex_hps_inst.hps_io" altera:type="conduit" altera:dir="end">
+        <altera:port_mapping altera:name="EMAC0_MDC" altera:internal="EMAC0_MDC"></altera:port_mapping>
+        <altera:port_mapping altera:name="EMAC0_MDIO" altera:internal="EMAC0_MDIO"></altera:port_mapping>
+        <altera:port_mapping altera:name="EMAC0_RXD0" altera:internal="EMAC0_RXD0"></altera:port_mapping>
+        <altera:port_mapping altera:name="EMAC0_RXD1" altera:internal="EMAC0_RXD1"></altera:port_mapping>
+        <altera:port_mapping altera:name="EMAC0_RXD2" altera:internal="EMAC0_RXD2"></altera:port_mapping>
+        <altera:port_mapping altera:name="EMAC0_RXD3" altera:internal="EMAC0_RXD3"></altera:port_mapping>
+        <altera:port_mapping altera:name="EMAC0_RX_CLK" altera:internal="EMAC0_RX_CLK"></altera:port_mapping>
+        <altera:port_mapping altera:name="EMAC0_RX_CTL" altera:internal="EMAC0_RX_CTL"></altera:port_mapping>
+        <altera:port_mapping altera:name="EMAC0_TXD0" altera:internal="EMAC0_TXD0"></altera:port_mapping>
+        <altera:port_mapping altera:name="EMAC0_TXD1" altera:internal="EMAC0_TXD1"></altera:port_mapping>
+        <altera:port_mapping altera:name="EMAC0_TXD2" altera:internal="EMAC0_TXD2"></altera:port_mapping>
+        <altera:port_mapping altera:name="EMAC0_TXD3" altera:internal="EMAC0_TXD3"></altera:port_mapping>
+        <altera:port_mapping altera:name="EMAC0_TX_CLK" altera:internal="EMAC0_TX_CLK"></altera:port_mapping>
+        <altera:port_mapping altera:name="EMAC0_TX_CTL" altera:internal="EMAC0_TX_CTL"></altera:port_mapping>
         <altera:port_mapping altera:name="I2C1_SCL" altera:internal="I2C1_SCL"></altera:port_mapping>
         <altera:port_mapping altera:name="I2C1_SDA" altera:internal="I2C1_SDA"></altera:port_mapping>
         <altera:port_mapping altera:name="SDMMC_CCLK" altera:internal="SDMMC_CCLK"></altera:port_mapping>
@@ -7404,32 +6919,32 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:port_mapping altera:name="SDMMC_D1" altera:internal="SDMMC_D1"></altera:port_mapping>
         <altera:port_mapping altera:name="SDMMC_D2" altera:internal="SDMMC_D2"></altera:port_mapping>
         <altera:port_mapping altera:name="SDMMC_D3" altera:internal="SDMMC_D3"></altera:port_mapping>
-        <altera:port_mapping altera:name="SDMMC_D4" altera:internal="SDMMC_D4"></altera:port_mapping>
-        <altera:port_mapping altera:name="SDMMC_D5" altera:internal="SDMMC_D5"></altera:port_mapping>
-        <altera:port_mapping altera:name="SDMMC_D6" altera:internal="SDMMC_D6"></altera:port_mapping>
-        <altera:port_mapping altera:name="SDMMC_D7" altera:internal="SDMMC_D7"></altera:port_mapping>
-        <altera:port_mapping altera:name="SPIM0_CLK" altera:internal="SPIM0_CLK"></altera:port_mapping>
-        <altera:port_mapping altera:name="SPIM0_MISO" altera:internal="SPIM0_MISO"></altera:port_mapping>
-        <altera:port_mapping altera:name="SPIM0_MOSI" altera:internal="SPIM0_MOSI"></altera:port_mapping>
-        <altera:port_mapping altera:name="SPIM0_SS0_N" altera:internal="SPIM0_SS0_N"></altera:port_mapping>
-        <altera:port_mapping altera:name="SPIM1_CLK" altera:internal="SPIM1_CLK"></altera:port_mapping>
-        <altera:port_mapping altera:name="SPIM1_MISO" altera:internal="SPIM1_MISO"></altera:port_mapping>
-        <altera:port_mapping altera:name="SPIM1_MOSI" altera:internal="SPIM1_MOSI"></altera:port_mapping>
-        <altera:port_mapping altera:name="SPIM1_SS0_N" altera:internal="SPIM1_SS0_N"></altera:port_mapping>
-        <altera:port_mapping altera:name="SPIM1_SS1_N" altera:internal="SPIM1_SS1_N"></altera:port_mapping>
-        <altera:port_mapping altera:name="UART1_RX" altera:internal="UART1_RX"></altera:port_mapping>
-        <altera:port_mapping altera:name="UART1_TX" altera:internal="UART1_TX"></altera:port_mapping>
-        <altera:port_mapping altera:name="gpio0_io11" altera:internal="gpio0_io11"></altera:port_mapping>
-        <altera:port_mapping altera:name="gpio0_io12" altera:internal="gpio0_io12"></altera:port_mapping>
-        <altera:port_mapping altera:name="gpio0_io13" altera:internal="gpio0_io13"></altera:port_mapping>
-        <altera:port_mapping altera:name="gpio0_io14" altera:internal="gpio0_io14"></altera:port_mapping>
-        <altera:port_mapping altera:name="gpio0_io15" altera:internal="gpio0_io15"></altera:port_mapping>
-        <altera:port_mapping altera:name="gpio0_io16" altera:internal="gpio0_io16"></altera:port_mapping>
-        <altera:port_mapping altera:name="gpio0_io17" altera:internal="gpio0_io17"></altera:port_mapping>
-        <altera:port_mapping altera:name="gpio0_io18" altera:internal="gpio0_io18"></altera:port_mapping>
-        <altera:port_mapping altera:name="gpio1_io16" altera:internal="gpio1_io16"></altera:port_mapping>
-        <altera:port_mapping altera:name="gpio1_io17" altera:internal="gpio1_io17"></altera:port_mapping>
+        <altera:port_mapping altera:name="UART0_RX" altera:internal="UART0_RX"></altera:port_mapping>
+        <altera:port_mapping altera:name="UART0_TX" altera:internal="UART0_TX"></altera:port_mapping>
+        <altera:port_mapping altera:name="USB0_CLK" altera:internal="USB0_CLK"></altera:port_mapping>
+        <altera:port_mapping altera:name="USB0_DATA0" altera:internal="USB0_DATA0"></altera:port_mapping>
+        <altera:port_mapping altera:name="USB0_DATA1" altera:internal="USB0_DATA1"></altera:port_mapping>
+        <altera:port_mapping altera:name="USB0_DATA2" altera:internal="USB0_DATA2"></altera:port_mapping>
+        <altera:port_mapping altera:name="USB0_DATA3" altera:internal="USB0_DATA3"></altera:port_mapping>
+        <altera:port_mapping altera:name="USB0_DATA4" altera:internal="USB0_DATA4"></altera:port_mapping>
+        <altera:port_mapping altera:name="USB0_DATA5" altera:internal="USB0_DATA5"></altera:port_mapping>
+        <altera:port_mapping altera:name="USB0_DATA6" altera:internal="USB0_DATA6"></altera:port_mapping>
+        <altera:port_mapping altera:name="USB0_DATA7" altera:internal="USB0_DATA7"></altera:port_mapping>
+        <altera:port_mapping altera:name="USB0_DIR" altera:internal="USB0_DIR"></altera:port_mapping>
+        <altera:port_mapping altera:name="USB0_NXT" altera:internal="USB0_NXT"></altera:port_mapping>
+        <altera:port_mapping altera:name="USB0_STP" altera:internal="USB0_STP"></altera:port_mapping>
+        <altera:port_mapping altera:name="gpio1_io0" altera:internal="gpio1_io0"></altera:port_mapping>
+        <altera:port_mapping altera:name="gpio1_io1" altera:internal="gpio1_io1"></altera:port_mapping>
+        <altera:port_mapping altera:name="gpio1_io19" altera:internal="gpio1_io19"></altera:port_mapping>
+        <altera:port_mapping altera:name="gpio1_io20" altera:internal="gpio1_io20"></altera:port_mapping>
+        <altera:port_mapping altera:name="gpio1_io21" altera:internal="gpio1_io21"></altera:port_mapping>
+        <altera:port_mapping altera:name="gpio1_io4" altera:internal="gpio1_io4"></altera:port_mapping>
+        <altera:port_mapping altera:name="gpio1_io5" altera:internal="gpio1_io5"></altera:port_mapping>
         <altera:port_mapping altera:name="hps_osc_clk" altera:internal="hps_osc_clk"></altera:port_mapping>
+        <altera:port_mapping altera:name="jtag_tck" altera:internal="jtag_tck"></altera:port_mapping>
+        <altera:port_mapping altera:name="jtag_tdi" altera:internal="jtag_tdi"></altera:port_mapping>
+        <altera:port_mapping altera:name="jtag_tdo" altera:internal="jtag_tdo"></altera:port_mapping>
+        <altera:port_mapping altera:name="jtag_tms" altera:internal="jtag_tms"></altera:port_mapping>
       </altera:interface_mapping>
     </altera:altera_interface_boundary>
     <ipxact:components>

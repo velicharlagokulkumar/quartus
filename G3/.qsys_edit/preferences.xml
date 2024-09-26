@@ -3,7 +3,7 @@
  <debug showDebugMenu="0" />
  <window width="1853" height="1055" x="67" y="25" />
  <systemtable filter="All Interfaces" />
- <library expandedCategories="Existing IP Variants,Project,Library" />
+ <library expandedCategories="Library,Existing IP Variants,Project" />
  <generation path="" simulation="NONE" modelsim="1" />
  <hdlexample language="VERILOG" />
  <sysinfo autosync="1" />

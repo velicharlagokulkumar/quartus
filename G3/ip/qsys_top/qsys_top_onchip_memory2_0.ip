@@ -408,6 +408,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:fileSetRef>
           <ipxact:localName>QUARTUS_SYNTH</ipxact:localName>
         </ipxact:fileSetRef>
+        <ipxact:parameters></ipxact:parameters>
       </ipxact:componentInstantiation>
     </ipxact:instantiations>
     <ipxact:ports>
@@ -415,6 +416,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>clk</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -445,6 +447,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>clken</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -457,6 +460,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>chipselect</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -469,6 +473,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>write</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -535,6 +540,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>reset</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -547,6 +553,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>reset_req</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -808,7 +815,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="device" type="string">
           <ipxact:name>device</ipxact:name>
           <ipxact:displayName>Device</ipxact:displayName>
-          <ipxact:value>AGFB027R24C2E2VR2</ipxact:value>
+          <ipxact:value>AGFB014R24B2E2V</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceFamily" type="string">
           <ipxact:name>deviceFamily</ipxact:name>
