@@ -1,7 +1,6 @@
 #ifndef __PRBS_PATTERN_GENERATOR_REGS_H__
 #define __PRBS_PATTERN_GENERATOR_REGS_H__
 
-
 // individual 32-bit registers with byte addressing
 #define PRBS_GENERATOR_PAYLOAD_LENGTH_REG   					                0x0    /*    r/w    */
 #define PRBS_GENERATOR_CONTROL_REG                                    0x8    /*    r/w    */

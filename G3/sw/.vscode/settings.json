@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "ram_test_controller_regs.h": "c",
+        "prbs_pattern_generator_regs.h": "c",
+        "io.h": "c",
+        "ram_test_controller.h": "c"
+    }
+}

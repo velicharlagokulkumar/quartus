@@ -32,8 +32,8 @@
 
 /* Altera - hps */
 
-#ifndef __ALT_SOCAL_HPS_H__
-#define __ALT_SOCAL_HPS_H__
+#ifndef __HPS_H__
+#define __HPS_H__
 
 #ifndef __ASSEMBLY__
 #ifdef __cplusplus
@@ -22273,5 +22273,5 @@ extern "C"
 #ifdef __cplusplus
 }
 #endif  /* __cplusplus */
-#endif  /* __ALT_SOCAL_HPS_H__ */
+#endif  /* __HPS_H__ */
 

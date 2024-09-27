@@ -14,14 +14,14 @@
 /***********************************************************************************************************************************************************************************/
 #define NUM_OF_TESTS                  1                  // set to -1 for test the memory indefinitely
 #define DATA_WIDTH                    4                  // the data width of the memory under test in bytes
-#define RAM_BASE                      0x0                // base address of the memory under test
+#define RAM_BASE                      0xA00000                // base address of the memory under test
 #define RAM_SPAN                      0x4000000          // span in bytes of the memory under test
-#define RAM_LENGTH_MINIMUM            0x400              // minimum test length, must be a multiple of the master word size, this value is a byte length
+#define RAM_LENGTH_MINIMUM            0x1000              // minimum test length, must be a multiple of the master word size, this value is a byte length
 #define RAM_LENGTH_MAXIMUM            RAM_SPAN           // maximum test length, must be a multiple of the master word size and cannot exceed RAM_SPAN
 #define CONCURRENT_ACCESS_ENABLE      0                  // read and write masters take turns accessing the memory when this is disabled
 #define BLOCK_SIZE_MINIMUM            0x400              // minimum block size, must be a multiple of the master word size in terms of bytes and must be less than or equal to "BLOCK_SIZE_MAXIMUM"
 #define BLOCK_SIZE_MAXIMUM            (1024*1024)        // maximum block size, must be a multiple of the master word size in terms of bytes  and must not exceed 1MB since the masters are setup for a maximum transfer length of 21 bits in width (one byte shy of 2MB)
-#define BLOCK_TRAIL_DISTANCE_MINIMUM  1                  // the write master will always be this many blocks ahead of the read master, this value must be 1-255
+#define BLOCK_TRAIL_DISTANCE_MINIMUM  4                  // the write master will always be this many blocks ahead of the read master, this value must be 1-255
 #define BLOCK_TRAIL_DISTANCE_MAXIMUM  255                // the write master will always be this many blocks ahead of the read master, this value must be 1-255 and larger or equal than "BLOCK_TRAIL_DISTANCE_MINIMUM"
 #define ENABLE_SMALL_PRINTF           0                  // reduces code footprint at the expense of text formatting
 
