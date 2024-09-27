@@ -52,6 +52,12 @@ module qsys_top_r1 (
 		output wire        h2f_reset_reset,                      //                     h2f_reset.reset
 		input  wire [31:0] f2h_irq0_irq,                         //                      f2h_irq0.irq
 		input  wire [31:0] f2h_irq1_irq,                         //                      f2h_irq1.irq
+		input  wire [3:0]  merger_conduit_awcache,               //                merger_conduit.awcache
+		input  wire [2:0]  merger_conduit_awprot,                //                              .awprot
+		input  wire [4:0]  merger_conduit_awuser,                //                              .awuser
+		input  wire [3:0]  merger_conduit_arcache,               //                              .arcache
+		input  wire [4:0]  merger_conduit_aruser,                //                              .aruser
+		input  wire [2:0]  merger_conduit_arprot,                //                              .arprot
 		input  wire        clk_100_clk,                          //                       clk_100.clk
 		input  wire        emif_hps_pll_ref_clk_clk,             //          emif_hps_pll_ref_clk.clk
 		input  wire        emif_hps_oct_oct_rzqin,               //                  emif_hps_oct.oct_rzqin

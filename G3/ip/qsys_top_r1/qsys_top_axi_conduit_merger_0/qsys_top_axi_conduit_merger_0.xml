@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2024.09.23.17:26:20"
- outputDirectory="/home/wisig/Videos/quartus/G3/ip/qsys_top/qsys_top_axi_conduit_merger_0/">
+ date="2024.09.27.14:31:36"
+ outputDirectory="/home/wisig/Videos/gokul_2/quartus/G3/ip/qsys_top_r1/qsys_top_axi_conduit_merger_0/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -205,21 +205,21 @@
   <parameter name="AUTO_ALTERA_AXI_MASTER_ADDRESS_MAP" value="" />
   <generatedFiles>
    <file
-       path="/home/wisig/Videos/quartus/G3/ip/qsys_top/qsys_top_axi_conduit_merger_0/synth/qsys_top_axi_conduit_merger_0.v"
+       path="/home/wisig/Videos/gokul_2/quartus/G3/ip/qsys_top_r1/qsys_top_axi_conduit_merger_0/synth/qsys_top_axi_conduit_merger_0.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/wisig/Videos/quartus/G3/ip/qsys_top/qsys_top_axi_conduit_merger_0/synth/qsys_top_axi_conduit_merger_0.v"
+       path="/home/wisig/Videos/gokul_2/quartus/G3/ip/qsys_top_r1/qsys_top_axi_conduit_merger_0/synth/qsys_top_axi_conduit_merger_0.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/home/wisig/Videos/quartus/G3/ip/qsys_top/qsys_top_axi_conduit_merger_0.ip" />
+       path="/home/wisig/Videos/gokul_2/quartus/G3/ip/qsys_top_r1/qsys_top_axi_conduit_merger_0.ip" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="/home/wisig/Videos/quartus/G3/custom_ip/axi_conduit_merger/axi_conduit_merger_hw.tcl" />
+       path="/home/wisig/Videos/gokul_2/quartus/G3/custom_ip/axi_conduit_merger/axi_conduit_merger_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="qsys_top_axi_conduit_merger_0">"Generating: qsys_top_axi_conduit_merger_0"</message>
@@ -229,17 +229,17 @@
  <entity kind="axi_conduit_merger" version="1.0" name="axi_conduit_merger">
   <generatedFiles>
    <file
-       path="/home/wisig/Videos/quartus/G3/ip/qsys_top/qsys_top_axi_conduit_merger_0/axi_conduit_merger_10/synth/axi_conduit_merger.v"
+       path="/home/wisig/Videos/gokul_2/quartus/G3/ip/qsys_top_r1/qsys_top_axi_conduit_merger_0/axi_conduit_merger_10/synth/axi_conduit_merger.v"
        attributes="TOP_LEVEL_FILE" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/wisig/Videos/quartus/G3/ip/qsys_top/qsys_top_axi_conduit_merger_0/axi_conduit_merger_10/synth/axi_conduit_merger.v"
+       path="/home/wisig/Videos/gokul_2/quartus/G3/ip/qsys_top_r1/qsys_top_axi_conduit_merger_0/axi_conduit_merger_10/synth/axi_conduit_merger.v"
        attributes="TOP_LEVEL_FILE" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/home/wisig/Videos/quartus/G3/custom_ip/axi_conduit_merger/axi_conduit_merger_hw.tcl" />
+       path="/home/wisig/Videos/gokul_2/quartus/G3/custom_ip/axi_conduit_merger/axi_conduit_merger_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator

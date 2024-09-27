@@ -395,3 +395,4 @@ set_global_assignment -name BOARD default
 set_global_assignment -name USE_SIGNALTAP_FILE stp_r1.stp
 set_global_assignment -name SIGNALTAP_FILE stp_r1.stp
 set_global_assignment -name IP_SEARCH_PATHS custom_ip/**/*
+set_global_assignment -name IP_FILE ip/qsys_top_r1/qsys_top_axi_conduit_merger_0.ip

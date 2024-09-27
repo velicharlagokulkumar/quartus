@@ -57,6 +57,12 @@ module qsys_top_r1 (
 		output wire        h2f_reset_reset,                      //                     h2f_reset.reset
 		input  wire [31:0] f2h_irq0_irq,                         //                      f2h_irq0.irq
 		input  wire [31:0] f2h_irq1_irq,                         //                      f2h_irq1.irq
+		input  wire [3:0]  merger_conduit_awcache,               //                merger_conduit.awcache
+		input  wire [2:0]  merger_conduit_awprot,                //                              .awprot
+		input  wire [4:0]  merger_conduit_awuser,                //                              .awuser
+		input  wire [3:0]  merger_conduit_arcache,               //                              .arcache
+		input  wire [4:0]  merger_conduit_aruser,                //                              .aruser
+		input  wire [2:0]  merger_conduit_arprot,                //                              .arprot
 		input  wire        clk_100_clk,                          //                       clk_100.clk
 		input  wire        emif_hps_pll_ref_clk_clk,             //          emif_hps_pll_ref_clk.clk
 		input  wire        emif_hps_oct_oct_rzqin,               //                  emif_hps_oct.oct_rzqin
@@ -84,125 +90,199 @@ module qsys_top_r1 (
 		output wire        ninit_done_ninit_done                 //                    ninit_done.ninit_done
 	);
 
-	wire           prbs_generator_1_src_master_tvalid;                 // prbs_generator_1:src_valid -> pattern_writer_1:snk_valid
-	wire           prbs_generator_1_src_master_tready;                 // pattern_writer_1:snk_ready -> prbs_generator_1:src_ready
-	wire    [31:0] prbs_generator_1_src_master_tdata;                  // prbs_generator_1:src_data -> pattern_writer_1:snk_data
-	wire           ram_controller_1_src_write_cmd_tvalid;              // ram_controller_1:src_write_command_valid -> pattern_writer_1:snk_command_valid
-	wire           ram_controller_1_src_write_cmd_tready;              // pattern_writer_1:snk_command_ready -> ram_controller_1:src_write_command_ready
-	wire    [95:0] ram_controller_1_src_write_cmd_tdata;               // ram_controller_1:src_write_command_data -> pattern_writer_1:snk_command_data
-	wire           emif_calbus_0_emif_calbus_clk_clk;                  // emif_calbus_0:calbus_clk -> emif_hps:calbus_clk
-	wire           clk_100_out_clk_clk;                                // clk_100:out_clk -> [agilex_hps:f2h_axi_clk, agilex_hps:h2f_axi_clk, mm_interconnect_0:clk_100_out_clk_clk, mm_interconnect_1:clk_100_out_clk_clk, pattern_writer_1:clk, pio_0:clk, prbs_generator_1:clk, ram_controller_1:clk, rst_controller:clk, rst_controller_001:clk]
-	wire    [31:0] emif_calbus_0_emif_calbus_0_calbus_wdata;           // emif_calbus_0:calbus_wdata_0 -> emif_hps:calbus_wdata
-	wire    [19:0] emif_calbus_0_emif_calbus_0_calbus_address;         // emif_calbus_0:calbus_address_0 -> emif_hps:calbus_address
-	wire  [4095:0] emif_hps_emif_calbus_calbus_seq_param_tbl;          // emif_hps:calbus_seq_param_tbl -> emif_calbus_0:calbus_seq_param_tbl_0
-	wire           emif_calbus_0_emif_calbus_0_calbus_read;            // emif_calbus_0:calbus_read_0 -> emif_hps:calbus_read
-	wire           emif_calbus_0_emif_calbus_0_calbus_write;           // emif_calbus_0:calbus_write_0 -> emif_hps:calbus_write
-	wire    [31:0] emif_hps_emif_calbus_calbus_rdata;                  // emif_hps:calbus_rdata -> emif_calbus_0:calbus_rdata_0
-	wire     [1:0] agilex_hps_hps_emif_gp_to_emif;                     // agilex_hps:hps_emif_gp_to_emif -> emif_hps:hps_to_emif_gp
-	wire  [4095:0] emif_hps_hps_emif_emif_to_hps;                      // emif_hps:emif_to_hps -> agilex_hps:hps_emif_emif_to_hps
-	wire     [0:0] emif_hps_hps_emif_emif_to_gp;                       // emif_hps:emif_to_hps_gp -> agilex_hps:hps_emif_emif_to_gp
-	wire  [4095:0] agilex_hps_hps_emif_hps_to_emif;                    // agilex_hps:hps_emif_hps_to_emif -> emif_hps:hps_to_emif
-	wire           pattern_writer_1_avalon_master_waitrequest;         // mm_interconnect_0:pattern_writer_1_avalon_master_waitrequest -> pattern_writer_1:master_waitrequest
-	wire    [31:0] pattern_writer_1_avalon_master_address;             // pattern_writer_1:master_address -> mm_interconnect_0:pattern_writer_1_avalon_master_address
-	wire     [3:0] pattern_writer_1_avalon_master_byteenable;          // pattern_writer_1:master_byteenable -> mm_interconnect_0:pattern_writer_1_avalon_master_byteenable
-	wire           pattern_writer_1_avalon_master_write;               // pattern_writer_1:master_write -> mm_interconnect_0:pattern_writer_1_avalon_master_write
-	wire    [31:0] pattern_writer_1_avalon_master_writedata;           // pattern_writer_1:master_writedata -> mm_interconnect_0:pattern_writer_1_avalon_master_writedata
-	wire     [1:0] pattern_writer_1_avalon_master_burstcount;          // pattern_writer_1:master_burstcount -> mm_interconnect_0:pattern_writer_1_avalon_master_burstcount
-	wire     [1:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awburst; // mm_interconnect_0:agilex_hps_f2h_axi_slave_awburst -> agilex_hps:f2h_AWBURST
-	wire    [22:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awuser;  // mm_interconnect_0:agilex_hps_f2h_axi_slave_awuser -> agilex_hps:f2h_AWUSER
-	wire     [7:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arlen;   // mm_interconnect_0:agilex_hps_f2h_axi_slave_arlen -> agilex_hps:f2h_ARLEN
-	wire     [3:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arqos;   // mm_interconnect_0:agilex_hps_f2h_axi_slave_arqos -> agilex_hps:f2h_ARQOS
-	wire    [63:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_wstrb;   // mm_interconnect_0:agilex_hps_f2h_axi_slave_wstrb -> agilex_hps:f2h_WSTRB
-	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_wready;  // agilex_hps:f2h_WREADY -> mm_interconnect_0:agilex_hps_f2h_axi_slave_wready
-	wire     [4:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_rid;     // agilex_hps:f2h_RID -> mm_interconnect_0:agilex_hps_f2h_axi_slave_rid
-	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_rready;  // mm_interconnect_0:agilex_hps_f2h_axi_slave_rready -> agilex_hps:f2h_RREADY
-	wire     [7:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awlen;   // mm_interconnect_0:agilex_hps_f2h_axi_slave_awlen -> agilex_hps:f2h_AWLEN
-	wire     [3:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awqos;   // mm_interconnect_0:agilex_hps_f2h_axi_slave_awqos -> agilex_hps:f2h_AWQOS
-	wire     [3:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arcache; // mm_interconnect_0:agilex_hps_f2h_axi_slave_arcache -> agilex_hps:f2h_ARCACHE
-	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_wvalid;  // mm_interconnect_0:agilex_hps_f2h_axi_slave_wvalid -> agilex_hps:f2h_WVALID
-	wire    [31:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_araddr;  // mm_interconnect_0:agilex_hps_f2h_axi_slave_araddr -> agilex_hps:f2h_ARADDR
-	wire     [2:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arprot;  // mm_interconnect_0:agilex_hps_f2h_axi_slave_arprot -> agilex_hps:f2h_ARPROT
-	wire     [2:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awprot;  // mm_interconnect_0:agilex_hps_f2h_axi_slave_awprot -> agilex_hps:f2h_AWPROT
-	wire   [511:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_wdata;   // mm_interconnect_0:agilex_hps_f2h_axi_slave_wdata -> agilex_hps:f2h_WDATA
-	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_arvalid; // mm_interconnect_0:agilex_hps_f2h_axi_slave_arvalid -> agilex_hps:f2h_ARVALID
-	wire     [3:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awcache; // mm_interconnect_0:agilex_hps_f2h_axi_slave_awcache -> agilex_hps:f2h_AWCACHE
-	wire     [4:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arid;    // mm_interconnect_0:agilex_hps_f2h_axi_slave_arid -> agilex_hps:f2h_ARID
-	wire     [0:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arlock;  // mm_interconnect_0:agilex_hps_f2h_axi_slave_arlock -> agilex_hps:f2h_ARLOCK
-	wire     [0:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awlock;  // mm_interconnect_0:agilex_hps_f2h_axi_slave_awlock -> agilex_hps:f2h_AWLOCK
-	wire    [31:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awaddr;  // mm_interconnect_0:agilex_hps_f2h_axi_slave_awaddr -> agilex_hps:f2h_AWADDR
-	wire     [1:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_bresp;   // agilex_hps:f2h_BRESP -> mm_interconnect_0:agilex_hps_f2h_axi_slave_bresp
-	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_arready; // agilex_hps:f2h_ARREADY -> mm_interconnect_0:agilex_hps_f2h_axi_slave_arready
-	wire   [511:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_rdata;   // agilex_hps:f2h_RDATA -> mm_interconnect_0:agilex_hps_f2h_axi_slave_rdata
-	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_awready; // agilex_hps:f2h_AWREADY -> mm_interconnect_0:agilex_hps_f2h_axi_slave_awready
-	wire     [1:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arburst; // mm_interconnect_0:agilex_hps_f2h_axi_slave_arburst -> agilex_hps:f2h_ARBURST
-	wire     [2:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arsize;  // mm_interconnect_0:agilex_hps_f2h_axi_slave_arsize -> agilex_hps:f2h_ARSIZE
-	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_bready;  // mm_interconnect_0:agilex_hps_f2h_axi_slave_bready -> agilex_hps:f2h_BREADY
-	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_rlast;   // agilex_hps:f2h_RLAST -> mm_interconnect_0:agilex_hps_f2h_axi_slave_rlast
-	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_wlast;   // mm_interconnect_0:agilex_hps_f2h_axi_slave_wlast -> agilex_hps:f2h_WLAST
-	wire     [1:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_rresp;   // agilex_hps:f2h_RRESP -> mm_interconnect_0:agilex_hps_f2h_axi_slave_rresp
-	wire     [4:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awid;    // mm_interconnect_0:agilex_hps_f2h_axi_slave_awid -> agilex_hps:f2h_AWID
-	wire     [4:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_bid;     // agilex_hps:f2h_BID -> mm_interconnect_0:agilex_hps_f2h_axi_slave_bid
-	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_bvalid;  // agilex_hps:f2h_BVALID -> mm_interconnect_0:agilex_hps_f2h_axi_slave_bvalid
-	wire     [2:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awsize;  // mm_interconnect_0:agilex_hps_f2h_axi_slave_awsize -> agilex_hps:f2h_AWSIZE
-	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_awvalid; // mm_interconnect_0:agilex_hps_f2h_axi_slave_awvalid -> agilex_hps:f2h_AWVALID
-	wire    [22:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_aruser;  // mm_interconnect_0:agilex_hps_f2h_axi_slave_aruser -> agilex_hps:f2h_ARUSER
-	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_rvalid;  // agilex_hps:f2h_RVALID -> mm_interconnect_0:agilex_hps_f2h_axi_slave_rvalid
-	wire     [1:0] agilex_hps_h2f_axi_master_awburst;                  // agilex_hps:h2f_AWBURST -> mm_interconnect_1:agilex_hps_h2f_axi_master_awburst
-	wire     [7:0] agilex_hps_h2f_axi_master_arlen;                    // agilex_hps:h2f_ARLEN -> mm_interconnect_1:agilex_hps_h2f_axi_master_arlen
-	wire     [3:0] agilex_hps_h2f_axi_master_wstrb;                    // agilex_hps:h2f_WSTRB -> mm_interconnect_1:agilex_hps_h2f_axi_master_wstrb
-	wire           agilex_hps_h2f_axi_master_wready;                   // mm_interconnect_1:agilex_hps_h2f_axi_master_wready -> agilex_hps:h2f_WREADY
-	wire     [3:0] agilex_hps_h2f_axi_master_rid;                      // mm_interconnect_1:agilex_hps_h2f_axi_master_rid -> agilex_hps:h2f_RID
-	wire           agilex_hps_h2f_axi_master_rready;                   // agilex_hps:h2f_RREADY -> mm_interconnect_1:agilex_hps_h2f_axi_master_rready
-	wire     [7:0] agilex_hps_h2f_axi_master_awlen;                    // agilex_hps:h2f_AWLEN -> mm_interconnect_1:agilex_hps_h2f_axi_master_awlen
-	wire     [3:0] agilex_hps_h2f_axi_master_arcache;                  // agilex_hps:h2f_ARCACHE -> mm_interconnect_1:agilex_hps_h2f_axi_master_arcache
-	wire           agilex_hps_h2f_axi_master_wvalid;                   // agilex_hps:h2f_WVALID -> mm_interconnect_1:agilex_hps_h2f_axi_master_wvalid
-	wire    [31:0] agilex_hps_h2f_axi_master_araddr;                   // agilex_hps:h2f_ARADDR -> mm_interconnect_1:agilex_hps_h2f_axi_master_araddr
-	wire     [2:0] agilex_hps_h2f_axi_master_arprot;                   // agilex_hps:h2f_ARPROT -> mm_interconnect_1:agilex_hps_h2f_axi_master_arprot
-	wire     [2:0] agilex_hps_h2f_axi_master_awprot;                   // agilex_hps:h2f_AWPROT -> mm_interconnect_1:agilex_hps_h2f_axi_master_awprot
-	wire    [31:0] agilex_hps_h2f_axi_master_wdata;                    // agilex_hps:h2f_WDATA -> mm_interconnect_1:agilex_hps_h2f_axi_master_wdata
-	wire           agilex_hps_h2f_axi_master_arvalid;                  // agilex_hps:h2f_ARVALID -> mm_interconnect_1:agilex_hps_h2f_axi_master_arvalid
-	wire     [3:0] agilex_hps_h2f_axi_master_awcache;                  // agilex_hps:h2f_AWCACHE -> mm_interconnect_1:agilex_hps_h2f_axi_master_awcache
-	wire     [3:0] agilex_hps_h2f_axi_master_arid;                     // agilex_hps:h2f_ARID -> mm_interconnect_1:agilex_hps_h2f_axi_master_arid
-	wire           agilex_hps_h2f_axi_master_arlock;                   // agilex_hps:h2f_ARLOCK -> mm_interconnect_1:agilex_hps_h2f_axi_master_arlock
-	wire           agilex_hps_h2f_axi_master_awlock;                   // agilex_hps:h2f_AWLOCK -> mm_interconnect_1:agilex_hps_h2f_axi_master_awlock
-	wire    [31:0] agilex_hps_h2f_axi_master_awaddr;                   // agilex_hps:h2f_AWADDR -> mm_interconnect_1:agilex_hps_h2f_axi_master_awaddr
-	wire     [1:0] agilex_hps_h2f_axi_master_bresp;                    // mm_interconnect_1:agilex_hps_h2f_axi_master_bresp -> agilex_hps:h2f_BRESP
-	wire           agilex_hps_h2f_axi_master_arready;                  // mm_interconnect_1:agilex_hps_h2f_axi_master_arready -> agilex_hps:h2f_ARREADY
-	wire    [31:0] agilex_hps_h2f_axi_master_rdata;                    // mm_interconnect_1:agilex_hps_h2f_axi_master_rdata -> agilex_hps:h2f_RDATA
-	wire           agilex_hps_h2f_axi_master_awready;                  // mm_interconnect_1:agilex_hps_h2f_axi_master_awready -> agilex_hps:h2f_AWREADY
-	wire     [1:0] agilex_hps_h2f_axi_master_arburst;                  // agilex_hps:h2f_ARBURST -> mm_interconnect_1:agilex_hps_h2f_axi_master_arburst
-	wire     [2:0] agilex_hps_h2f_axi_master_arsize;                   // agilex_hps:h2f_ARSIZE -> mm_interconnect_1:agilex_hps_h2f_axi_master_arsize
-	wire           agilex_hps_h2f_axi_master_bready;                   // agilex_hps:h2f_BREADY -> mm_interconnect_1:agilex_hps_h2f_axi_master_bready
-	wire           agilex_hps_h2f_axi_master_rlast;                    // mm_interconnect_1:agilex_hps_h2f_axi_master_rlast -> agilex_hps:h2f_RLAST
-	wire           agilex_hps_h2f_axi_master_wlast;                    // agilex_hps:h2f_WLAST -> mm_interconnect_1:agilex_hps_h2f_axi_master_wlast
-	wire     [1:0] agilex_hps_h2f_axi_master_rresp;                    // mm_interconnect_1:agilex_hps_h2f_axi_master_rresp -> agilex_hps:h2f_RRESP
-	wire     [3:0] agilex_hps_h2f_axi_master_awid;                     // agilex_hps:h2f_AWID -> mm_interconnect_1:agilex_hps_h2f_axi_master_awid
-	wire     [3:0] agilex_hps_h2f_axi_master_bid;                      // mm_interconnect_1:agilex_hps_h2f_axi_master_bid -> agilex_hps:h2f_BID
-	wire           agilex_hps_h2f_axi_master_bvalid;                   // mm_interconnect_1:agilex_hps_h2f_axi_master_bvalid -> agilex_hps:h2f_BVALID
-	wire     [2:0] agilex_hps_h2f_axi_master_awsize;                   // agilex_hps:h2f_AWSIZE -> mm_interconnect_1:agilex_hps_h2f_axi_master_awsize
-	wire           agilex_hps_h2f_axi_master_awvalid;                  // agilex_hps:h2f_AWVALID -> mm_interconnect_1:agilex_hps_h2f_axi_master_awvalid
-	wire           agilex_hps_h2f_axi_master_rvalid;                   // mm_interconnect_1:agilex_hps_h2f_axi_master_rvalid -> agilex_hps:h2f_RVALID
-	wire    [31:0] mm_interconnect_1_ram_controller_1_csr_readdata;    // ram_controller_1:csr_readdata -> mm_interconnect_1:ram_controller_1_csr_readdata
-	wire           mm_interconnect_1_ram_controller_1_csr_waitrequest; // ram_controller_1:csr_waitrequest -> mm_interconnect_1:ram_controller_1_csr_waitrequest
-	wire     [2:0] mm_interconnect_1_ram_controller_1_csr_address;     // mm_interconnect_1:ram_controller_1_csr_address -> ram_controller_1:csr_address
-	wire           mm_interconnect_1_ram_controller_1_csr_read;        // mm_interconnect_1:ram_controller_1_csr_read -> ram_controller_1:csr_read
-	wire     [3:0] mm_interconnect_1_ram_controller_1_csr_byteenable;  // mm_interconnect_1:ram_controller_1_csr_byteenable -> ram_controller_1:csr_byteenable
-	wire           mm_interconnect_1_ram_controller_1_csr_write;       // mm_interconnect_1:ram_controller_1_csr_write -> ram_controller_1:csr_write
-	wire    [31:0] mm_interconnect_1_ram_controller_1_csr_writedata;   // mm_interconnect_1:ram_controller_1_csr_writedata -> ram_controller_1:csr_writedata
-	wire    [31:0] mm_interconnect_1_prbs_generator_1_csr_readdata;    // prbs_generator_1:csr_readdata -> mm_interconnect_1:prbs_generator_1_csr_readdata
-	wire     [2:0] mm_interconnect_1_prbs_generator_1_csr_address;     // mm_interconnect_1:prbs_generator_1_csr_address -> prbs_generator_1:csr_address
-	wire           mm_interconnect_1_prbs_generator_1_csr_read;        // mm_interconnect_1:prbs_generator_1_csr_read -> prbs_generator_1:csr_read
-	wire     [3:0] mm_interconnect_1_prbs_generator_1_csr_byteenable;  // mm_interconnect_1:prbs_generator_1_csr_byteenable -> prbs_generator_1:csr_byteenable
-	wire           mm_interconnect_1_prbs_generator_1_csr_write;       // mm_interconnect_1:prbs_generator_1_csr_write -> prbs_generator_1:csr_write
-	wire    [31:0] mm_interconnect_1_prbs_generator_1_csr_writedata;   // mm_interconnect_1:prbs_generator_1_csr_writedata -> prbs_generator_1:csr_writedata
-	wire           mm_interconnect_1_pio_0_s1_chipselect;              // mm_interconnect_1:pio_0_s1_chipselect -> pio_0:chipselect
-	wire    [31:0] mm_interconnect_1_pio_0_s1_readdata;                // pio_0:readdata -> mm_interconnect_1:pio_0_s1_readdata
-	wire     [1:0] mm_interconnect_1_pio_0_s1_address;                 // mm_interconnect_1:pio_0_s1_address -> pio_0:address
-	wire           mm_interconnect_1_pio_0_s1_write;                   // mm_interconnect_1:pio_0_s1_write -> pio_0:write_n
-	wire    [31:0] mm_interconnect_1_pio_0_s1_writedata;               // mm_interconnect_1:pio_0_s1_writedata -> pio_0:writedata
-	wire           rst_controller_reset_out_reset;                     // rst_controller:reset_out -> [agilex_hps:f2h_axi_rst_n, agilex_hps:h2f_axi_rst_n, pattern_writer_1:reset, pio_0:reset_n, prbs_generator_1:reset, ram_controller_1:reset]
-	wire           rst_in_out_reset_reset;                             // rst_in:out_reset_n -> [rst_controller:reset_in0, rst_controller_001:reset_in0]
-	wire           rst_controller_001_reset_out_reset;                 // rst_controller_001:reset_out -> [mm_interconnect_0:pattern_writer_1_avalon_master_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_1:agilex_hps_h2f_axi_master_translator_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:agilex_hps_h2f_axi_reset_reset_bridge_in_reset_reset]
+	wire           prbs_generator_1_src_master_tvalid;                              // prbs_generator_1:src_valid -> pattern_writer_1:snk_valid
+	wire           prbs_generator_1_src_master_tready;                              // pattern_writer_1:snk_ready -> prbs_generator_1:src_ready
+	wire    [31:0] prbs_generator_1_src_master_tdata;                               // prbs_generator_1:src_data -> pattern_writer_1:snk_data
+	wire           ram_controller_1_src_write_cmd_tvalid;                           // ram_controller_1:src_write_command_valid -> pattern_writer_1:snk_command_valid
+	wire           ram_controller_1_src_write_cmd_tready;                           // pattern_writer_1:snk_command_ready -> ram_controller_1:src_write_command_ready
+	wire    [95:0] ram_controller_1_src_write_cmd_tdata;                            // ram_controller_1:src_write_command_data -> pattern_writer_1:snk_command_data
+	wire           emif_calbus_0_emif_calbus_clk_clk;                               // emif_calbus_0:calbus_clk -> emif_hps:calbus_clk
+	wire           clk_100_out_clk_clk;                                             // clk_100:out_clk -> [agilex_hps:f2h_axi_clk, agilex_hps:h2f_axi_clk, axi_conduit_merger_0:clk, mm_interconnect_0:clk_100_out_clk_clk, mm_interconnect_1:clk_100_out_clk_clk, mm_interconnect_2:clk_100_out_clk_clk, pattern_writer_1:clk, pio_0:clk, prbs_generator_1:clk, ram_controller_1:clk, rst_controller:clk, rst_controller_001:clk]
+	wire    [31:0] emif_calbus_0_emif_calbus_0_calbus_wdata;                        // emif_calbus_0:calbus_wdata_0 -> emif_hps:calbus_wdata
+	wire    [19:0] emif_calbus_0_emif_calbus_0_calbus_address;                      // emif_calbus_0:calbus_address_0 -> emif_hps:calbus_address
+	wire  [4095:0] emif_hps_emif_calbus_calbus_seq_param_tbl;                       // emif_hps:calbus_seq_param_tbl -> emif_calbus_0:calbus_seq_param_tbl_0
+	wire           emif_calbus_0_emif_calbus_0_calbus_read;                         // emif_calbus_0:calbus_read_0 -> emif_hps:calbus_read
+	wire           emif_calbus_0_emif_calbus_0_calbus_write;                        // emif_calbus_0:calbus_write_0 -> emif_hps:calbus_write
+	wire    [31:0] emif_hps_emif_calbus_calbus_rdata;                               // emif_hps:calbus_rdata -> emif_calbus_0:calbus_rdata_0
+	wire     [1:0] agilex_hps_hps_emif_gp_to_emif;                                  // agilex_hps:hps_emif_gp_to_emif -> emif_hps:hps_to_emif_gp
+	wire  [4095:0] emif_hps_hps_emif_emif_to_hps;                                   // emif_hps:emif_to_hps -> agilex_hps:hps_emif_emif_to_hps
+	wire     [0:0] emif_hps_hps_emif_emif_to_gp;                                    // emif_hps:emif_to_hps_gp -> agilex_hps:hps_emif_emif_to_gp
+	wire  [4095:0] agilex_hps_hps_emif_hps_to_emif;                                 // agilex_hps:hps_emif_hps_to_emif -> emif_hps:hps_to_emif
+	wire     [1:0] axi_conduit_merger_0_altera_axi_master_awburst;                  // axi_conduit_merger_0:m_awburst -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_awburst
+	wire     [4:0] axi_conduit_merger_0_altera_axi_master_awuser;                   // axi_conduit_merger_0:m_awuser -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_awuser
+	wire     [3:0] axi_conduit_merger_0_altera_axi_master_arlen;                    // axi_conduit_merger_0:m_arlen -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_arlen
+	wire           axi_conduit_merger_0_altera_axi_master_wready;                   // mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_wready -> axi_conduit_merger_0:m_wready
+	wire     [3:0] axi_conduit_merger_0_altera_axi_master_wstrb;                    // axi_conduit_merger_0:m_wstrb -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_wstrb
+	wire     [4:0] axi_conduit_merger_0_altera_axi_master_rid;                      // mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_rid -> axi_conduit_merger_0:m_rid
+	wire           axi_conduit_merger_0_altera_axi_master_rready;                   // axi_conduit_merger_0:m_rready -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_rready
+	wire     [3:0] axi_conduit_merger_0_altera_axi_master_awlen;                    // axi_conduit_merger_0:m_awlen -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_awlen
+	wire     [4:0] axi_conduit_merger_0_altera_axi_master_wid;                      // axi_conduit_merger_0:m_wid -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_wid
+	wire     [3:0] axi_conduit_merger_0_altera_axi_master_arcache;                  // axi_conduit_merger_0:m_arcache -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_arcache
+	wire           axi_conduit_merger_0_altera_axi_master_wvalid;                   // axi_conduit_merger_0:m_wvalid -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_wvalid
+	wire    [31:0] axi_conduit_merger_0_altera_axi_master_araddr;                   // axi_conduit_merger_0:m_araddr -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_araddr
+	wire     [2:0] axi_conduit_merger_0_altera_axi_master_arprot;                   // axi_conduit_merger_0:m_arprot -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_arprot
+	wire     [2:0] axi_conduit_merger_0_altera_axi_master_awprot;                   // axi_conduit_merger_0:m_awprot -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_awprot
+	wire           axi_conduit_merger_0_altera_axi_master_arvalid;                  // axi_conduit_merger_0:m_arvalid -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_arvalid
+	wire    [31:0] axi_conduit_merger_0_altera_axi_master_wdata;                    // axi_conduit_merger_0:m_wdata -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_wdata
+	wire     [3:0] axi_conduit_merger_0_altera_axi_master_awcache;                  // axi_conduit_merger_0:m_awcache -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_awcache
+	wire     [4:0] axi_conduit_merger_0_altera_axi_master_arid;                     // axi_conduit_merger_0:m_arid -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_arid
+	wire     [1:0] axi_conduit_merger_0_altera_axi_master_arlock;                   // axi_conduit_merger_0:m_arlock -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_arlock
+	wire     [1:0] axi_conduit_merger_0_altera_axi_master_awlock;                   // axi_conduit_merger_0:m_awlock -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_awlock
+	wire    [31:0] axi_conduit_merger_0_altera_axi_master_awaddr;                   // axi_conduit_merger_0:m_awaddr -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_awaddr
+	wire           axi_conduit_merger_0_altera_axi_master_arready;                  // mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_arready -> axi_conduit_merger_0:m_arready
+	wire     [1:0] axi_conduit_merger_0_altera_axi_master_bresp;                    // mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_bresp -> axi_conduit_merger_0:m_bresp
+	wire    [31:0] axi_conduit_merger_0_altera_axi_master_rdata;                    // mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_rdata -> axi_conduit_merger_0:m_rdata
+	wire           axi_conduit_merger_0_altera_axi_master_awready;                  // mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_awready -> axi_conduit_merger_0:m_awready
+	wire     [1:0] axi_conduit_merger_0_altera_axi_master_arburst;                  // axi_conduit_merger_0:m_arburst -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_arburst
+	wire     [2:0] axi_conduit_merger_0_altera_axi_master_arsize;                   // axi_conduit_merger_0:m_arsize -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_arsize
+	wire           axi_conduit_merger_0_altera_axi_master_rlast;                    // mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_rlast -> axi_conduit_merger_0:m_rlast
+	wire           axi_conduit_merger_0_altera_axi_master_bready;                   // axi_conduit_merger_0:m_bready -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_bready
+	wire           axi_conduit_merger_0_altera_axi_master_wlast;                    // axi_conduit_merger_0:m_wlast -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_wlast
+	wire     [1:0] axi_conduit_merger_0_altera_axi_master_rresp;                    // mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_rresp -> axi_conduit_merger_0:m_rresp
+	wire     [4:0] axi_conduit_merger_0_altera_axi_master_awid;                     // axi_conduit_merger_0:m_awid -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_awid
+	wire     [4:0] axi_conduit_merger_0_altera_axi_master_bid;                      // mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_bid -> axi_conduit_merger_0:m_bid
+	wire           axi_conduit_merger_0_altera_axi_master_bvalid;                   // mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_bvalid -> axi_conduit_merger_0:m_bvalid
+	wire           axi_conduit_merger_0_altera_axi_master_awvalid;                  // axi_conduit_merger_0:m_awvalid -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_awvalid
+	wire     [2:0] axi_conduit_merger_0_altera_axi_master_awsize;                   // axi_conduit_merger_0:m_awsize -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_awsize
+	wire     [4:0] axi_conduit_merger_0_altera_axi_master_aruser;                   // axi_conduit_merger_0:m_aruser -> mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_aruser
+	wire           axi_conduit_merger_0_altera_axi_master_rvalid;                   // mm_interconnect_0:axi_conduit_merger_0_altera_axi_master_rvalid -> axi_conduit_merger_0:m_rvalid
+	wire     [1:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awburst;              // mm_interconnect_0:agilex_hps_f2h_axi_slave_awburst -> agilex_hps:f2h_AWBURST
+	wire    [22:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awuser;               // mm_interconnect_0:agilex_hps_f2h_axi_slave_awuser -> agilex_hps:f2h_AWUSER
+	wire     [7:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arlen;                // mm_interconnect_0:agilex_hps_f2h_axi_slave_arlen -> agilex_hps:f2h_ARLEN
+	wire     [3:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arqos;                // mm_interconnect_0:agilex_hps_f2h_axi_slave_arqos -> agilex_hps:f2h_ARQOS
+	wire    [63:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_wstrb;                // mm_interconnect_0:agilex_hps_f2h_axi_slave_wstrb -> agilex_hps:f2h_WSTRB
+	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_wready;               // agilex_hps:f2h_WREADY -> mm_interconnect_0:agilex_hps_f2h_axi_slave_wready
+	wire     [4:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_rid;                  // agilex_hps:f2h_RID -> mm_interconnect_0:agilex_hps_f2h_axi_slave_rid
+	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_rready;               // mm_interconnect_0:agilex_hps_f2h_axi_slave_rready -> agilex_hps:f2h_RREADY
+	wire     [7:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awlen;                // mm_interconnect_0:agilex_hps_f2h_axi_slave_awlen -> agilex_hps:f2h_AWLEN
+	wire     [3:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awqos;                // mm_interconnect_0:agilex_hps_f2h_axi_slave_awqos -> agilex_hps:f2h_AWQOS
+	wire     [3:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arcache;              // mm_interconnect_0:agilex_hps_f2h_axi_slave_arcache -> agilex_hps:f2h_ARCACHE
+	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_wvalid;               // mm_interconnect_0:agilex_hps_f2h_axi_slave_wvalid -> agilex_hps:f2h_WVALID
+	wire    [31:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_araddr;               // mm_interconnect_0:agilex_hps_f2h_axi_slave_araddr -> agilex_hps:f2h_ARADDR
+	wire     [2:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arprot;               // mm_interconnect_0:agilex_hps_f2h_axi_slave_arprot -> agilex_hps:f2h_ARPROT
+	wire     [2:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awprot;               // mm_interconnect_0:agilex_hps_f2h_axi_slave_awprot -> agilex_hps:f2h_AWPROT
+	wire   [511:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_wdata;                // mm_interconnect_0:agilex_hps_f2h_axi_slave_wdata -> agilex_hps:f2h_WDATA
+	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_arvalid;              // mm_interconnect_0:agilex_hps_f2h_axi_slave_arvalid -> agilex_hps:f2h_ARVALID
+	wire     [3:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awcache;              // mm_interconnect_0:agilex_hps_f2h_axi_slave_awcache -> agilex_hps:f2h_AWCACHE
+	wire     [4:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arid;                 // mm_interconnect_0:agilex_hps_f2h_axi_slave_arid -> agilex_hps:f2h_ARID
+	wire     [0:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arlock;               // mm_interconnect_0:agilex_hps_f2h_axi_slave_arlock -> agilex_hps:f2h_ARLOCK
+	wire     [0:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awlock;               // mm_interconnect_0:agilex_hps_f2h_axi_slave_awlock -> agilex_hps:f2h_AWLOCK
+	wire    [31:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awaddr;               // mm_interconnect_0:agilex_hps_f2h_axi_slave_awaddr -> agilex_hps:f2h_AWADDR
+	wire     [1:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_bresp;                // agilex_hps:f2h_BRESP -> mm_interconnect_0:agilex_hps_f2h_axi_slave_bresp
+	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_arready;              // agilex_hps:f2h_ARREADY -> mm_interconnect_0:agilex_hps_f2h_axi_slave_arready
+	wire   [511:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_rdata;                // agilex_hps:f2h_RDATA -> mm_interconnect_0:agilex_hps_f2h_axi_slave_rdata
+	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_awready;              // agilex_hps:f2h_AWREADY -> mm_interconnect_0:agilex_hps_f2h_axi_slave_awready
+	wire     [1:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arburst;              // mm_interconnect_0:agilex_hps_f2h_axi_slave_arburst -> agilex_hps:f2h_ARBURST
+	wire     [2:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_arsize;               // mm_interconnect_0:agilex_hps_f2h_axi_slave_arsize -> agilex_hps:f2h_ARSIZE
+	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_bready;               // mm_interconnect_0:agilex_hps_f2h_axi_slave_bready -> agilex_hps:f2h_BREADY
+	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_rlast;                // agilex_hps:f2h_RLAST -> mm_interconnect_0:agilex_hps_f2h_axi_slave_rlast
+	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_wlast;                // mm_interconnect_0:agilex_hps_f2h_axi_slave_wlast -> agilex_hps:f2h_WLAST
+	wire     [1:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_rresp;                // agilex_hps:f2h_RRESP -> mm_interconnect_0:agilex_hps_f2h_axi_slave_rresp
+	wire     [4:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awid;                 // mm_interconnect_0:agilex_hps_f2h_axi_slave_awid -> agilex_hps:f2h_AWID
+	wire     [4:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_bid;                  // agilex_hps:f2h_BID -> mm_interconnect_0:agilex_hps_f2h_axi_slave_bid
+	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_bvalid;               // agilex_hps:f2h_BVALID -> mm_interconnect_0:agilex_hps_f2h_axi_slave_bvalid
+	wire     [2:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_awsize;               // mm_interconnect_0:agilex_hps_f2h_axi_slave_awsize -> agilex_hps:f2h_AWSIZE
+	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_awvalid;              // mm_interconnect_0:agilex_hps_f2h_axi_slave_awvalid -> agilex_hps:f2h_AWVALID
+	wire    [22:0] mm_interconnect_0_agilex_hps_f2h_axi_slave_aruser;               // mm_interconnect_0:agilex_hps_f2h_axi_slave_aruser -> agilex_hps:f2h_ARUSER
+	wire           mm_interconnect_0_agilex_hps_f2h_axi_slave_rvalid;               // agilex_hps:f2h_RVALID -> mm_interconnect_0:agilex_hps_f2h_axi_slave_rvalid
+	wire           pattern_writer_1_avalon_master_waitrequest;                      // mm_interconnect_1:pattern_writer_1_avalon_master_waitrequest -> pattern_writer_1:master_waitrequest
+	wire    [31:0] pattern_writer_1_avalon_master_address;                          // pattern_writer_1:master_address -> mm_interconnect_1:pattern_writer_1_avalon_master_address
+	wire     [3:0] pattern_writer_1_avalon_master_byteenable;                       // pattern_writer_1:master_byteenable -> mm_interconnect_1:pattern_writer_1_avalon_master_byteenable
+	wire           pattern_writer_1_avalon_master_write;                            // pattern_writer_1:master_write -> mm_interconnect_1:pattern_writer_1_avalon_master_write
+	wire    [31:0] pattern_writer_1_avalon_master_writedata;                        // pattern_writer_1:master_writedata -> mm_interconnect_1:pattern_writer_1_avalon_master_writedata
+	wire     [1:0] pattern_writer_1_avalon_master_burstcount;                       // pattern_writer_1:master_burstcount -> mm_interconnect_1:pattern_writer_1_avalon_master_burstcount
+	wire     [1:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awburst; // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_awburst -> axi_conduit_merger_0:s_awburst
+	wire     [3:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arlen;   // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_arlen -> axi_conduit_merger_0:s_arlen
+	wire     [3:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wstrb;   // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_wstrb -> axi_conduit_merger_0:s_wstrb
+	wire           mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wready;  // axi_conduit_merger_0:s_wready -> mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_wready
+	wire     [4:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rid;     // axi_conduit_merger_0:s_rid -> mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_rid
+	wire           mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rready;  // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_rready -> axi_conduit_merger_0:s_rready
+	wire     [3:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awlen;   // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_awlen -> axi_conduit_merger_0:s_awlen
+	wire     [4:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wid;     // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_wid -> axi_conduit_merger_0:s_wid
+	wire     [3:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arcache; // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_arcache -> axi_conduit_merger_0:s_arcache
+	wire           mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wvalid;  // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_wvalid -> axi_conduit_merger_0:s_wvalid
+	wire    [31:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_araddr;  // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_araddr -> axi_conduit_merger_0:s_araddr
+	wire     [2:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arprot;  // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_arprot -> axi_conduit_merger_0:s_arprot
+	wire     [2:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awprot;  // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_awprot -> axi_conduit_merger_0:s_awprot
+	wire    [31:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wdata;   // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_wdata -> axi_conduit_merger_0:s_wdata
+	wire           mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arvalid; // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_arvalid -> axi_conduit_merger_0:s_arvalid
+	wire     [3:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awcache; // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_awcache -> axi_conduit_merger_0:s_awcache
+	wire     [4:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arid;    // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_arid -> axi_conduit_merger_0:s_arid
+	wire     [1:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arlock;  // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_arlock -> axi_conduit_merger_0:s_arlock
+	wire     [1:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awlock;  // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_awlock -> axi_conduit_merger_0:s_awlock
+	wire    [31:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awaddr;  // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_awaddr -> axi_conduit_merger_0:s_awaddr
+	wire     [1:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_bresp;   // axi_conduit_merger_0:s_bresp -> mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_bresp
+	wire           mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arready; // axi_conduit_merger_0:s_arready -> mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_arready
+	wire    [31:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rdata;   // axi_conduit_merger_0:s_rdata -> mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_rdata
+	wire           mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awready; // axi_conduit_merger_0:s_awready -> mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_awready
+	wire     [1:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arburst; // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_arburst -> axi_conduit_merger_0:s_arburst
+	wire     [2:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arsize;  // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_arsize -> axi_conduit_merger_0:s_arsize
+	wire           mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_bready;  // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_bready -> axi_conduit_merger_0:s_bready
+	wire           mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rlast;   // axi_conduit_merger_0:s_rlast -> mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_rlast
+	wire           mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wlast;   // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_wlast -> axi_conduit_merger_0:s_wlast
+	wire     [1:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rresp;   // axi_conduit_merger_0:s_rresp -> mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_rresp
+	wire     [4:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awid;    // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_awid -> axi_conduit_merger_0:s_awid
+	wire     [4:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_bid;     // axi_conduit_merger_0:s_bid -> mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_bid
+	wire           mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_bvalid;  // axi_conduit_merger_0:s_bvalid -> mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_bvalid
+	wire     [2:0] mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awsize;  // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_awsize -> axi_conduit_merger_0:s_awsize
+	wire           mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awvalid; // mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_awvalid -> axi_conduit_merger_0:s_awvalid
+	wire           mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rvalid;  // axi_conduit_merger_0:s_rvalid -> mm_interconnect_1:axi_conduit_merger_0_altera_axi_slave_rvalid
+	wire     [1:0] agilex_hps_h2f_axi_master_awburst;                               // agilex_hps:h2f_AWBURST -> mm_interconnect_2:agilex_hps_h2f_axi_master_awburst
+	wire     [7:0] agilex_hps_h2f_axi_master_arlen;                                 // agilex_hps:h2f_ARLEN -> mm_interconnect_2:agilex_hps_h2f_axi_master_arlen
+	wire     [3:0] agilex_hps_h2f_axi_master_wstrb;                                 // agilex_hps:h2f_WSTRB -> mm_interconnect_2:agilex_hps_h2f_axi_master_wstrb
+	wire           agilex_hps_h2f_axi_master_wready;                                // mm_interconnect_2:agilex_hps_h2f_axi_master_wready -> agilex_hps:h2f_WREADY
+	wire     [3:0] agilex_hps_h2f_axi_master_rid;                                   // mm_interconnect_2:agilex_hps_h2f_axi_master_rid -> agilex_hps:h2f_RID
+	wire           agilex_hps_h2f_axi_master_rready;                                // agilex_hps:h2f_RREADY -> mm_interconnect_2:agilex_hps_h2f_axi_master_rready
+	wire     [7:0] agilex_hps_h2f_axi_master_awlen;                                 // agilex_hps:h2f_AWLEN -> mm_interconnect_2:agilex_hps_h2f_axi_master_awlen
+	wire     [3:0] agilex_hps_h2f_axi_master_arcache;                               // agilex_hps:h2f_ARCACHE -> mm_interconnect_2:agilex_hps_h2f_axi_master_arcache
+	wire           agilex_hps_h2f_axi_master_wvalid;                                // agilex_hps:h2f_WVALID -> mm_interconnect_2:agilex_hps_h2f_axi_master_wvalid
+	wire    [31:0] agilex_hps_h2f_axi_master_araddr;                                // agilex_hps:h2f_ARADDR -> mm_interconnect_2:agilex_hps_h2f_axi_master_araddr
+	wire     [2:0] agilex_hps_h2f_axi_master_arprot;                                // agilex_hps:h2f_ARPROT -> mm_interconnect_2:agilex_hps_h2f_axi_master_arprot
+	wire     [2:0] agilex_hps_h2f_axi_master_awprot;                                // agilex_hps:h2f_AWPROT -> mm_interconnect_2:agilex_hps_h2f_axi_master_awprot
+	wire    [31:0] agilex_hps_h2f_axi_master_wdata;                                 // agilex_hps:h2f_WDATA -> mm_interconnect_2:agilex_hps_h2f_axi_master_wdata
+	wire           agilex_hps_h2f_axi_master_arvalid;                               // agilex_hps:h2f_ARVALID -> mm_interconnect_2:agilex_hps_h2f_axi_master_arvalid
+	wire     [3:0] agilex_hps_h2f_axi_master_awcache;                               // agilex_hps:h2f_AWCACHE -> mm_interconnect_2:agilex_hps_h2f_axi_master_awcache
+	wire     [3:0] agilex_hps_h2f_axi_master_arid;                                  // agilex_hps:h2f_ARID -> mm_interconnect_2:agilex_hps_h2f_axi_master_arid
+	wire           agilex_hps_h2f_axi_master_arlock;                                // agilex_hps:h2f_ARLOCK -> mm_interconnect_2:agilex_hps_h2f_axi_master_arlock
+	wire           agilex_hps_h2f_axi_master_awlock;                                // agilex_hps:h2f_AWLOCK -> mm_interconnect_2:agilex_hps_h2f_axi_master_awlock
+	wire    [31:0] agilex_hps_h2f_axi_master_awaddr;                                // agilex_hps:h2f_AWADDR -> mm_interconnect_2:agilex_hps_h2f_axi_master_awaddr
+	wire     [1:0] agilex_hps_h2f_axi_master_bresp;                                 // mm_interconnect_2:agilex_hps_h2f_axi_master_bresp -> agilex_hps:h2f_BRESP
+	wire           agilex_hps_h2f_axi_master_arready;                               // mm_interconnect_2:agilex_hps_h2f_axi_master_arready -> agilex_hps:h2f_ARREADY
+	wire    [31:0] agilex_hps_h2f_axi_master_rdata;                                 // mm_interconnect_2:agilex_hps_h2f_axi_master_rdata -> agilex_hps:h2f_RDATA
+	wire           agilex_hps_h2f_axi_master_awready;                               // mm_interconnect_2:agilex_hps_h2f_axi_master_awready -> agilex_hps:h2f_AWREADY
+	wire     [1:0] agilex_hps_h2f_axi_master_arburst;                               // agilex_hps:h2f_ARBURST -> mm_interconnect_2:agilex_hps_h2f_axi_master_arburst
+	wire     [2:0] agilex_hps_h2f_axi_master_arsize;                                // agilex_hps:h2f_ARSIZE -> mm_interconnect_2:agilex_hps_h2f_axi_master_arsize
+	wire           agilex_hps_h2f_axi_master_bready;                                // agilex_hps:h2f_BREADY -> mm_interconnect_2:agilex_hps_h2f_axi_master_bready
+	wire           agilex_hps_h2f_axi_master_rlast;                                 // mm_interconnect_2:agilex_hps_h2f_axi_master_rlast -> agilex_hps:h2f_RLAST
+	wire           agilex_hps_h2f_axi_master_wlast;                                 // agilex_hps:h2f_WLAST -> mm_interconnect_2:agilex_hps_h2f_axi_master_wlast
+	wire     [1:0] agilex_hps_h2f_axi_master_rresp;                                 // mm_interconnect_2:agilex_hps_h2f_axi_master_rresp -> agilex_hps:h2f_RRESP
+	wire     [3:0] agilex_hps_h2f_axi_master_awid;                                  // agilex_hps:h2f_AWID -> mm_interconnect_2:agilex_hps_h2f_axi_master_awid
+	wire     [3:0] agilex_hps_h2f_axi_master_bid;                                   // mm_interconnect_2:agilex_hps_h2f_axi_master_bid -> agilex_hps:h2f_BID
+	wire           agilex_hps_h2f_axi_master_bvalid;                                // mm_interconnect_2:agilex_hps_h2f_axi_master_bvalid -> agilex_hps:h2f_BVALID
+	wire     [2:0] agilex_hps_h2f_axi_master_awsize;                                // agilex_hps:h2f_AWSIZE -> mm_interconnect_2:agilex_hps_h2f_axi_master_awsize
+	wire           agilex_hps_h2f_axi_master_awvalid;                               // agilex_hps:h2f_AWVALID -> mm_interconnect_2:agilex_hps_h2f_axi_master_awvalid
+	wire           agilex_hps_h2f_axi_master_rvalid;                                // mm_interconnect_2:agilex_hps_h2f_axi_master_rvalid -> agilex_hps:h2f_RVALID
+	wire    [31:0] mm_interconnect_2_ram_controller_1_csr_readdata;                 // ram_controller_1:csr_readdata -> mm_interconnect_2:ram_controller_1_csr_readdata
+	wire           mm_interconnect_2_ram_controller_1_csr_waitrequest;              // ram_controller_1:csr_waitrequest -> mm_interconnect_2:ram_controller_1_csr_waitrequest
+	wire     [2:0] mm_interconnect_2_ram_controller_1_csr_address;                  // mm_interconnect_2:ram_controller_1_csr_address -> ram_controller_1:csr_address
+	wire           mm_interconnect_2_ram_controller_1_csr_read;                     // mm_interconnect_2:ram_controller_1_csr_read -> ram_controller_1:csr_read
+	wire     [3:0] mm_interconnect_2_ram_controller_1_csr_byteenable;               // mm_interconnect_2:ram_controller_1_csr_byteenable -> ram_controller_1:csr_byteenable
+	wire           mm_interconnect_2_ram_controller_1_csr_write;                    // mm_interconnect_2:ram_controller_1_csr_write -> ram_controller_1:csr_write
+	wire    [31:0] mm_interconnect_2_ram_controller_1_csr_writedata;                // mm_interconnect_2:ram_controller_1_csr_writedata -> ram_controller_1:csr_writedata
+	wire    [31:0] mm_interconnect_2_prbs_generator_1_csr_readdata;                 // prbs_generator_1:csr_readdata -> mm_interconnect_2:prbs_generator_1_csr_readdata
+	wire     [2:0] mm_interconnect_2_prbs_generator_1_csr_address;                  // mm_interconnect_2:prbs_generator_1_csr_address -> prbs_generator_1:csr_address
+	wire           mm_interconnect_2_prbs_generator_1_csr_read;                     // mm_interconnect_2:prbs_generator_1_csr_read -> prbs_generator_1:csr_read
+	wire     [3:0] mm_interconnect_2_prbs_generator_1_csr_byteenable;               // mm_interconnect_2:prbs_generator_1_csr_byteenable -> prbs_generator_1:csr_byteenable
+	wire           mm_interconnect_2_prbs_generator_1_csr_write;                    // mm_interconnect_2:prbs_generator_1_csr_write -> prbs_generator_1:csr_write
+	wire    [31:0] mm_interconnect_2_prbs_generator_1_csr_writedata;                // mm_interconnect_2:prbs_generator_1_csr_writedata -> prbs_generator_1:csr_writedata
+	wire           mm_interconnect_2_pio_0_s1_chipselect;                           // mm_interconnect_2:pio_0_s1_chipselect -> pio_0:chipselect
+	wire    [31:0] mm_interconnect_2_pio_0_s1_readdata;                             // pio_0:readdata -> mm_interconnect_2:pio_0_s1_readdata
+	wire     [1:0] mm_interconnect_2_pio_0_s1_address;                              // mm_interconnect_2:pio_0_s1_address -> pio_0:address
+	wire           mm_interconnect_2_pio_0_s1_write;                                // mm_interconnect_2:pio_0_s1_write -> pio_0:write_n
+	wire    [31:0] mm_interconnect_2_pio_0_s1_writedata;                            // mm_interconnect_2:pio_0_s1_writedata -> pio_0:writedata
+	wire           rst_controller_reset_out_reset;                                  // rst_controller:reset_out -> [agilex_hps:f2h_axi_rst_n, agilex_hps:h2f_axi_rst_n, axi_conduit_merger_0:rst_n, pattern_writer_1:reset, pio_0:reset_n, prbs_generator_1:reset, ram_controller_1:reset]
+	wire           rst_in_out_reset_reset;                                          // rst_in:out_reset_n -> [rst_controller:reset_in0, rst_controller_001:reset_in0]
+	wire           rst_controller_001_reset_out_reset;                              // rst_controller_001:reset_out -> [mm_interconnect_0:agilex_hps_f2h_axi_slave_translator_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:pattern_writer_1_avalon_master_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_2:agilex_hps_h2f_axi_master_translator_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_2:agilex_hps_h2f_axi_reset_reset_bridge_in_reset_reset]
 
 	agilex_hps agilex_hps (
 		.s2f_user_clk0_hio    (agilex_hps_h2f_user0_clock_clk),                     //  output,     width = 1, h2f_user0_clock.clk
@@ -342,6 +422,93 @@ module qsys_top_r1 (
 		.f2h_irq_p1           (f2h_irq1_irq)                                        //   input,    width = 32,        f2h_irq1.irq
 	);
 
+	qsys_top_axi_conduit_merger_0 axi_conduit_merger_0 (
+		.clk       (clk_100_out_clk_clk),                                             //   input,   width = 1,             clock.clk
+		.rst_n     (~rst_controller_reset_out_reset),                                 //   input,   width = 1,        reset_sink.reset_n
+		.m_awvalid (axi_conduit_merger_0_altera_axi_master_awvalid),                  //  output,   width = 1, altera_axi_master.awvalid
+		.m_awlen   (axi_conduit_merger_0_altera_axi_master_awlen),                    //  output,   width = 4,                  .awlen
+		.m_awsize  (axi_conduit_merger_0_altera_axi_master_awsize),                   //  output,   width = 3,                  .awsize
+		.m_awburst (axi_conduit_merger_0_altera_axi_master_awburst),                  //  output,   width = 2,                  .awburst
+		.m_awlock  (axi_conduit_merger_0_altera_axi_master_awlock),                   //  output,   width = 2,                  .awlock
+		.m_awcache (axi_conduit_merger_0_altera_axi_master_awcache),                  //  output,   width = 4,                  .awcache
+		.m_awprot  (axi_conduit_merger_0_altera_axi_master_awprot),                   //  output,   width = 3,                  .awprot
+		.m_awready (axi_conduit_merger_0_altera_axi_master_awready),                  //   input,   width = 1,                  .awready
+		.m_awuser  (axi_conduit_merger_0_altera_axi_master_awuser),                   //  output,   width = 5,                  .awuser
+		.m_arvalid (axi_conduit_merger_0_altera_axi_master_arvalid),                  //  output,   width = 1,                  .arvalid
+		.m_arlen   (axi_conduit_merger_0_altera_axi_master_arlen),                    //  output,   width = 4,                  .arlen
+		.m_arsize  (axi_conduit_merger_0_altera_axi_master_arsize),                   //  output,   width = 3,                  .arsize
+		.m_arburst (axi_conduit_merger_0_altera_axi_master_arburst),                  //  output,   width = 2,                  .arburst
+		.m_arlock  (axi_conduit_merger_0_altera_axi_master_arlock),                   //  output,   width = 2,                  .arlock
+		.m_arcache (axi_conduit_merger_0_altera_axi_master_arcache),                  //  output,   width = 4,                  .arcache
+		.m_arprot  (axi_conduit_merger_0_altera_axi_master_arprot),                   //  output,   width = 3,                  .arprot
+		.m_arready (axi_conduit_merger_0_altera_axi_master_arready),                  //   input,   width = 1,                  .arready
+		.m_aruser  (axi_conduit_merger_0_altera_axi_master_aruser),                   //  output,   width = 5,                  .aruser
+		.m_rvalid  (axi_conduit_merger_0_altera_axi_master_rvalid),                   //   input,   width = 1,                  .rvalid
+		.m_rlast   (axi_conduit_merger_0_altera_axi_master_rlast),                    //   input,   width = 1,                  .rlast
+		.m_rresp   (axi_conduit_merger_0_altera_axi_master_rresp),                    //   input,   width = 2,                  .rresp
+		.m_rready  (axi_conduit_merger_0_altera_axi_master_rready),                   //  output,   width = 1,                  .rready
+		.m_wvalid  (axi_conduit_merger_0_altera_axi_master_wvalid),                   //  output,   width = 1,                  .wvalid
+		.m_wlast   (axi_conduit_merger_0_altera_axi_master_wlast),                    //  output,   width = 1,                  .wlast
+		.m_wready  (axi_conduit_merger_0_altera_axi_master_wready),                   //   input,   width = 1,                  .wready
+		.m_bvalid  (axi_conduit_merger_0_altera_axi_master_bvalid),                   //   input,   width = 1,                  .bvalid
+		.m_bresp   (axi_conduit_merger_0_altera_axi_master_bresp),                    //   input,   width = 2,                  .bresp
+		.m_bready  (axi_conduit_merger_0_altera_axi_master_bready),                   //  output,   width = 1,                  .bready
+		.m_awaddr  (axi_conduit_merger_0_altera_axi_master_awaddr),                   //  output,  width = 32,                  .awaddr
+		.m_awid    (axi_conduit_merger_0_altera_axi_master_awid),                     //  output,   width = 5,                  .awid
+		.m_araddr  (axi_conduit_merger_0_altera_axi_master_araddr),                   //  output,  width = 32,                  .araddr
+		.m_arid    (axi_conduit_merger_0_altera_axi_master_arid),                     //  output,   width = 5,                  .arid
+		.m_rdata   (axi_conduit_merger_0_altera_axi_master_rdata),                    //   input,  width = 32,                  .rdata
+		.m_rid     (axi_conduit_merger_0_altera_axi_master_rid),                      //   input,   width = 5,                  .rid
+		.m_wdata   (axi_conduit_merger_0_altera_axi_master_wdata),                    //  output,  width = 32,                  .wdata
+		.m_wstrb   (axi_conduit_merger_0_altera_axi_master_wstrb),                    //  output,   width = 4,                  .wstrb
+		.m_wid     (axi_conduit_merger_0_altera_axi_master_wid),                      //  output,   width = 5,                  .wid
+		.m_bid     (axi_conduit_merger_0_altera_axi_master_bid),                      //   input,   width = 5,                  .bid
+		.s_awvalid (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awvalid), //   input,   width = 1,  altera_axi_slave.awvalid
+		.s_awlen   (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awlen),   //   input,   width = 4,                  .awlen
+		.s_awsize  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awsize),  //   input,   width = 3,                  .awsize
+		.s_awburst (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awburst), //   input,   width = 2,                  .awburst
+		.s_awlock  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awlock),  //   input,   width = 2,                  .awlock
+		.s_awcache (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awcache), //   input,   width = 4,                  .awcache
+		.s_awprot  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awprot),  //   input,   width = 3,                  .awprot
+		.s_awready (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awready), //  output,   width = 1,                  .awready
+		.s_awuser  (),                                                                //   input,   width = 5,                  .awuser
+		.s_arvalid (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arvalid), //   input,   width = 1,                  .arvalid
+		.s_arlen   (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arlen),   //   input,   width = 4,                  .arlen
+		.s_arsize  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arsize),  //   input,   width = 3,                  .arsize
+		.s_arburst (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arburst), //   input,   width = 2,                  .arburst
+		.s_arlock  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arlock),  //   input,   width = 2,                  .arlock
+		.s_arcache (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arcache), //   input,   width = 4,                  .arcache
+		.s_arprot  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arprot),  //   input,   width = 3,                  .arprot
+		.s_arready (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arready), //  output,   width = 1,                  .arready
+		.s_aruser  (),                                                                //   input,   width = 5,                  .aruser
+		.s_rvalid  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rvalid),  //  output,   width = 1,                  .rvalid
+		.s_rlast   (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rlast),   //  output,   width = 1,                  .rlast
+		.s_rresp   (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rresp),   //  output,   width = 2,                  .rresp
+		.s_rready  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rready),  //   input,   width = 1,                  .rready
+		.s_wvalid  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wvalid),  //   input,   width = 1,                  .wvalid
+		.s_wlast   (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wlast),   //   input,   width = 1,                  .wlast
+		.s_wready  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wready),  //  output,   width = 1,                  .wready
+		.s_bvalid  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_bvalid),  //  output,   width = 1,                  .bvalid
+		.s_bresp   (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_bresp),   //  output,   width = 2,                  .bresp
+		.s_bready  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_bready),  //   input,   width = 1,                  .bready
+		.s_awaddr  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awaddr),  //   input,  width = 32,                  .awaddr
+		.s_awid    (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awid),    //   input,   width = 5,                  .awid
+		.s_araddr  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_araddr),  //   input,  width = 32,                  .araddr
+		.s_arid    (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arid),    //   input,   width = 5,                  .arid
+		.s_rdata   (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rdata),   //  output,  width = 32,                  .rdata
+		.s_rid     (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rid),     //  output,   width = 5,                  .rid
+		.s_wdata   (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wdata),   //   input,  width = 32,                  .wdata
+		.s_wstrb   (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wstrb),   //   input,   width = 4,                  .wstrb
+		.s_wid     (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wid),     //   input,   width = 5,                  .wid
+		.s_bid     (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_bid),     //  output,   width = 5,                  .bid
+		.c_awcache (merger_conduit_awcache),                                          //   input,   width = 4,       conduit_end.awcache
+		.c_awprot  (merger_conduit_awprot),                                           //   input,   width = 3,                  .awprot
+		.c_awuser  (merger_conduit_awuser),                                           //   input,   width = 5,                  .awuser
+		.c_arcache (merger_conduit_arcache),                                          //   input,   width = 4,                  .arcache
+		.c_aruser  (merger_conduit_aruser),                                           //   input,   width = 5,                  .aruser
+		.c_arprot  (merger_conduit_arprot)                                            //   input,   width = 3,                  .arprot
+	);
+
 	clk_100 clk_100 (
 		.in_clk  (clk_100_clk),         //   input,  width = 1,  in_clk.clk
 		.out_clk (clk_100_out_clk_clk)  //  output,  width = 1, out_clk.clk
@@ -409,23 +576,23 @@ module qsys_top_r1 (
 	qsys_top_pio_0 pio_0 (
 		.clk        (clk_100_out_clk_clk),                   //   input,   width = 1,                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),       //   input,   width = 1,               reset.reset_n
-		.address    (mm_interconnect_1_pio_0_s1_address),    //   input,   width = 2,                  s1.address
-		.write_n    (~mm_interconnect_1_pio_0_s1_write),     //   input,   width = 1,                    .write_n
-		.writedata  (mm_interconnect_1_pio_0_s1_writedata),  //   input,  width = 32,                    .writedata
-		.chipselect (mm_interconnect_1_pio_0_s1_chipselect), //   input,   width = 1,                    .chipselect
-		.readdata   (mm_interconnect_1_pio_0_s1_readdata),   //  output,  width = 32,                    .readdata
+		.address    (mm_interconnect_2_pio_0_s1_address),    //   input,   width = 2,                  s1.address
+		.write_n    (~mm_interconnect_2_pio_0_s1_write),     //   input,   width = 1,                    .write_n
+		.writedata  (mm_interconnect_2_pio_0_s1_writedata),  //   input,  width = 32,                    .writedata
+		.chipselect (mm_interconnect_2_pio_0_s1_chipselect), //   input,   width = 1,                    .chipselect
+		.readdata   (mm_interconnect_2_pio_0_s1_readdata),   //  output,  width = 32,                    .readdata
 		.out_port   (pio_0_external_connection_export)       //  output,   width = 2, external_connection.export
 	);
 
 	qsys_top_prbs_generator_1 prbs_generator_1 (
 		.clk            (clk_100_out_clk_clk),                               //   input,   width = 1,      clock.clk
 		.reset          (rst_controller_reset_out_reset),                    //   input,   width = 1,      reset.reset
-		.csr_address    (mm_interconnect_1_prbs_generator_1_csr_address),    //   input,   width = 3,        csr.address
-		.csr_writedata  (mm_interconnect_1_prbs_generator_1_csr_writedata),  //   input,  width = 32,           .writedata
-		.csr_write      (mm_interconnect_1_prbs_generator_1_csr_write),      //   input,   width = 1,           .write
-		.csr_readdata   (mm_interconnect_1_prbs_generator_1_csr_readdata),   //  output,  width = 32,           .readdata
-		.csr_read       (mm_interconnect_1_prbs_generator_1_csr_read),       //   input,   width = 1,           .read
-		.csr_byteenable (mm_interconnect_1_prbs_generator_1_csr_byteenable), //   input,   width = 4,           .byteenable
+		.csr_address    (mm_interconnect_2_prbs_generator_1_csr_address),    //   input,   width = 3,        csr.address
+		.csr_writedata  (mm_interconnect_2_prbs_generator_1_csr_writedata),  //   input,  width = 32,           .writedata
+		.csr_write      (mm_interconnect_2_prbs_generator_1_csr_write),      //   input,   width = 1,           .write
+		.csr_readdata   (mm_interconnect_2_prbs_generator_1_csr_readdata),   //  output,  width = 32,           .readdata
+		.csr_read       (mm_interconnect_2_prbs_generator_1_csr_read),       //   input,   width = 1,           .read
+		.csr_byteenable (mm_interconnect_2_prbs_generator_1_csr_byteenable), //   input,   width = 4,           .byteenable
 		.src_data       (prbs_generator_1_src_master_tdata),                 //  output,  width = 32, src_master.tdata
 		.src_valid      (prbs_generator_1_src_master_tvalid),                //  output,   width = 1,           .tvalid
 		.src_ready      (prbs_generator_1_src_master_tready)                 //   input,   width = 1,           .tready
@@ -434,13 +601,13 @@ module qsys_top_r1 (
 	qsys_top_ram_controller_1 ram_controller_1 (
 		.clk                     (clk_100_out_clk_clk),                                //   input,   width = 1,         clock.clk
 		.reset                   (rst_controller_reset_out_reset),                     //   input,   width = 1,         reset.reset
-		.csr_address             (mm_interconnect_1_ram_controller_1_csr_address),     //   input,   width = 3,           csr.address
-		.csr_read                (mm_interconnect_1_ram_controller_1_csr_read),        //   input,   width = 1,              .read
-		.csr_write               (mm_interconnect_1_ram_controller_1_csr_write),       //   input,   width = 1,              .write
-		.csr_readdata            (mm_interconnect_1_ram_controller_1_csr_readdata),    //  output,  width = 32,              .readdata
-		.csr_writedata           (mm_interconnect_1_ram_controller_1_csr_writedata),   //   input,  width = 32,              .writedata
-		.csr_byteenable          (mm_interconnect_1_ram_controller_1_csr_byteenable),  //   input,   width = 4,              .byteenable
-		.csr_waitrequest         (mm_interconnect_1_ram_controller_1_csr_waitrequest), //  output,   width = 1,              .waitrequest
+		.csr_address             (mm_interconnect_2_ram_controller_1_csr_address),     //   input,   width = 3,           csr.address
+		.csr_read                (mm_interconnect_2_ram_controller_1_csr_read),        //   input,   width = 1,              .read
+		.csr_write               (mm_interconnect_2_ram_controller_1_csr_write),       //   input,   width = 1,              .write
+		.csr_readdata            (mm_interconnect_2_ram_controller_1_csr_readdata),    //  output,  width = 32,              .readdata
+		.csr_writedata           (mm_interconnect_2_ram_controller_1_csr_writedata),   //   input,  width = 32,              .writedata
+		.csr_byteenable          (mm_interconnect_2_ram_controller_1_csr_byteenable),  //   input,   width = 4,              .byteenable
+		.csr_waitrequest         (mm_interconnect_2_ram_controller_1_csr_waitrequest), //  output,   width = 1,              .waitrequest
 		.src_write_command_ready (ram_controller_1_src_write_cmd_tready),              //   input,   width = 1, src_write_cmd.tready
 		.src_write_command_data  (ram_controller_1_src_write_cmd_tdata),               //  output,  width = 96,              .tdata
 		.src_write_command_valid (ram_controller_1_src_write_cmd_tvalid),              //  output,   width = 1,              .tvalid
@@ -458,57 +625,136 @@ module qsys_top_r1 (
 		.ninit_done (ninit_done_ninit_done)  //  output,  width = 1, ninit_done.ninit_done
 	);
 
-	qsys_top_r1_altera_mm_interconnect_1920_adt2oxa mm_interconnect_0 (
-		.pattern_writer_1_avalon_master_address                                      (pattern_writer_1_avalon_master_address),             //   input,   width = 32,                                        pattern_writer_1_avalon_master.address
-		.pattern_writer_1_avalon_master_waitrequest                                  (pattern_writer_1_avalon_master_waitrequest),         //  output,    width = 1,                                                                      .waitrequest
-		.pattern_writer_1_avalon_master_burstcount                                   (pattern_writer_1_avalon_master_burstcount),          //   input,    width = 2,                                                                      .burstcount
-		.pattern_writer_1_avalon_master_byteenable                                   (pattern_writer_1_avalon_master_byteenable),          //   input,    width = 4,                                                                      .byteenable
-		.pattern_writer_1_avalon_master_write                                        (pattern_writer_1_avalon_master_write),               //   input,    width = 1,                                                                      .write
-		.pattern_writer_1_avalon_master_writedata                                    (pattern_writer_1_avalon_master_writedata),           //   input,   width = 32,                                                                      .writedata
-		.agilex_hps_f2h_axi_slave_awid                                               (mm_interconnect_0_agilex_hps_f2h_axi_slave_awid),    //  output,    width = 5,                                              agilex_hps_f2h_axi_slave.awid
-		.agilex_hps_f2h_axi_slave_awaddr                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_awaddr),  //  output,   width = 32,                                                                      .awaddr
-		.agilex_hps_f2h_axi_slave_awlen                                              (mm_interconnect_0_agilex_hps_f2h_axi_slave_awlen),   //  output,    width = 8,                                                                      .awlen
-		.agilex_hps_f2h_axi_slave_awsize                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_awsize),  //  output,    width = 3,                                                                      .awsize
-		.agilex_hps_f2h_axi_slave_awburst                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_awburst), //  output,    width = 2,                                                                      .awburst
-		.agilex_hps_f2h_axi_slave_awlock                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_awlock),  //  output,    width = 1,                                                                      .awlock
-		.agilex_hps_f2h_axi_slave_awcache                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_awcache), //  output,    width = 4,                                                                      .awcache
-		.agilex_hps_f2h_axi_slave_awprot                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_awprot),  //  output,    width = 3,                                                                      .awprot
-		.agilex_hps_f2h_axi_slave_awuser                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_awuser),  //  output,   width = 23,                                                                      .awuser
-		.agilex_hps_f2h_axi_slave_awqos                                              (mm_interconnect_0_agilex_hps_f2h_axi_slave_awqos),   //  output,    width = 4,                                                                      .awqos
-		.agilex_hps_f2h_axi_slave_awvalid                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_awvalid), //  output,    width = 1,                                                                      .awvalid
-		.agilex_hps_f2h_axi_slave_awready                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_awready), //   input,    width = 1,                                                                      .awready
-		.agilex_hps_f2h_axi_slave_wdata                                              (mm_interconnect_0_agilex_hps_f2h_axi_slave_wdata),   //  output,  width = 512,                                                                      .wdata
-		.agilex_hps_f2h_axi_slave_wstrb                                              (mm_interconnect_0_agilex_hps_f2h_axi_slave_wstrb),   //  output,   width = 64,                                                                      .wstrb
-		.agilex_hps_f2h_axi_slave_wlast                                              (mm_interconnect_0_agilex_hps_f2h_axi_slave_wlast),   //  output,    width = 1,                                                                      .wlast
-		.agilex_hps_f2h_axi_slave_wvalid                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_wvalid),  //  output,    width = 1,                                                                      .wvalid
-		.agilex_hps_f2h_axi_slave_wready                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_wready),  //   input,    width = 1,                                                                      .wready
-		.agilex_hps_f2h_axi_slave_bid                                                (mm_interconnect_0_agilex_hps_f2h_axi_slave_bid),     //   input,    width = 5,                                                                      .bid
-		.agilex_hps_f2h_axi_slave_bresp                                              (mm_interconnect_0_agilex_hps_f2h_axi_slave_bresp),   //   input,    width = 2,                                                                      .bresp
-		.agilex_hps_f2h_axi_slave_bvalid                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_bvalid),  //   input,    width = 1,                                                                      .bvalid
-		.agilex_hps_f2h_axi_slave_bready                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_bready),  //  output,    width = 1,                                                                      .bready
-		.agilex_hps_f2h_axi_slave_arid                                               (mm_interconnect_0_agilex_hps_f2h_axi_slave_arid),    //  output,    width = 5,                                                                      .arid
-		.agilex_hps_f2h_axi_slave_araddr                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_araddr),  //  output,   width = 32,                                                                      .araddr
-		.agilex_hps_f2h_axi_slave_arlen                                              (mm_interconnect_0_agilex_hps_f2h_axi_slave_arlen),   //  output,    width = 8,                                                                      .arlen
-		.agilex_hps_f2h_axi_slave_arsize                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_arsize),  //  output,    width = 3,                                                                      .arsize
-		.agilex_hps_f2h_axi_slave_arburst                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_arburst), //  output,    width = 2,                                                                      .arburst
-		.agilex_hps_f2h_axi_slave_arlock                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_arlock),  //  output,    width = 1,                                                                      .arlock
-		.agilex_hps_f2h_axi_slave_arcache                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_arcache), //  output,    width = 4,                                                                      .arcache
-		.agilex_hps_f2h_axi_slave_arprot                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_arprot),  //  output,    width = 3,                                                                      .arprot
-		.agilex_hps_f2h_axi_slave_aruser                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_aruser),  //  output,   width = 23,                                                                      .aruser
-		.agilex_hps_f2h_axi_slave_arqos                                              (mm_interconnect_0_agilex_hps_f2h_axi_slave_arqos),   //  output,    width = 4,                                                                      .arqos
-		.agilex_hps_f2h_axi_slave_arvalid                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_arvalid), //  output,    width = 1,                                                                      .arvalid
-		.agilex_hps_f2h_axi_slave_arready                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_arready), //   input,    width = 1,                                                                      .arready
-		.agilex_hps_f2h_axi_slave_rid                                                (mm_interconnect_0_agilex_hps_f2h_axi_slave_rid),     //   input,    width = 5,                                                                      .rid
-		.agilex_hps_f2h_axi_slave_rdata                                              (mm_interconnect_0_agilex_hps_f2h_axi_slave_rdata),   //   input,  width = 512,                                                                      .rdata
-		.agilex_hps_f2h_axi_slave_rresp                                              (mm_interconnect_0_agilex_hps_f2h_axi_slave_rresp),   //   input,    width = 2,                                                                      .rresp
-		.agilex_hps_f2h_axi_slave_rlast                                              (mm_interconnect_0_agilex_hps_f2h_axi_slave_rlast),   //   input,    width = 1,                                                                      .rlast
-		.agilex_hps_f2h_axi_slave_rvalid                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_rvalid),  //   input,    width = 1,                                                                      .rvalid
-		.agilex_hps_f2h_axi_slave_rready                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_rready),  //  output,    width = 1,                                                                      .rready
-		.pattern_writer_1_avalon_master_translator_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),                 //   input,    width = 1, pattern_writer_1_avalon_master_translator_reset_reset_bridge_in_reset.reset
-		.clk_100_out_clk_clk                                                         (clk_100_out_clk_clk)                                 //   input,    width = 1,                                                       clk_100_out_clk.clk
+	qsys_top_r1_altera_mm_interconnect_1920_jdizp5q mm_interconnect_0 (
+		.agilex_hps_f2h_axi_slave_awid                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_awid),    //  output,    width = 5,                                            agilex_hps_f2h_axi_slave.awid
+		.agilex_hps_f2h_axi_slave_awaddr                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_awaddr),  //  output,   width = 32,                                                                    .awaddr
+		.agilex_hps_f2h_axi_slave_awlen                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_awlen),   //  output,    width = 8,                                                                    .awlen
+		.agilex_hps_f2h_axi_slave_awsize                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_awsize),  //  output,    width = 3,                                                                    .awsize
+		.agilex_hps_f2h_axi_slave_awburst                                          (mm_interconnect_0_agilex_hps_f2h_axi_slave_awburst), //  output,    width = 2,                                                                    .awburst
+		.agilex_hps_f2h_axi_slave_awlock                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_awlock),  //  output,    width = 1,                                                                    .awlock
+		.agilex_hps_f2h_axi_slave_awcache                                          (mm_interconnect_0_agilex_hps_f2h_axi_slave_awcache), //  output,    width = 4,                                                                    .awcache
+		.agilex_hps_f2h_axi_slave_awprot                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_awprot),  //  output,    width = 3,                                                                    .awprot
+		.agilex_hps_f2h_axi_slave_awuser                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_awuser),  //  output,   width = 23,                                                                    .awuser
+		.agilex_hps_f2h_axi_slave_awqos                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_awqos),   //  output,    width = 4,                                                                    .awqos
+		.agilex_hps_f2h_axi_slave_awvalid                                          (mm_interconnect_0_agilex_hps_f2h_axi_slave_awvalid), //  output,    width = 1,                                                                    .awvalid
+		.agilex_hps_f2h_axi_slave_awready                                          (mm_interconnect_0_agilex_hps_f2h_axi_slave_awready), //   input,    width = 1,                                                                    .awready
+		.agilex_hps_f2h_axi_slave_wdata                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_wdata),   //  output,  width = 512,                                                                    .wdata
+		.agilex_hps_f2h_axi_slave_wstrb                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_wstrb),   //  output,   width = 64,                                                                    .wstrb
+		.agilex_hps_f2h_axi_slave_wlast                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_wlast),   //  output,    width = 1,                                                                    .wlast
+		.agilex_hps_f2h_axi_slave_wvalid                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_wvalid),  //  output,    width = 1,                                                                    .wvalid
+		.agilex_hps_f2h_axi_slave_wready                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_wready),  //   input,    width = 1,                                                                    .wready
+		.agilex_hps_f2h_axi_slave_bid                                              (mm_interconnect_0_agilex_hps_f2h_axi_slave_bid),     //   input,    width = 5,                                                                    .bid
+		.agilex_hps_f2h_axi_slave_bresp                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_bresp),   //   input,    width = 2,                                                                    .bresp
+		.agilex_hps_f2h_axi_slave_bvalid                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_bvalid),  //   input,    width = 1,                                                                    .bvalid
+		.agilex_hps_f2h_axi_slave_bready                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_bready),  //  output,    width = 1,                                                                    .bready
+		.agilex_hps_f2h_axi_slave_arid                                             (mm_interconnect_0_agilex_hps_f2h_axi_slave_arid),    //  output,    width = 5,                                                                    .arid
+		.agilex_hps_f2h_axi_slave_araddr                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_araddr),  //  output,   width = 32,                                                                    .araddr
+		.agilex_hps_f2h_axi_slave_arlen                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_arlen),   //  output,    width = 8,                                                                    .arlen
+		.agilex_hps_f2h_axi_slave_arsize                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_arsize),  //  output,    width = 3,                                                                    .arsize
+		.agilex_hps_f2h_axi_slave_arburst                                          (mm_interconnect_0_agilex_hps_f2h_axi_slave_arburst), //  output,    width = 2,                                                                    .arburst
+		.agilex_hps_f2h_axi_slave_arlock                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_arlock),  //  output,    width = 1,                                                                    .arlock
+		.agilex_hps_f2h_axi_slave_arcache                                          (mm_interconnect_0_agilex_hps_f2h_axi_slave_arcache), //  output,    width = 4,                                                                    .arcache
+		.agilex_hps_f2h_axi_slave_arprot                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_arprot),  //  output,    width = 3,                                                                    .arprot
+		.agilex_hps_f2h_axi_slave_aruser                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_aruser),  //  output,   width = 23,                                                                    .aruser
+		.agilex_hps_f2h_axi_slave_arqos                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_arqos),   //  output,    width = 4,                                                                    .arqos
+		.agilex_hps_f2h_axi_slave_arvalid                                          (mm_interconnect_0_agilex_hps_f2h_axi_slave_arvalid), //  output,    width = 1,                                                                    .arvalid
+		.agilex_hps_f2h_axi_slave_arready                                          (mm_interconnect_0_agilex_hps_f2h_axi_slave_arready), //   input,    width = 1,                                                                    .arready
+		.agilex_hps_f2h_axi_slave_rid                                              (mm_interconnect_0_agilex_hps_f2h_axi_slave_rid),     //   input,    width = 5,                                                                    .rid
+		.agilex_hps_f2h_axi_slave_rdata                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_rdata),   //   input,  width = 512,                                                                    .rdata
+		.agilex_hps_f2h_axi_slave_rresp                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_rresp),   //   input,    width = 2,                                                                    .rresp
+		.agilex_hps_f2h_axi_slave_rlast                                            (mm_interconnect_0_agilex_hps_f2h_axi_slave_rlast),   //   input,    width = 1,                                                                    .rlast
+		.agilex_hps_f2h_axi_slave_rvalid                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_rvalid),  //   input,    width = 1,                                                                    .rvalid
+		.agilex_hps_f2h_axi_slave_rready                                           (mm_interconnect_0_agilex_hps_f2h_axi_slave_rready),  //  output,    width = 1,                                                                    .rready
+		.axi_conduit_merger_0_altera_axi_master_awid                               (axi_conduit_merger_0_altera_axi_master_awid),        //   input,    width = 5,                              axi_conduit_merger_0_altera_axi_master.awid
+		.axi_conduit_merger_0_altera_axi_master_awaddr                             (axi_conduit_merger_0_altera_axi_master_awaddr),      //   input,   width = 32,                                                                    .awaddr
+		.axi_conduit_merger_0_altera_axi_master_awlen                              (axi_conduit_merger_0_altera_axi_master_awlen),       //   input,    width = 4,                                                                    .awlen
+		.axi_conduit_merger_0_altera_axi_master_awsize                             (axi_conduit_merger_0_altera_axi_master_awsize),      //   input,    width = 3,                                                                    .awsize
+		.axi_conduit_merger_0_altera_axi_master_awburst                            (axi_conduit_merger_0_altera_axi_master_awburst),     //   input,    width = 2,                                                                    .awburst
+		.axi_conduit_merger_0_altera_axi_master_awlock                             (axi_conduit_merger_0_altera_axi_master_awlock),      //   input,    width = 2,                                                                    .awlock
+		.axi_conduit_merger_0_altera_axi_master_awcache                            (axi_conduit_merger_0_altera_axi_master_awcache),     //   input,    width = 4,                                                                    .awcache
+		.axi_conduit_merger_0_altera_axi_master_awprot                             (axi_conduit_merger_0_altera_axi_master_awprot),      //   input,    width = 3,                                                                    .awprot
+		.axi_conduit_merger_0_altera_axi_master_awuser                             (axi_conduit_merger_0_altera_axi_master_awuser),      //   input,    width = 5,                                                                    .awuser
+		.axi_conduit_merger_0_altera_axi_master_awvalid                            (axi_conduit_merger_0_altera_axi_master_awvalid),     //   input,    width = 1,                                                                    .awvalid
+		.axi_conduit_merger_0_altera_axi_master_awready                            (axi_conduit_merger_0_altera_axi_master_awready),     //  output,    width = 1,                                                                    .awready
+		.axi_conduit_merger_0_altera_axi_master_wid                                (axi_conduit_merger_0_altera_axi_master_wid),         //   input,    width = 5,                                                                    .wid
+		.axi_conduit_merger_0_altera_axi_master_wdata                              (axi_conduit_merger_0_altera_axi_master_wdata),       //   input,   width = 32,                                                                    .wdata
+		.axi_conduit_merger_0_altera_axi_master_wstrb                              (axi_conduit_merger_0_altera_axi_master_wstrb),       //   input,    width = 4,                                                                    .wstrb
+		.axi_conduit_merger_0_altera_axi_master_wlast                              (axi_conduit_merger_0_altera_axi_master_wlast),       //   input,    width = 1,                                                                    .wlast
+		.axi_conduit_merger_0_altera_axi_master_wvalid                             (axi_conduit_merger_0_altera_axi_master_wvalid),      //   input,    width = 1,                                                                    .wvalid
+		.axi_conduit_merger_0_altera_axi_master_wready                             (axi_conduit_merger_0_altera_axi_master_wready),      //  output,    width = 1,                                                                    .wready
+		.axi_conduit_merger_0_altera_axi_master_bid                                (axi_conduit_merger_0_altera_axi_master_bid),         //  output,    width = 5,                                                                    .bid
+		.axi_conduit_merger_0_altera_axi_master_bresp                              (axi_conduit_merger_0_altera_axi_master_bresp),       //  output,    width = 2,                                                                    .bresp
+		.axi_conduit_merger_0_altera_axi_master_bvalid                             (axi_conduit_merger_0_altera_axi_master_bvalid),      //  output,    width = 1,                                                                    .bvalid
+		.axi_conduit_merger_0_altera_axi_master_bready                             (axi_conduit_merger_0_altera_axi_master_bready),      //   input,    width = 1,                                                                    .bready
+		.axi_conduit_merger_0_altera_axi_master_arid                               (axi_conduit_merger_0_altera_axi_master_arid),        //   input,    width = 5,                                                                    .arid
+		.axi_conduit_merger_0_altera_axi_master_araddr                             (axi_conduit_merger_0_altera_axi_master_araddr),      //   input,   width = 32,                                                                    .araddr
+		.axi_conduit_merger_0_altera_axi_master_arlen                              (axi_conduit_merger_0_altera_axi_master_arlen),       //   input,    width = 4,                                                                    .arlen
+		.axi_conduit_merger_0_altera_axi_master_arsize                             (axi_conduit_merger_0_altera_axi_master_arsize),      //   input,    width = 3,                                                                    .arsize
+		.axi_conduit_merger_0_altera_axi_master_arburst                            (axi_conduit_merger_0_altera_axi_master_arburst),     //   input,    width = 2,                                                                    .arburst
+		.axi_conduit_merger_0_altera_axi_master_arlock                             (axi_conduit_merger_0_altera_axi_master_arlock),      //   input,    width = 2,                                                                    .arlock
+		.axi_conduit_merger_0_altera_axi_master_arcache                            (axi_conduit_merger_0_altera_axi_master_arcache),     //   input,    width = 4,                                                                    .arcache
+		.axi_conduit_merger_0_altera_axi_master_arprot                             (axi_conduit_merger_0_altera_axi_master_arprot),      //   input,    width = 3,                                                                    .arprot
+		.axi_conduit_merger_0_altera_axi_master_aruser                             (axi_conduit_merger_0_altera_axi_master_aruser),      //   input,    width = 5,                                                                    .aruser
+		.axi_conduit_merger_0_altera_axi_master_arvalid                            (axi_conduit_merger_0_altera_axi_master_arvalid),     //   input,    width = 1,                                                                    .arvalid
+		.axi_conduit_merger_0_altera_axi_master_arready                            (axi_conduit_merger_0_altera_axi_master_arready),     //  output,    width = 1,                                                                    .arready
+		.axi_conduit_merger_0_altera_axi_master_rid                                (axi_conduit_merger_0_altera_axi_master_rid),         //  output,    width = 5,                                                                    .rid
+		.axi_conduit_merger_0_altera_axi_master_rdata                              (axi_conduit_merger_0_altera_axi_master_rdata),       //  output,   width = 32,                                                                    .rdata
+		.axi_conduit_merger_0_altera_axi_master_rresp                              (axi_conduit_merger_0_altera_axi_master_rresp),       //  output,    width = 2,                                                                    .rresp
+		.axi_conduit_merger_0_altera_axi_master_rlast                              (axi_conduit_merger_0_altera_axi_master_rlast),       //  output,    width = 1,                                                                    .rlast
+		.axi_conduit_merger_0_altera_axi_master_rvalid                             (axi_conduit_merger_0_altera_axi_master_rvalid),      //  output,    width = 1,                                                                    .rvalid
+		.axi_conduit_merger_0_altera_axi_master_rready                             (axi_conduit_merger_0_altera_axi_master_rready),      //   input,    width = 1,                                                                    .rready
+		.agilex_hps_f2h_axi_slave_translator_clk_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),                 //   input,    width = 1, agilex_hps_f2h_axi_slave_translator_clk_reset_reset_bridge_in_reset.reset
+		.clk_100_out_clk_clk                                                       (clk_100_out_clk_clk)                                 //   input,    width = 1,                                                     clk_100_out_clk.clk
 	);
 
-	qsys_top_r1_altera_mm_interconnect_1920_o523bhq mm_interconnect_1 (
+	qsys_top_r1_altera_mm_interconnect_1920_zkg4qvq mm_interconnect_1 (
+		.pattern_writer_1_avalon_master_address                                      (pattern_writer_1_avalon_master_address),                          //   input,  width = 32,                                        pattern_writer_1_avalon_master.address
+		.pattern_writer_1_avalon_master_waitrequest                                  (pattern_writer_1_avalon_master_waitrequest),                      //  output,   width = 1,                                                                      .waitrequest
+		.pattern_writer_1_avalon_master_burstcount                                   (pattern_writer_1_avalon_master_burstcount),                       //   input,   width = 2,                                                                      .burstcount
+		.pattern_writer_1_avalon_master_byteenable                                   (pattern_writer_1_avalon_master_byteenable),                       //   input,   width = 4,                                                                      .byteenable
+		.pattern_writer_1_avalon_master_write                                        (pattern_writer_1_avalon_master_write),                            //   input,   width = 1,                                                                      .write
+		.pattern_writer_1_avalon_master_writedata                                    (pattern_writer_1_avalon_master_writedata),                        //   input,  width = 32,                                                                      .writedata
+		.axi_conduit_merger_0_altera_axi_slave_awid                                  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awid),    //  output,   width = 5,                                 axi_conduit_merger_0_altera_axi_slave.awid
+		.axi_conduit_merger_0_altera_axi_slave_awaddr                                (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awaddr),  //  output,  width = 32,                                                                      .awaddr
+		.axi_conduit_merger_0_altera_axi_slave_awlen                                 (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awlen),   //  output,   width = 4,                                                                      .awlen
+		.axi_conduit_merger_0_altera_axi_slave_awsize                                (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awsize),  //  output,   width = 3,                                                                      .awsize
+		.axi_conduit_merger_0_altera_axi_slave_awburst                               (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awburst), //  output,   width = 2,                                                                      .awburst
+		.axi_conduit_merger_0_altera_axi_slave_awlock                                (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awlock),  //  output,   width = 2,                                                                      .awlock
+		.axi_conduit_merger_0_altera_axi_slave_awcache                               (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awcache), //  output,   width = 4,                                                                      .awcache
+		.axi_conduit_merger_0_altera_axi_slave_awprot                                (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awprot),  //  output,   width = 3,                                                                      .awprot
+		.axi_conduit_merger_0_altera_axi_slave_awvalid                               (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awvalid), //  output,   width = 1,                                                                      .awvalid
+		.axi_conduit_merger_0_altera_axi_slave_awready                               (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_awready), //   input,   width = 1,                                                                      .awready
+		.axi_conduit_merger_0_altera_axi_slave_wid                                   (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wid),     //  output,   width = 5,                                                                      .wid
+		.axi_conduit_merger_0_altera_axi_slave_wdata                                 (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wdata),   //  output,  width = 32,                                                                      .wdata
+		.axi_conduit_merger_0_altera_axi_slave_wstrb                                 (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wstrb),   //  output,   width = 4,                                                                      .wstrb
+		.axi_conduit_merger_0_altera_axi_slave_wlast                                 (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wlast),   //  output,   width = 1,                                                                      .wlast
+		.axi_conduit_merger_0_altera_axi_slave_wvalid                                (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wvalid),  //  output,   width = 1,                                                                      .wvalid
+		.axi_conduit_merger_0_altera_axi_slave_wready                                (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_wready),  //   input,   width = 1,                                                                      .wready
+		.axi_conduit_merger_0_altera_axi_slave_bid                                   (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_bid),     //   input,   width = 5,                                                                      .bid
+		.axi_conduit_merger_0_altera_axi_slave_bresp                                 (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_bresp),   //   input,   width = 2,                                                                      .bresp
+		.axi_conduit_merger_0_altera_axi_slave_bvalid                                (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_bvalid),  //   input,   width = 1,                                                                      .bvalid
+		.axi_conduit_merger_0_altera_axi_slave_bready                                (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_bready),  //  output,   width = 1,                                                                      .bready
+		.axi_conduit_merger_0_altera_axi_slave_arid                                  (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arid),    //  output,   width = 5,                                                                      .arid
+		.axi_conduit_merger_0_altera_axi_slave_araddr                                (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_araddr),  //  output,  width = 32,                                                                      .araddr
+		.axi_conduit_merger_0_altera_axi_slave_arlen                                 (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arlen),   //  output,   width = 4,                                                                      .arlen
+		.axi_conduit_merger_0_altera_axi_slave_arsize                                (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arsize),  //  output,   width = 3,                                                                      .arsize
+		.axi_conduit_merger_0_altera_axi_slave_arburst                               (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arburst), //  output,   width = 2,                                                                      .arburst
+		.axi_conduit_merger_0_altera_axi_slave_arlock                                (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arlock),  //  output,   width = 2,                                                                      .arlock
+		.axi_conduit_merger_0_altera_axi_slave_arcache                               (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arcache), //  output,   width = 4,                                                                      .arcache
+		.axi_conduit_merger_0_altera_axi_slave_arprot                                (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arprot),  //  output,   width = 3,                                                                      .arprot
+		.axi_conduit_merger_0_altera_axi_slave_arvalid                               (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arvalid), //  output,   width = 1,                                                                      .arvalid
+		.axi_conduit_merger_0_altera_axi_slave_arready                               (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_arready), //   input,   width = 1,                                                                      .arready
+		.axi_conduit_merger_0_altera_axi_slave_rid                                   (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rid),     //   input,   width = 5,                                                                      .rid
+		.axi_conduit_merger_0_altera_axi_slave_rdata                                 (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rdata),   //   input,  width = 32,                                                                      .rdata
+		.axi_conduit_merger_0_altera_axi_slave_rresp                                 (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rresp),   //   input,   width = 2,                                                                      .rresp
+		.axi_conduit_merger_0_altera_axi_slave_rlast                                 (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rlast),   //   input,   width = 1,                                                                      .rlast
+		.axi_conduit_merger_0_altera_axi_slave_rvalid                                (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rvalid),  //   input,   width = 1,                                                                      .rvalid
+		.axi_conduit_merger_0_altera_axi_slave_rready                                (mm_interconnect_1_axi_conduit_merger_0_altera_axi_slave_rready),  //  output,   width = 1,                                                                      .rready
+		.pattern_writer_1_avalon_master_translator_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),                              //   input,   width = 1, pattern_writer_1_avalon_master_translator_reset_reset_bridge_in_reset.reset
+		.clk_100_out_clk_clk                                                         (clk_100_out_clk_clk)                                              //   input,   width = 1,                                                       clk_100_out_clk.clk
+	);
+
+	qsys_top_r1_altera_mm_interconnect_1920_o523bhq mm_interconnect_2 (
 		.agilex_hps_h2f_axi_master_awid                                             (agilex_hps_h2f_axi_master_awid),                     //   input,   width = 4,                                            agilex_hps_h2f_axi_master.awid
 		.agilex_hps_h2f_axi_master_awaddr                                           (agilex_hps_h2f_axi_master_awaddr),                   //   input,  width = 32,                                                                     .awaddr
 		.agilex_hps_h2f_axi_master_awlen                                            (agilex_hps_h2f_axi_master_awlen),                    //   input,   width = 8,                                                                     .awlen
@@ -544,24 +790,24 @@ module qsys_top_r1 (
 		.agilex_hps_h2f_axi_master_rlast                                            (agilex_hps_h2f_axi_master_rlast),                    //  output,   width = 1,                                                                     .rlast
 		.agilex_hps_h2f_axi_master_rvalid                                           (agilex_hps_h2f_axi_master_rvalid),                   //  output,   width = 1,                                                                     .rvalid
 		.agilex_hps_h2f_axi_master_rready                                           (agilex_hps_h2f_axi_master_rready),                   //   input,   width = 1,                                                                     .rready
-		.ram_controller_1_csr_address                                               (mm_interconnect_1_ram_controller_1_csr_address),     //  output,   width = 3,                                                 ram_controller_1_csr.address
-		.ram_controller_1_csr_write                                                 (mm_interconnect_1_ram_controller_1_csr_write),       //  output,   width = 1,                                                                     .write
-		.ram_controller_1_csr_read                                                  (mm_interconnect_1_ram_controller_1_csr_read),        //  output,   width = 1,                                                                     .read
-		.ram_controller_1_csr_readdata                                              (mm_interconnect_1_ram_controller_1_csr_readdata),    //   input,  width = 32,                                                                     .readdata
-		.ram_controller_1_csr_writedata                                             (mm_interconnect_1_ram_controller_1_csr_writedata),   //  output,  width = 32,                                                                     .writedata
-		.ram_controller_1_csr_byteenable                                            (mm_interconnect_1_ram_controller_1_csr_byteenable),  //  output,   width = 4,                                                                     .byteenable
-		.ram_controller_1_csr_waitrequest                                           (mm_interconnect_1_ram_controller_1_csr_waitrequest), //   input,   width = 1,                                                                     .waitrequest
-		.prbs_generator_1_csr_address                                               (mm_interconnect_1_prbs_generator_1_csr_address),     //  output,   width = 3,                                                 prbs_generator_1_csr.address
-		.prbs_generator_1_csr_write                                                 (mm_interconnect_1_prbs_generator_1_csr_write),       //  output,   width = 1,                                                                     .write
-		.prbs_generator_1_csr_read                                                  (mm_interconnect_1_prbs_generator_1_csr_read),        //  output,   width = 1,                                                                     .read
-		.prbs_generator_1_csr_readdata                                              (mm_interconnect_1_prbs_generator_1_csr_readdata),    //   input,  width = 32,                                                                     .readdata
-		.prbs_generator_1_csr_writedata                                             (mm_interconnect_1_prbs_generator_1_csr_writedata),   //  output,  width = 32,                                                                     .writedata
-		.prbs_generator_1_csr_byteenable                                            (mm_interconnect_1_prbs_generator_1_csr_byteenable),  //  output,   width = 4,                                                                     .byteenable
-		.pio_0_s1_address                                                           (mm_interconnect_1_pio_0_s1_address),                 //  output,   width = 2,                                                             pio_0_s1.address
-		.pio_0_s1_write                                                             (mm_interconnect_1_pio_0_s1_write),                   //  output,   width = 1,                                                                     .write
-		.pio_0_s1_readdata                                                          (mm_interconnect_1_pio_0_s1_readdata),                //   input,  width = 32,                                                                     .readdata
-		.pio_0_s1_writedata                                                         (mm_interconnect_1_pio_0_s1_writedata),               //  output,  width = 32,                                                                     .writedata
-		.pio_0_s1_chipselect                                                        (mm_interconnect_1_pio_0_s1_chipselect),              //  output,   width = 1,                                                                     .chipselect
+		.ram_controller_1_csr_address                                               (mm_interconnect_2_ram_controller_1_csr_address),     //  output,   width = 3,                                                 ram_controller_1_csr.address
+		.ram_controller_1_csr_write                                                 (mm_interconnect_2_ram_controller_1_csr_write),       //  output,   width = 1,                                                                     .write
+		.ram_controller_1_csr_read                                                  (mm_interconnect_2_ram_controller_1_csr_read),        //  output,   width = 1,                                                                     .read
+		.ram_controller_1_csr_readdata                                              (mm_interconnect_2_ram_controller_1_csr_readdata),    //   input,  width = 32,                                                                     .readdata
+		.ram_controller_1_csr_writedata                                             (mm_interconnect_2_ram_controller_1_csr_writedata),   //  output,  width = 32,                                                                     .writedata
+		.ram_controller_1_csr_byteenable                                            (mm_interconnect_2_ram_controller_1_csr_byteenable),  //  output,   width = 4,                                                                     .byteenable
+		.ram_controller_1_csr_waitrequest                                           (mm_interconnect_2_ram_controller_1_csr_waitrequest), //   input,   width = 1,                                                                     .waitrequest
+		.prbs_generator_1_csr_address                                               (mm_interconnect_2_prbs_generator_1_csr_address),     //  output,   width = 3,                                                 prbs_generator_1_csr.address
+		.prbs_generator_1_csr_write                                                 (mm_interconnect_2_prbs_generator_1_csr_write),       //  output,   width = 1,                                                                     .write
+		.prbs_generator_1_csr_read                                                  (mm_interconnect_2_prbs_generator_1_csr_read),        //  output,   width = 1,                                                                     .read
+		.prbs_generator_1_csr_readdata                                              (mm_interconnect_2_prbs_generator_1_csr_readdata),    //   input,  width = 32,                                                                     .readdata
+		.prbs_generator_1_csr_writedata                                             (mm_interconnect_2_prbs_generator_1_csr_writedata),   //  output,  width = 32,                                                                     .writedata
+		.prbs_generator_1_csr_byteenable                                            (mm_interconnect_2_prbs_generator_1_csr_byteenable),  //  output,   width = 4,                                                                     .byteenable
+		.pio_0_s1_address                                                           (mm_interconnect_2_pio_0_s1_address),                 //  output,   width = 2,                                                             pio_0_s1.address
+		.pio_0_s1_write                                                             (mm_interconnect_2_pio_0_s1_write),                   //  output,   width = 1,                                                                     .write
+		.pio_0_s1_readdata                                                          (mm_interconnect_2_pio_0_s1_readdata),                //   input,  width = 32,                                                                     .readdata
+		.pio_0_s1_writedata                                                         (mm_interconnect_2_pio_0_s1_writedata),               //  output,  width = 32,                                                                     .writedata
+		.pio_0_s1_chipselect                                                        (mm_interconnect_2_pio_0_s1_chipselect),              //  output,   width = 1,                                                                     .chipselect
 		.agilex_hps_h2f_axi_reset_reset_bridge_in_reset_reset                       (rst_controller_001_reset_out_reset),                 //   input,   width = 1,                       agilex_hps_h2f_axi_reset_reset_bridge_in_reset.reset
 		.agilex_hps_h2f_axi_master_translator_clk_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),                 //   input,   width = 1, agilex_hps_h2f_axi_master_translator_clk_reset_reset_bridge_in_reset.reset
 		.clk_100_out_clk_clk                                                        (clk_100_out_clk_clk)                                 //   input,   width = 1,                                                      clk_100_out_clk.clk

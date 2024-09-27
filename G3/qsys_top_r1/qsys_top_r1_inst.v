@@ -52,6 +52,12 @@
 		.h2f_reset_reset                      (_connected_to_h2f_reset_reset_),                      //  output,   width = 1,                     h2f_reset.reset
 		.f2h_irq0_irq                         (_connected_to_f2h_irq0_irq_),                         //   input,  width = 32,                      f2h_irq0.irq
 		.f2h_irq1_irq                         (_connected_to_f2h_irq1_irq_),                         //   input,  width = 32,                      f2h_irq1.irq
+		.merger_conduit_awcache               (_connected_to_merger_conduit_awcache_),               //   input,   width = 4,                merger_conduit.awcache
+		.merger_conduit_awprot                (_connected_to_merger_conduit_awprot_),                //   input,   width = 3,                              .awprot
+		.merger_conduit_awuser                (_connected_to_merger_conduit_awuser_),                //   input,   width = 5,                              .awuser
+		.merger_conduit_arcache               (_connected_to_merger_conduit_arcache_),               //   input,   width = 4,                              .arcache
+		.merger_conduit_aruser                (_connected_to_merger_conduit_aruser_),                //   input,   width = 5,                              .aruser
+		.merger_conduit_arprot                (_connected_to_merger_conduit_arprot_),                //   input,   width = 3,                              .arprot
 		.clk_100_clk                          (_connected_to_clk_100_clk_),                          //   input,   width = 1,                       clk_100.clk
 		.emif_hps_pll_ref_clk_clk             (_connected_to_emif_hps_pll_ref_clk_clk_),             //   input,   width = 1,          emif_hps_pll_ref_clk.clk
 		.emif_hps_oct_oct_rzqin               (_connected_to_emif_hps_oct_oct_rzqin_),               //   input,   width = 1,                  emif_hps_oct.oct_rzqin

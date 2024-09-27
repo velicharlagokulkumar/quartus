@@ -1,5 +1,5 @@
 Fitter Retime Stage Report for G3_r1
-Fri Sep 27 00:53:42 2024
+Fri Sep 27 15:56:26 2024
 Quartus Prime Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
 
 
@@ -112,8 +112,8 @@ Info (20030): Parallel compilation is enabled and will use 12 of the 12 processo
 Info: *******************************************************************
 Info: Running Quartus Prime Fitter
     Info: Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
-    Info: Processing started: Fri Sep 27 00:44:28 2024
-    Info: System process ID: 711771
+    Info: Processing started: Fri Sep 27 15:43:06 2024
+    Info: System process ID: 1568099
 Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off G3 -c G3_r1
 Info: qfit2_default_script.tcl version: #1
 Info: Project  = G3
@@ -121,7 +121,7 @@ Info: Revision = G3_r1
 Info (17966): Starting Hyper-Retimer operations.
 Info (18914): The Hyper-Retimer was unable to optimize the design due to retiming restrictions. Run Fast Forward Timing Closure Recommendations to see step-by-step suggestions for design changes and show the estimated performance improvement from making these changes.
 Info (17968): Completed Hyper-Retimer operations.
-Info (18821): Fitter Hyper-Retimer operations ending: elapsed time is 00:00:03
+Info (18821): Fitter Hyper-Retimer operations ending: elapsed time is 00:00:06
 Info: Constraints on the CDC paths between acquisition clock and communication clock are created in the Signal Tap instance, auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0
 Info: The clock period of 'altera_reserved_tck' used in the Signal Tap instance, auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0 is not defined, setting max delay to 30ns (default 33MHz tck)
 Info: Adding default timing constraints to JTAG signals.  This will help to achieve basic functionality since no such constraints were provided by the user.

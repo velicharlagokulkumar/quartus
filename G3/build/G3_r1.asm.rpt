@@ -1,5 +1,5 @@
 Assembler report for G3_r1
-Fri Sep 27 00:56:14 2024
+Fri Sep 27 15:59:38 2024
 Quartus Prime Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
 
 
@@ -40,7 +40,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Sep 27 00:56:14 2024 ;
+; Assembler Status      ; Successful - Fri Sep 27 15:59:38 2024 ;
 ; Revision Name         ; G3_r1                                 ;
 ; Top-level Entity Name ; G3_r1                                 ;
 ; Family                ; Agilex                                ;
@@ -157,19 +157,19 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 22.4.0 Build 94 12/07/2022 SC Pro Edition
-    Info: Processing started: Fri Sep 27 00:55:07 2024
-    Info: System process ID: 767745
+    Info: Processing started: Fri Sep 27 15:58:21 2024
+    Info: System process ID: 1646946
 Info: Command: quartus_asm --read_settings_files=on --write_settings_files=off G3 -c G3_r1
 Info (16677): Loading final database.
 Info (16734): Loading "final" snapshot for partition "root_partition".
 Info (16734): Loading "final" snapshot for partition "auto_fab_0".
-Info (16678): Successfully loaded final database: elapsed time is 00:00:09.
+Info (16678): Successfully loaded final database: elapsed time is 00:00:10.
 Info (20553): Using CVP Hash 0123456789ABCDEF001122334455667788889999AAAABBBBCCCCDDDDEEEEFFFF
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 8350 megabytes
-    Info: Processing ended: Fri Sep 27 00:56:14 2024
-    Info: Elapsed time: 00:01:07
-    Info: System process ID: 767745
+    Info: Peak virtual memory: 8630 megabytes
+    Info: Processing ended: Fri Sep 27 15:59:39 2024
+    Info: Elapsed time: 00:01:18
+    Info: System process ID: 1646946
 
 
 +----------------------------------------------------+
@@ -197,8 +197,8 @@ Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
 ; Option         ; Setting                                                           ;
 +----------------+-------------------------------------------------------------------+
 ; JTAG usercode  ; 0xFFFFFFFF                                                        ;
-; Checksum       ; 0x7632D0B9                                                        ;
-; Design hash    ; D7B5365FB250675AF9E3FAA94AF8066F7AABD14211960B8A7B8B029E013828F0  ;
+; Checksum       ; 0x77632171                                                        ;
+; Design hash    ; 078B7E171BDD56B663AD1547A2101AA2EA3FE568F79DF75CDDBB68634CF2D559  ;
 +----------------+-------------------------------------------------------------------+
 
 

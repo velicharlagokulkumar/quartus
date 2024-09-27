@@ -133,7 +133,7 @@ qsys_top_r1 soc_inst_r1 (
     .hps_io_SDMMC_D6                        (SDMMC_D6), //   inout,     width = 1,                                .SDMMC_D6
     .hps_io_SDMMC_D7                        (SDMMC_D7), //   inout,     width = 1,                                .SDMMC_D7
     .hps_io_SDMMC_CCLK                      (SDMMC_CCLK), //  output,     width = 1,                                .SDMMC_CCLK
-
+ 
     .hps_io_SPIM0_CLK                      (SPIM0_CLK),                      //  output,   width = 1,                               .SPIM0_CLK
     .hps_io_SPIM0_MOSI                     (SPIM0_MOSI),                     //  output,   width = 1,                               .SPIM0_MOSI
     .hps_io_SPIM0_MISO                     (SPIM0_MISO),                     //   input,   width = 1,                               .SPIM0_MISO
@@ -183,8 +183,17 @@ qsys_top_r1 soc_inst_r1 (
     .emif_hps_mem_mem_dqs_n           (emif_hps_mem_mem_dqs_n),           //   inout,   width = 9,                          .mem_dqs_n
     .emif_hps_mem_mem_dq              (emif_hps_mem_mem_dq),              //   inout,  width = 72,                          .mem_dq
     .emif_hps_mem_mem_dbi_n           (emif_hps_mem_mem_dbi_n),           //   inout,   width = 9,                          .mem_dbi_n
+    
     .pio_0_external_connection_export (fpga_led_pio), //  output,   width = 2, pio_0_external_connection.export
     .reset_reset_n                    (system_reset_n),                    //   input,   width = 1,                     reset.reset_n
+    
+    .merger_conduit_awcache               (4'b0111),               //   input,   width = 4,                merger_conduit.awcache
+    .merger_conduit_awprot                (3'b000),                //   input,   width = 3,                              .awprot
+    .merger_conduit_awuser                (5'b00001),                //   input,   width = 5,                              .awuser
+    .merger_conduit_arcache               (4'b0111),               //   input,   width = 4,                              .arcache
+    .merger_conduit_aruser                (5'b00001),                //   input,   width = 5,                              .aruser
+    .merger_conduit_arprot                (3'b000),  
+
     .ninit_done_ninit_done            (ninit_done)             //  output,   width = 1,                ninit_done.ninit_done
 );
 

@@ -267,7 +267,11 @@ https://fpgasoftware.intel.com/eula.-->
    type="reset"
    dir="start" />
  <interface name="hps_io" internal="agilex_hps.hps_io" type="conduit" dir="end" />
- <interface name="merger_conduit" internal="axi_conduit_merger_0.conduit_end" />
+ <interface
+   name="merger_conduit"
+   internal="axi_conduit_merger_0.conduit_end"
+   type="conduit"
+   dir="end" />
  <interface
    name="ninit_done"
    internal="user_rst_clkgate_0.ninit_done"
@@ -3983,7 +3987,7 @@ https://fpgasoftware.intel.com/eula.-->
    name="axi_conduit_merger_0"
    kind="altera_generic_component"
    version="1.0"
-   enabled="0">
+   enabled="1">
   <parameter name="componentDefinition"><![CDATA[<componentDefinition>
     <boundary>
         <interfaces>
@@ -12488,30 +12492,6 @@ https://fpgasoftware.intel.com/eula.-->
    version="22.4"
    start="pattern_writer_1.avalon_master"
    end="axi_conduit_merger_0.altera_axi_slave">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
-  <parameter name="domainAlias" value="" />
-  <parameter name="qsys_mm.burstAdapterImplementation" value="GENERIC_CONVERTER" />
-  <parameter name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
-  <parameter name="qsys_mm.enableAllPipelines" value="FALSE" />
-  <parameter name="qsys_mm.enableEccProtection" value="FALSE" />
-  <parameter name="qsys_mm.enableInstrumentation" value="FALSE" />
-  <parameter name="qsys_mm.insertDefaultSlave" value="FALSE" />
-  <parameter name="qsys_mm.interconnectResetSource" value="DEFAULT" />
-  <parameter name="qsys_mm.interconnectType" value="STANDARD" />
-  <parameter name="qsys_mm.maxAdditionalLatency" value="1" />
-  <parameter name="qsys_mm.optimizeRdFifoSize" value="FALSE" />
-  <parameter name="qsys_mm.piplineType" value="PIPELINE_STAGE" />
-  <parameter name="qsys_mm.responseFifoType" value="REGISTER_BASED" />
-  <parameter name="qsys_mm.syncResets" value="TRUE" />
-  <parameter name="qsys_mm.widthAdapterImplementation" value="GENERIC_CONVERTER" />
- </connection>
- <connection
-   kind="avalon"
-   version="22.4"
-   start="pattern_writer_1.avalon_master"
-   end="agilex_hps.f2h_axi_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />

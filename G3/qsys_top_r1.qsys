@@ -4054,7 +4054,7 @@ https://fpgasoftware.intel.com/eula.-->
           </ipxact:parameters>
         </altera:altera_module_parameters>
       </altera:module>
-      <altera:module altera:enabled="false" altera:auto_export="false">
+      <altera:module altera:enabled="true" altera:auto_export="false">
         <altera:entity_info>
           <ipxact:vendor>Altera Corporation</ipxact:vendor>
           <ipxact:library>axi_conduit_merger_0</ipxact:library>
@@ -12994,26 +12994,6 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="TRUE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="avalon" altera:version="22.4" altera:start="pattern_writer_1.avalon_master" altera:end="agilex_hps.f2h_axi_slave">
-        <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="domainAlias" altera:parameter_value=""></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="qsys_mm.burstAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="qsys_mm.clockCrossingAdapter" altera:parameter_value="HANDSHAKE"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="qsys_mm.enableEccProtection" altera:parameter_value="FALSE"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="qsys_mm.enableInstrumentation" altera:parameter_value="FALSE"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="qsys_mm.insertDefaultSlave" altera:parameter_value="FALSE"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="qsys_mm.interconnectResetSource" altera:parameter_value="DEFAULT"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="qsys_mm.interconnectType" altera:parameter_value="STANDARD"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="qsys_mm.maxAdditionalLatency" altera:parameter_value="1"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="qsys_mm.optimizeRdFifoSize" altera:parameter_value="FALSE"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="qsys_mm.piplineType" altera:parameter_value="PIPELINE_STAGE"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="qsys_mm.responseFifoType" altera:parameter_value="REGISTER_BASED"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="TRUE"></altera:connection_parameter>
-        <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
-      </altera:connection>
       <altera:connection altera:kind="avalon" altera:version="22.4" altera:start="agilex_hps.h2f_axi_master" altera:end="ram_controller_1.csr">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x00030000"></altera:connection_parameter>
@@ -13146,7 +13126,7 @@ https://fpgasoftware.intel.com/eula.-->
       <altera:interface_mapping altera:name="f2h_irq1" altera:internal="agilex_hps.f2h_irq1" altera:type="interrupt" altera:dir="start"></altera:interface_mapping>
       <altera:interface_mapping altera:name="h2f_reset" altera:internal="agilex_hps.h2f_reset" altera:type="reset" altera:dir="start"></altera:interface_mapping>
       <altera:interface_mapping altera:name="hps_io" altera:internal="agilex_hps.hps_io" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
-      <altera:interface_mapping altera:name="merger_conduit" altera:internal="axi_conduit_merger_0.conduit_end"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="merger_conduit" altera:internal="axi_conduit_merger_0.conduit_end" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="ninit_done" altera:internal="user_rst_clkgate_0.ninit_done" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="pio_0_external_connection" altera:internal="pio_0.external_connection" altera:type="conduit" altera:dir="end"></altera:interface_mapping>
       <altera:interface_mapping altera:name="ram_controller_1_src_read_cmd" altera:internal="ram_controller_1.src_read_cmd" altera:type="axi4stream" altera:dir="start"></altera:interface_mapping>
@@ -13186,6 +13166,19 @@ https://fpgasoftware.intel.com/eula.-->
             <ipxact:busType vendor="intel" library="intel" name="axi4" version="22.4"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
+            <ipxact:name>axi_conduit_merger_0.altera_axi_master</ipxact:name>
+            <ipxact:busType vendor="intel" library="intel" name="axi" version="22.4"></ipxact:busType>
+            <ipxact:master>
+              <ipxact:addressSpaceRef addressSpaceRef="axi_conduit_merger_0.altera_axi_master">
+                <ipxact:baseAddress>0x0000_0000</ipxact:baseAddress>
+              </ipxact:addressSpaceRef>
+            </ipxact:master>
+          </ipxact:busInterface>
+          <ipxact:busInterface>
+            <ipxact:name>axi_conduit_merger_0.altera_axi_slave</ipxact:name>
+            <ipxact:busType vendor="intel" library="intel" name="axi" version="22.4"></ipxact:busType>
+          </ipxact:busInterface>
+          <ipxact:busInterface>
             <ipxact:name>pattern_writer_1.avalon_master</ipxact:name>
             <ipxact:busType vendor="intel" library="intel" name="avalon" version="22.4"></ipxact:busType>
             <ipxact:master>
@@ -13217,10 +13210,20 @@ https://fpgasoftware.intel.com/eula.-->
             </ipxact:segments>
           </ipxact:addressSpace>
           <ipxact:addressSpace>
-            <ipxact:name>pattern_writer_1.avalon_master</ipxact:name>
+            <ipxact:name>axi_conduit_merger_0.altera_axi_master</ipxact:name>
             <ipxact:segments>
               <ipxact:segment>
                 <ipxact:name>agilex_hps.f2h_axi_slave</ipxact:name>
+                <ipxact:addressOffset>0x0000_0000</ipxact:addressOffset>
+                <ipxact:range>0x1_0000_0000</ipxact:range>
+              </ipxact:segment>
+            </ipxact:segments>
+          </ipxact:addressSpace>
+          <ipxact:addressSpace>
+            <ipxact:name>pattern_writer_1.avalon_master</ipxact:name>
+            <ipxact:segments>
+              <ipxact:segment>
+                <ipxact:name>axi_conduit_merger_0.altera_axi_slave</ipxact:name>
                 <ipxact:addressOffset>0x0000_0000</ipxact:addressOffset>
                 <ipxact:range>0x1_0000_0000</ipxact:range>
               </ipxact:segment>

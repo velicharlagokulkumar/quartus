@@ -53,6 +53,12 @@
 			h2f_reset_reset                      : out   std_logic;                                        -- reset
 			f2h_irq0_irq                         : in    std_logic_vector(31 downto 0) := (others => 'X'); -- irq
 			f2h_irq1_irq                         : in    std_logic_vector(31 downto 0) := (others => 'X'); -- irq
+			merger_conduit_awcache               : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- awcache
+			merger_conduit_awprot                : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- awprot
+			merger_conduit_awuser                : in    std_logic_vector(4 downto 0)  := (others => 'X'); -- awuser
+			merger_conduit_arcache               : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- arcache
+			merger_conduit_aruser                : in    std_logic_vector(4 downto 0)  := (others => 'X'); -- aruser
+			merger_conduit_arprot                : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- arprot
 			clk_100_clk                          : in    std_logic                     := 'X';             -- clk
 			emif_hps_pll_ref_clk_clk             : in    std_logic                     := 'X';             -- clk
 			emif_hps_oct_oct_rzqin               : in    std_logic                     := 'X';             -- oct_rzqin
@@ -136,6 +142,12 @@
 			h2f_reset_reset                      => CONNECTED_TO_h2f_reset_reset,                      --                     h2f_reset.reset
 			f2h_irq0_irq                         => CONNECTED_TO_f2h_irq0_irq,                         --                      f2h_irq0.irq
 			f2h_irq1_irq                         => CONNECTED_TO_f2h_irq1_irq,                         --                      f2h_irq1.irq
+			merger_conduit_awcache               => CONNECTED_TO_merger_conduit_awcache,               --                merger_conduit.awcache
+			merger_conduit_awprot                => CONNECTED_TO_merger_conduit_awprot,                --                              .awprot
+			merger_conduit_awuser                => CONNECTED_TO_merger_conduit_awuser,                --                              .awuser
+			merger_conduit_arcache               => CONNECTED_TO_merger_conduit_arcache,               --                              .arcache
+			merger_conduit_aruser                => CONNECTED_TO_merger_conduit_aruser,                --                              .aruser
+			merger_conduit_arprot                => CONNECTED_TO_merger_conduit_arprot,                --                              .arprot
 			clk_100_clk                          => CONNECTED_TO_clk_100_clk,                          --                       clk_100.clk
 			emif_hps_pll_ref_clk_clk             => CONNECTED_TO_emif_hps_pll_ref_clk_clk,             --          emif_hps_pll_ref_clk.clk
 			emif_hps_oct_oct_rzqin               => CONNECTED_TO_emif_hps_oct_oct_rzqin,               --                  emif_hps_oct.oct_rzqin
