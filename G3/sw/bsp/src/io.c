@@ -89,19 +89,16 @@
 
     u32 reg_read_32(u32 offset)
     {
-        u32 z = *((int *)(h2f_ptr + offset/4)); // for removing read error on board
         return *((int *)(h2f_ptr + offset/4));
     }
 
     u16 reg_read_16(u32 offset)
     {
-        u16 z = *((int *)(h2f_ptr + offset/4)); // for removing read error on board
         return *((uint16_t *)(h2f_ptr2 + offset/2));
     }
 
     u8 reg_read_8(u32 offset)
     {
-        u8 z = *((int *)(h2f_ptr + offset/4)); // for removing read error on board
         return *((uint8_t *)(h2f_ptr3 + offset));
     }
 
