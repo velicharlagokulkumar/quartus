@@ -1,8 +1,9 @@
-![prbs(3)](https://github.com/velicharlagokulkumar/quartus/assets/104726431/85e5a5e2-2a22-4506-8acc-b9985ada18cf)
+![Untitled Project](https://github.com/user-attachments/assets/5f8b2aa4-6e49-4a3a-b4b3-f55b0ee07c2d)
 
-![gk-Page-63 drawio](https://github.com/user-attachments/assets/09e1e7af-0d88-4c53-8c8c-82991d88d825)
+![gk-Page-63 drawio (1)](https://github.com/user-attachments/assets/11fe5427-2ce8-44b2-b9a4-64d80552bcea)
 
 ![image](https://github.com/user-attachments/assets/21e0a0ee-1909-4d1f-a8ef-9e055eda200a)
 
+![gk-Page-64 drawio](https://github.com/user-attachments/assets/b4ac12d8-2f4f-4e4a-90ca-8d50de0c5c57)
 
 
