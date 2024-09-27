@@ -1,2 +1,3 @@
 *.jic
 /output_files/*.sof
+/build/*.sof

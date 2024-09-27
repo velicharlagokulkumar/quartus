@@ -1,0 +1,95 @@
+	component qsys_top_axi_conduit_merger_0 is
+		generic (
+			ID_WIDTH      : integer := 5;
+			DATA_WIDTH    : integer := 32;
+			ADDRESS_WIDTH : integer := 32;
+			AXUSER_WIDTH  : integer := 5
+		);
+		port (
+			clk       : in  std_logic                                   := 'X';             -- clk
+			rst_n     : in  std_logic                                   := 'X';             -- reset_n
+			m_awvalid : out std_logic;                                                      -- awvalid
+			m_awlen   : out std_logic_vector(3 downto 0);                                   -- awlen
+			m_awsize  : out std_logic_vector(2 downto 0);                                   -- awsize
+			m_awburst : out std_logic_vector(1 downto 0);                                   -- awburst
+			m_awlock  : out std_logic_vector(1 downto 0);                                   -- awlock
+			m_awcache : out std_logic_vector(3 downto 0);                                   -- awcache
+			m_awprot  : out std_logic_vector(2 downto 0);                                   -- awprot
+			m_awready : in  std_logic                                   := 'X';             -- awready
+			m_awuser  : out std_logic_vector(AXUSER_WIDTH-1 downto 0);                      -- awuser
+			m_arvalid : out std_logic;                                                      -- arvalid
+			m_arlen   : out std_logic_vector(3 downto 0);                                   -- arlen
+			m_arsize  : out std_logic_vector(2 downto 0);                                   -- arsize
+			m_arburst : out std_logic_vector(1 downto 0);                                   -- arburst
+			m_arlock  : out std_logic_vector(1 downto 0);                                   -- arlock
+			m_arcache : out std_logic_vector(3 downto 0);                                   -- arcache
+			m_arprot  : out std_logic_vector(2 downto 0);                                   -- arprot
+			m_arready : in  std_logic                                   := 'X';             -- arready
+			m_aruser  : out std_logic_vector(AXUSER_WIDTH-1 downto 0);                      -- aruser
+			m_rvalid  : in  std_logic                                   := 'X';             -- rvalid
+			m_rlast   : in  std_logic                                   := 'X';             -- rlast
+			m_rresp   : in  std_logic_vector(1 downto 0)                := (others => 'X'); -- rresp
+			m_rready  : out std_logic;                                                      -- rready
+			m_wvalid  : out std_logic;                                                      -- wvalid
+			m_wlast   : out std_logic;                                                      -- wlast
+			m_wready  : in  std_logic                                   := 'X';             -- wready
+			m_bvalid  : in  std_logic                                   := 'X';             -- bvalid
+			m_bresp   : in  std_logic_vector(1 downto 0)                := (others => 'X'); -- bresp
+			m_bready  : out std_logic;                                                      -- bready
+			m_awaddr  : out std_logic_vector(ADDRESS_WIDTH-1 downto 0);                     -- awaddr
+			m_awid    : out std_logic_vector(ID_WIDTH-1 downto 0);                          -- awid
+			m_araddr  : out std_logic_vector(ADDRESS_WIDTH-1 downto 0);                     -- araddr
+			m_arid    : out std_logic_vector(ID_WIDTH-1 downto 0);                          -- arid
+			m_rdata   : in  std_logic_vector(DATA_WIDTH-1 downto 0)     := (others => 'X'); -- rdata
+			m_rid     : in  std_logic_vector(ID_WIDTH-1 downto 0)       := (others => 'X'); -- rid
+			m_wdata   : out std_logic_vector(DATA_WIDTH-1 downto 0);                        -- wdata
+			m_wstrb   : out std_logic_vector((DATA_WIDTH/8)-1 downto 0);                    -- wstrb
+			m_wid     : out std_logic_vector(ID_WIDTH-1 downto 0);                          -- wid
+			m_bid     : in  std_logic_vector(ID_WIDTH-1 downto 0)       := (others => 'X'); -- bid
+			s_awvalid : in  std_logic                                   := 'X';             -- awvalid
+			s_awlen   : in  std_logic_vector(3 downto 0)                := (others => 'X'); -- awlen
+			s_awsize  : in  std_logic_vector(2 downto 0)                := (others => 'X'); -- awsize
+			s_awburst : in  std_logic_vector(1 downto 0)                := (others => 'X'); -- awburst
+			s_awlock  : in  std_logic_vector(1 downto 0)                := (others => 'X'); -- awlock
+			s_awcache : in  std_logic_vector(3 downto 0)                := (others => 'X'); -- awcache
+			s_awprot  : in  std_logic_vector(2 downto 0)                := (others => 'X'); -- awprot
+			s_awready : out std_logic;                                                      -- awready
+			s_awuser  : in  std_logic_vector(AXUSER_WIDTH-1 downto 0)   := (others => 'X'); -- awuser
+			s_arvalid : in  std_logic                                   := 'X';             -- arvalid
+			s_arlen   : in  std_logic_vector(3 downto 0)                := (others => 'X'); -- arlen
+			s_arsize  : in  std_logic_vector(2 downto 0)                := (others => 'X'); -- arsize
+			s_arburst : in  std_logic_vector(1 downto 0)                := (others => 'X'); -- arburst
+			s_arlock  : in  std_logic_vector(1 downto 0)                := (others => 'X'); -- arlock
+			s_arcache : in  std_logic_vector(3 downto 0)                := (others => 'X'); -- arcache
+			s_arprot  : in  std_logic_vector(2 downto 0)                := (others => 'X'); -- arprot
+			s_arready : out std_logic;                                                      -- arready
+			s_aruser  : in  std_logic_vector(AXUSER_WIDTH-1 downto 0)   := (others => 'X'); -- aruser
+			s_rvalid  : out std_logic;                                                      -- rvalid
+			s_rlast   : out std_logic;                                                      -- rlast
+			s_rresp   : out std_logic_vector(1 downto 0);                                   -- rresp
+			s_rready  : in  std_logic                                   := 'X';             -- rready
+			s_wvalid  : in  std_logic                                   := 'X';             -- wvalid
+			s_wlast   : in  std_logic                                   := 'X';             -- wlast
+			s_wready  : out std_logic;                                                      -- wready
+			s_bvalid  : out std_logic;                                                      -- bvalid
+			s_bresp   : out std_logic_vector(1 downto 0);                                   -- bresp
+			s_bready  : in  std_logic                                   := 'X';             -- bready
+			s_awaddr  : in  std_logic_vector(ADDRESS_WIDTH-1 downto 0)  := (others => 'X'); -- awaddr
+			s_awid    : in  std_logic_vector(ID_WIDTH-1 downto 0)       := (others => 'X'); -- awid
+			s_araddr  : in  std_logic_vector(ADDRESS_WIDTH-1 downto 0)  := (others => 'X'); -- araddr
+			s_arid    : in  std_logic_vector(ID_WIDTH-1 downto 0)       := (others => 'X'); -- arid
+			s_rdata   : out std_logic_vector(DATA_WIDTH-1 downto 0);                        -- rdata
+			s_rid     : out std_logic_vector(ID_WIDTH-1 downto 0);                          -- rid
+			s_wdata   : in  std_logic_vector(DATA_WIDTH-1 downto 0)     := (others => 'X'); -- wdata
+			s_wstrb   : in  std_logic_vector((DATA_WIDTH/8)-1 downto 0) := (others => 'X'); -- wstrb
+			s_wid     : in  std_logic_vector(ID_WIDTH-1 downto 0)       := (others => 'X'); -- wid
+			s_bid     : out std_logic_vector(ID_WIDTH-1 downto 0);                          -- bid
+			c_awcache : in  std_logic_vector(3 downto 0)                := (others => 'X'); -- awcache
+			c_awprot  : in  std_logic_vector(2 downto 0)                := (others => 'X'); -- awprot
+			c_awuser  : in  std_logic_vector(AXUSER_WIDTH-1 downto 0)   := (others => 'X'); -- awuser
+			c_arcache : in  std_logic_vector(3 downto 0)                := (others => 'X'); -- arcache
+			c_aruser  : in  std_logic_vector(AXUSER_WIDTH-1 downto 0)   := (others => 'X'); -- aruser
+			c_arprot  : in  std_logic_vector(2 downto 0)                := (others => 'X')  -- arprot
+		);
+	end component qsys_top_axi_conduit_merger_0;
+
